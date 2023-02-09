@@ -1,0 +1,128 @@
+/* The Modal (background) */
+
+.isOpen{
+        .modal {
+            z-index: 1; /* Sit on top */
+            // left: 34.8%;        
+            left: 470px;
+            top: 34%;
+            position: absolute;
+            height: 342px;
+            background: #141425;
+            border-radius: 0px 0px 8px 8px;
+            width: 414px;
+          }
+          .modalcontent {
+            font-family: 'SFProText-Regular';
+            padding: 16px;           
+          }
+          .selecttext{
+            font-style: normal;
+            font-weight: 510;
+            font-size: 12px;
+            line-height: 24px;
+            color: #898992;
+            border-bottom: 1px solid rgba(160, 160, 170, 0.3);
+            width: 380px; 
+            font-family: 'SFProText-Regular'; 
+            letter-spacing: 1px;    
+          }
+          .container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: absolute;
+            width: auto;
+            height: 448px;
+            left: 16px;
+            .wrapper {
+              display: flex;
+              justify-content: space-between;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              gap: 8px;      
+              width: 362px;
+              font-style: normal;
+              font-weight: 700;
+              font-size: 14px;
+              line-height: 25px;
+              padding: 8px;
+              border-bottom: 1px solid rgba(160, 160, 170, 0.3);
+              font-family: 'SFProText-Regular';
+              .country_code_container {
+                height: 24px;  
+                font-family: "SFProText";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 24px;    
+                color: #ffffff;
+                font-family: 'SFProText-Regular';
+                .country_name {
+                }
+                .country_code {
+                  color: rgba(255, 255, 255, 0.4);
+                }
+              }
+              .check {
+                width: 24px;
+                height: 24px;     
+                input[type="radio"]{
+                  accent-color: #F5961E ;
+                }
+              }
+            }
+          }
+          
+    }
+.isClose{
+    display: none;
+}
+
+  
+@media (min-width:1024px) and (max-width: 1290px){
+    
+.isOpen{
+    .modal {
+        left: 26.8%;
+        top: 16%;    
+      }
+    }
+}
+@media (min-width:500px) and (max-width: 1023px){
+
+.isOpen{
+    .modal {
+        left: 26.8%;
+        top: 23%;    
+      }
+      .modalcontent {
+        padding: 16px;           
+      }
+      .selecttext{
+        letter-spacing: 1px;    
+      }
+      .container {  
+        .wrapper {
+          .country_code_container {
+            font-family: 'SFProText-Regular';
+            .country_name {
+            }
+            .country_code {
+              color: rgba(255, 255, 255, 0.4);
+            }
+          }
+          .check {
+            width: 24px;
+            height: 24px;     
+            input[type="radio"]{
+              accent-color: #F5961E ;
+            }
+          }
+        }
+      }
+      
+}
+ 
+}
