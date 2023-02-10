@@ -52,7 +52,7 @@ function ProfileInfo({ handleBack }) {
   const handleInput = (e) => {
     const fieldName = e.target.name;
     if (fieldName == "langData") {
-      console.log("before--", formData.langData.length, e.target.value);
+      
       if (formData.langData.length > 0) {
         const langDataOld = formData.langData.filter((item) => {
           return item !== e.target.value;
@@ -60,7 +60,7 @@ function ProfileInfo({ handleBack }) {
         const langDataExist = formData.langData.filter((item) => {
           return item == e.target.value;
         });
-        console.log("langDataOld--", langDataOld, langDataExist);
+       
         if (langDataOld.length > 0 && langDataExist.length > 0) {
           setFormData((prevState) => ({
             ...prevState,
@@ -97,7 +97,7 @@ function ProfileInfo({ handleBack }) {
       }));
     } else {
       let fieldValue = e.target.value;
-      console.log("handleInput--", fieldName, fieldValue);
+     
       setFormData((prevState) => ({
         ...prevState,
         [fieldName]: fieldValue,
@@ -207,14 +207,7 @@ function ProfileInfo({ handleBack }) {
       },
     ],
   };
-  console.log(
-    "render",
-    avtaar,
-    deviceDetect,
-    state.mobileWidth,
-    formData.checkedKids,
-    formData.langData
-  );
+
   return (
     <div
       className={`${style.registration_container} ${
