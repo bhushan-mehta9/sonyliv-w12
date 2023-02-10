@@ -11,6 +11,8 @@ function Player() {
 
   return(
     <>
+    <meta name="description" content="This is home page"></meta>
+    <title>This is home page</title>
         <span onClick={() => {handleSignInModal(true)}}>SignIn</span>
         {showModal ? <SignInModal handleSignInModal={handleSignInModal} /> : ""}
     </>
