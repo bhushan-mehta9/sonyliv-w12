@@ -1,9 +1,11 @@
-import SignIn from "@/components/SignIn/SignIn";
+// import SignIn from "@/components/SignIn/SignIn";
 import React, { useState } from "react";
 import style from "./SignInModal.module.scss";
 
+import ProfileInfo from "@/components/ProfileInfo/ProfileInfo";
+
 function Modal(props) {
-  const [page, setPage] = useState("signin");
+  const [page, setPage] = useState("profileinfo");
 
   /**
    * Show the prious page to user
@@ -30,7 +32,7 @@ function Modal(props) {
           case "confirmotp":
             return null;
           case "profileinfo":
-            return null;
+            return <ProfileInfo/>;
           default:
             return null;
         }
