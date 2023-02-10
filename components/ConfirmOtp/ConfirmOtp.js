@@ -5,15 +5,16 @@ import EditIcon from "../../public/images/editIcon.png";
 import { useRouter } from "next/router";
 import ArrowLeft from "../../public/images/arrowLeft.svg";
 import { useState } from "react";
-// import ResendOtpPopup from "../Modal/ResendOtp/ResendOtpPopup";
+import ResendOtpPopup from "../Modal/ResendOtp/ResendOtpPopup";
 
-const ConfirmOtp = () => {
+const ConfirmOtp = ({handleBack,handlePageChange}) => {
   const [resendOtpPopup, setResendOtpModal] = useState(false);
   const [resendOtpText, setResendOtpText] = useState(false);
   const router = useRouter();
 
   const handleClick = () => {
-    router.push("/signin");
+    //router.push("/signin");
+    handleBack("signin")
   };
   function handleResendOtp() {
     setResendOtpModal(false);
@@ -23,7 +24,8 @@ const ConfirmOtp = () => {
   }
 
   const handleNext = () => {
-    router.push("/profileinfo");
+    //router.push("/profileinfo");
+    handlePageChange('profileinfo')
   };
   const [formData, setFormData] = useState({
     otp1: "",
@@ -112,9 +114,9 @@ const ConfirmOtp = () => {
             />
           </div>
         </div>
-        {resendOtpText ? <div className={styles.sectionFour} onClick={resendClick}>Didn’t receive the code? Try Again</div> : <div className={styles.sectionFour} >
+        {resendOtpText ? <div className={styles.sectionFour} onClick={resendClick} style={{ cursor: "pointer" }} >Didn’t receive the code? Try Again</div> : <div className={styles.sectionFour} >
           You will be receiving an SMS shortly
-          <div  style={{ cursor: "pointer" }}>
+          <div >
             Resend OTP in <span className={styles.blueColor}> 01:56</span>
           </div>
         </div>
@@ -142,7 +144,7 @@ const ConfirmOtp = () => {
             <li></li>
           </ul>
         </div>
-        {/* <ResendOtpPopup isOpen={resendOtpPopup} handleModal={handleResendOtp} /> */}
+       <ResendOtpPopup isOpen={resendOtpPopup} handleModal={handleResendOtp} />
       </div>
     </>
   );

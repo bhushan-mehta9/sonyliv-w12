@@ -13,9 +13,13 @@ function Modal(props) {
    * Show the prious page to user
    * Creation Date : 09/02/2023
    */
-  const handleBack = () => {
-    props.handleSignInModal(false);
+  const handleBack = (value) => {
+    setPage(value)
+    //props.handleSignInModal(false);
   };
+  const handlePageChange = (value) => {
+    setPage(value)
+  }
 
   /**
    * Load the page components on click of back and next button
@@ -30,11 +34,11 @@ function Modal(props) {
       {(() => {
         switch (page) {
           case "signin":
-            return <SignIn/>;
+            return <SignIn handleBack={handleBack} handlePageChange={handlePageChange} />;
           case "confirmotp":
-            return null;
+            return <ConfirmOtp handleBack={handleBack} handlePageChange={handlePageChange} />;
           case "profileinfo":
-            return <ProfileIfo/>;
+            return <ProfileInfo handleBack={handleBack} />;
           default:
             return null;
         }

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import style from "./SelectCountry.module.scss";
 
-function SelectCountry({ isOpen, handleModal, codehandler }) {
+const SelectCountry=({ isOpen, handleModal, codehandler })=> {
   const [width, setWidth] = useState("");
   const [isChecked, setIsChecked] = useState(false);
 
-  function handleCheckBox(e) {
+  const handleCheckBox=(e)=> {
     codehandler(e);
     console.log("e.target.value", e.target.value);
     setIsChecked(!isChecked);
@@ -23,7 +23,7 @@ function SelectCountry({ isOpen, handleModal, codehandler }) {
     { name: "Wakanda", code: "+0" },
   ];
 
-  function handleOverLayClick(event) {
+  const handleOverLayClick=(event)=> {
     console.log("event", event);
     if (event?.target?.classList[0]?.includes("myModal")) {
       // setIsOpen(false);

@@ -37,36 +37,27 @@
   width: 100%;
   .button {
     width: 100%;
-    button {
-      cursor: pointer;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      padding: 12px 24px;
-      margin-bottom: 16px;
-      background: #242436;
-      border-radius: 8px;
-      color: #ffffff;
-      .image {
-        margin-right: 10.5px;
-      }
+    cursor: pointer;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 24px;
+    margin-bottom: 16px;
+    background: #242436;
+    border-radius: 8px;
+    color: #ffffff;
+    .image {
+      margin-right: 10.5px;
     }
-    .button1 {
+    &:first-child {
       background: #f5961e;
-      width: 100%;
-      padding: 12px 24px;
-      margin-bottom: 16px;
-      border-radius: 8px;
       color: #07070a;
     }
-    &:last-child {
-      button {
-        margin-bottom: 0;
-      }
-    }
+   
   }
+ 
 }
 @media (min-width: 521px) and (max-width: 1024px) {
   .header_section {
@@ -80,9 +71,8 @@
   }
   .button_section {
     .button {
-      button {
         height: 56px;
-      }
+    
     }
   }
 }
@@ -94,7 +84,7 @@
     margin-top: 34px;
     .title {
       letter-spacing: 1px;
-      padding:0 10px;
+      padding: 0 10px;
       padding-bottom: 0;
       font-size: 24px;
       line-height: 32px;
@@ -102,7 +92,7 @@
       margin-bottom: 8px;
     }
     .description {
-      letter-spacing: .8px;
+      letter-spacing: 0.8px;
       max-width: 288px;
       max-height: 16px;
       font-weight: 400;
@@ -112,14 +102,12 @@
   }
   .button_section {
     .button {
-      button {
         font-weight: 700;
         font-size: 16px;
         line-height: 24px;
         margin-bottom: 12px;
         height: 48px;
-      }
+      
     }
   }
 }
-

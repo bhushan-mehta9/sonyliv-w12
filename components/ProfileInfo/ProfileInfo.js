@@ -28,7 +28,7 @@ const OwlCarousel = dynamic(() => import ('@ntegral/react-owl-carousel'), {
   ssr: false,
 });
 
-function ProfileInfo() {
+function ProfileInfo({handleBack}) {
     const [exitModal, setExitModal] = useState(false);
     const [avtaar, setAvtaar] = useState();
     const [kiduser, setkiduser] = useState(true);

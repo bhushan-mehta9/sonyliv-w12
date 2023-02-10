@@ -2,7 +2,7 @@ import React from "react";
 import Modal from "../CommonModal/Modal";
 import style from "./LinkYourMobilePopup.module.scss";
 
-function LinkYourMobilePopup({ isOpen, handleModal, continueClick }) {
+const LinkYourMobilePopup=({ isOpen, handleModal, continueClick })=> {
   return (
     <Modal isOpen={isOpen} handleModal={handleModal}>
       <div className={style.header_section}>

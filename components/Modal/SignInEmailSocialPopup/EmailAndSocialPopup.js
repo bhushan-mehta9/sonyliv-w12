@@ -6,7 +6,7 @@ import Google from "../../../public/images/Google.png"
 import Facebook from "../../../public/images/Facebook.png";
 import Apple from "../../../public/images/Apple.png";
 
-function EmailAndSocialPopup({ isOpen, handleModal, emailHandler }) {
+const EmailAndSocialPopup=({ isOpen, handleModal, emailHandler })=>{
   return (
     <Modal isOpen={isOpen} handleModal={handleModal}>
       <div className={style.header_section}>
@@ -14,14 +14,12 @@ function EmailAndSocialPopup({ isOpen, handleModal, emailHandler }) {
         <div className={style.description}>How would you like to Sign In?</div>
       </div>
       <div className={style.button_section}>
-        <div className={style.button}>
-          <button className={style.button1} onClick={emailHandler}>
+          <button className={style.button} onClick={emailHandler}>
             Login with Email ID
           </button>
-        </div>
+        
 
-        <div className={style.button}>
-          <button>
+          <button className={style.button}>
             <Image
               src={Facebook}
               width={15.92}
@@ -30,9 +28,9 @@ function EmailAndSocialPopup({ isOpen, handleModal, emailHandler }) {
             />
             <span>Continue with Facebook</span>
           </button>
-        </div>
-        <div className={style.button}>
-          <button>
+        
+       
+          <button className={style.button}>
             <Image
               src={Google}
               width={15.92}
@@ -41,9 +39,8 @@ function EmailAndSocialPopup({ isOpen, handleModal, emailHandler }) {
             />
             <span>Continue with Google</span>
           </button>
-        </div>
-        <div className={style.button}>
-          <button>
+        
+          <button className={style.button}>
             <Image
               src={Apple}
               width={15.92}
@@ -52,7 +49,6 @@ function EmailAndSocialPopup({ isOpen, handleModal, emailHandler }) {
             />
             <span>Continue with Apple</span>
           </button>
-        </div>
       </div>
     </Modal>
   );
