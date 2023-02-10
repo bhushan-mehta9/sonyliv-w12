@@ -1,32 +1,19 @@
 import React from "react";
 import style from "./ProfileInfo.module.scss";
-// import LeftChevron from "../../public/images/left-chevron.svg";
-// import { InputGroup, Form } from "react-bootstrap";
+
 import mypic from '../../public/images/Avatar.png';
 import mypic1 from '../../public/images/Avatar_1.png'
 import mypic2 from '../../public/images/Avatar_2.png';
 import checkNew from '../../public/images/check_1.png';
-// import Carousel from 'react-multi-carousel';
-// import "react-multi-carousel/lib/styles.css";
-import { useEffect } from "react";
-// import ExitConfirmPopup from "../Modal/ExitConfirmPopup/ExitPopup";
+import Slider from "react-slick";
 
-// import { lazy } from 'react';
+import { useEffect } from "react";
+
 import { useState } from 'react';
 import check from '../../public/images/check.png'
 import Image from 'next/image';
 import { isMobile, isTablet, isMobileOnly, isDesktop } from 'react-device-detect';
 import dynamic from 'next/dynamic';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
-
-var $ = require("jquery");
-if (typeof window !== "undefined") {
-   window.$ = window.jQuery = require("jquery");
-}
-const OwlCarousel = dynamic(() => import ('@ntegral/react-owl-carousel'), {
-  ssr: false,
-});
 
 function ProfileInfo() {
     const [exitModal, setExitModal] = useState(false);
@@ -139,29 +126,7 @@ function ProfileInfo() {
               setAvtaar(data)
           }
       
-    const responsive = {
-        superLargeDesktop: {
-          // the naming can be any, depends on you.
-          breakpoint: { max: 4000, min: 3000 },
-          items: 7,
-          slidesToSlide: 1
-        },
-        desktop: {
-          breakpoint: { max: 3000, min: 1024 },
-          items: 6,
-          slidesToSlide: 1
-        },
-        tablet: {
-          breakpoint: { max: 1024, min: 464 },
-          items: 4,
-          slidesToSlide: 1
-        },
-        mobile: {
-          breakpoint: { max: 464, min: 0 },
-          items: 4,
-          slidesToSlide: 1
-        }
-      };
+    
     
 const mypicData = [
     {
@@ -220,21 +185,49 @@ const langrInfo = [{ item :"English", name:'langData'},
 {item:'Kannada', name:"langData"}
 
 ]
-const Responsive = {
-  1500:{
-    items : 5
-    },
-    1024:{
-      items: 5
-      },
-    768:{
-        items: 5
-      },
-      0:{
-      items: 1.5
-      },
 
-}
+
+const settings = {
+  className: "center",
+  centerMode: true,
+  infinite: true,
+  // centerPadding: "60px",
+  slidesToShow: 3,
+  speed: 500,
+  responsive: [
+    {
+      breakpoint: 1499,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 1,
+       
+      }
+    },
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 1,
+       
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        // initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+      }
+    }
+  ]
+};
 console.log('render', avtaar, deviceDetect, state.mobileWidth, formData.checkedKids, formData.langData)
   return (
     <div className={`${style.registration_container} ${deviceDetect ? `${style.tablet_container}` : state.mobileWidth ? style.mobile_container : ''}`}>
@@ -243,43 +236,10 @@ console.log('render', avtaar, deviceDetect, state.mobileWidth, formData.checkedK
     </div>
     <div className={style.avtaar_container} id="avtaar_container">
       <h3 className={style.title}>Choose avatar</h3>
-      {/* <Carousel 
-        swipeable={true}
-        draggable={true}
-        showDots={false}
-        responsive={responsive}
-        ssr={true} // means to render carousel on server-side.
-        infinite={false}
-        autoPlay={ false}
-        autoPlaySpeed={1000}
-        keyBoardControl={true}
-        customTransition="all .5"
-        transitionDuration={500}
-        containerClass={style.carousel_container}
-        removeArrowOnDeviceType={["tablet", "mobile",]}
-        itemClass="carousel-item"
-       centerMode={true}
-       >
-        {mypicData.map((item, index) => {
-          return  <div className={style.image_block} key={index} >
-            <div className={`${avtaar == index ? style.active: `${index}`}`} onClick={() => handleProfile(index)}>
-              <Image width="350px" height="300px" layout="responsive" src={item.path} alt={item.altData} className={style.avtaar_img} />
-              <Image src={check} alt='check_icon' className={style.checkicon} />
-            </div>
-        </div>
-        })}
-    
-      </Carousel> */}
-    <div className={style.avtaarSlider_container}>
-      <OwlCarousel
-    className={`owl-theme avtaarSlider`}
-    loop={false}
-    margin={10}
-    nav={true}
-    center={true} 
-    responsive={Responsive}
-    dots={false}
->
+     
+    <div className={style.avtaarSlider_container} id="profileAvtaarCarousel">
+
+<Slider {...settings}>
 {mypicData.map((item, index) => {
           return  <div className={style.image_block} key={index} >
             <div className={`${avtaar == index ? style.active: `${index}`}`} onClick={(e) => {
@@ -290,7 +250,8 @@ console.log('render', avtaar, deviceDetect, state.mobileWidth, formData.checkedK
             </div>
         </div>
         })}
-</OwlCarousel>
+</Slider>
+
 </div>
     </div>
     <div className={style.form_container}>
