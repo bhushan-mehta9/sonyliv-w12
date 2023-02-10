@@ -5,49 +5,95 @@ import EditIcon from "../../public/images/editIcon.png";
 import { useRouter } from "next/router";
 import ArrowLeft from "../../public/images/arrowLeft.svg";
 import { useState } from "react";
+import { useEffect, useRef } from "react";
 import ResendOtpPopup from "../Modal/ResendOtp/ResendOtpPopup";
 
 const ConfirmOtp = ({handleBack,handlePageChange}) => {
+  const textInput = useRef(null);
+  const [inputFocus, setinputFocus] = useState(false);
   const [resendOtpPopup, setResendOtpModal] = useState(false);
   const [resendOtpText, setResendOtpText] = useState(false);
-  const router = useRouter();
-
-  const handleClick = () => {
-    //router.push("/signin");
-    handleBack("signin")
-  };
-  function handleResendOtp() {
-    setResendOtpModal(false);
-  }
-  function resendClick() {
-    setResendOtpModal(true);
-  }
-
-  const handleNext = () => {
-    //router.push("/profileinfo");
-    handlePageChange('profileinfo')
-  };
   const [formData, setFormData] = useState({
     otp1: "",
     otp2: "",
     otp3: "",
     otp4: "",
   });
+
+  /**
+   * Show the signin page to user
+   * Creation Date : 10/02/2023
+   */
+  const handleClick = () => {
+    handleBack("signin");
+  };
+
+  /**
+   * resendOtp page handeling
+   * Creation Date : 10/02/2023
+   */
+  const handleResendOtp = () => {
+    setResendOtpModal(false);
+  };
+
+  /**
+   * Show the resendOtp page to user
+   * Creation Date : 10/02/2023
+   */
+  const resendClick = () => {
+    setResendOtpModal(true);
+  };
+
+  /**
+   * Click on next will show the profileinfo page to user
+   * Creation Date : 10/02/2023
+   */
+  const handleNext = () => {
+    handlePageChange('profileinfo')
+  };
+
+  /**
+   * set otp value ,number validation
+   * Creation Date : 10/02/2023
+   */
   const handleOtp = (event) => {
     const otpLabel = event.target.name;
     const otpValue = event.target.value;
     if (!isNaN(otpValue)) {
       setFormData((prevState) => ({ ...prevState, [otpLabel]: otpValue }));
     }
+    if (!isNaN(otpValue) && otpValue.length > 0) {
+      if (otpLabel == "otp4") {
+        setinputFocus(otpLabel);
+      } else {
+        const split = JSON.parse(otpLabel.split("otp")[1]);
+        const splitNum = split + 1;
+        console.log("otp--", split, splitNum);
+        setinputFocus(`otp${splitNum}`);
+      }
+    }
   };
-  setTimeout(() => {
-    console.log("set timeout working");
-    setResendOtpText(true);
 
-  }, 2000);
+  /**
+   * after the otp interval the text will change
+   * Creation Date : 10/02/2023
+   */
+  setTimeout(() => {
+    setResendOtpText(true);
+  }, 5000);
+
+  /**
+   * move focus from one otp field to another
+   * Creation Date : 10/02/2023
+   */
+  useEffect(() => {
+    textInput.current.focus();
+  }, [inputFocus]);
 
   return (
     <>
+    <meta name="description" content="Confirm Otp Page"></meta>
+    <title>Confirm Otp Page</title>
       <div className={styles.otpContainer}>
         <div className={styles.sectionOne}>
           <div onClick={handleClick} className={styles.arrowLeftBlock}>
@@ -56,8 +102,6 @@ const ConfirmOtp = ({handleBack,handlePageChange}) => {
               alt="check_icon"
               className={styles.arrowLeft}
             />
-            {/* <span className={styles.vectorOne}></span>
-            <span className={styles.vectorTwo}></span> */}
           </div>
           <div className={styles.textOne}> Please verify its you</div>
         </div>
@@ -81,6 +125,7 @@ const ConfirmOtp = ({handleBack,handlePageChange}) => {
               name="otp1"
               value={formData.otp1}
               onChange={handleOtp}
+              ref={textInput}
             />
             <input
               maxlength="1"
@@ -91,6 +136,7 @@ const ConfirmOtp = ({handleBack,handlePageChange}) => {
               name="otp2"
               value={formData.otp2}
               onChange={handleOtp}
+              ref={inputFocus == "otp2" ? textInput : null}
             />
             <input
               maxlength="1"
@@ -101,6 +147,7 @@ const ConfirmOtp = ({handleBack,handlePageChange}) => {
               name="otp3"
               value={formData.otp3}
               onChange={handleOtp}
+              ref={inputFocus == "otp3" ? textInput : null}
             />
             <input
               maxlength="1"
@@ -111,6 +158,7 @@ const ConfirmOtp = ({handleBack,handlePageChange}) => {
               name="otp4"
               value={formData.otp4}
               onChange={handleOtp}
+              ref={inputFocus == "otp4" ? textInput : null}
             />
           </div>
         </div>
@@ -119,8 +167,8 @@ const ConfirmOtp = ({handleBack,handlePageChange}) => {
           <div >
             Resend OTP in <span className={styles.blueColor}> 01:56</span>
           </div>
-        </div>
-}
+          </div>
+        }
         <button
           onClick={handleNext}
           className={`${styles.button} ${
@@ -144,10 +192,9 @@ const ConfirmOtp = ({handleBack,handlePageChange}) => {
             <li></li>
           </ul>
         </div>
-       <ResendOtpPopup isOpen={resendOtpPopup} handleModal={handleResendOtp} />
+        <ResendOtpPopup isOpen={resendOtpPopup} handleModal={handleResendOtp} />
       </div>
-    </>
-  );
-};
-
+     </>
+     );
+   };
 export default ConfirmOtp;
