@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ConfirmOtp.module.scss";
 import Image from "next/image";
-import EditIcon from "../../public/images/edit-icon.png";
+import EditIcon from "../../public/images/editIcon.png";
 import { useRouter } from "next/router";
 import ArrowLeft from "../../public/images/arrowLeft.svg";
 import { useState } from "react";
