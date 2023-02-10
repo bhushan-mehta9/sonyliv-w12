@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import style from "./SignIn.module.scss";
-import LeftChevron from "../../../src/srcAssets/images/left-chevron.svg";
+import LeftChevron from "../images/left-chevron.svg";
 import Horizontalline from "../../../src/srcAssets/images/horiline.svg";
 import SelectCountry from "../CountryModal/SelectCountry";
 import SelectCountryCode from "../SelectCountryCode/selectCode";
@@ -53,7 +53,7 @@ function SignIn() {
     if (regex.test(phonenumber) === true) {
       seterror(false);
       setActive(true);
-      router.push("/confirmotp");
+     // router.push("/confirmotp");
       //pageHandler("confirmOtp");
       console.log("push");
     } else {

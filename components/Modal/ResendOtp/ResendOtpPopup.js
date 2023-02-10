@@ -1,8 +1,8 @@
 import React from "react";
 import Modal from "../CommonModal/Modal";
 import style from "./ResendOtpPopup.module.scss";
-import Apple from "../../srcAssets/images/next/Apple.png";
-import Whatsapp from "../../srcAssets/images/next/whatsapp.png";
+import Apple from "../../../public/images/Apple.png";
+import Whatsapp from "../../../public/images/whatsapp.png";
 import Image from "next/image";
 
 function ResendOtpPopup({ isOpen, handleModal }) {
