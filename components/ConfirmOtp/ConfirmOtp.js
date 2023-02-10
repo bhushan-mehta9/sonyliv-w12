@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./ConfirmOtp.module.scss";
 import Image from "next/image";
-import EditIcon from "../../../src/srcAssets/images/editIcon.png";
+import EditIcon from "../../public/images/editIcon.png";
 import { useRouter } from "next/router";
-import ArrowLeft from "../../../public/assets/arrow-left.svg";
+import ArrowLeft from "../../public/images/arrowLeft.svg";
 import { useState } from "react";
-import ResendOtpPopup from "../ResendOtp/ResendOtpPopup";
+// import ResendOtpPopup from "../Modal/ResendOtp/ResendOtpPopup";
 
 const ConfirmOtp = () => {
   const [resendOtpPopup, setResendOtpModal] = useState(false);
@@ -38,16 +38,6 @@ const ConfirmOtp = () => {
       setFormData((prevState) => ({ ...prevState, [otpLabel]: otpValue }));
     }
   };
-
-  // const fn = (event, to) => {
-  //   const len = event.target.value;
-  //   const max = event.target.maxlength;
-  //   console.log("value is", event, event.target.name);
-  //   if (len == max) {
-  //     document.getElementById("#otp1").nextElementSibling;
-  //   }
-  // };
-
   setTimeout(() => {
     console.log("set timeout working");
     setResendOtpText(true);
@@ -87,10 +77,8 @@ const ConfirmOtp = () => {
               }`}
               type="tel"
               name="otp1"
-              id="otp1"
               value={formData.otp1}
               onChange={handleOtp}
-              onKeyUp={fn}
             />
             <input
               maxlength="1"
@@ -99,7 +87,6 @@ const ConfirmOtp = () => {
               }`}
               type="tel"
               name="otp2"
-              id="otp2"
               value={formData.otp2}
               onChange={handleOtp}
             />
@@ -155,7 +142,7 @@ const ConfirmOtp = () => {
             <li></li>
           </ul>
         </div>
-        <ResendOtpPopup isOpen={resendOtpPopup} handleModal={handleResendOtp} />
+        {/* <ResendOtpPopup isOpen={resendOtpPopup} handleModal={handleResendOtp} /> */}
       </div>
     </>
   );
