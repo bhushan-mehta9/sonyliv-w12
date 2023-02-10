@@ -2,9 +2,9 @@ import React from "react";
 import Modal from "../CommonModal/Modal";
 import style from "./EmailAndSocialPopup.module.scss";
 import Image from "next/image";
-import Google from "../../srcAssets/images/next/Google.png";
-import Facebook from "../../srcAssets/images/next/Facebook.png";
-import Apple from "../../srcAssets/images/next/Apple.png";
+import Google from "../../../public/images/Google.png"
+import Facebook from "../../../public/images/Facebook.png";
+import Apple from "../../../public/images/Apple.png";
 
 function EmailAndSocialPopup({ isOpen, handleModal, emailHandler }) {
   return (

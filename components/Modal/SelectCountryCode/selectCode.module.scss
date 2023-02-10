@@ -2,10 +2,10 @@
 
 .isOpen{
         .modal {
-            z-index: 1; /* Sit on top */
-            // left: 34.8%;        
-            left: 470px;
-            top: 34%;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, -50%);
+            z-index: 1; 
             position: absolute;
             height: 342px;
             background: #141425;

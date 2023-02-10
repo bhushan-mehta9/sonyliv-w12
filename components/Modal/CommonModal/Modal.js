@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import style from "./Modal.module.scss";
-
-import close from "../../srcAssets/images/closeModal.svg";
-
+import close from "../../../public/images/closeModal.svg";
 import Image from "next/image";
 
 function Modal({ isOpen, handleModal, children }) {

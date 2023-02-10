@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import style from "./selectCode.module.scss";
-// import Elipse from "../../../src/srcAssets/images/next/Ellipse 1.png";
-// import Radio from "../../../src/srcAssets/images/next/Radio.png";
 
 function SelectCode(props) {
     const {isOpen, handleModal,codehandler} = props;
