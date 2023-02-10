@@ -34,7 +34,7 @@ function Modal(props) {
           case "confirmotp":
             return null;
           case "profileinfo":
-            return <ProfileInfo/>;
+            return <ProfileIfo/>;
           default:
             return null;
         }

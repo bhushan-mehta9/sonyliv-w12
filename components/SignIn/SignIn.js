@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import style from "./SignIn.module.scss";
-import LeftChevron from "../images/left-chevron.svg";
-import Horizontalline from "../../../src/srcAssets/images/horiline.svg";
-import SelectCountry from "../CountryModal/SelectCountry";
-import SelectCountryCode from "../SelectCountryCode/selectCode";
+import LeftChevron from "../../public/images/left-chevron.svg";
+import Horizontalline from "../../public/images/horizontalline.png";
+import SelectCountry from "../Modal/CountryModal/SelectCountry";
+import SelectCountryCode from "../Modal/SelectCountryCode/selectCode";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import EmailAndSocialPopup from "../SignInEmailSocialPopup/EmailAndSocialPopup";
-import LinkYourMobilePopup from "../LinkYourMobile/LinkYourMobilePopup";
-import ArrowLeft from "../../../public/assets/arrow-left.svg";
+import EmailAndSocialPopup from "../Modal/SignInEmailSocialPopup/EmailAndSocialPopup";
+import LinkYourMobilePopup from "../Modal/LinkYourMobile/LinkYourMobilePopup";
+import ArrowLeft from "../../public/images/arrowLeft.svg";
 
 function SignIn() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -94,7 +94,7 @@ function SignIn() {
             <Image src={LeftChevron} className={style.arrow} />
             <Image src={Horizontalline} className={style.dash} />
           </div>
-          {/* <div className={style.sign}>Sign in to watch </div> */}
+          <div className={style.sign}>Sign in to watch </div>
           {linkPage ? (
             <>
               <div className={style.sign}>Link  Mobile no. with Email ID</div>
@@ -110,7 +110,7 @@ function SignIn() {
         <div className={style.imgdiv} onClick={handleBackClick}>
         <Image
               src={ArrowLeft}
-              alt="check_icon"
+              // alt="check_icon"
               className={style.arrowLeft}
             />
           </div>

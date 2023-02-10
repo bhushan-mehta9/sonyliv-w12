@@ -93,8 +93,11 @@
         }
     }
     .new{
-        padding: 0 35%;
+        // padding: 0 35%;
+        margin-left: auto;
+        margin-right: auto;
         margin-top: 60px;
+
         width: 412px;
         .containeremail{
             .email{       
@@ -279,8 +282,8 @@
 @media (min-width:500px) and (max-width: 1024px) {
     .mainheader{
         .new{
-            padding: 0px 24% !important;
-        }
+            // padding: 0px 24% !important;
+                }
     }
 }
 @media only screen and (max-width: 450px) {
@@ -317,9 +320,9 @@
             }
         }
         .new{      
-            padding: 0px;
             margin-top: 10px;
-            width: 100%;        
+            width: 100%;  
+            padding: 15px;               
             .container{
                 display: flex;
                 margin-top: 6%;
