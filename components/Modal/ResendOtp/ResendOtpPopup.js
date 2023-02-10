@@ -5,7 +5,7 @@ import Apple from "../../../public/images/Apple.png";
 import Whatsapp from "../../../public/images/whatsapp.png";
 import Image from "next/image";
 
-function ResendOtpPopup({ isOpen, handleModal }) {
+const ResendOtpPopup=({ isOpen, handleModal })=> {
   return (
     <Modal isOpen={isOpen} handleModal={handleModal}>
       <div className={style.header_section}>

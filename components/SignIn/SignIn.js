@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import style from "./SignIn.module.scss";
 import LeftChevron from "../../public/images/left-chevron.svg";
-import Horizontalline from "../../public/images/horizontalline.png";
-import SelectCountry from "../Modal/CountryModal/SelectCountry";
-import SelectCountryCode from "../Modal/SelectCountryCode/selectCode";
+//import Horizontalline from "../../../src/srcAssets/images/horiline.svg";
+import SelectCountry from "../../components/Modal/CountryModal/SelectCountry";
+import SelectCountryCode from "../../components/Modal/SelectCountryCode/selectCode";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import EmailAndSocialPopup from "../Modal/SignInEmailSocialPopup/EmailAndSocialPopup";
-import LinkYourMobilePopup from "../Modal/LinkYourMobile/LinkYourMobilePopup";
+import EmailAndSocialPopup from "../../components/Modal/SignInEmailSocialPopup/EmailAndSocialPopup";
+import LinkYourMobilePopup from "../../components/Modal/LinkYourMobile/LinkYourMobilePopup";
 import ArrowLeft from "../../public/images/arrowLeft.svg";
 
-function SignIn() {
+const SignIn=({handleBack,handlePageChange}) =>{
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLinkModal, setIsLinkModal] = useState(false);
   const [socialLoginModal, setSocialLoginModal] = useState(false);
@@ -28,24 +28,36 @@ function SignIn() {
   useEffect(() => {
     setWidth(window.innerWidth);
   });
+  const handleModals = (modal) => {
+    switch (modal) {
+      case "country":
+        return setIsModalOpen(!isModalOpen)
+      case "socialLogin":
+        return setSocialLoginModal(true)
+      case "linkMobil":
+        return setIsLinkModal(true)
+      default:
+        return null;
+    }
+  }
 
-  function onDropDown() {
+  const onDropDown=()=> {
     setIsModalOpen(!isModalOpen);
     console.log("isopen in drop sown", isModalOpen);
   }
-  function handleModal() {
+  const  handleModal=()=> {
     setIsModalOpen(false);
   }
-  function handleModalClose() {
+  const handleModalClose=()=> {
     setSocialLoginModal(false);
   }
-  function handleSocialLoginModal() {
+  const handleSocialLoginModal=() =>{
     setSocialLoginModal(true);
   }
-  function handleLinkModal() {
+  const handleLinkModal=()=> {
     setIsLinkModal(false);
   }
-  function handleClick() {
+  const handleClick=() =>{
     if (email) {
       setIsLinkModal(true);
     }
@@ -54,24 +66,23 @@ function SignIn() {
       seterror(false);
       setActive(true);
      // router.push("/confirmotp");
-      //pageHandler("confirmOtp");
-      console.log("push");
+      handlePageChange("confirmotp");
     } else {
       seterror(true);
       setActive(false);
     }
   }
-  function codehandler(e) {
+  const codehandler=(e)=> {
     setcode(e.target.value);
   }
-  function onNumberChange(e) {
+  const onNumberChange=(e)=> {
     setphonenumber(e.target.value);
   }
-  function emailHandler(e) {
+  const emailHandler=(e)=> {
     setemail(true);
     setSocialLoginModal(false);
   }
-  function continueLinkEmail() {
+  const continueLinkEmail=()=> {
     setLinkPage(true);
     setemail(false);
     setIsLinkModal(false);
@@ -91,8 +102,11 @@ function SignIn() {
           mobile ? 
         <div className={style.header}>
           <div onClick={handleBackClick}>
-            <Image src={LeftChevron} className={style.arrow} />
-            <Image src={Horizontalline} className={style.dash} />
+          <Image
+              src={ArrowLeft}
+              alt="check_icon"
+              className={style.arrow}
+            />
           </div>
           <div className={style.sign}>Sign in to watch </div>
           {linkPage ? (

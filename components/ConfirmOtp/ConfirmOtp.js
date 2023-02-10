@@ -8,8 +8,7 @@ import { useState } from "react";
 import { useEffect, useRef } from "react";
 import ResendOtpPopup from "../Modal/ResendOtp/ResendOtpPopup";
 
-const ConfirmOtp = (handleBack) => {
-  const router = useRouter();
+const ConfirmOtp = ({handleBack,handlePageChange}) => {
   const textInput = useRef(null);
   const [inputFocus, setinputFocus] = useState(false);
   const [resendOtpPopup, setResendOtpModal] = useState(false);
@@ -26,7 +25,7 @@ const ConfirmOtp = (handleBack) => {
    * Creation Date : 10/02/2023
    */
   const handleClick = () => {
-    handleBack("/signin");
+    handleBack("signin");
   };
 
   /**
@@ -50,7 +49,7 @@ const ConfirmOtp = (handleBack) => {
    * Creation Date : 10/02/2023
    */
   const handleNext = () => {
-    router.push("/profileinfo");
+    handlePageChange('profileinfo')
   };
 
   /**
@@ -163,18 +162,13 @@ const ConfirmOtp = (handleBack) => {
             />
           </div>
         </div>
-        {resendOtpText ? (
-          <div className={styles.sectionFour} onClick={resendClick}>
-            Didn’t receive the code? Try Again
+        {resendOtpText ? <div className={styles.sectionFour} onClick={resendClick} style={{ cursor: "pointer" }} >Didn’t receive the code? Try Again</div> : <div className={styles.sectionFour} >
+          You will be receiving an SMS shortly
+          <div >
+            Resend OTP in <span className={styles.blueColor}> 01:56</span>
           </div>
-        ) : (
-          <div className={styles.sectionFour}>
-            You will be receiving an SMS shortly
-            <div style={{ cursor: "pointer" }}>
-              Resend OTP in <span className={styles.blueColor}> 01:56</span>
-            </div>
           </div>
-        )}
+        }
         <button
           onClick={handleNext}
           className={`${styles.button} ${
@@ -200,8 +194,7 @@ const ConfirmOtp = (handleBack) => {
         </div>
         <ResendOtpPopup isOpen={resendOtpPopup} handleModal={handleResendOtp} />
       </div>
-    </>
-  );
-};
-
+     </>
+     );
+   };
 export default ConfirmOtp;

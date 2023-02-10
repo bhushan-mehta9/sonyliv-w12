@@ -3,11 +3,11 @@ import style from "./Modal.module.scss";
 import close from "../../../public/images/closeModal.svg";
 import Image from "next/image";
 
-function Modal({ isOpen, handleModal, children }) {
-  function handleClose() {
+const Modal=({ isOpen, handleModal, children })=> {
+  const handleClose=()=> {
     handleModal();
   }
-  function handleOverLayClick(event) {
+  const handleOverLayClick=(event)=> {
     console.log("event", event);
     if (event?.target?.classList[0]?.includes("myModal")) {
       handleModal();

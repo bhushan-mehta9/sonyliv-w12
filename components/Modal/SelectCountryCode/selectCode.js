@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import style from "./selectCode.module.scss";
 
-function SelectCode(props) {
+const SelectCode=(props)=> {
     const {isOpen, handleModal,codehandler} = props;
     const [isChecked, setIsChecked] = useState(false);
 
-    function handleCheckBox(e) {
+    const handleCheckBox=(e)=> {
         codehandler(e);
         console.log("e.target.value", e.target.value);
         setIsChecked(!isChecked);

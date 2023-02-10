@@ -2,7 +2,7 @@ import React from "react";
 import Modal from "../CommonModal/Modal";
 import style from "./ExitPopup.module.scss";
 
-function ExitPopup({ isOpen, handleModal }) {
+const ExitPopup=({ isOpen, handleModal })=> {
   return (
     <>
       <Modal isOpen={isOpen} handleModal={handleModal}>
