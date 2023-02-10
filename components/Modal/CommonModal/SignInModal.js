@@ -32,7 +32,7 @@ function Modal(props) {
           case "signin":
             return <SignIn/>;
           case "confirmotp":
-            return <ConfirmOtp/>;
+            return null;
           case "profileinfo":
             return <ProfileInfo/>;
           default:
