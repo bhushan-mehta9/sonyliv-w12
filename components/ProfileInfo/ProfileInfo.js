@@ -344,7 +344,7 @@ console.log('render', avtaar, deviceDetect, state.mobileWidth, formData.checkedK
     <div className={`${style.next_btn} ${formData.nameField && formData.checkedKids && formData.ageField && formData.genderData  && formData.langData.length > 0 ? style.activeBtn : ''}`}>
         <button onClick={handleSubmit} disabled={formData.nameField && formData.checkedKids && formData.ageField && formData.genderData && formData.langData.length > 0 ? false : true}>Next</button>
       </div>
-      <button
+      {/* <button
         onClick={() => setExitModal(true)}
         style={{
           backgroundColor: "black",
@@ -355,7 +355,7 @@ console.log('render', avtaar, deviceDetect, state.mobileWidth, formData.checkedK
         }}
       >
         Exit
-      </button>
+      </button> */}
     <div className={style.pagination}>
         <ul>
           <li></li>
@@ -364,7 +364,7 @@ console.log('render', avtaar, deviceDetect, state.mobileWidth, formData.checkedK
           <li></li>
         </ul>
       </div>
-      <ExitConfirmPopup isOpen={exitModal} handleModal={handleModal} />
+      {/* <ExitConfirmPopup isOpen={exitModal} handleModal={handleModal} /> */}
     </div>
   );
 }
