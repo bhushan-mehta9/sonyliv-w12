@@ -1,19 +1,19 @@
 import React from "react";
 import style from "./ProfileInfo.module.scss";
-import LeftChevron from "../../../src/srcAssets/images/left-chevron.svg";
-import { InputGroup, Form } from "react-bootstrap";
-import mypic from '../../../public/assets/images/Avatar.png';
-import mypic1 from '../../../public/assets/images/Avatar_1.png'
-import mypic2 from '../../../public/assets/images/Avatar_2.png';
-import checkNew from '../../../public/assets/images/check_1.png';
-import Carousel from 'react-multi-carousel';
-import "react-multi-carousel/lib/styles.css";
+// import LeftChevron from "../../public/images/left-chevron.svg";
+// import { InputGroup, Form } from "react-bootstrap";
+import mypic from '../../public/images/Avatar.png';
+import mypic1 from '../../public/images/Avatar_1.png'
+import mypic2 from '../../public/images/Avatar_2.png';
+import checkNew from '../../public/images/check_1.png';
+// import Carousel from 'react-multi-carousel';
+// import "react-multi-carousel/lib/styles.css";
 import { useEffect } from "react";
-import ExitConfirmPopup from "../ExitConfirmPopup/ExitPopup";
+// import ExitConfirmPopup from "../Modal/ExitConfirmPopup/ExitPopup";
 
 // import { lazy } from 'react';
 import { useState } from 'react';
-import check from '../../../public/assets/images/check.png'
+import check from '../../public/images/check.png'
 import Image from 'next/image';
 import { isMobile, isTablet, isMobileOnly, isDesktop } from 'react-device-detect';
 import dynamic from 'next/dynamic';
