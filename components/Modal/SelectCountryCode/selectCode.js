@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import style from "./selectCode.module.scss";
-// import Elipse from "../../../src/srcAssets/images/next/Ellipse 1.png";
-// import Radio from "../../../src/srcAssets/images/next/Radio.png";
 
-function SelectCode(props) {
+const SelectCode=(props)=> {
     const {isOpen, handleModal,codehandler} = props;
     const [isChecked, setIsChecked] = useState(false);
 
-    function handleCheckBox(e) {
+    const handleCheckBox=(e)=> {
         codehandler(e);
         console.log("e.target.value", e.target.value);
         setIsChecked(!isChecked);

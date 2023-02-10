@@ -11,7 +11,10 @@ function Player() {
 
   return(
     <>
+    {
+      showModal ? "" : 
         <span onClick={() => {handleSignInModal(true)}}>SignIn</span>
+    }
         {showModal ? <SignInModal handleSignInModal={handleSignInModal} /> : ""}
     </>
   );

@@ -2,10 +2,10 @@
 
 .isOpen{
         .modal {
-            z-index: 1; /* Sit on top */
-            // left: 34.8%;        
-            left: 470px;
-            top: 34%;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, -50%);
+            z-index: 1; 
             position: absolute;
             height: 342px;
             background: #141425;
@@ -81,21 +81,21 @@
 }
 
   
-@media (min-width:1024px) and (max-width: 1290px){
+// @media (min-width:1024px) and (max-width: 1290px){
     
-.isOpen{
-    .modal {
-        left: 26.8%;
-        top: 16%;    
-      }
-    }
-}
+// .isOpen{
+//     .modal {
+//         left: 26.8%;
+//         top: 16%;    
+//       }
+//     }
+// }
 @media (min-width:500px) and (max-width: 1023px){
 
 .isOpen{
     .modal {
-        left: 26.8%;
-        top: 23%;    
+        // left: 26.8%;
+        // top: 23%;    
       }
       .modalcontent {
         padding: 16px;           

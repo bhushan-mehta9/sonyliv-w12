@@ -15,7 +15,7 @@ import Image from 'next/image';
 import { isMobile, isTablet, isMobileOnly, isDesktop } from 'react-device-detect';
 import dynamic from 'next/dynamic';
 
-function ProfileInfo() {
+function ProfileInfo({handleBack}) {
     const [exitModal, setExitModal] = useState(false);
     const [avtaar, setAvtaar] = useState();
     const [kiduser, setkiduser] = useState(true);
