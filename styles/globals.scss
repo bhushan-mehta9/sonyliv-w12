@@ -105,3 +105,25 @@ a {
     color-scheme: dark;
   }
 }
+
+
+html body{
+  min-height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+  background: 
+      linear-gradient(0deg, #000000 79.07%, rgba(0, 0, 0, 0) 109.5%),
+      linear-gradient(360deg, #0e0f15 34.18%, rgba(7, 7, 10, 0) 100%),
+      radial-gradient(
+      88.87% 98.15% at -20.75% -15.5%,
+      #24bff3 0%,
+      rgba(64, 32, 128, 0) 100%
+      ),
+      radial-gradient(108.25% 233.18% at 36.5% 37.5%, #402080 0%, #ff5500 100%),
+      radial-gradient(
+      78.75% 520.8% at -23.37% -35.25%,
+      #faeb32 0%,
+      #ff5500 100%
+      ),
+      linear-gradient(312.65deg, #000000 63.82%, #1f1f2d 113.14%);
+}
