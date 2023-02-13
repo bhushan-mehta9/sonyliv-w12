@@ -1,15 +1,12 @@
 .header_section {
   color: white;
-  margin: 0px auto 32px auto;
+  margin: 0px auto 24px auto;
   max-width: 349px;
   width: 100%;
-  height: 120px;
+  height: auto;
   text-align: center;
   .title {
-    //height: 40px;
-    max-width: 300px;
     margin: 0 auto;
-
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
@@ -35,8 +32,13 @@
       padding: 12px 24px;
       margin-bottom: 16px;
       background: #242436;
+      border: 1px solid #636370;
       border-radius: 8px;
       color: #ffffff;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
       .image {
         margin-right: 10.5px;
       }
@@ -48,6 +50,13 @@
       margin-bottom: 16px;
       border-radius: 8px;
       color: #07070a;
+      border: none;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      outline: none;
+      cursor: pointer;
     }
     &:last-child {
       button {
@@ -60,7 +69,7 @@
   .header_section {
     margin-top: 34px;
     .title {
-      max-width: 250px;
+      max-width: 288px;
       margin: 0 auto;
       font-size: 24px;
       line-height: 32px;

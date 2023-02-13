@@ -56,6 +56,7 @@ const SelectCountry=({ isOpen, handleModal, codehandler })=> {
                     checked={checked}
                     onChange={(e) => handleCheckBox(e)}
                   />
+                  <span className={style.circleshape}></span>
                 </label>
 
                 <div className={style.customCheck}></div>

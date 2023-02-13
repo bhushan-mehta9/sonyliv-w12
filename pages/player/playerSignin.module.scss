@@ -123,12 +123,13 @@ $btnOrange : #F5961E;
     backdrop-filter: blur(8px);
     .Signinmdal_box{
       position: absolute;
-      left: 0;
+      left: 50%;
+      transform: translateX(-50%);
       bottom: 0;
       width: 100%;
       border-radius: 16px 16px 0px 0px;
       padding: 48px 16px 24px 16px;
-      max-width: inherit;
+      max-width: 445px;
       &::before{
           content: '';
           display: inline-block;
@@ -165,3 +166,4 @@ $btnOrange : #F5961E;
     }
   }
 }
+

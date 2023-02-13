@@ -40,7 +40,7 @@ const EmailAndSocialPopup=({ isOpen, handleModal, emailHandler })=>{
             <span>Continue with Google</span>
           </button>
         
-          <button className={style.button}>
+          {/* <button className={style.button}>
             <Image
               src={Apple}
               width={15.92}
@@ -48,7 +48,7 @@ const EmailAndSocialPopup=({ isOpen, handleModal, emailHandler })=>{
               className={style.image}
             />
             <span>Continue with Apple</span>
-          </button>
+          </button> */}
       </div>
     </Modal>
   );

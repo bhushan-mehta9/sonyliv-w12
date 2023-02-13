@@ -186,20 +186,20 @@ function ProfileInfo({ handleBack }) {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 1,
           // initialSlide: 2
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 600,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -263,6 +263,7 @@ function ProfileInfo({ handleBack }) {
       </div>
       <div className={style.form_container}>
         <form method="post" action="submit">
+        <div className={style.flex_cont}>
           <div
             className={`${style.nameFieldBox} ${
               formData.nameField ? style.activeField : ""
@@ -314,26 +315,9 @@ function ProfileInfo({ handleBack }) {
               Date of birth
             </label>
           </div>
-          <div
-            className={`${style.identityFieldBox} ${
-              kiduser ? style.kidsprobox : ""
-            }`}
-          >
-            <div className={style.kidFlexBox}>
-              <label className={style.label}>Kid’s mode</label>
-              <div
-                className={`${style.switchBox} ${
-                  formData.checkedKids ? style.active : ""
-                }`}
-              >
-                <input
-                  type="checkbox"
-                  name="checkedKids"
-                  value={formData.checkedKids}
-                  onChange={handleInput}
-                />
-              </div>
-            </div>
+          </div>
+          <div className={style.flex_cont}>
+          <div className={style.identityFieldBox}>
             <h3 className={style.title}>What do you identify as?</h3>
             <div className={style.genderBtn_Flexbox}>
               {genderInfo &&
@@ -390,6 +374,7 @@ function ProfileInfo({ handleBack }) {
                 })}
             </div>
           </div>
+          </div>
         </form>
       </div>
       <div
@@ -415,7 +400,7 @@ function ProfileInfo({ handleBack }) {
               : true
           }
         >
-          Next
+          Create Profile
         </button>
       </div>
       {/* <button
