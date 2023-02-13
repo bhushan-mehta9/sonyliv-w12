@@ -1,0 +1,167 @@
+$signinBg : #141425;
+$white: #fff;
+$lightgray: #A0A0AA;
+$btnOrange : #F5961E;
+
+
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+
+.signinmodal_container{
+    min-height: 100vh;
+    width: 100%;
+    @include flexbox();
+    align-items: center;
+    justify-content: center;
+    background: rgba(7, 7, 10, 0.87);
+    position: relative;
+    .Signinmdal_box{
+      background: $signinBg;
+      border-radius: 8px;
+      padding: 48px;
+      width: 100%;
+      max-width: 445px;
+  .header{
+    position: relative;
+    .closeBtn{
+      background-color: transparent;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      padding: 0px;
+      display: inline-flex;
+      position: absolute;
+      right: -18px;
+      top: -18px;
+      z-index: 1;
+      img{
+        width: 16px;
+        height: 16px;
+      }
+    }
+    .title{
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 40px;
+      color: $white;
+      text-align: center;
+      margin: 0px 0px 12px 0px;
+    }
+    .info{
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      color: $lightgray;
+      text-align: center;
+      padding: 0 5px;
+      margin: 0;
+    }
+  }
+  .body{
+    padding-top: 32px;
+    .signin_Btn{
+      display: block;
+      width: 100%;
+      background-color: $btnOrange;
+      border-radius: 8px;
+      outline: none;
+      border: none;
+      height: 48px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      color: #07070A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      cursor: pointer;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .keepbrowseBtn{
+      border: 1px solid #636370;
+      border-radius: 8px;
+      background: #242436;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      display: block;
+      width: 100%;
+      height: 48px;
+      outline: none;
+      cursor: pointer;
+      color: $white;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+ }
+ 
+
+}
+
+
+
+//for mobile screens
+@media screen and (max-width:767px) {
+  .signinmodal_container{
+    background: rgba(7, 7, 10, 0.5);
+    backdrop-filter: blur(8px);
+    .Signinmdal_box{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      border-radius: 16px 16px 0px 0px;
+      padding: 48px 16px 24px 16px;
+      max-width: inherit;
+      &::before{
+          content: '';
+          display: inline-block;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          top: 12px;
+          width: 32px;
+          height: 2px;
+          background: rgba(255, 255, 255, 0.4);
+          border-radius: 2px;
+      }
+      .header{
+        .closeBtn{
+          top: -26px;
+          right: 6px;
+        }
+        .title{
+          font-size: 24px;
+          line-height: 32px;
+          margin: 0px 0px 8px 0px;
+        }
+        .info{
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 16px;
+          padding: 0 10px;
+        }
+      }
+      .body{
+        padding-top: 24px;
+      }
+    }
+  }
+}
