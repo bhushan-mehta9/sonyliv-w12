@@ -9,8 +9,9 @@ import Image from "next/image";
 import EmailAndSocialPopup from "../../components/Modal/SignInEmailSocialPopup/EmailAndSocialPopup";
 import LinkYourMobilePopup from "../../components/Modal/LinkYourMobile/LinkYourMobilePopup";
 import ArrowLeft from "../../public/images/arrowLeft.svg";
+// import Player from "@/pages/player";
 
-const SignIn=({handleBack,handlePageChange}) =>{
+const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLinkModal, setIsLinkModal] = useState(false);
   const [socialLoginModal, setSocialLoginModal] = useState(false);
@@ -92,6 +93,9 @@ const SignIn=({handleBack,handlePageChange}) =>{
       setemail("")
     } else if (linkPage) {
       setLinkPage("")
+    }
+    else{
+      closeSignIn();    
     }
   }
 

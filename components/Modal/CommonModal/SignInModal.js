@@ -15,7 +15,6 @@ function Modal(props) {
    */
   const handleBack = (value) => {
     setPage(value)
-    //props.handleSignInModal(false);
   };
   const handlePageChange = (value) => {
     setPage(value)
@@ -25,8 +24,8 @@ function Modal(props) {
    * Load the page components on click of back and next button
    * Creation Date : 09/02/2023
    */
-  const closeSignIn = (pageName) => {
-    setPage(pageName);
+  const closeSignIn = () => {
+    props.handleSignInModal(false);    
   };
 
   return (
@@ -34,7 +33,7 @@ function Modal(props) {
       {(() => {
         switch (page) {
           case "signin":
-            return <SignIn handleBack={handleBack} handlePageChange={handlePageChange} />;
+            return <SignIn handleBack={handleBack} handlePageChange={handlePageChange}  closeSignIn={closeSignIn} />;
           case "confirmotp":
             return <ConfirmOtp handleBack={handleBack} handlePageChange={handlePageChange} />;
           case "profileinfo":
