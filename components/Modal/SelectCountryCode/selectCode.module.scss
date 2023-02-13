@@ -3,18 +3,36 @@
 .isOpen{
         .modal {
             left: 50%;
-            top: 60%;
-            transform: translate(-50%, -50%);
+            top: 210px;
+            transform: translateX(-50%);
             z-index: 1; 
             position: absolute;
             height: 342px;
             background: #141425;
             border-radius: 0px 0px 8px 8px;
             width: 414px;
+            padding: 16px; 
           }
           .modalcontent {
-            
-            padding: 16px;           
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 0px;            
+            margin-right: -10px;
+            padding-right: 10px;
+            &::-webkit-scrollbar{
+              width: 2px;
+              height: 1%;
+            }
+            &::-webkit-scrollbar-thumb{
+              background: #636370;
+              border-radius: 90px;
+              height: 1%;
+              width: 0;
+            }
+            &::-webkit-scrollbar-track{
+              background-color: transparent;
+              width: 5px;
+            }      
           }
           .selecttext{
             font-style: normal;
@@ -23,31 +41,30 @@
             line-height: 24px;
             color: #898992;
             border-bottom: 1px solid rgba(160, 160, 170, 0.3);
-            width: 380px; 
-             
+            width: 100%; 
+            padding: 0px 0px 8px 0px;     
             letter-spacing: 1px;    
           }
           .container {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            position: absolute;
+            position: relative;
             width: auto;
-            height: 448px;
-            left: 16px;
+            height: 277px;
+            left: 0px;
             .wrapper {
               display: flex;
               justify-content: space-between;
               display: flex;
               flex-direction: row;
-              align-items: center;
-              gap: 8px;      
-              width: 362px;
+              align-items: center;   
+              width: 100%;
               font-style: normal;
-              font-weight: 700;
+              font-weight: 400;
               font-size: 14px;
-              line-height: 25px;
-              padding: 8px;
+              line-height: 24px;
+              padding: 8px 0px;
               border-bottom: 1px solid rgba(160, 160, 170, 0.3);
               
               .country_code_container {
@@ -66,13 +83,53 @@
                 }
               }
               .check {
-                width: 24px;
-                height: 24px;     
-                input[type="radio"]{
-                  accent-color: #F5961E ;
+                width: 16px;
+                height: 16px;
+                label{
+                  position: relative;
+                  display: inline-flex;
+                  width: 16px;
+                  height: 16px;
+                  input[type="radio"]{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    cursor:pointer;
+                    left: 0;
+                    top: 0;
+                    z-index: 1;
+                    opacity: 0;
+                  }     
+                  input[type="radio"] + .circleshape{
+                    width: 16px;
+                    height: 16px;
+                    display: inline-flex;
+                    border-radius: 50%;
+                    border: 1px solid #C2C2C2;
+                    display: inline-flex;
+                    position: relative;
+                  }
+                  input[type="radio"]:checked + .circleshape{
+                    border: 1px solid #F5961E;
+                    &::after{
+                      content: "";
+                      position: absolute;
+                      left: 50%;
+                      top: 50%;
+                      width: 10px;
+                      height: 10px;
+                      border-radius: 50%;
+                      background-color: #F5961E;
+                      display: inline-flex;
+                      transform: translate(-50%, -50%);
+                    }
+                  }
+                  
                 }
+                
               }
             }
+           
           }
           
     }
@@ -94,11 +151,9 @@
 
 .isOpen{
     .modal {
-        // left: 26.8%;
-        // top: 23%;    
+       
       }
-      .modalcontent {
-        padding: 16px;           
+      .modalcontent {       
       }
       .selecttext{
         letter-spacing: 1px;    
@@ -113,13 +168,7 @@
               color: rgba(255, 255, 255, 0.4);
             }
           }
-          .check {
-            width: 24px;
-            height: 24px;     
-            input[type="radio"]{
-              accent-color: #F5961E ;
-            }
-          }
+         
         }
       }
       
