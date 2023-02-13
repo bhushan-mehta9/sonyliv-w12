@@ -133,6 +133,8 @@
         }
         .containerphone{
             display: flex;
+            align-items: center;
+            height: 40px;
             // margin-top: 6%;
             padding-bottom: 14px;
             border-bottom: 1px solid #636370;
@@ -144,7 +146,7 @@
             background: transparent;
             border: none;
             padding: 0;
-            
+            outline: none;
             }
             .defaultcode{
                 font-style: normal;
