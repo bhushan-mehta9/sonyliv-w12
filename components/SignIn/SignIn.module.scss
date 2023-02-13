@@ -283,6 +283,31 @@
     }
 }
 
+@media (min-width:768px) and (max-width: 1024px) {
+    .mainheader{
+        .headerweb{
+            padding-top: 50px;
+            align-items: center;
+            .signweb{
+                    margin-top: 0;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 40px;
+            }
+            .imgdiv{
+                width: 32px;
+                height: 32px;
+                .arrowLeft{
+                    width: 32px;
+                    height: 32px;   
+                }
+            }
+        }
+    }
+}
+
+
 @media (min-width:500px) and (max-width: 1024px) {
     .mainheader{
         .new{
