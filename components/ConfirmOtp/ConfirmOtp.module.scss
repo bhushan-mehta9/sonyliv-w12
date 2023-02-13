@@ -257,6 +257,9 @@ $white: #fff;
     .displayFlex {
       margin-bottom: 32px;
     }
+    .button{
+      width: calc(100% - 32px);
+    }
   }
   .otpNo {
     border: none;
@@ -293,6 +296,7 @@ $white: #fff;
       width: calc(100% - 32px) !important;
     }
   }
+  
 }
 //for Ipad
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
