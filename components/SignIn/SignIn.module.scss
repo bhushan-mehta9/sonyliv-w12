@@ -57,7 +57,7 @@
     }
     .headerweb{
         // margin-top: 60px;
-        // display: flex;
+        display: flex;
         // justify-content: space-between;
         padding-top: 20px;
         padding-left: 53px;
@@ -90,6 +90,8 @@
             font-size: 32px;
             line-height: 40px;
             margin-top: 25px;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
     .new{
@@ -97,7 +99,6 @@
         margin-left: auto;
         margin-right: auto;
         margin-top: 60px;
-
         width: 412px;
         .containeremail{
             .email{       
@@ -294,15 +295,18 @@
         margin: 2%;
         height: auto;
         min-height: 900px;
-        .header{
-            margin-top: 10%;
+        .headerweb{
+            margin-top: 17px;
             display: flex;
-            justify-content: space-between;
-            .arrow{
-                height: 17px;
-                width: 15px;
+            align-items: center;
+            // justify-content: space-between;
+            padding: 0px;
+            .imgdiv{
+                .arrowLeft{
+                    margin-left: 8px;
+                }
             }
-            .sign{
+            .signweb{
                 // font-family: 'SF Pro';
                 font-style: normal;
                 font-weight: 700;
@@ -323,9 +327,16 @@
             }
         }
         .new{      
-            margin-top: 10px;
+            margin-top: 45px;
             width: 100%;  
-            padding: 15px;               
+            padding: 15px; 
+            .containeremail{
+                .email{              
+                }
+                .note{
+                width: auto;
+                }
+            }             
             .container{
                 display: flex;
                 margin-top: 6%;
@@ -397,7 +408,6 @@
                 font-size: 12px;
                 font-weight: 400;
                 line-height: 18px;
-                letter-spacing: 0.9px;
                 text-align: center;
                 color: #636370;
                 margin: 5% 0%;

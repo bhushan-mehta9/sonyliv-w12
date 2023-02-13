@@ -9,7 +9,13 @@ import Image from "next/image";
 import EmailAndSocialPopup from "../../components/Modal/SignInEmailSocialPopup/EmailAndSocialPopup";
 import LinkYourMobilePopup from "../../components/Modal/LinkYourMobile/LinkYourMobilePopup";
 import ArrowLeft from "../../public/images/arrowLeft.svg";
-// import Player from "@/pages/player";
+import {
+  isMobile,
+  isTablet,
+  isMobileOnly,
+  isDesktop,
+} from "react-device-detect";
+
 
 const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -79,6 +85,10 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
   const onNumberChange=(e)=> {
     setphonenumber(e.target.value);
   }
+  const phoneno=(e)=> {
+
+  }
+
   const emailHandler=(e)=> {
     setemail(true);
     setSocialLoginModal(false);
@@ -100,10 +110,10 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
   }
 
   return (
-    <div className={style.main}>
+    <div>
       <div className={style.mainheader}>
-        {
-          mobile ? 
+        {/* {
+          isMobileOnly ? 
         <div className={style.header}>
           <div onClick={handleBackClick}>
           <Image
@@ -112,8 +122,8 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
               className={style.arrow}
             />
           </div>
-          <div className={style.sign}>Sign in to watch </div>
-          {linkPage ? (
+          {/* <div className={style.sign}>Sign in to watchs </div> */}
+          {/* {linkPage ? (
             <>
               <div className={style.sign}>Link  Mobile no. with Email ID</div>
             </>
@@ -123,7 +133,7 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
             </>
           )}
           <div className={style.skip}>Skip </div>
-        </div> : 
+        //</div> :  */} 
         <div className={style.headerweb}>
         <div className={style.imgdiv} onClick={handleBackClick}>
         <Image
@@ -142,7 +152,7 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
             </>
           )}
         </div>
-        }
+       {/* } */}
         <div className={style.new}>
           {email ? (
             <div className={style.containeremail}>
@@ -159,7 +169,6 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
                 Note: OTP will be sent to your mobile number linked with this
                 email id
               </div>
-              <div></div>
             </div>
           ) : (
             <>
@@ -173,14 +182,13 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
                 >
                   {" "}
                   {code}
-                </select>
+                </select> 
                 <input
                   className={style.number}
-                  id="phone"
-                  type="tel"
-                  name="phone"
+                  max="10"
                   value={phonenumber}
                   onChange={onNumberChange}
+                  onkeypress={phoneno}
                   placeholder="Enter your phone number"
                 />
               </div>
@@ -191,7 +199,7 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
           ) : (
             ""
           )} */}
-          {mobile ? (
+          {isMobileOnly ? (
             <div className={style.refcode}>
               Have a referral code ?{" "}
               <span className={style.apply}> Click to apply</span>

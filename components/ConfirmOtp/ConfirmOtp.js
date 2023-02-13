@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useEffect, useRef } from "react";
 import ResendOtpPopup from "../Modal/ResendOtp/ResendOtpPopup";
 
-const ConfirmOtp = ({handleBack,handlePageChange}) => {
+const ConfirmOtp = ({ handleBack, handlePageChange }) => {
   const textInput = useRef(null);
   const [inputFocus, setinputFocus] = useState(false);
   const [resendOtpPopup, setResendOtpModal] = useState(false);
@@ -49,7 +49,7 @@ const ConfirmOtp = ({handleBack,handlePageChange}) => {
    * Creation Date : 10/02/2023
    */
   const handleNext = () => {
-    handlePageChange('profileinfo')
+    handlePageChange("profileinfo");
   };
 
   /**
@@ -92,8 +92,8 @@ const ConfirmOtp = ({handleBack,handlePageChange}) => {
 
   return (
     <>
-    <meta name="description" content="Confirm Otp Page"></meta>
-    <title>Confirm Otp Page</title>
+      <meta name="description" content="Confirm Otp Page"></meta>
+      <title>Confirm Otp Page</title>
       <div className={styles.otpContainer}>
         <div className={styles.sectionOne}>
           <div onClick={handleClick} className={styles.arrowLeftBlock}>
@@ -162,13 +162,22 @@ const ConfirmOtp = ({handleBack,handlePageChange}) => {
             />
           </div>
         </div>
-        {resendOtpText ? <div className={styles.sectionFour} onClick={resendClick} style={{ cursor: "pointer" }} >Didn’t receive the code? Try Again</div> : <div className={styles.sectionFour} >
-          You will be receiving an SMS shortly
-          <div >
-            Resend OTP in <span className={styles.blueColor}> 01:56</span>
+        {resendOtpText ? (
+          <div
+            className={styles.sectionFour}
+            onClick={resendClick}
+            style={{ cursor: "pointer" }}
+          >
+            Didn’t receive the code? Try Again
           </div>
+        ) : (
+          <div className={styles.sectionFour}>
+            You will be receiving an SMS shortly
+            <div>
+              Resend OTP in <span className={styles.blueColor}> 01:56</span>
+            </div>
           </div>
-        }
+        )}
         <button
           onClick={handleNext}
           className={`${styles.button} ${
@@ -194,7 +203,7 @@ const ConfirmOtp = ({handleBack,handlePageChange}) => {
         </div>
         <ResendOtpPopup isOpen={resendOtpPopup} handleModal={handleResendOtp} />
       </div>
-     </>
-     );
-   };
+    </>
+  );
+};
 export default ConfirmOtp;
