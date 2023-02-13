@@ -199,14 +199,14 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
           ) : (
             ""
           )} */}
-          {isMobileOnly ? (
+          {/* {isMobileOnly ? (
             <div className={style.refcode}>
               Have a referral code ?{" "}
               <span className={style.apply}> Click to apply</span>
             </div>
           ) : (
             ""
-          )}
+          )} */}
           <div className={style.btndiv}>
             <button
               className={active ? style.active : style.nextbtn}
