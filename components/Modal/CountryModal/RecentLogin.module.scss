@@ -1,5 +1,5 @@
- .wrapper{
-     .login-text {
+.wrapper {
+  .login-text {
     margin-top: 32px;
     font-style: normal;
     font-weight: 510;
@@ -14,7 +14,7 @@
 
     color: #f1f1f1;
   }
- .container {
+  .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,7 +46,6 @@
           left: 16px;
           top: 150px;
 
-          font-family: "SFProText-Regular";
           font-style: normal;
           font-weight: 400;
           font-size: 11px;
@@ -100,5 +99,5 @@
       left: 3.33px;
       top: 2.5px;
     }
-}
   }
+}

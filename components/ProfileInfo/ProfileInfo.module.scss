@@ -1,79 +1,73 @@
 $white: #fff;
-$lighttGray : #F1F1F1;
+$lighttGray: #f1f1f1;
 $lightViolet: #141425;
 $black: #000;
 
-
-.registration_container{
-//    min-height: 100vh; 
-box-sizing: border-box;
-padding-top: 80px;
-position: relative;
-width: 100%;
-height: 100%;
-z-index: 61;
-left: 0;
-top: 0;
-overflow-y: auto;
-overflow-x: hidden;
-min-height: 100vh;
-background-attachment: scroll;
-display: flex;
-flex-direction: column;
-.page_header{
-
-.page_title{
-    text-align: center;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 40px;
-    font-family: "SFProText-Regular";
-    color: $white;
-    margin-top: 0px;
-    margin-bottom: 40px;
-}
-
-}
-.avtaar_container{
-.title{
-    margin-top: 0;
-    margin-bottom: 16px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 16px;
-    font-family: "SFProText-Regular";
-    color: $lighttGray;
-    margin-left: 0px;
-    text-align: center;
-}
-
-.avtaarSlider_container{
-    max-width: 630px;
-    margin: 0 auto;
-    
-}
-.image_block{
-    padding: 0px ;
-    position: relative;
-    max-width: 90px;
-    margin: 0 auto;
-    .avtaar_img{
-
+.registration_container {
+  //    min-height: 100vh;
+  box-sizing: border-box;
+  padding-top: 80px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 61;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-attachment: scroll;
+  display: flex;
+  flex-direction: column;
+  .page_header {
+    .page_title {
+      text-align: center;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 40px;
+      color: $white;
+      margin-top: 0px;
+      margin-bottom: 40px;
     }
-    .checkicon{
+  }
+  .avtaar_container {
+    .title {
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+
+      color: $lighttGray;
+      margin-left: 0px;
+      text-align: center;
+    }
+
+    .avtaarSlider_container {
+      max-width: 630px;
+      margin: 0 auto;
+    }
+    .image_block {
+      padding: 0px;
+      position: relative;
+      max-width: 90px;
+      margin: 0 auto;
+      .avtaar_img {
+      }
+      .checkicon {
         position: absolute;
         bottom: 6px;
         right: 0;
         width: 24px;
         max-width: 24px;
         display: none;
+      }
     }
-}
-}
+  }
 
-.form_container{
+  .form_container {
     margin-top: 30px;
     padding: 0px 10px;
     max-width: 835px;
@@ -81,885 +75,855 @@ flex-direction: column;
     margin-right: auto;
     position: relative;
     z-index: 1;
-form{
-    display: flex;
-    flex-wrap: wrap;
-}
-.nameFieldBox{
-    margin-bottom: 32px;
-    width: calc(50% - 30px);
-    max-width: 375px;
-    margin-right: auto;
-    position: relative;
-    padding-top: 20px;
-    .label{
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 20px;
-        color: #ACACAC;
-        font-family: "SFProText-Regular";
-        position: absolute;
-        top: 29px;
-        left: 0;
-        transition: all .2s linear;
+    form {
+      display: flex;
+      flex-wrap: wrap;
     }
-    .nameField{
-        width: 100%;
-        height: 38px;
-        background-color: transparent !important;
-        border-bottom: 1px solid #636370;
-        outline: none;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        color: $white;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
-        font-family: "SFProText-Regular";
-        &:-webkit-autofill { 
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: $white !important;
-            &:focus{
-                color: $white;
-            }
-        }
-        &:focus + .label{
-            top: 0;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 16px;
-            color: $lighttGray;
-        }
-    }
- &.activeField{
-    .label{
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 16px;
-        color: $lighttGray;
-        top: 0;
-        left: 0;
-    }
- }
-    
-}
-.ageFieldBox{
-    margin-bottom: 32px;
-    width: calc(50% - 30px);
-    margin-left: auto;
-    max-width: 375px;
-    padding-top: 20px;
-    position: relative;
-   
-    .ageField{
-        width: 100%;
-        height: 38px;
-        background-color: transparent !important;
-        border-bottom: 1px solid #636370;
-        outline: none;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        color: $white;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
-        font-family: "SFProText-Regular";
-        background-color: red;
-        &:focus + .label{
-            top: 0;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 16px;
-            color: $lighttGray;
-        }
-        &[value=""]::-webkit-datetime-edit{ color: transparent; }
-        &:focus::-webkit-datetime-edit{ color: $white; }
-    }
-    
-    .label{
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 20px;
-        color: #ACACAC;
-        font-family: "SFProText-Regular";
-        position: absolute;
-        top: 29px;
-        left: 0;
-        transition: all .2s linear;
-    }
-    &.activeField{
-        .label{
-            font-style: normal;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 16px;
-            color: $lighttGray;
-            top: 0;
-            left: 0;
-        }
-     }
-}
-.identityFieldBox{
-    margin-bottom: 16px;
-    width: calc(50% - 30px);
-    max-width: 375px;
-    margin-right: auto;
-    .title{
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 16px;
-        color: $lighttGray;
-        font-family: "SFProText-Regular";
-        margin-top: 0;
-        margin-bottom: 16px;
-    }
-    .genderBtn_Flexbox{
-        display: flex;
-        flex-wrap:wrap;
-        .genderBtn{
-            height: 32px;
-            margin-right: 12px;
-            padding: 0px 12px;
-            white-space: nowrap;
-            background-color: $lightViolet;
-            border-radius: 22px;
-            position: relative;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 12px;
-            line-height: 16px;
-            color: $lighttGray;
-            font-family: "SFProText-Regular";
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
-            position: relative;
-            &.active{
-                background: #636370;
-            }
-            span{
-                display: inline-block;
-            }
-            input[type=radio]{
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                opacity: 0;
-                margin: 0;
-                z-index: 1;
-                cursor: pointer;
-                
-            }
-        }
-    }
-    &.kidsprobox{
-  .kidFlexBox{
-    display: flex;
-    align-items: center;
-    margin-bottom: 43px;
-    > .label{
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 16px;
-        font-family: "SFProText-Regular";
-        margin-right: 48px;
-        display: inline-flex;
-        color: $lighttGray;
-    }
-    .switchBox{
-      cursor: pointer;
-      width: 40px;
-      height: 24px;
-      background: #767676;
-      border-radius: 16px;
+    .nameFieldBox {
+      margin-bottom: 32px;
+      width: calc(50% - 30px);
+      max-width: 375px;
+      margin-right: auto;
       position: relative;
-      input[type=checkbox]{
-        cursor: pointer;
+      padding-top: 20px;
+      .label {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #acacac;
+
         position: absolute;
+        top: 29px;
         left: 0;
-        top: 0;
+        transition: all 0.2s linear;
+      }
+      .nameField {
         width: 100%;
-        height: 100%;
-        opacity: 0;
-        margin: 0;
+        height: 38px;
+        background-color: transparent !important;
+        border-bottom: 1px solid #636370;
+        outline: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        color: $white;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+
+        &:-webkit-autofill {
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: $white !important;
+          &:focus {
+            color: $white;
+          }
+        }
+        &:focus + .label {
+          top: 0;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 16px;
+          color: $lighttGray;
+        }
       }
-      &::before{
-        content: '';
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        left: 2px;
-        top: 2px;
-        transition: all .1s linear;
-        position: absolute;
-        background-color: $white;
-      }
-      &.active{
-        background-color: #F5961E;
-        &::before{
-            left: 18px;
-            
+      &.activeField {
+        .label {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 16px;
+          color: $lighttGray;
+          top: 0;
+          left: 0;
         }
       }
     }
-  }
+    .ageFieldBox {
+      margin-bottom: 32px;
+      width: calc(50% - 30px);
+      margin-left: auto;
+      max-width: 375px;
+      padding-top: 20px;
+      position: relative;
+
+      .ageField {
+        width: 100%;
+        height: 38px;
+        background-color: transparent !important;
+        border-bottom: 1px solid #636370;
+        outline: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        color: $white;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+
+        background-color: red;
+        &:focus + .label {
+          top: 0;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 16px;
+          color: $lighttGray;
+        }
+        &[value=""]::-webkit-datetime-edit {
+          color: transparent;
+        }
+        &:focus::-webkit-datetime-edit {
+          color: $white;
+        }
+      }
+
+      .label {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #acacac;
+
+        position: absolute;
+        top: 29px;
+        left: 0;
+        transition: all 0.2s linear;
+      }
+      &.activeField {
+        .label {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 16px;
+          color: $lighttGray;
+          top: 0;
+          left: 0;
+        }
+      }
     }
-}
-.contentLangFieldBox{
-    width: calc(50% - 30px);
-    margin-left: auto;
-    max-width: 375px;
-    .title{
+    .identityFieldBox {
+      margin-bottom: 16px;
+      width: calc(50% - 30px);
+      max-width: 375px;
+      margin-right: auto;
+      .title {
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
         line-height: 16px;
         color: $lighttGray;
-        font-family: "SFProText-Regular";
+
         margin-top: 0;
         margin-bottom: 16px;
-
-    }
-    .contentLangFlexbox{
+      }
+      .genderBtn_Flexbox {
         display: flex;
         flex-wrap: wrap;
-       .langBtn{
-            height: 32px;
-            margin-right: 12px;
-            padding: 0px 12px;
-            white-space: nowrap;
-            background-color: $lightViolet;
-            border-radius: 22px;
-            position: relative;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 12px;
-            line-height: 16px;
-            color: $lighttGray;
-            font-family: "SFProText-Regular";
-            border: none;
+        .genderBtn {
+          height: 32px;
+          margin-right: 12px;
+          padding: 0px 12px;
+          white-space: nowrap;
+          background-color: $lightViolet;
+          border-radius: 22px;
+          position: relative;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 16px;
+          color: $lighttGray;
+
+          border: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 16px;
+          position: relative;
+          &.active {
+            background: #636370;
+          }
+          span {
+            display: inline-block;
+          }
+          input[type="radio"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            margin: 0;
+            z-index: 1;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
-            input[type=checkbox]{
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                opacity: 0;
-                z-index: 1;
-                margin: 0;
-                cursor: pointer;
+          }
+        }
+      }
+      &.kidsprobox {
+        .kidFlexBox {
+          display: flex;
+          align-items: center;
+          margin-bottom: 43px;
+          > .label {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+
+            margin-right: 48px;
+            display: inline-flex;
+            color: $lighttGray;
+          }
+          .switchBox {
+            cursor: pointer;
+            width: 40px;
+            height: 24px;
+            background: #767676;
+            border-radius: 16px;
+            position: relative;
+            input[type="checkbox"] {
+              cursor: pointer;
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              opacity: 0;
+              margin: 0;
             }
-            .check_icon{
-                display: none;
-                margin-right: 4px;
+            &::before {
+              content: "";
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              left: 2px;
+              top: 2px;
+              transition: all 0.1s linear;
+              position: absolute;
+              background-color: $white;
             }
-            &.active{
-                background-color: #636370;
-                .check_icon{
-                    display: inline-flex;
-                }
+            &.active {
+              background-color: #f5961e;
+              &::before {
+                left: 18px;
+              }
             }
-       } 
+          }
+        }
+      }
     }
-}
-.kidFlexBox{
-    display: none;
-}
-}
-.next_btn{
-padding: 0px 16px;
-padding-bottom: 24px;
-padding-top: 0px;
-max-width: 412px;
-margin: 0px auto;
-margin-top: 90px;
-width: 100%;
-button{
-    background-color: transparent;
+    .contentLangFieldBox {
+      width: calc(50% - 30px);
+      margin-left: auto;
+      max-width: 375px;
+      .title {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: $lighttGray;
+
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+      .contentLangFlexbox {
+        display: flex;
+        flex-wrap: wrap;
+        .langBtn {
+          height: 32px;
+          margin-right: 12px;
+          padding: 0px 12px;
+          white-space: nowrap;
+          background-color: $lightViolet;
+          border-radius: 22px;
+          position: relative;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 16px;
+          color: $lighttGray;
+
+          border: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 16px;
+          input[type="checkbox"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 1;
+            margin: 0;
+            cursor: pointer;
+          }
+          .check_icon {
+            display: none;
+            margin-right: 4px;
+          }
+          &.active {
+            background-color: #636370;
+            .check_icon {
+              display: inline-flex;
+            }
+          }
+        }
+      }
+    }
+    .kidFlexBox {
+      display: none;
+    }
+  }
+  .next_btn {
+    padding: 0px 16px;
+    padding-bottom: 24px;
+    padding-top: 0px;
+    max-width: 412px;
+    margin: 0px auto;
+    margin-top: 90px;
     width: 100%;
-    height: 48px;
-    background: #07070A;
-    border: 1px solid #636370;
-    border-radius: 8px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
-    color: #636370;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: not-allowed;
-    
-}
-&.activeBtn{
-    button{
-        background-color:  #F5961E;
+    button {
+      background-color: transparent;
+      width: 100%;
+      height: 48px;
+      background: #07070a;
+      border: 1px solid #636370;
+      border-radius: 8px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      color: #636370;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: not-allowed;
+    }
+    &.activeBtn {
+      button {
+        background-color: #f5961e;
         color: $black;
         border: none;
         cursor: pointer;
+      }
     }
-}
-}
-.pagination{
-padding: 0px 16px 32px 16px;
-margin-top: auto;
-ul{
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    li{
+  }
+  .pagination {
+    padding: 0px 16px 32px 16px;
+    margin-top: auto;
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      li {
         list-style: none;
         width: 4px;
         height: 4px;
         background: #636370;
         border-radius: 12px;
         margin-right: 8px;
-        &:nth-child(3){
-            width: 24px;
-            background: #F1F1F1;
-            box-shadow: 0px 0px 50px rgba(255, 175, 0, 0.25);
-            border-radius: 60px;
+        &:nth-child(3) {
+          width: 24px;
+          background: #f1f1f1;
+          box-shadow: 0px 0px 50px rgba(255, 175, 0, 0.25);
+          border-radius: 60px;
         }
-        &:last-child{
-            margin-right: 0px;
+        &:last-child {
+          margin-right: 0px;
         }
+      }
     }
-}
-}
+  }
 
-*{
+  * {
     box-sizing: border-box;
-}
+  }
 
-&.tablet_container{
+  &.tablet_container {
     padding-top: 45px;
     position: fixed;
     min-height: auto;
-    .page_header{
+    .page_header {
+      .page_title {
+        text-align: center;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 40px;
 
-        .page_title{
-            text-align: center;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 40px;
-            font-family: "SFProText-Regular";
-            color: $white;
-            margin-top: 0px;
-            margin-bottom: 40px;
-        }
-        
-        }
-    .avtaar_container{
-        .title{
-            text-align: center;
-            max-width: 530px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 510;
-            font-size: 14px;
-            line-height: 20px;
-            margin-bottom: 16px;
-        }
-       
-    }
-    .form_container{
-        max-height: calc(100vh - 445px);
-        overflow-y: auto;
-     
-       
-    }
-    .next_btn{
-        padding-top: 10px;
-        margin-top: 90px;
-        padding-left: 0px;
-        padding-right: 0px;
-        button{
-            height: 56px;
-        }
-    }
-}
-}
-
-@media  screen and (max-width:991px) and (orientation:landscape) {
-    .registration_container{
-        &.mobile_container{
-            .form_container{
-                max-height: inherit;
-                overflow-y: visible;
-            }
-        }
-    }
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
-    .registration_container{
-        padding-top: 45px;
-        position: fixed;
-        min-height: auto;
-        .page_header{
-    
-            .page_title{
-                text-align: center;
-                font-style: normal;
-                font-weight: 700;
-                font-size: 24px;
-                line-height: 40px;
-                font-family: "SFProText-Regular";
-                color: $white;
-                margin-top: 0px;
-                margin-bottom: 40px;
-            }
-            
-            }
-        .avtaar_container{
-            .title{
-                text-align: center;
-                max-width: 530px;
-                margin-left: auto;
-                margin-right: auto;
-                font-weight: 510;
-                font-size: 14px;
-                line-height: 20px;
-                margin-bottom: 16px;
-            }
-           
-        }
-        .form_container{
-            max-height: calc(100vh - 445px);
-            overflow-y: auto;           
-        }
-        .next_btn{
-            padding-top: 10px;
-            margin-top: 90px;
-            padding-left: 0px;
-            padding-right: 0px;
-            button{
-                height: 56px;
-            }
-        }
-    }
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation : landscape) {
-    .registration_container{
-        &.tablet_container{
-            .next_btn{
-                margin-top: 45px;
-            }
-        }
-        .next_btn{
-            margin-top: 45px;
-        }
-    }
-}
-
-@media screen and (max-width:767px) {
-    .registration_container{
-        padding-top: 16px;
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        z-index: 5;
-        left: 0;
-        top: 0;
-        overflow-y: auto;
-        overflow-x: hidden;
-        min-height: auto;
-    
-      .page_header{
-        
-        .page_title{
-            text-align: center;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 14px;
-            line-height: 16px;
-            font-family: "SFProText-Regular";
-            color: $white;
-            margin-top: 0px;
-            margin-bottom: 32px;
-        }
-       
+        color: $white;
+        margin-top: 0px;
+        margin-bottom: 40px;
       }
-      .avtaar_container{
-        .title{
-            margin-top: 0;
-            margin-bottom: 22px;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 16px;
-            font-family: "SFProText-Regular";
-            color: $lighttGray;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 16px;
-            max-width: 412px;
-            text-align: left;
-        }
-        
-        .image_block{
-            max-width: 76px;
-            .checkicon{
-                bottom: 0px;
-            }
-        }
+    }
+    .avtaar_container {
+      .title {
+        text-align: center;
+        max-width: 530px;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 510;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 16px;
       }
-      .form_container{
-        margin-top: 40px;
-        padding: 0px 16px;
+    }
+    .form_container {
+      max-height: calc(100vh - 445px);
+      overflow-y: auto;
+    }
+    .next_btn {
+      padding-top: 10px;
+      margin-top: 90px;
+      padding-left: 0px;
+      padding-right: 0px;
+      button {
+        height: 56px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) and (orientation: landscape) {
+  .registration_container {
+    &.mobile_container {
+      .form_container {
+        max-height: inherit;
+        overflow-y: visible;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .registration_container {
+    padding-top: 45px;
+    position: fixed;
+    min-height: auto;
+    .page_header {
+      .page_title {
+        text-align: center;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 40px;
+
+        color: $white;
+        margin-top: 0px;
+        margin-bottom: 40px;
+      }
+    }
+    .avtaar_container {
+      .title {
+        text-align: center;
+        max-width: 530px;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 510;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 16px;
+      }
+    }
+    .form_container {
+      max-height: calc(100vh - 445px);
+      overflow-y: auto;
+    }
+    .next_btn {
+      padding-top: 10px;
+      margin-top: 90px;
+      padding-left: 0px;
+      padding-right: 0px;
+      button {
+        height: 56px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .registration_container {
+    &.tablet_container {
+      .next_btn {
+        margin-top: 45px;
+      }
+    }
+    .next_btn {
+      margin-top: 45px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .registration_container {
+    padding-top: 16px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: auto;
+
+    .page_header {
+      .page_title {
+        text-align: center;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 16px;
+
+        color: $white;
+        margin-top: 0px;
+        margin-bottom: 32px;
+      }
+    }
+    .avtaar_container {
+      .title {
+        margin-top: 0;
+        margin-bottom: 22px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+
+        color: $lighttGray;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 16px;
         max-width: 412px;
-        // max-height: calc(100vh - 420px);
-        // overflow-y: auto;
-        position: relative;
-        z-index: 1;
-        .nameFieldBox{
-            margin-bottom: 52px;
-            width: 100%;
-            max-width: inherit;
-            .nameField{
-                width: 100%;
-                label{
-                    
-                }
-               
+        text-align: left;
+      }
 
-            }
-            
+      .image_block {
+        max-width: 76px;
+        .checkicon {
+          bottom: 0px;
         }
-        .ageFieldBox{
-            margin-bottom: 32px;
-            width: 100%;
-            max-width: inherit;
-            .ageField{
+      }
+    }
+    .form_container {
+      margin-top: 40px;
+      padding: 0px 16px;
+      max-width: 412px;
+      // max-height: calc(100vh - 420px);
+      // overflow-y: auto;
+      position: relative;
+      z-index: 1;
+      .nameFieldBox {
+        margin-bottom: 52px;
+        width: 100%;
+        max-width: inherit;
+        .nameField {
+          width: 100%;
+          label {
+          }
+        }
+      }
+      .ageFieldBox {
+        margin-bottom: 32px;
+        width: 100%;
+        max-width: inherit;
+        .ageField {
+          width: 100%;
+          label {
+            &[data-shrink="false"] {
+              color: #acacac;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 20px;
+            }
+            &[data-shrink="false"] + div {
+              margin-top: 23px;
+              &::before {
+                border-bottom: 1px solid #636370;
+              }
+              &::after {
+                border-bottom: 1px solid #636370;
+              }
+              input {
+                background-color: transparent;
                 width: 100%;
-                label{
-                    &[data-shrink=false] {
-                        color: #ACACAC;
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 14px;
-                        line-height: 20px;
-                        font-family: "SFProText-Regular";
-                        
-                    }
-                    &[data-shrink=false] + div{
-                        margin-top: 23px;
-                        &::before{
-                            border-bottom: 1px solid #636370;
-                        }
-                        &::after{
-                            border-bottom: 1px solid #636370;;
-                        }
-                        input{
-                            background-color:transparent;
-                            width: 100%;
-                            border: none;
-                            font-style: normal;
-                            font-weight: 400;
-                            font-size: 16px;
-                            line-height: 24px;
-                            font-family: "SFProText-Regular";
-                            opacity: 0;
-                            // color: #fff;
-                        }
-                        input[type=date]:required:invalid::-webkit-datetime-edit {
-                            color: transparent;
-                        }
-                        input[type=date]:focus::-webkit-datetime-edit {
-                            color: $white !important;
-                        }
-                        
-                    }
-                    &[data-shrink=true] {
-                        color: $lighttGray;
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 12px;
-                        line-height: 16px;
-                        font-family: "SFProText-Regular";
-                        
-                    }
-                    &[data-shrink=true] + div{
-                        &::before{
-                            display: none;
-                        }
-                        &::after{
-                            border-bottom: 1px solid $white;
-                            transform: scaleX(1);
-                        }
-                        input{
-                            background-color:transparent;
-                            width: 100%;
-                            border: none;
-                            font-style: normal;
-                            font-weight: 400;
-                            font-size: 16px;
-                            line-height: 24px;
-                            font-family: "SFProText-Regular";
-                            color: #fff;
-                        }
-                        input[type=date]:required:invalid::-webkit-datetime-edit {
-                            color: transparent;
-                        }
-                        input[type=date]:focus::-webkit-datetime-edit {
-                            color: $white !important;
-                        }
-                       
-                    }
-                }
-               
-
-            }
-        }
-        .identityFieldBox{
-            margin-bottom: 16px;
-            width: 100%;
-            max-width: inherit;
-            .title{
+                border: none;
                 font-style: normal;
                 font-weight: 400;
-                font-size: 12px;
-                line-height: 16px;
-                color: $lighttGray;
-                font-family: "SFProText-Regular";
-                margin-top: 0;
-                margin-bottom: 16px;
-            }
-            .genderBtn_Flexbox{
-                display: flex;
-                flex-wrap:wrap;
-                .genderBtn{
-                    height: 32px;
-                    margin-right: 12px;
-                    padding: 0px 12px;
-                    white-space: nowrap;
-                    background-color: $lightViolet;
-                    border-radius: 22px;
-                    position: relative;
-                    font-style: normal;
-                    font-weight: 500;
-                    font-size: 12px;
-                    line-height: 16px;
-                    color: $lighttGray;
-                    font-family: "SFProText-Regular";
-                    border: none;
-                    cursor: pointer;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin-bottom: 16px;
-                    input[type=radio]{
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        width: 100%;
-                        height: 100%;
-                        opacity: 0;
-                        margin: 0;
-                        z-index: 1;
-                    }
-                }
-            }
-            &.kidsprobox{
-                .kidFlexBox{
-                display: none;
-                }
-            }
-        }
-        .contentLangFieldBox{
-            width: 100%;
-            max-width: inherit;
-            .title{
-                font-style: normal;
-                font-weight: 400;
-                font-size: 12px;
-                line-height: 16px;
-                color: $lighttGray;
-                font-family: "SFProText-Regular";
-                margin-top: 0;
-                margin-bottom: 16px;
+                font-size: 16px;
+                line-height: 24px;
 
-            }
-            .contentLangFlexbox{
-                display: flex;
-                flex-wrap: wrap;
-               .langBtn{
-                    height: 32px;
-                    margin-right: 12px;
-                    padding: 0px 12px;
-                    white-space: nowrap;
-                    background-color: $lightViolet;
-                    border-radius: 22px;
-                    position: relative;
-                    font-style: normal;
-                    font-weight: 500;
-                    font-size: 12px;
-                    line-height: 16px;
-                    color: $lighttGray;
-                    font-family: "SFProText-Regular";
-                    border: none;
-                    cursor: pointer;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin-bottom: 16px;
-                    input[type=checkbox]{
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        width: 100%;
-                        height: 100%;
-                        opacity: 0;
-                        z-index: 1;
-                        margin: 0;
-                    }
-               } 
-            }
-        }
-        .kidFlexBox{
-            display: flex;
-            align-items: center;
-            margin-bottom: 43px;
-            width: 100%;
-            justify-content: space-between;
-            > .label{
-                font-style: normal;
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 16px;
-                font-family: "SFProText-Regular";
-                margin-right: 48px;
-                display: inline-flex;
-                color: $lighttGray;
-            }
-            .switchBox{
-              cursor: pointer;
-              width: 40px;
-              height: 24px;
-              background: #767676;
-              border-radius: 16px;
-              position: relative;
-              input[type=checkbox]{
-                cursor: pointer;
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
                 opacity: 0;
-                margin: 0;
+                // color: #fff;
               }
-              &::before{
-                content: '';
-                display: inline-block;
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                left: 2px;
-                top: 2px;
-                transition: all .1s linear;
-                position: absolute;
-                background-color: $white;
+              input[type="date"]:required:invalid::-webkit-datetime-edit {
+                color: transparent;
               }
-              &.active{
-                background-color: #F5961E;
-                &::before{
-                    left: 18px;
-                    
-                }
+              input[type="date"]:focus::-webkit-datetime-edit {
+                color: $white !important;
+              }
+            }
+            &[data-shrink="true"] {
+              color: $lighttGray;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 16px;
+            }
+            &[data-shrink="true"] + div {
+              &::before {
+                display: none;
+              }
+              &::after {
+                border-bottom: 1px solid $white;
+                transform: scaleX(1);
+              }
+              input {
+                background-color: transparent;
+                width: 100%;
+                border: none;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+
+                color: #fff;
+              }
+              input[type="date"]:required:invalid::-webkit-datetime-edit {
+                color: transparent;
+              }
+              input[type="date"]:focus::-webkit-datetime-edit {
+                color: $white !important;
               }
             }
           }
-      
-        
-      }
-      .next_btn{
-        padding: 0px 16px;
-        padding-bottom: 24px;
-        padding-top: 24px;
-        margin-top: 0;
-        button{
-            background-color: transparent;
-            width: 100%;
-            height: 48px;
-            background: #07070A;
-            border: 1px solid #636370;
-            border-radius: 8px;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 24px;
-            color: #636370;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
       }
-      .pagination{
-        padding: 0px 16px 32px 16px;
-        ul{
-            margin: 0;
-            padding: 0;
+      .identityFieldBox {
+        margin-bottom: 16px;
+        width: 100%;
+        max-width: inherit;
+        .title {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 16px;
+          color: $lighttGray;
+
+          margin-top: 0;
+          margin-bottom: 16px;
+        }
+        .genderBtn_Flexbox {
+          display: flex;
+          flex-wrap: wrap;
+          .genderBtn {
+            height: 32px;
+            margin-right: 12px;
+            padding: 0px 12px;
+            white-space: nowrap;
+            background-color: $lightViolet;
+            border-radius: 22px;
+            position: relative;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            color: $lighttGray;
+
+            border: none;
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            li{
-                list-style: none;
-                width: 4px;
-                height: 4px;
-                background: #636370;
-                border-radius: 12px;
-                margin-right: 8px;
-                &:nth-child(3){
-                    width: 24px;
-                    background: #F1F1F1;
-                    box-shadow: 0px 0px 50px rgba(255, 175, 0, 0.25);
-                    border-radius: 60px;
-                }
-                &:last-child{
-                    margin-right: 0px;
-                }
+            margin-bottom: 16px;
+            input[type="radio"] {
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              opacity: 0;
+              margin: 0;
+              z-index: 1;
             }
+          }
+        }
+        &.kidsprobox {
+          .kidFlexBox {
+            display: none;
+          }
+        }
+      }
+      .contentLangFieldBox {
+        width: 100%;
+        max-width: inherit;
+        .title {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 16px;
+          color: $lighttGray;
+
+          margin-top: 0;
+          margin-bottom: 16px;
+        }
+        .contentLangFlexbox {
+          display: flex;
+          flex-wrap: wrap;
+          .langBtn {
+            height: 32px;
+            margin-right: 12px;
+            padding: 0px 12px;
+            white-space: nowrap;
+            background-color: $lightViolet;
+            border-radius: 22px;
+            position: relative;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            color: $lighttGray;
+
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            input[type="checkbox"] {
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              opacity: 0;
+              z-index: 1;
+              margin: 0;
+            }
+          }
+        }
+      }
+      .kidFlexBox {
+        display: flex;
+        align-items: center;
+        margin-bottom: 43px;
+        width: 100%;
+        justify-content: space-between;
+        > .label {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 16px;
+
+          margin-right: 48px;
+          display: inline-flex;
+          color: $lighttGray;
+        }
+        .switchBox {
+          cursor: pointer;
+          width: 40px;
+          height: 24px;
+          background: #767676;
+          border-radius: 16px;
+          position: relative;
+          input[type="checkbox"] {
+            cursor: pointer;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            margin: 0;
+          }
+          &::before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            left: 2px;
+            top: 2px;
+            transition: all 0.1s linear;
+            position: absolute;
+            background-color: $white;
+          }
+          &.active {
+            background-color: #f5961e;
+            &::before {
+              left: 18px;
+            }
+          }
         }
       }
     }
-  
+    .next_btn {
+      padding: 0px 16px;
+      padding-bottom: 24px;
+      padding-top: 24px;
+      margin-top: 0;
+      button {
+        background-color: transparent;
+        width: 100%;
+        height: 48px;
+        background: #07070a;
+        border: 1px solid #636370;
+        border-radius: 8px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        color: #636370;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .pagination {
+      padding: 0px 16px 32px 16px;
+      ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        li {
+          list-style: none;
+          width: 4px;
+          height: 4px;
+          background: #636370;
+          border-radius: 12px;
+          margin-right: 8px;
+          &:nth-child(3) {
+            width: 24px;
+            background: #f1f1f1;
+            box-shadow: 0px 0px 50px rgba(255, 175, 0, 0.25);
+            border-radius: 60px;
+          }
+          &:last-child {
+            margin-right: 0px;
+          }
+        }
+      }
+    }
+  }
 }
 
-@media screen and (max-width:576px) {
-    .registration_container{
-        .form_container{
-              max-height: calc(100vh - 380px); 
-            overflow-y: auto;  
-        } 
-    } 
+@media screen and (max-width: 576px) {
+  .registration_container {
+    .form_container {
+      max-height: calc(100vh - 380px);
+      overflow-y: auto;
+    }
+  }
 }
-
-

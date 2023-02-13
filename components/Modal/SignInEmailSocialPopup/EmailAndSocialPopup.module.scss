@@ -6,7 +6,7 @@
   .title {
     max-height: 80px;
     margin-bottom: 12px;
-    font-family: "SFProText-Regular";
+
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
@@ -18,7 +18,7 @@
     height: 40px;
     max-width: 230px;
     margin: 0 auto;
-    font-family: "SFProText-Regular";
+
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -55,9 +55,7 @@
       background: #f5961e;
       color: #07070a;
     }
-   
   }
- 
 }
 @media (min-width: 521px) and (max-width: 1024px) {
   .header_section {
@@ -71,8 +69,7 @@
   }
   .button_section {
     .button {
-        height: 56px;
-    
+      height: 56px;
     }
   }
 }
@@ -102,12 +99,11 @@
   }
   .button_section {
     .button {
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 24px;
-        margin-bottom: 12px;
-        height: 48px;
-      
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 12px;
+      height: 48px;
     }
   }
 }
