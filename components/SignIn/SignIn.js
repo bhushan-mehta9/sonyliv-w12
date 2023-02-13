@@ -83,7 +83,13 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
     setcode(e.target.value);
   }
   const onNumberChange=(e)=> {
+    const mobileNo = e.target.value;
     setphonenumber(e.target.value);
+    if(mobileNo.length >= 10) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
   }
   const phoneno=(e)=> {
 
@@ -199,14 +205,14 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
           ) : (
             ""
           )} */}
-          {isMobileOnly ? (
+          {/* {isMobileOnly ? (
             <div className={style.refcode}>
               Have a referral code ?{" "}
               <span className={style.apply}> Click to apply</span>
             </div>
           ) : (
             ""
-          )}
+          )} */}
           <div className={style.btndiv}>
             <button
               className={active ? style.active : style.nextbtn}
