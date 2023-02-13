@@ -1,3 +1,6 @@
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -126,4 +129,36 @@ html body{
       #ff5500 100%
       ),
       linear-gradient(312.65deg, #000000 63.82%, #1f1f2d 113.14%);
+}
+
+#profileAvtaarCarousel{
+.slick-slider{
+  .slick-list{
+    padding-top:10px !important;
+    padding-bottom: 10px !important;
+    .slick-track{
+      .slick-slide{
+        text-align: center;
+        &.slick-active{
+          &.slick-center {
+            transform: scale(1.2);
+            #avtaar_img{
+              border: 2px solid #F5961E;
+              border-radius: 50%;
+            }
+            #checkIcon{
+              display: inline-flex;
+            }
+          }
+          
+        } 
+      }
+    }
+  }
+  .slick-arrow{
+    &.slick-disabled{
+      display: none !important;
+    }
+  } 
+}
 }
