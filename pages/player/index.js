@@ -3,10 +3,11 @@ import React, { useState } from "react";
 import style from "./playerSignin.module.scss";
 import close from "../../public/images/close.png";
 import Image from "next/image";
+import { getCommonData } from "@/lib/app";
 
-function Player() {
+function Player(props) {
   const [showModal, setShowModal] = useState(false);
-
+  console.log(">>>>>> commonData", props)
   const handleSignInModal = (modalState) => {
     setShowModal(modalState);
   };
@@ -48,3 +49,21 @@ function Player() {
 }
 
 export default Player;
+
+/**
+ * Function for Calling Server API call 
+ * Creation Date : 13/02/2023
+ */
+export async function getServerSideProps(context) {
+  const { params, req, res } = context;
+  const {uld, dictionary, initialConfig, featureConfig} = await getCommonData();
+  
+  return {
+    props: {
+      uld : uld,
+      dictionary : dictionary,
+      initialConfig : initialConfig,
+      featureConfig : featureConfig
+    },
+  };
+}

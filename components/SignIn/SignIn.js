@@ -83,7 +83,13 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
     setcode(e.target.value);
   }
   const onNumberChange=(e)=> {
+    const mobileNo = e.target.value;
     setphonenumber(e.target.value);
+    if(mobileNo.length >= 10) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
   }
   const phoneno=(e)=> {
 

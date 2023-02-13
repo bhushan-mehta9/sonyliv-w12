@@ -49,7 +49,7 @@ const ConfirmOtp = ({ handleBack, handlePageChange }) => {
    * Creation Date : 10/02/2023
    */
   const handleNext = () => {
-    handlePageChange("profileinfo");
+    handlePageChange("loginsuccess");
   };
 
   /**

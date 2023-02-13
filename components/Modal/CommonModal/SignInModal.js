@@ -5,6 +5,7 @@ import style from "./SignInModal.module.scss";
 import ProfileInfo from "@/components/ProfileInfo/ProfileInfo";
 import SignIn from "@/components/SignIn/SignIn";
 import ConfirmOtp from "@/components/ConfirmOtp/ConfirmOtp";
+import LoginSuccess from "@/components/LoginSuccess/LoginSuccess";
 
 function Modal(props) {
   const [page, setPage] = useState("signin");
@@ -36,6 +37,8 @@ function Modal(props) {
             return <SignIn handleBack={handleBack} handlePageChange={handlePageChange}  closeSignIn={closeSignIn} />;
           case "confirmotp":
             return <ConfirmOtp handleBack={handleBack} handlePageChange={handlePageChange} />;
+          case "loginsuccess":
+            return <LoginSuccess handlePageChange={handlePageChange} />;
           case "profileinfo":
             return <ProfileInfo handleBack={handleBack} />;
           default:
