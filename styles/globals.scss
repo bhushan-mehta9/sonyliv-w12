@@ -1,6 +1,23 @@
 @import "~slick-carousel/slick/slick.css"; 
 @import "~slick-carousel/slick/slick-theme.css";
 
+@font-face {
+  font-family: 'Roboto-regular';
+  src: url('../public/font/Roboto/Roboto-Regular.ttf');
+  // src: url('../public/font/Roboto/Roboto-Bold.ttf');
+  // src: url('../public/font/Roboto/Roboto-Medium.ttf');
+}
+
+// @font-face {
+//   font-family: 'Roboto-bold';
+//   src: url('../public/font/Roboto/Roboto-Bold.ttf');
+// }
+
+// @font-face {
+//   font-family: 'Roboto-medium';
+//   src: url('../public/font/Roboto/Roboto-Medium.ttf');
+// }
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -80,6 +97,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Roboto-regular';
 }
 
 html,
@@ -129,6 +147,7 @@ html body{
       #ff5500 100%
       ),
       linear-gradient(312.65deg, #000000 63.82%, #1f1f2d 113.14%);
+     
 }
 
 #profileAvtaarCarousel{

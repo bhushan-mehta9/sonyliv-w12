@@ -38,9 +38,10 @@ $white: #fff;
     }
     .textOne {
       font-weight: 700;
+      font-family: "Roboto-regular";
       font-size: 32px;
       line-height: 60px;
-      font-family: "SFProText-Regular";
+
       text-align: center;
       color: #ffffff;
       display: -ms-flexbox;
@@ -60,26 +61,27 @@ $white: #fff;
     order: 0;
     flex-grow: 0;
     margin-bottom: 2px;
-    font-family: "SFProText-Regular";
 
     .otpEmail {
       display: flex;
       -ms-flex-pack: center;
       justify-content: center;
+      font-family: "Roboto-regular";
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
-      font-family: "SFProText-Regular";
+
       line-height: 20px;
       text-align: center;
       color: #acacac;
     }
     .mobileNo {
       font-style: normal;
+      font-family: "Roboto-regular";
       font-weight: 400;
       font-size: 14px;
       line-height: 24px;
-      font-family: "SFProText-Regular";
+
       text-decoration-line: underline;
       color: #ffffff;
     }
@@ -107,7 +109,7 @@ $white: #fff;
     width: 248px;
     height: 56px;
     margin-left: auto;
-    font-family: "SFProText-Regular";
+    font-family: "Roboto-regular";
     margin-right: auto;
     margin-bottom: 48px;
     .otpNo1 {
@@ -116,14 +118,14 @@ $white: #fff;
       color: #fff;
       text-align: center;
       font-size: 18px;
-      font-family: "SFProText-Regular";
+      font-family: "Roboto-regular";
       font-weight: 500;
       outline: none;
       background: #242436;
       border: none;
       border-radius: 8px;
       &:focus {
-        border: 1px solid #f5961e !important;
+        border: 1px solid #f5961e;
       }
       &.otpapplied {
         border: 1px solid #636370;
@@ -145,9 +147,10 @@ $white: #fff;
     padding: 0px;
     gap: 4px;
     color: #f1f1f1;
+    font-family: "Roboto-regular";
     font-size: 12px;
     line-height: 16px;
-    font-family: "SFProText-Regular";
+
     margin-bottom: 32px;
 
     .blueColor {
@@ -183,7 +186,7 @@ $white: #fff;
     .buttonText {
       width: 38px;
       height: 24px;
-      font-family: "SFProText-Bold";
+      font-family: "Roboto-regular";
       font-style: normal;
       font-weight: 700;
       font-size: 16px;
@@ -245,6 +248,7 @@ $white: #fff;
         }
       }
       .textOne {
+        font-family: "Roboto-regular";
         font-size: 14px;
         line-height: 16px;
         margin-top: 0px;
@@ -254,65 +258,8 @@ $white: #fff;
       margin-bottom: 32px;
     }
   }
-  .otpNo1 {
-    width: 44px;
-    height: 56px;
-    color: #fff;
-    text-align: center;
-    font-size: 18px;
-    font-family: "SFProText-Regular";
-    font-weight: 500;
-    outline: none;
-    border-bottom: 1px solid #636370;
-    border-radius: 0px;
-    background: transparent;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    &.otpapplied {
-      border-bottom: 1px solid $white;
-      border-top: none;
-      border-left: none;
-      border-right: none;
-    }
-    &:focus {
-      border-bottom: 1px solid #f5961e !important;
-      border-top: none !important;
-      border-left: none !important;
-      border-right: none !important;
-    }
-  }
-  .button {
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-    width: calc(100% - 32px) !important;
-  }
-}
-//for Ipad
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-  .otpContainer {
-    padding-top: 45px;
-    .sectionOne {
-      margin-bottom: 40px;
-      .arrowLeftBlock {
-        transform: translateY(-50%);
-        top: 50%;
-        .arrowLeft {
-          width: 24px;
-          height: 24px;
-          padding: 5px;
-        }
-      }
-      .textOne {
-        font-size: 24px;
-        line-height: 40px;
-      }
-    }
-
-    .displayFlex {
-      margin-bottom: 32px;
-    }
+  .otpNo {
+    border: none;
 
     .otpNo1 {
       width: 44px;
@@ -320,20 +267,80 @@ $white: #fff;
       color: #fff;
       text-align: center;
       font-size: 18px;
-      font-family: "SFProText-Regular";
+      font-family: "Roboto-regular";
       font-weight: 500;
       outline: none;
-      background: transparent;
-      border-bottom: 1px solid #636370;
+      border-bottom: 1px solid #fff !important;
+      border-radius: 0px !important;
+      background: transparent !important;
+      border-top: none !important;
+      border-left: none !important;
+      border-right: none !important;
+      &.otpapplied {
+        border-bottom: 1px solid $white !important;
+      }
+      &:focus {
+        border-bottom: 1px solid #f5961e !important;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+      }
+    }
+    .button {
+      margin-left: auto !important;
+      margin-right: auto !important;
+      box-sizing: border-box;
+      width: calc(100% - 32px) !important;
+    }
+  }
+}
+//for Ipad
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .sectionOne {
+    margin-bottom: 40px;
+    .arrowLeftBlock {
+      transform: translateY(-50%);
+      top: 50%;
+      .arrowLeft {
+        width: 24px;
+        height: 24px;
+        padding: 5px;
+        margin-top: 25px;
+      }
+    }
+    .textOne {
+      font-family: "Roboto-regular";
+      font-size: 24px !important;
+      line-height: 40px;
+      margin-top: 0px !important;
+    }
+  }
+
+  .displayFlex {
+    margin-bottom: 32px;
+  }
+  .otpNo {
+    border: none;
+    .otpNo1 {
+      width: 44px;
+      height: 56px;
+      color: #fff;
+      text-align: center;
+      font-size: 18px;
+      font-family: "Roboto-regular";
+      font-weight: 500;
+      outline: none;
+      background: transparent !important;
+      border-bottom: 1px solid #fff !important;
       border-left: none;
       border-top: none;
       border-right: none;
-      border-radius: 0px;
+      border-radius: 0px !important;
       &.otpapplied {
         border-bottom: 1px solid $white;
-        border-top: none;
-        border-left: none;
-        border-right: none;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
       }
       &:focus {
         border-bottom: 1px solid #f5961e !important;
