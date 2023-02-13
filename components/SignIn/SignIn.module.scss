@@ -35,7 +35,7 @@
             border: 2px solid #f1f1f1;
           }
         .sign{
-            font-family: 'SFProText-Regular';
+            
             font-style: normal;
             font-weight: 700;
             line-height: 14px;
@@ -46,7 +46,7 @@
             margin-top: 50px;
         }
         .skip{
-            font-family: 'SFProText-Regular';
+            
             font-style: normal;
             font-size: 12px;
             line-height: 12px;
@@ -81,7 +81,7 @@
         }
         .signweb{
             text-align: center;
-            font-family: 'SFProText-Regular';
+            
             font-style: normal;
             font-weight: 700;
             line-height: 14px;
@@ -105,7 +105,7 @@
                 font-weight: 400;
                 font-size: 14px;
                 line-height: 16px;
-                font-family: 'SFProText-Regular';
+                
                 letter-spacing: 1px;
                 font-feature-settings: 'ss02' on, 'ss03' on;
                 color: #FFFFFF;
@@ -117,7 +117,7 @@
                 outline: none !important;         
             }
             .note{
-            font-family: 'SFProText-Regular';  
+              
             letter-spacing: 1px;         
             font-style: normal;
             font-weight: 400;
@@ -143,7 +143,7 @@
             background: transparent;
             border: none;
             padding: 0;
-            font-family: 'SFProText-Regular';
+            
             }
             .defaultcode{
                 font-style: normal;
@@ -152,7 +152,7 @@
                 line-height: 20px;
                 font-feature-settings: 'ss02' on, 'ss03' on;
                 color: #F1F1F1;
-                font-family: 'SFProText-Regular';
+                
             }
             .number{
             height: 100%;
@@ -164,7 +164,7 @@
             padding: 0 12px;
             width: 82%;
             outline: none;
-            font-family: 'SFProText-Regular';
+            
             letter-spacing: 1px;           
             }
         }
@@ -174,7 +174,7 @@
             line-height: 16px;
             color: #FF5500;
             margin-top: 8px;
-            font-family: 'SFProText-Regular';
+            
             letter-spacing: 1px;
         }
         .refcode{
@@ -185,12 +185,12 @@
             font-size: 12px;
             letter-spacing: 1px;
             color: #ACACAC;
-            font-family: 'SFProText-Regular';
+            
             .apply{
                 text-decoration: underline;
                 text-underline-offset: 3px;
                 color: #ACACAC;
-                font-family: 'SFProText-Regular';
+                
             }
         }
         .btndiv{
@@ -199,7 +199,7 @@
             border: 1px solid #636370;
             border-radius: 8px;
             margin-top: 40px;
-            font-family: 'SFProText-Regular';
+            
             .nextbtn{
                 cursor: pointer;
                 height: 48px;
@@ -213,7 +213,7 @@
                 font-style: normal;
                 font-weight: 700;
                 font-size: 16px;
-                font-family: 'SFProText-Regular';
+                
             }
             .active{  
                 height: 48px;
@@ -229,7 +229,7 @@
                 background: #F5961E;
                 border-radius: 8px !important;
                 border: none;
-                font-family: 'SFProText-Regular';
+                
             }
         }
         .proceed{
@@ -245,7 +245,7 @@
             text-align: center;
             color: #636370;
             margin: 5% 0%;
-            font-family: 'SFProText-Regular';
+            
             .tnc{
             text-decoration: underline;
             }
@@ -261,7 +261,7 @@
             text-align: center; 
             color: #ACACAC;   
             margin: 2% 0%;  
-            font-family: 'SFProText-Regular';  
+              
         }
         .viaemail{
             cursor: pointer;
@@ -275,7 +275,7 @@
             text-underline-offset: 3px;
             letter-spacing: 0.9px;
             color: #F1F1F1;
-            font-family: 'SFProText-Regular';
+            
         }
     }
 }
@@ -337,7 +337,7 @@
                 background: transparent;
                 border: none;
                 padding: 0;
-                font-family: 'SFProText-Regular';
+                
                 }
                 .number{
                 height: 100%;

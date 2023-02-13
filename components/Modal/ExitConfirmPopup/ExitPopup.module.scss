@@ -8,7 +8,7 @@
     height: 40px;
     max-width: 300px;
     margin: 0 auto;
-    font-family: "SFProText-Regular";
+
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
@@ -20,7 +20,7 @@
     height: 40px;
     max-width: 230px;
     margin: 0 auto;
-    font-family: "SFProText-Regular";
+
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -39,7 +39,7 @@
     width: 100%;
     button {
       cursor: pointer;
-    height: 48px;
+      height: 48px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -61,59 +61,55 @@
       border-radius: 8px;
       color: #07070a;
     }
-      &:last-child{
-  
-      button{
-       margin-bottom: 0;
+    &:last-child {
+      button {
+        margin-bottom: 0;
       }
-    
+    }
   }
-  }
-
 }
-@media (min-width:320px) and (max-width: 520px) {
- .header_section {
-      margin-top: 34px;
-      .title {
-        max-width: 230px;
-        margin: 0 auto;
-        font-size: 24px;
-        line-height: 32px;
-        font-weight: 700;
-        margin-bottom: 8px;
-      }
-      .description {
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 16px;
-      }
+@media (min-width: 320px) and (max-width: 520px) {
+  .header_section {
+    margin-top: 34px;
+    .title {
+      max-width: 230px;
+      margin: 0 auto;
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
     }
-    .button_section {
-      .button {
-        button {
-          font-weight: 700;
-          font-size: 16px;
-          line-height: 24px;
-          margin-bottom: 12px;
-          height: 48px;
-        }
+    .description {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  .button_section {
+    .button {
+      button {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 12px;
+        height: 48px;
       }
     }
   }
-
+}
 
 @media (min-width: 521px) and (max-width: 1024px) {
-.header_section {
-      .title{
-        max-width: 300px;
-        margin: 0 auto;
-      }
-    }
-    .button_section{
-        .button{
-            button{
-                height: 56px;
-            }
-        }
+  .header_section {
+    .title {
+      max-width: 300px;
+      margin: 0 auto;
     }
   }
+  .button_section {
+    .button {
+      button {
+        height: 56px;
+      }
+    }
+  }
+}

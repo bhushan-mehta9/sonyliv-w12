@@ -40,7 +40,7 @@ $white: #fff;
       font-weight: 700;
       font-size: 32px;
       line-height: 60px;
-      font-family: "SFProText-Regular";
+
       text-align: center;
       color: #ffffff;
       display: -ms-flexbox;
@@ -60,7 +60,6 @@ $white: #fff;
     order: 0;
     flex-grow: 0;
     margin-bottom: 2px;
-    font-family: "SFProText-Regular";
 
     .otpEmail {
       display: flex;
@@ -69,7 +68,7 @@ $white: #fff;
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
-      font-family: "SFProText-Regular";
+
       line-height: 20px;
       text-align: center;
       color: #acacac;
@@ -79,7 +78,7 @@ $white: #fff;
       font-weight: 400;
       font-size: 14px;
       line-height: 24px;
-      font-family: "SFProText-Regular";
+
       text-decoration-line: underline;
       color: #ffffff;
     }
@@ -107,7 +106,7 @@ $white: #fff;
     width: 248px;
     height: 56px;
     margin-left: auto;
-    font-family: "SFProText-Regular";
+
     margin-right: auto;
     margin-bottom: 48px;
     .otpNo1 {
@@ -116,7 +115,7 @@ $white: #fff;
       color: #fff;
       text-align: center;
       font-size: 18px;
-      font-family: "SFProText-Regular";
+
       font-weight: 500;
       outline: none;
       background: #242436;
@@ -147,7 +146,7 @@ $white: #fff;
     color: #f1f1f1;
     font-size: 12px;
     line-height: 16px;
-    font-family: "SFProText-Regular";
+
     margin-bottom: 32px;
 
     .blueColor {
@@ -183,7 +182,6 @@ $white: #fff;
     .buttonText {
       width: 38px;
       height: 24px;
-      font-family: "SFProText-Bold";
       font-style: normal;
       font-weight: 700;
       font-size: 16px;
@@ -260,7 +258,7 @@ $white: #fff;
     color: #fff;
     text-align: center;
     font-size: 18px;
-    font-family: "SFProText-Regular";
+
     font-weight: 500;
     outline: none;
     border-bottom: 1px solid #636370;
@@ -320,7 +318,7 @@ $white: #fff;
       color: #fff;
       text-align: center;
       font-size: 18px;
-      font-family: "SFProText-Regular";
+
       font-weight: 500;
       outline: none;
       background: transparent;
