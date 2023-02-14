@@ -1,11 +1,11 @@
 .header_section {
   color: white;
-  margin: 0px auto 32px auto;
+  margin: 0px auto 24px auto;
   width: 100%;
   text-align: center;
   .title {
     max-height: 80px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 
     font-style: normal;
     font-weight: 700;
@@ -15,17 +15,13 @@
   }
   .description {
     width: 100%;
-    height: 40px;
-    max-width: 230px;
+    // height: 40px;
     margin: 0 auto;
-
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
-
     text-align: center;
-
     color: #a0a0aa;
   }
 }
@@ -48,12 +44,21 @@
     background: #242436;
     border-radius: 8px;
     color: #ffffff;
+    border: 1px solid #636370;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
     .image {
       margin-right: 10.5px;
     }
     &:first-child {
       background: #f5961e;
       color: #07070a;
+      border: none;
+    }
+    &:last-child{
+      margin-bottom: 0;
     }
   }
 }
@@ -70,6 +75,37 @@
   .button_section {
     .button {
       height: 56px;
+    }
+  }
+}
+
+@media  screen and (max-width:991px) and (orientation:landscape) {
+  .header_section{
+    .title {
+      letter-spacing: 1px;
+      padding: 0 10px;
+      padding-bottom: 0;
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .description {
+      letter-spacing: 0.8px;
+      max-width: 288px;
+      max-height: 16px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  .button_section {
+    .button {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 12px;
+      height: 48px !important;
     }
   }
 }

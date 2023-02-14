@@ -175,9 +175,62 @@ html body{
     }
   }
   .slick-arrow{
+    &.slick-next{
+      background: url('../public/images/chevron-right.png') no-repeat ;
+      background-size: cover;
+      width: 30px;
+      height: 30px;
+      right: -50px;
+      &::before{
+        display: none;
+      }
+    }
+    &.slick-prev{
+      background: url('../public/images/chevron-left.png') no-repeat ;
+      background-size: cover;
+      width: 30px;
+      height: 30px;
+      left: -50px;
+      &::before{
+        display: none;
+      }
+    }
     &.slick-disabled{
       display: none !important;
     }
+   
   } 
 }
+}
+
+@media screen and (max-width:992px) and (orientation:landscape) {
+  #profileAvtaarCarousel{
+    .slick-slider{
+      .slick-arrow{
+        display: none !important;
+      }
+    }
+  }
+  
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1200px) and (orientation:portrait){
+  #profileAvtaarCarousel{
+    .slick-slider{
+      .slick-arrow{
+        display: none !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:767px) {
+  #profileAvtaarCarousel{
+    .slick-slider{
+      .slick-arrow{
+        display: none !important;
+      }
+    }
+  }
+  
 }
