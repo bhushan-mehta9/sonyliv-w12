@@ -26,8 +26,8 @@ function SelectProfile() {
       altData: "avtaar2",
     },
     {
-      path: mypic2,
-      altData: "avtaar2",
+      path: mypic,
+      altData: "avtaar",
     },
     {
       path: plusIcon,
@@ -49,13 +49,25 @@ function SelectProfile() {
                     handleProfile(index);
                   }}
                 >
-                  <Image
+                    { item.altData == 'Add Profile' ? <div  className={styles.addBlock}>
+                    <Image
                     width="350px"
                     height="300px"
                     layout="responsive"
                     src={item.path}
                     alt={item.altData}
-                    className={styles["avtaar_img" ,"plusIcon"]} 
+                    className={styles.plusIcon}
+                    id="avtaar_img"
+                  />
+                 
+                    </div> : <>
+                    <Image
+                    width="350px"
+                    height="300px"
+                    layout="responsive"
+                    src={item.path}
+                    alt={item.altData}
+                    className={`${item.altData == 'Add Profile' ? styles.plusIcon : styles.avtaar_img}`}
                     id="avtaar_img"
                   />
                   <Image
@@ -63,7 +75,9 @@ function SelectProfile() {
                     alt="check_icon"
                     className={styles.checkicon}
                     id="checkIcon"
-                  />
+                  /></>
+                    }
+                  
                   <div className={styles.imageText}>Meera</div>
                 </div>
               </div>
