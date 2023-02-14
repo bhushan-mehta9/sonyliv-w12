@@ -5,9 +5,10 @@ import mypic1 from "../../public/images/Avatar_1.png";
 import mypic2 from "../../public/images/Avatar_2.png";
 import Image from "next/image";
 import check from "../../public/images/check.png";
+import plusIcon from "../../public/images/plusIcon.svg";
 import { useState } from "react";
 function SelectProfile() {
-    const [avtaar, setAvtaar] = useState();
+  const [avtaar, setAvtaar] = useState();
   const handleProfile = (data) => {
     setAvtaar(data);
   };
@@ -23,6 +24,14 @@ function SelectProfile() {
     {
       path: mypic2,
       altData: "avtaar2",
+    },
+    {
+      path: mypic2,
+      altData: "avtaar2",
+    },
+    {
+      path: plusIcon,
+      altData: "Add Profile",
     },
   ];
   return (
@@ -46,7 +55,7 @@ function SelectProfile() {
                     layout="responsive"
                     src={item.path}
                     alt={item.altData}
-                    className={styles.avtaar_img}
+                    className={styles["avtaar_img" ,"plusIcon"]} 
                     id="avtaar_img"
                   />
                   <Image
@@ -55,17 +64,15 @@ function SelectProfile() {
                     className={styles.checkicon}
                     id="checkIcon"
                   />
-                  <div className={styles.imageText}>
-                    Meera
-                    </div>
+                  <div className={styles.imageText}>Meera</div>
                 </div>
               </div>
             );
           })}
         </div>
-        <div className={styles.edit_Button}>
-          <button>Edit Profile</button>
-        </div>
+        <button className={styles.edit_Button}>
+          <div>Edit Profile</div>
+        </button>
       </div>
     </>
   );

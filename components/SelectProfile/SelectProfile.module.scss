@@ -1,13 +1,12 @@
 $white: #fff;
 .selectProfileContainer {
-  padding-top: 20px;
   position: fixed;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
   min-height: auto;
-  overflow-y: auto;
+  overflow-y: hidden;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -18,6 +17,7 @@ $white: #fff;
     justify-content: center;
     text-align: center;
     margin-top: 80px;
+    margin-bottom: 80px;
     line-height: 40px;
     font-size: 32px;
     font-weight: 700;
@@ -31,8 +31,18 @@ $white: #fff;
     .image_block {
       padding: 0px;
       position: relative;
-      max-width: 90px;
       margin: 0 auto;
+      margin-right: 25px;
+      width: 200px;
+      height: 200px;
+      .plusIcon{
+        width: 100%;
+        height: auto;
+        background: #242436;
+        border-radius: 50px;
+        // padding: 34px;
+        
+      }
       .checkicon {
         position: absolute;
         bottom: 6px;
@@ -40,6 +50,9 @@ $white: #fff;
         width: 24px;
         max-width: 24px;
         display: none;
+        &.active {
+          display: block;
+        }
       }
       .imageText {
         font-size: 16px;
@@ -49,18 +62,23 @@ $white: #fff;
         margin-top: 5px;
       }
     }
-    .edit_Button {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 12px 24px;
-        gap: 8px;
-        width: 250px;
-        height: 48px;
-        background: #242436;
-        border: 1px solid #636370;
-        border-radius: 8px;
-    }
+  }
+  .edit_Button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 8px;
+    width: 250px;
+    height: 48px;
+    background: #242436;
+    border: 1px solid #636370;
+    border-radius: 8px;
+    color: $white;
+    margin: auto;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 24px;
   }
 }
