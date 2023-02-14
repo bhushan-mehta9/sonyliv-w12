@@ -84,7 +84,7 @@ function Modal(props) {
                 <ProfileInfo dictionary={props.dictionary} handleBack={handleBack} />
               </>
             ) : (
-              <ProfileInfo handleBack={handleBack} />
+              <ProfileInfo dictionary={props.dictionary} handleBack={handleBack} />
             );
           case "personalization":
             return <Personalization dictionary={props.dictionary} handleBack={handleBack} />
