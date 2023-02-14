@@ -1,13 +1,11 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-
 import { useState } from "react";
 import styles from "./Personalization.module.scss";
 import check from "@/public/images/Vector.png";
 import checkMweb from "@/public/images/Vector_mble.png";
 import ArrowLeft from "@/public/images/arrow-left.svg";
-import Shape from "@/public/loginsuccess/shape.png";
 import pic1 from "@/public/personalization/image1.png";
 import pic2 from "@/public/personalization/image2.png";
 import pic3 from "@/public/personalization/image3.png";
@@ -21,7 +19,12 @@ import pic10 from "@/public/personalization/image10.png";
 import pic11 from "@/public/personalization/image11.png";
 import pic12 from "@/public/personalization/image12.png";
 import pic13 from "@/public/personalization/image5.png";
-function Personalization({handleBack}) {
+
+function Personalization({handleBack,closeSignIn}) {
+  /**
+   * Array Manipulation for image rendering
+   * Creation Date : 14/02/2023
+   */
   const PicImgdata = [
     {
       path: pic1,
@@ -80,6 +83,10 @@ function Personalization({handleBack}) {
       altData: "avtaar",
     },
   ];
+  const handleSubmit = ()=> {
+    closeSignIn();
+  }
+
   const [avtaar, setAvtaar] = useState();
   const [Mobile, IsMobile] = useState();
   const [formdata, setFormData] = useState({
@@ -209,7 +216,7 @@ function Personalization({handleBack}) {
               : styles.next_btn
           }
         >
-          <button>I'm done</button>
+          <button onClick={handleSubmit}> I'm done</button>
         </div>
 
         <div className={styles.pagination}>

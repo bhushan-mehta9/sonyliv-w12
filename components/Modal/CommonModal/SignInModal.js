@@ -87,7 +87,7 @@ function Modal(props) {
               <ProfileInfo handleBack={handleBack} />
             );
           case "personalization":
-            return <Personalization dictionary={props.dictionary} handleBack={handleBack} />
+            return <Personalization dictionary={props.dictionary} handleBack={handleBack} closeSignIn={closeSignIn} />
           default:
             return null;
         }
