@@ -21,7 +21,7 @@ function LoginSuccess({ handlePageChangeForSucess }) {
   const router = useRouter();
   return (
     <>
-      {true ? (
+      {!isMobile ? (
         <div className={styles.SuccessLoginContainer}>
           <div className={styles.sectionOne}>
             <div className={styles.textOne}></div>

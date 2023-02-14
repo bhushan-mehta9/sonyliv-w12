@@ -94,6 +94,9 @@ function Personalization({handleBack}) {
     setAvtaar(data);
   };
 
+  const handleBackBtn = () => {
+    handleBack("profileinfo")
+  }
   const handleClickChange = (data) => {
     if (formdata.PersonalizedData.length > 0) {
       const formdataNotExist = formdata.PersonalizedData.filter((item) => {
@@ -132,8 +135,9 @@ function Personalization({handleBack}) {
           <div className={styles.arrowLeftBlock}>
             <Image
               src={ArrowLeft}
-              alt="check_icon"
+              alt="back_icon"
               className={styles.arrowLeft}
+              onClick={handleBackBtn}
             />
           </div>
           {Mobile ? (
