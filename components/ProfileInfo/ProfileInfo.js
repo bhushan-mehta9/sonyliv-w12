@@ -105,7 +105,9 @@ function ProfileInfo({ handleBack }) {
     }
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    handleBack("personalization")
+  };
   const handleProfile = (data) => {
     setAvtaar(data);
   };
@@ -407,7 +409,6 @@ function ProfileInfo({ handleBack }) {
           onClick={handleSubmit}
           disabled={
             formData.nameField &&
-            formData.checkedKids &&
             formData.ageField &&
             formData.genderData &&
             formData.langData.length > 0

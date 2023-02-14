@@ -1,5 +1,4 @@
-
-$white:#fff;
+$white: #fff;
 
 .SuccessLoginContainer {
   padding-top: 120px;
@@ -11,7 +10,7 @@ $white:#fff;
   min-height: auto;
   overflow-y: auto;
   box-sizing: border-box;
-  *{
+  * {
     box-sizing: border-box;
   }
   .sectionOne {
@@ -20,14 +19,14 @@ $white:#fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 48px; 
+    margin-bottom: 48px;
     .textOne {
-        position: absolute;
-        left: 27.42%;
-        right: 27.42%;
-        top: 27.42%;
-        bottom: 27.89%;
-        background: #20F676;
+      position: absolute;
+      left: 27.42%;
+      right: 27.42%;
+      top: 27.42%;
+      bottom: 27.89%;
+      background: #20f676;
     }
   }
   .sectionTwo {
@@ -37,44 +36,43 @@ $white:#fff;
     align-items: center;
     padding: 0px;
     margin-bottom: 12px;
-    font-family: "SFProText-Regular";
-    .SuccessClick { 
-        box-sizing: border-box;
-        width: 65px;
-        height: 65px;
-      }
-    .mobileNo {
-        font-style: normal;
-        font-weight: 590;
-        font-size: 16px;    
-        font-feature-settings: 'ss02' on, 'ss03' on;
-        line-height: 24px;
-        font-family: "SFProText-Regular";
-        text-align: center;
-        color: #ffffff;
-        display: -ms-flexbox;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        margin-top: 30px;
+
+    .SuccessClick {
+      box-sizing: border-box;
+      width: 65px;
+      height: 65px;
     }
-    
-    .mobileNoText{
-       
-        font-style: normal;
-        font-weight: 590;
-        font-size: 14px;    
-        font-feature-settings: 'ss02' on, 'ss03' on;
-        line-height: 20px;
-        font-family: "SFProText-Regular";
-        text-align: center;
-        color: #FFC328;
-        display: -ms-flexbox;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        margin-top: -10px;
-        margin-bottom: 20px;
+    .mobileNo {
+      font-style: normal;
+      font-weight: 590;
+      font-size: 16px;
+      font-feature-settings: "ss02" on, "ss03" on;
+      line-height: 24px;
+
+      text-align: center;
+      color: #ffffff;
+      display: -ms-flexbox;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .mobileNoText {
+      font-style: normal;
+      font-weight: 590;
+      font-size: 14px;
+      font-feature-settings: "ss02" on, "ss03" on;
+      line-height: 20px;
+
+      text-align: center;
+      color: #ffc328;
+      display: -ms-flexbox;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin-top: -10px;
+      margin-bottom: 20px;
     }
     .displayFlex {
       display: flex;
@@ -83,64 +81,62 @@ $white:#fff;
       margin-bottom: 16px;
     }
     .LoggedMobile {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 1px;
-      }
-      .button {
-       
-        border-radius: 8px;
-        padding: 8px;
-        top: 369px;
-        background: #07070a;
-        border: 1px solid #636370;
-        box-sizing: border-box;
-        height: auto;
-        left: 607.3px;
-        top: 380px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1px;
+    }
+    .button {
+      border-radius: 8px;
+      padding: 8px;
+      top: 369px;
+      background: #07070a;
+      border: 1px solid #636370;
+      box-sizing: border-box;
+      height: auto;
+      left: 607.3px;
+      top: 380px;
+      width: auto;
+      margin: 0px auto;
+      display: flex;
+      align-items: baseline;
+      .buttonText {
         width: auto;
-        margin: 0px auto;
-        display: flex;
-        align-items: baseline;
-        .buttonText {
-            width: auto;
-            height: auto;
-            white-space: nowrap ;
-          font-family: "SFProText-Bold";
-          font-style: normal;
-          font-weight: 700;
-          font-size: 10px;
-          line-height: 12px;
-          text-transform: uppercase;
-          text-align: center;
-          letter-spacing: 0.0125em;
-          color: #FFFFFF;
-          margin: 0px 0px 0px 5px;
-        } 
-      }.premium_icon_01{
-        width: 10px;
-    height: auto;
-    white-space: nowrap;
-     }
+        height: auto;
+        white-space: nowrap;
+        font-family: "SFProText-Bold";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 10px;
+        line-height: 12px;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 0.0125em;
+        color: #ffffff;
+        margin: 0px 0px 0px 5px;
+      }
+    }
+    .premium_icon_01 {
+      width: 10px;
+      height: auto;
+      white-space: nowrap;
+    }
   }
   .sectionThree {
-      
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0px;
     gap: 4px;
-    color: #F1F1F1;
-    font-feature-settings: 'ss02' on, 'ss03' on;
-    font-family: "SFProText-Regular";
+    color: #f1f1f1;
+    font-feature-settings: "ss02" on, "ss03" on;
+
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
     text-align: center;
   }
- 
 }
 //for mobile screens
 @media screen and (max-width: 767px) {
@@ -152,117 +148,116 @@ $white:#fff;
     left: 0;
     top: 0;
     min-height: auto;
-      .sectionOne {
-        position: relative;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 40px;
-        .textOne {
-          font-style: normal;
-          // font-weight: 700;
-          font-weight: 500;
-          font-size: 14px;
-          line-height: 16px;
-          font-family: "SFProText-Regular";
-          text-align: center;
-          color: #ffffff;
-          display: -ms-flexbox;
-          display: flex;
-          margin-top: 0px;
-        }
-      }
-      .sectionTwo {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        padding: 0px;
-        margin-bottom: 22px;
-        font-family: "SFProText-Regular";
-        .SuccessClick { 
-            box-sizing: border-box;
-            width: 65px;
-            height: 65px;
-          }
-        .mobileNo {
-          font-style: normal;
-          font-weight: 590;
-          font-size: 16px;
-          line-height: 24px;
-          font-family: "SFProText-Regular";
-          text-align: center;
-          color: #ffffff;
-          display: flex;
-          align-items: center;
-          text-align: center;
-          margin-top: 30px;
-        }
-        .mobileNoText{
-       
-            font-style: normal;
-            font-weight: 590;
-            font-size: 14px;    
-            font-feature-settings: 'ss02' on, 'ss03' on;
-            line-height: 20px;
-            font-family: "SFProText-Regular";
-            text-align: center;
-            color: #FFC328;
-            display: -ms-flexbox;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            margin-top: -10px;
-            margin-bottom: 20px;
-        }
-        .displayFlex {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-bottom: 16px;
-        }
-        .LoggedMobile {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 1px;
-          }
-      }
-      
-      .sectionThree {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0px;
-        gap: 4px;
-        color: #F1F1F1;
-        font-feature-settings: 'ss02' on, 'ss03' on;
-        font-family: "SFProText-Regular";
+    .sectionOne {
+      position: relative;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+      .textOne {
         font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
+        // font-weight: 700;
+        font-weight: 500;
+        font-size: 14px;
         line-height: 16px;
+
         text-align: center;
+        color: #ffffff;
+        display: -ms-flexbox;
+        display: flex;
+        margin-top: 0px;
       }
-      
-      .button {
-        border-radius: 8px;
-        padding: 0px 0px 0px 5px;
-        background: #07070a;
-        border: 1px solid #636370;
-        border-radius: 8px;
-        margin-left: auto;
-        margin-right: auto;
+    }
+    .sectionTwo {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px;
+      margin-bottom: 22px;
+
+      .SuccessClick {
         box-sizing: border-box;
-        width: calc(100% - 32px);
-        // max-width: 530px;
-        // margin: 0px auto;
+        width: 65px;
+        height: 65px;
       }
-      .buttonText {
-        width: auto;
-        height: auto;
-        white-space: nowrap ;
+      .mobileNo {
+        font-style: normal;
+        font-weight: 590;
+        font-size: 16px;
+        line-height: 24px;
+
+        text-align: center;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-top: 30px;
+      }
+      .mobileNoText {
+        font-style: normal;
+        font-weight: 590;
+        font-size: 14px;
+        font-feature-settings: "ss02" on, "ss03" on;
+        line-height: 20px;
+
+        text-align: center;
+        color: #ffc328;
+        display: -ms-flexbox;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-top: -10px;
+        margin-bottom: 20px;
+      }
+      .displayFlex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+      .LoggedMobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1px;
+      }
+    }
+
+    .sectionThree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px;
+      gap: 4px;
+      color: #f1f1f1;
+      font-feature-settings: "ss02" on, "ss03" on;
+
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+    }
+
+    .button {
+      border-radius: 8px;
+      padding: 0px 0px 0px 5px;
+      background: #07070a;
+      border: 1px solid #636370;
+      border-radius: 8px;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+      width: calc(100% - 32px);
+      // max-width: 530px;
+      // margin: 0px auto;
+    }
+    .buttonText {
+      width: auto;
+      height: auto;
+      white-space: nowrap;
       font-family: "SFProText-Bold";
       font-style: normal;
       font-weight: 700;
@@ -271,21 +266,19 @@ $white:#fff;
       text-transform: uppercase;
       text-align: center;
       letter-spacing: 0.0125em;
-      color: #FFFFFF;
+      color: #ffffff;
       margin: 0px 0px 0px 5px;
-      }.premium_icon_01{
-        width: 12px;
-        height: auto;
-        white-space: nowrap ;
-    
-     }
+    }
+    .premium_icon_01 {
+      width: 12px;
+      height: auto;
+      white-space: nowrap;
+    }
   }
-
-
 }
 
 //for Ipad
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .SuccessLoginContainer {
     padding-top: 205px;
     position: fixed;
@@ -294,114 +287,112 @@ $white:#fff;
     left: 0;
     top: 0;
     min-height: auto;
-      .sectionOne {
-        position: relative;
+    .sectionOne {
+      position: relative;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+      .textOne {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 40px;
+
         text-align: center;
+        color: #ffffff;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 40px;
-        .textOne {
-          font-style: normal;
-          font-weight: 500;
-          font-size: 24px;
-          line-height: 40px;
-          font-family: "SFProText-Regular";
-          text-align: center;
-          color: #ffffff;
-          display: -ms-flexbox;
-          display: flex;
-          margin-top: 0px;
-        }
+        margin-top: 0px;
       }
-      .sectionTwo {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        padding: 0px;
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-        margin-bottom: 2px;
-        font-family: "SFProText-Regular";
-        .SuccessClick { 
-            box-sizing: border-box;
-            width: 65px;
-            height: 65px;
-          }
-        .mobileNo {
-          font-style: normal;
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 24px;
-          font-family: "SFProText-Regular";
-          color: #ffffff;
-        }
-        .mobileNoText{
-       
-            font-style: normal;
-            font-weight: 590;
-            font-size: 14px;    
-            font-feature-settings: 'ss02' on, 'ss03' on;
-            line-height: 20px;
-            font-family: "SFProText-Regular";
-            text-align: center;
-            color: #FFC328;
-            display: -ms-flexbox;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            margin-top: -10px;
-            margin-bottom: 20px;
-        }
-        .displayFlex {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-bottom: 32px;
-        }
-        .LoggedMobile {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 1px;
-          }
-      }   
-      .sectionThree {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0px;
-        gap: 4px;
-        color: #F1F1F1;
-        font-feature-settings: 'ss02' on, 'ss03' on;
-        font-family: "SFProText-Regular";
+    }
+    .sectionTwo {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px;
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+      margin-bottom: 2px;
+
+      .SuccessClick {
+        box-sizing: border-box;
+        width: 65px;
+        height: 65px;
+      }
+      .mobileNo {
         font-style: normal;
         font-weight: 400;
-        font-size: 12px;
-        line-height: 16px;
+        font-size: 14px;
+        line-height: 24px;
+
+        color: #ffffff;
+      }
+      .mobileNoText {
+        font-style: normal;
+        font-weight: 590;
+        font-size: 14px;
+        font-feature-settings: "ss02" on, "ss03" on;
+        line-height: 20px;
+
         text-align: center;
-         margin-top: 20px;
-        
+        color: #ffc328;
+        display: -ms-flexbox;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-top: -10px;
+        margin-bottom: 20px;
       }
-      .button {
-        border-radius: 8px;
-        padding: 0px 0px 0px 5px;
-        background: #07070a;
-        border: 1px solid #636370;
-        border-radius: 8px;
-        margin-left: auto;
-        margin-right: auto;
-        box-sizing: border-box;
-        width: calc(100% - 32px);
-        // max-width: 530px;
-        // margin: 0px auto;
+      .displayFlex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 32px;
       }
-      .buttonText {
-        width: auto;
-        height: auto;
-        white-space: nowrap ;
+      .LoggedMobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1px;
+      }
+    }
+    .sectionThree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px;
+      gap: 4px;
+      color: #f1f1f1;
+      font-feature-settings: "ss02" on, "ss03" on;
+
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .button {
+      border-radius: 8px;
+      padding: 0px 0px 0px 5px;
+      background: #07070a;
+      border: 1px solid #636370;
+      border-radius: 8px;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+      width: calc(100% - 32px);
+      // max-width: 530px;
+      // margin: 0px auto;
+    }
+    .buttonText {
+      width: auto;
+      height: auto;
+      white-space: nowrap;
       font-family: "SFProText-Bold";
       font-style: normal;
       font-weight: 700;
@@ -410,15 +401,13 @@ $white:#fff;
       text-transform: uppercase;
       text-align: center;
       letter-spacing: 0.0125em;
-      color: #FFFFFF;
+      color: #ffffff;
       margin: 0px 0px 0px 5px;
-      }.premium_icon_01{
-        width: 12px;
-        height: auto;
-        white-space: nowrap ;
-    
-     }
+    }
+    .premium_icon_01 {
+      width: 12px;
+      height: auto;
+      white-space: nowrap;
+    }
   }
-
- 
 }

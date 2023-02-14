@@ -3,16 +3,25 @@ import style from "./Modal.module.scss";
 import close from "../../../public/images/closeModal.svg";
 import Image from "next/image";
 
-const Modal=({ isOpen, handleModal, children })=> {
-  const handleClose=()=> {
+const Modal = ({ isOpen, handleModal, children }) => {
+  /**
+   * Close the modal
+   * Creation Date : 14/02/2023
+   */
+  const handleClose = () => {
     handleModal();
-  }
-  const handleOverLayClick=(event)=> {
+  };
+
+  /**
+   * Handle the Modal Click
+   * Creation Date : 14/02/2023
+   */
+  const handleOverLayClick = (event) => {
     console.log("event", event);
     if (event?.target?.classList[0]?.includes("myModal")) {
       handleModal();
     }
-  }
+  };
 
   return (
     <div
@@ -21,13 +30,16 @@ const Modal=({ isOpen, handleModal, children })=> {
     >
       <div className={style.modal_content}>
         <div className={style.dash}></div>
-
-        <Image src={close} className={style.close} onClick={handleClose} />
-
+        <Image
+          src={close}
+          className={style.close}
+          onClick={handleClose}
+          alt="close"
+        />
         {children}
       </div>
     </div>
   );
-}
+};
 
 export default Modal;
