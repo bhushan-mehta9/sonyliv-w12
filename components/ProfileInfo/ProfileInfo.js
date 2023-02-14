@@ -17,6 +17,8 @@ import {
 } from "react-device-detect";
 import dynamic from "next/dynamic";
 
+import * as constants from "@/constants/constant";
+
 function ProfileInfo({dictionary, handleBack}) {
   const [exitModal, setExitModal] = useState(false);
   const [avtaar, setAvtaar] = useState();
@@ -88,14 +90,16 @@ function ProfileInfo({dictionary, handleBack}) {
           [fieldName]: [...prevState.langData, e.target.value],
         }));
       }
-    } else if (fieldName == "checkedKids") {
+    } 
+    else if (fieldName == "checkedKids") {
       const fieldValue = !JSON.parse(e.target.value);
 
       setFormData((prevState) => ({
         ...prevState,
         [fieldName]: fieldValue,
       }));
-    } else {
+    } 
+    else {
       let fieldValue = e.target.value;
      
       setFormData((prevState) => ({
@@ -240,10 +244,10 @@ function ProfileInfo({dictionary, handleBack}) {
       }`}
     >
       <div className={style.page_header} id="page_header">
-        <h1 className={style.page_title}>{dictionary?.profile_setup_title ? dictionary.profile_setup_title : ''}</h1>
+        <h1 className={style.page_title}>{dictionary?.profile_setup_title ? dictionary.profile_setup_title : constants.profile_setup_title}</h1>
       </div>
       <div className={style.avtaar_container} id="avtaar_container">
-        <h3 className={style.title}>{dictionary?.profile_setup_choose_avatar_title ? dictionary.profile_setup_choose_avatar_title :""}</h3>
+        <h3 className={style.title}>{dictionary?.profile_setup_choose_avatar_title ? dictionary.profile_setup_choose_avatar_title : constants.profile_setup_choose_avatar_title}</h3>
         <div
           className={style.avtaarSlider_container}
           id="profileAvtaarCarousel"
@@ -299,11 +303,11 @@ function ProfileInfo({dictionary, handleBack}) {
               required
             />
             <label for="nameLabel" className={style.label}>
-              {dictionary?.profile_setup_name_placeholder? dictionary.profile_setup_name_placeholder : ''}
+              {dictionary?.profile_setup_name_placeholder? dictionary.profile_setup_name_placeholder : constants.profile_setup_name_placeholder}
             </label>
           </div>
           <div className={style.kidFlexBox}>
-            <label className={style.label}>{dictionary?.profile_setup_kids_mode_title? dictionary.profile_setup_kids_mode_title : ''}</label>
+            <label className={style.label}>{dictionary?.profile_setup_kids_mode_title? dictionary.profile_setup_kids_mode_title : constants.profile_setup_kids_mode_title}</label>
             <div
               className={`${style.switchBox} ${
                 formData.checkedKids ? style.active : ""
@@ -332,13 +336,13 @@ function ProfileInfo({dictionary, handleBack}) {
               required
             />
             <label for="dateLabel" className={style.label}>
-              {dictionary?.profile_setup_dob_placeholder? dictionary.profile_setup_dob_placeholder : ''}
+              {dictionary?.profile_setup_dob_placeholder? dictionary.profile_setup_dob_placeholder : constants.profile_setup_dob_placeholder}
             </label>
           </div>
           </div>
           <div className={style.flex_cont}>
           <div className={style.identityFieldBox}>
-            <h3 className={style.title}>{dictionary?.profile_setup_select_gender_title ? dictionary.profile_setup_select_gender_title : ''}</h3>
+            <h3 className={style.title}>{dictionary?.profile_setup_select_gender_title ? dictionary.profile_setup_select_gender_title : constants.profile_setup_select_gender_title}</h3>
             <div className={style.genderBtn_Flexbox}>
               {genderInfo &&
                 genderInfo.map((data, index) => {
@@ -363,7 +367,7 @@ function ProfileInfo({dictionary, handleBack}) {
           </div>
           <div className={style.contentLangFieldBox}>
             <h3 className={style.title}>
-              Choose you preferred content language
+              {dictionary?.profile_setup_select_languages_title ? dictionary.profile_setup_select_languages_title : constants.profile_setup_select_languages_title}
             </h3>
             <div className={style.contentLangFlexbox}>
               {langrInfo &&
@@ -400,7 +404,7 @@ function ProfileInfo({dictionary, handleBack}) {
       <div
         className={`${style.next_btn} ${
           formData.nameField &&
-          formData.checkedKids &&
+          // formData.checkedKids &&
           formData.ageField &&
           formData.genderData &&
           formData.langData.length > 0
@@ -412,6 +416,7 @@ function ProfileInfo({dictionary, handleBack}) {
           onClick={handleSubmit}
           disabled={
             formData.nameField &&
+            // formData.checkedKids &&
             formData.ageField &&
             formData.genderData &&
             formData.langData.length > 0
@@ -419,7 +424,7 @@ function ProfileInfo({dictionary, handleBack}) {
               : true
           }
         >
-          {dictionary?.profile_setup_create_cta ? dictionary.profile_setup_create_cta : ''}
+          {dictionary?.profile_setup_create_cta ? dictionary.profile_setup_create_cta : constants.profile_setup_create_cta}
         </button>
       </div>
       {/* <button
