@@ -199,7 +199,6 @@
         .btndiv{
             display: flex;
             justify-content: center;
-            border: 1px solid #636370;
             border-radius: 8px;
             margin-top: 40px;
             
@@ -217,6 +216,7 @@
                 border: none;
                 outline: none;
                 cursor: pointer;
+                border: 1px solid #636370;
             }
             .active{  
                 height: 48px;
@@ -233,6 +233,7 @@
                 border-radius: 8px !important;
                 border: none;
                 cursor: pointer;
+                border: none;
             }
         }
         .proceed{
@@ -406,7 +407,6 @@
             .btndiv{
                 display: flex;
                 justify-content: center;
-                border: 1px solid #636370;
                 border-radius: 8px;
                 .nextbtn{
                     height: 48px;
@@ -421,6 +421,7 @@
                     font-style: normal;
                     font-weight: 700;
                     font-size: 16px;
+                    border: 1px solid #636370;
                 }
             }
             .proceed{

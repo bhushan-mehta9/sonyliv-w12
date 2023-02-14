@@ -40,7 +40,7 @@ function Modal(props) {
           case "loginsuccess":
             return <LoginSuccess handlePageChange={handlePageChange} />;
           case "profileinfo":
-            return <ProfileInfo handleBack={handleBack} />;
+            return <ProfileInfo dictionary={props.dictionary} handleBack={handleBack} />;
           default:
             return null;
         }
