@@ -17,7 +17,7 @@ import {
 } from "react-device-detect";
 import dynamic from "next/dynamic";
 
-function ProfileInfo({ handleBack }) {
+function ProfileInfo(props) {
   const [exitModal, setExitModal] = useState(false);
   const [avtaar, setAvtaar] = useState();
   const [kiduser, setkiduser] = useState(true);
@@ -174,42 +174,62 @@ function ProfileInfo({ handleBack }) {
     className: "center",
     centerMode: true,
     infinite: true,
-    // centerPadding: "60px",
     slidesToShow: 3,
     speed: 500,
     responsive: [
       {
-        breakpoint: 1499,
+        breakpoint: 1599,
         settings: {
           slidesToShow: 5,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1598,
+        settings: {
+          slidesToShow: 3.0,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 1,
           // initialSlide: 2
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 600,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
+      {
+        breakpoint: 340,
+        settings: {
+          slidesToShow: 2.299,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 299,
+        settings: {
+          slidesToShow: 2.4,
+          slidesToScroll: 1,
+        },
+      },
     ],
   };
-
+const dictionary = props.dictionary;
   return (
     <div
       className={`${style.registration_container} ${
@@ -221,11 +241,10 @@ function ProfileInfo({ handleBack }) {
       }`}
     >
       <div className={style.page_header} id="page_header">
-        <h1 className={style.page_title}>Tell us about yourself</h1>
+        <h1 className={style.page_title}>{dictionary?.profile_setup_title ? dictionary.profile_setup_title : ''}</h1>
       </div>
       <div className={style.avtaar_container} id="avtaar_container">
-        <h3 className={style.title}>Choose avatar</h3>
-
+        <h3 className={style.title}>{dictionary?.profile_setup_choose_avatar_title ? dictionary.profile_setup_choose_avatar_title :""}</h3>
         <div
           className={style.avtaarSlider_container}
           id="profileAvtaarCarousel"
@@ -265,6 +284,7 @@ function ProfileInfo({ handleBack }) {
       </div>
       <div className={style.form_container}>
         <form method="post" action="submit">
+        <div className={style.flex_cont}>
           <div
             className={`${style.nameFieldBox} ${
               formData.nameField ? style.activeField : ""
@@ -280,11 +300,11 @@ function ProfileInfo({ handleBack }) {
               required
             />
             <label for="nameLabel" className={style.label}>
-              Name
+              {dictionary?.profile_setup_name_placeholder? dictionary.profile_setup_name_placeholder : ''}
             </label>
           </div>
           <div className={style.kidFlexBox}>
-            <label className={style.label}>Kid’s mode</label>
+            <label className={style.label}>{dictionary?.profile_setup_kids_mode_title? dictionary.profile_setup_kids_mode_title : ''}</label>
             <div
               className={`${style.switchBox} ${
                 formData.checkedKids ? style.active : ""
@@ -313,30 +333,13 @@ function ProfileInfo({ handleBack }) {
               required
             />
             <label for="dateLabel" className={style.label}>
-              Date of birth
+              {dictionary.profile_setup_dob_placeholder}
             </label>
           </div>
-          <div
-            className={`${style.identityFieldBox} ${
-              kiduser ? style.kidsprobox : ""
-            }`}
-          >
-            <div className={style.kidFlexBox}>
-              <label className={style.label}>Kid’s mode</label>
-              <div
-                className={`${style.switchBox} ${
-                  formData.checkedKids ? style.active : ""
-                }`}
-              >
-                <input
-                  type="checkbox"
-                  name="checkedKids"
-                  value={formData.checkedKids}
-                  onChange={handleInput}
-                />
-              </div>
-            </div>
-            <h3 className={style.title}>What do you identify as?</h3>
+          </div>
+          <div className={style.flex_cont}>
+          <div className={style.identityFieldBox}>
+            <h3 className={style.title}>{dictionary?.profile_setup_select_gender_title ? dictionary.profile_setup_select_gender_title : ''}</h3>
             <div className={style.genderBtn_Flexbox}>
               {genderInfo &&
                 genderInfo.map((data, index) => {
@@ -392,6 +395,7 @@ function ProfileInfo({ handleBack }) {
                 })}
             </div>
           </div>
+          </div>
         </form>
       </div>
       <div
@@ -416,7 +420,7 @@ function ProfileInfo({ handleBack }) {
               : true
           }
         >
-          Next
+          {dictionary?.profile_setup_create_cta ? dictionary.profile_setup_create_cta : ''}
         </button>
       </div>
       {/* <button

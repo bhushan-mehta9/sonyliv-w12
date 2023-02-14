@@ -34,7 +34,7 @@ const ResendOtpPopup=({ isOpen, handleModal })=> {
             <span>Send via Whatsapp</span>
           </button>
         </div>
-        <div className={style.button}>
+        {/* <div className={style.button}>
           <button>
             <Image
               src={Apple}
@@ -44,7 +44,7 @@ const ResendOtpPopup=({ isOpen, handleModal })=> {
             />
             <span>Continue with Apple</span>
           </button>
-        </div>
+        </div> */}
       </div>
     </Modal>
   );

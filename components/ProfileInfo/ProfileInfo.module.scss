@@ -46,7 +46,7 @@ $black: #000;
     }
 
     .avtaarSlider_container {
-      max-width: 630px;
+      max-width: 450px;
       margin: 0 auto;
     }
     .image_block {
@@ -75,14 +75,35 @@ $black: #000;
     margin-right: auto;
     position: relative;
     z-index: 1;
+    width: 100%;
     form {
       display: flex;
       flex-wrap: wrap;
+      width: 100%;
+      .flex_cont{
+        width: 50%;
+        &:nth-child(1){
+            padding-right: 42px;
+            position: relative;
+            &::after{
+                content: '';
+                display: inline-block;
+                position: absolute;
+                width: 1px;
+                height: calc(100% - 10px);
+                right: 0;
+                top: 0;
+                background-color: rgba(99, 99, 112, .5);
+            }
+        }
+        &:nth-child(2){
+            padding-left: 42px;
+        }
+      }
     }
     .nameFieldBox {
       margin-bottom: 32px;
-      width: calc(50% - 30px);
-      max-width: 375px;
+      width: calc(100% - 0px);
       margin-right: auto;
       position: relative;
       padding-top: 20px;
@@ -143,9 +164,8 @@ $black: #000;
     }
     .ageFieldBox {
       margin-bottom: 32px;
-      width: calc(50% - 30px);
-      margin-left: auto;
-      max-width: 375px;
+      width: calc(100% - 0px);
+      margin-right: auto;
       padding-top: 20px;
       position: relative;
 
@@ -207,8 +227,7 @@ $black: #000;
     }
     .identityFieldBox {
       margin-bottom: 16px;
-      width: calc(50% - 30px);
-      max-width: 375px;
+      width: calc(100% - 0px);
       margin-right: auto;
       .title {
         font-style: normal;
@@ -263,64 +282,11 @@ $black: #000;
           }
         }
       }
-      &.kidsprobox {
-        .kidFlexBox {
-          display: flex;
-          align-items: center;
-          margin-bottom: 43px;
-          > .label {
-            font-style: normal;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 16px;
-
-            margin-right: 48px;
-            display: inline-flex;
-            color: $lighttGray;
-          }
-          .switchBox {
-            cursor: pointer;
-            width: 40px;
-            height: 24px;
-            background: #767676;
-            border-radius: 16px;
-            position: relative;
-            input[type="checkbox"] {
-              cursor: pointer;
-              position: absolute;
-              left: 0;
-              top: 0;
-              width: 100%;
-              height: 100%;
-              opacity: 0;
-              margin: 0;
-            }
-            &::before {
-              content: "";
-              display: inline-block;
-              width: 20px;
-              height: 20px;
-              border-radius: 50%;
-              left: 2px;
-              top: 2px;
-              transition: all 0.1s linear;
-              position: absolute;
-              background-color: $white;
-            }
-            &.active {
-              background-color: #f5961e;
-              &::before {
-                left: 18px;
-              }
-            }
-          }
-        }
-      }
+   
     }
     .contentLangFieldBox {
-      width: calc(50% - 30px);
-      margin-left: auto;
-      max-width: 375px;
+      width: calc(100% - 0px);
+      margin-right: auto;
       .title {
         font-style: normal;
         font-weight: 400;
@@ -379,11 +345,59 @@ $black: #000;
       }
     }
     .kidFlexBox {
-      display: none;
-    }
+        display: flex;
+        align-items: center;
+        margin-bottom: 32px;
+        > .label {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 16px;
+
+          margin-right: 48px;
+          display: inline-flex;
+          color: $lighttGray;
+        }
+        .switchBox {
+          cursor: pointer;
+          width: 40px;
+          height: 24px;
+          background: #767676;
+          border-radius: 16px;
+          position: relative;
+          input[type="checkbox"] {
+            cursor: pointer;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            margin: 0;
+          }
+          &::before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            left: 2px;
+            top: 2px;
+            transition: all 0.1s linear;
+            position: absolute;
+            background-color: $white;
+          }
+          &.active {
+            background-color: #f5961e;
+            &::before {
+              left: 18px;
+            }
+          }
+        }
+      }
   }
   .next_btn {
-    padding: 0px 16px;
+    padding: 0px 0px;
     padding-bottom: 24px;
     padding-top: 0px;
     max-width: 412px;
@@ -401,7 +415,7 @@ $black: #000;
       font-weight: 700;
       font-size: 16px;
       line-height: 24px;
-      color: #636370;
+      color: #646471;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -449,65 +463,79 @@ $black: #000;
     box-sizing: border-box;
   }
 
-  &.tablet_container {
-    padding-top: 45px;
-    position: fixed;
-    min-height: auto;
-    .page_header {
-      .page_title {
-        text-align: center;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 40px;
+}
 
-        color: $white;
-        margin-top: 0px;
-        margin-bottom: 40px;
-      }
-    }
+@media screen and (min-width:1599px) {
+  .registration_container{
     .avtaar_container {
-      .title {
-        text-align: center;
-        max-width: 530px;
-        margin-left: auto;
-        margin-right: auto;
-        font-weight: 510;
-        font-size: 14px;
-        line-height: 20px;
-        margin-bottom: 16px;
+      .avtaarSlider_container {
+        max-width: 430px;
+        margin: 0 auto;
       }
-    }
-    .form_container {
-      max-height: calc(100vh - 445px);
-      overflow-y: auto;
-    }
-    .next_btn {
-      padding-top: 10px;
-      margin-top: 90px;
-      padding-left: 0px;
-      padding-right: 0px;
-      button {
-        height: 56px;
-      }
-    }
   }
+}
 }
 
 @media screen and (max-width: 991px) and (orientation: landscape) {
   .registration_container {
-    &.mobile_container {
-      .form_container {
-        max-height: inherit;
-        overflow-y: visible;
-      }
+    &.mobile_container{
+        padding-top: 16px;
+        .page_header{
+            .page_title{
+                text-align: center;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 16px;
+                color: #fff;
+                margin-top: 0px;
+                margin-bottom: 32px;
+            }
+        }
+        .avtaar_container {
+            .title{
+                margin-top: 0;
+                margin-bottom: 22px;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 16px;
+                color: #f1f1f1;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 0px;
+                max-width: 412px;
+                text-align: left;
+            }
+        }
+        .form_container {
+          max-height: inherit;
+          overflow-y: visible;
+          max-width: 412px;
+          padding: 0;
+          form{
+              .flex_cont{
+                  width: 100%;
+                  &:nth-child(1){
+                      padding-right: 0;
+                      &::after{
+                          display: none;
+                      }
+                  }
+                  &:nth-child(2){
+                      padding-left: 0;
+                  }
+              }
+          }
+        }
     }
+     
   }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1200px) and (orientation:portrait) {
   .registration_container {
-    padding-top: 45px;
+    padding-top: 50px;
     position: fixed;
     min-height: auto;
     .page_header {
@@ -517,16 +545,15 @@ $black: #000;
         font-weight: 700;
         font-size: 24px;
         line-height: 40px;
-
         color: $white;
         margin-top: 0px;
-        margin-bottom: 40px;
+        margin-bottom: 60px;
       }
     }
     .avtaar_container {
       .title {
-        text-align: center;
-        max-width: 530px;
+        text-align: left;
+        max-width: 412px;
         margin-left: auto;
         margin-right: auto;
         font-weight: 510;
@@ -534,30 +561,85 @@ $black: #000;
         line-height: 20px;
         margin-bottom: 16px;
       }
+      .avtaarSlider_container{
+        max-width: 412px;
+      }
     }
     .form_container {
       max-height: calc(100vh - 445px);
       overflow-y: auto;
+      max-width: 412px;
+      padding: 0;
+      form{
+        .flex_cont{
+            width: 100%;     
+            &:nth-child(1){
+                padding-right: 0;
+                &::after{
+                    display: none;
+                }
+            }
+            &:nth-child(2){
+                padding-left: 0;
+            }
+        }
+      }
     }
     .next_btn {
       padding-top: 10px;
-      margin-top: 90px;
+      margin-top: auto;
       padding-left: 0px;
       padding-right: 0px;
       button {
         height: 56px;
       }
     }
+    .pagination{
+        margin-top: 0;
+    }
   }
 }
 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1200px) and (orientation:landscape){
+    .registration_container {
+        padding-top: 50px;
+        position: fixed;
+        min-height: auto;
+        
+        .avtaar_container {
+          .title {
+            text-align: center;
+            max-width: 412px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            margin-bottom: 16px;
+          }
+          .avtaarSlider_container{
+            max-width: 450px;
+          }
+        }
+        }
+}
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   .registration_container {
-    &.tablet_container {
-      .next_btn {
-        margin-top: 45px;
+    .avtaar_container {
+        .title {
+          text-align: center;
+          max-width: 412px;
+          margin-left: auto;
+          margin-right: auto;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 24px;
+          margin-bottom: 16px;
+        }
+        .avtaarSlider_container{
+          max-width: 412px;
+        }
       }
-    }
     .next_btn {
       margin-top: 45px;
     }
@@ -606,7 +688,9 @@ $black: #000;
         max-width: 412px;
         text-align: left;
       }
-
+        .avtaarSlider_container{
+            max-width: 412px;
+        }
       .image_block {
         max-width: 76px;
         .checkicon {
@@ -615,15 +699,29 @@ $black: #000;
       }
     }
     .form_container {
-      margin-top: 40px;
+      margin-top: 30px;
       padding: 0px 16px;
       max-width: 412px;
       // max-height: calc(100vh - 420px);
       // overflow-y: auto;
       position: relative;
       z-index: 1;
+      form{
+        .flex_cont{
+            width: 100%;
+            &:nth-child(1){
+                padding-right: 0;
+                &::after{
+                    display: none;
+                }
+            }
+            &:nth-child(2){
+                padding-left: 0;
+            }
+        }
+      }
       .nameFieldBox {
-        margin-bottom: 52px;
+        margin-bottom: 32px;
         width: 100%;
         max-width: inherit;
         .nameField {
@@ -816,7 +914,7 @@ $black: #000;
       .kidFlexBox {
         display: flex;
         align-items: center;
-        margin-bottom: 43px;
+        margin-bottom: 32px;
         width: 100%;
         justify-content: space-between;
         > .label {
@@ -919,11 +1017,22 @@ $black: #000;
   }
 }
 
+
 @media screen and (max-width: 576px) {
   .registration_container {
     .form_container {
-      max-height: calc(100vh - 380px);
+      max-height: calc(100vh - 390px);
       overflow-y: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 299px) {
+  .registration_container {
+    .avtaar_container{
+      .image_block{
+        max-width: 65px;
+      }
     }
   }
 }

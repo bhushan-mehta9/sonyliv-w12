@@ -43,7 +43,7 @@ function Player(props) {
           </div>
         </div>
       )}
-      {showModal ? <SignInModal handleSignInModal={handleSignInModal} /> : ""}
+      {showModal ? <SignInModal handleSignInModal={handleSignInModal} dictionary={props?.dictionary?.resultObj?.dictionary} /> : ""}
     </>
   );
 }

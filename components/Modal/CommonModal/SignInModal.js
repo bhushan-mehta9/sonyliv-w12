@@ -81,13 +81,13 @@ function Modal(props) {
                 <LoginSuccess
                   handlePageChangeForSucess={handlePageChangeForSucess}
                 />
-                <ProfileInfo handleBack={handleBack} />
+                <ProfileInfo dictionary={props.dictionary} handleBack={handleBack} />
               </>
             ) : (
               <ProfileInfo handleBack={handleBack} />
             );
           case "personalization":
-            return <Personalization handleBack={handleBack} />
+            return <Personalization dictionary={props.dictionary} handleBack={handleBack} />
           default:
             return null;
         }
