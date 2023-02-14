@@ -1,0 +1,66 @@
+$white: #fff;
+.selectProfileContainer {
+  padding-top: 20px;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  min-height: auto;
+  overflow-y: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  * {
+    box-sizing: border-box;
+  }
+  .page_title {
+    justify-content: center;
+    text-align: center;
+    margin-top: 80px;
+    line-height: 40px;
+    font-size: 32px;
+    font-weight: 700;
+    color: $white;
+  }
+  .avatar_container {
+    display: flex;
+    max-width: 630px;
+    margin: 0 auto;
+
+    .image_block {
+      padding: 0px;
+      position: relative;
+      max-width: 90px;
+      margin: 0 auto;
+      .checkicon {
+        position: absolute;
+        bottom: 6px;
+        right: 0;
+        width: 24px;
+        max-width: 24px;
+        display: none;
+      }
+      .imageText {
+        font-size: 16px;
+        line-height: 16px;
+        text-align: center;
+        color: $white;
+        margin-top: 5px;
+      }
+    }
+    .edit_Button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 24px;
+        gap: 8px;
+        width: 250px;
+        height: 48px;
+        background: #242436;
+        border: 1px solid #636370;
+        border-radius: 8px;
+    }
+  }
+}
