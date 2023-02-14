@@ -105,7 +105,9 @@ function ProfileInfo(props) {
     }
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    handleBack("personalization")
+  };
   const handleProfile = (data) => {
     setAvtaar(data);
   };
@@ -411,7 +413,6 @@ const dictionary = props.dictionary;
           onClick={handleSubmit}
           disabled={
             formData.nameField &&
-            formData.checkedKids &&
             formData.ageField &&
             formData.genderData &&
             formData.langData.length > 0
