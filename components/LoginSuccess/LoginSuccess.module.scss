@@ -1,8 +1,15 @@
 
 $white:#fff;
 
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
 .SuccessLoginContainer {
-  padding-top: 120px;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -11,6 +18,10 @@ $white:#fff;
   min-height: auto;
   overflow-y: auto;
   box-sizing: border-box;
+  @include flexbox();
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   *{
     box-sizing: border-box;
   }
@@ -36,12 +47,12 @@ $white:#fff;
     flex-direction: column;
     align-items: center;
     padding: 0px;
-    margin-bottom: 12px;
-    font-family: "SFProText-Regular";
+    margin-bottom: 20px;
+    
     .SuccessClick { 
         box-sizing: border-box;
-        width: 65px;
-        height: 65px;
+        width: 104px;
+        height: 104px;
       }
     .mobileNo {
         font-style: normal;
@@ -49,38 +60,34 @@ $white:#fff;
         font-size: 16px;    
         font-feature-settings: 'ss02' on, 'ss03' on;
         line-height: 24px;
-        font-family: "SFProText-Regular";
         text-align: center;
         color: #ffffff;
         display: -ms-flexbox;
         display: flex;
         align-items: center;
         text-align: center;
-        margin-top: 30px;
+        margin-top: 32px;
     }
     
     .mobileNoText{
-       
         font-style: normal;
         font-weight: 590;
         font-size: 14px;    
         font-feature-settings: 'ss02' on, 'ss03' on;
-        line-height: 20px;
-        font-family: "SFProText-Regular";
+        line-height: 20px; 
         text-align: center;
         color: #FFC328;
         display: -ms-flexbox;
         display: flex;
         align-items: center;
         text-align: center;
-        margin-top: -10px;
         margin-bottom: 20px;
     }
     .displayFlex {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 16px;
+      margin-bottom: 4px;
     }
     .LoggedMobile {
         display: flex;
@@ -102,12 +109,11 @@ $white:#fff;
         width: auto;
         margin: 0px auto;
         display: flex;
-        align-items: baseline;
+        align-items: center;
         .buttonText {
             width: auto;
             height: auto;
             white-space: nowrap ;
-          font-family: "SFProText-Bold";
           font-style: normal;
           font-weight: 700;
           font-size: 10px;
@@ -119,7 +125,7 @@ $white:#fff;
           margin: 0px 0px 0px 5px;
         } 
       }.premium_icon_01{
-        width: 10px;
+        width: 12px;
     height: auto;
     white-space: nowrap;
      }
@@ -133,7 +139,7 @@ $white:#fff;
     gap: 4px;
     color: #F1F1F1;
     font-feature-settings: 'ss02' on, 'ss03' on;
-    font-family: "SFProText-Regular";
+    
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -165,7 +171,7 @@ $white:#fff;
           font-weight: 500;
           font-size: 14px;
           line-height: 16px;
-          font-family: "SFProText-Regular";
+          
           text-align: center;
           color: #ffffff;
           display: -ms-flexbox;
@@ -180,7 +186,7 @@ $white:#fff;
         align-items: center;
         padding: 0px;
         margin-bottom: 22px;
-        font-family: "SFProText-Regular";
+        
         .SuccessClick { 
             box-sizing: border-box;
             width: 65px;
@@ -191,7 +197,7 @@ $white:#fff;
           font-weight: 590;
           font-size: 16px;
           line-height: 24px;
-          font-family: "SFProText-Regular";
+          
           text-align: center;
           color: #ffffff;
           display: flex;
@@ -200,20 +206,18 @@ $white:#fff;
           margin-top: 30px;
         }
         .mobileNoText{
-       
             font-style: normal;
             font-weight: 590;
             font-size: 14px;    
             font-feature-settings: 'ss02' on, 'ss03' on;
             line-height: 20px;
-            font-family: "SFProText-Regular";
+            display: inline-block;
             text-align: center;
             color: #FFC328;
             display: -ms-flexbox;
             display: flex;
             align-items: center;
             text-align: center;
-            margin-top: -10px;
             margin-bottom: 20px;
         }
         .displayFlex {
@@ -238,7 +242,7 @@ $white:#fff;
         gap: 4px;
         color: #F1F1F1;
         font-feature-settings: 'ss02' on, 'ss03' on;
-        font-family: "SFProText-Regular";
+        
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
@@ -263,7 +267,6 @@ $white:#fff;
         width: auto;
         height: auto;
         white-space: nowrap ;
-      font-family: "SFProText-Bold";
       font-style: normal;
       font-weight: 700;
       font-size: 10px;
@@ -306,7 +309,7 @@ $white:#fff;
           font-weight: 500;
           font-size: 24px;
           line-height: 40px;
-          font-family: "SFProText-Regular";
+          
           text-align: center;
           color: #ffffff;
           display: -ms-flexbox;
@@ -324,7 +327,7 @@ $white:#fff;
         order: 0;
         flex-grow: 0;
         margin-bottom: 2px;
-        font-family: "SFProText-Regular";
+        
         .SuccessClick { 
             box-sizing: border-box;
             width: 65px;
@@ -335,24 +338,21 @@ $white:#fff;
           font-weight: 400;
           font-size: 14px;
           line-height: 24px;
-          font-family: "SFProText-Regular";
+          
           color: #ffffff;
         }
         .mobileNoText{
-       
             font-style: normal;
             font-weight: 590;
             font-size: 14px;    
             font-feature-settings: 'ss02' on, 'ss03' on;
             line-height: 20px;
-            font-family: "SFProText-Regular";
             text-align: center;
             color: #FFC328;
             display: -ms-flexbox;
             display: flex;
             align-items: center;
             text-align: center;
-            margin-top: -10px;
             margin-bottom: 20px;
         }
         .displayFlex {
@@ -376,7 +376,7 @@ $white:#fff;
         gap: 4px;
         color: #F1F1F1;
         font-feature-settings: 'ss02' on, 'ss03' on;
-        font-family: "SFProText-Regular";
+        
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
@@ -402,7 +402,6 @@ $white:#fff;
         width: auto;
         height: auto;
         white-space: nowrap ;
-      font-family: "SFProText-Bold";
       font-style: normal;
       font-weight: 700;
       font-size: 10px;

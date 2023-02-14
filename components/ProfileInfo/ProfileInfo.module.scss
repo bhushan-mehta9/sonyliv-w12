@@ -10,7 +10,7 @@ $black: #000;
   position: relative;
   width: 100%;
   height: 100%;
-  z-index: 61;
+  z-index: 1;
   left: 0;
   top: 0;
   overflow-y: auto;
@@ -46,7 +46,7 @@ $black: #000;
     }
 
     .avtaarSlider_container {
-      max-width: 630px;
+      max-width: 450px;
       margin: 0 auto;
     }
     .image_block {
@@ -465,6 +465,17 @@ $black: #000;
 
 }
 
+@media screen and (min-width:1599px) {
+  .registration_container{
+    .avtaar_container {
+      .avtaarSlider_container {
+        max-width: 430px;
+        margin: 0 auto;
+      }
+  }
+}
+}
+
 @media screen and (max-width: 991px) and (orientation: landscape) {
   .registration_container {
     &.mobile_container{
@@ -607,7 +618,7 @@ $black: #000;
             margin-bottom: 16px;
           }
           .avtaarSlider_container{
-            max-width: 650px;
+            max-width: 450px;
           }
         }
         }
@@ -641,7 +652,7 @@ $black: #000;
     position: fixed;
     width: 100%;
     height: 100%;
-    z-index: 5;
+    z-index: 1;
     left: 0;
     top: 0;
     overflow-y: auto;
@@ -688,7 +699,7 @@ $black: #000;
       }
     }
     .form_container {
-      margin-top: 40px;
+      margin-top: 30px;
       padding: 0px 16px;
       max-width: 412px;
       // max-height: calc(100vh - 420px);
@@ -1010,8 +1021,18 @@ $black: #000;
 @media screen and (max-width: 576px) {
   .registration_container {
     .form_container {
-      max-height: calc(100vh - 380px);
+      max-height: calc(100vh - 390px);
       overflow-y: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 299px) {
+  .registration_container {
+    .avtaar_container{
+      .image_block{
+        max-width: 65px;
+      }
     }
   }
 }
