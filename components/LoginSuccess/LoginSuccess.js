@@ -15,13 +15,13 @@ function LoginSuccess({ handlePageChangeForSucess }) {
      */
     setTimeout(() => {
       handlePageChangeForSucess("profileinfo");
-    }, 5000);
+    }, 3000);
   }, []);
 
   const router = useRouter();
   return (
     <>
-      {!isMobile ? (
+      {true ? (
         <div className={styles.SuccessLoginContainer}>
           <div className={styles.sectionOne}>
             <div className={styles.textOne}></div>
