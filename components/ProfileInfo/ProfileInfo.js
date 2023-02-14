@@ -17,7 +17,7 @@ import {
 } from "react-device-detect";
 import dynamic from "next/dynamic";
 
-function ProfileInfo(props) {
+function ProfileInfo({dictionary, handleBack}) {
   const [exitModal, setExitModal] = useState(false);
   const [avtaar, setAvtaar] = useState();
   const [kiduser, setkiduser] = useState(true);
@@ -229,7 +229,6 @@ function ProfileInfo(props) {
       },
     ],
   };
-const dictionary = props.dictionary;
   return (
     <div
       className={`${style.registration_container} ${
