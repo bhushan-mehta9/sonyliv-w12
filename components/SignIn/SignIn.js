@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import style from "./SignIn.module.scss";
-import LeftChevron from "../../public/images/left-chevron.svg";
-//import Horizontalline from "../../../src/srcAssets/images/horiline.svg";
 import SelectCountry from "../../components/Modal/CountryModal/SelectCountry";
 import SelectCountryCode from "../../components/Modal/SelectCountryCode/selectCode";
 import { useRouter } from "next/router";
@@ -50,7 +48,6 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
 
   const onDropDown=()=> {
     setIsModalOpen(!isModalOpen);
-    console.log("isopen in drop sown", isModalOpen);
   }
   const  handleModal=()=> {
     setIsModalOpen(false);
@@ -72,7 +69,6 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
     if (regex.test(phonenumber) === true) {
       seterror(false);
       setActive(true);
-     // router.push("/confirmotp");
       handlePageChange("confirmotp");
     } else {
       seterror(true);
@@ -82,6 +78,10 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
   const codehandler=(e)=> {
     setcode(e.target.value);
   }
+   /**
+   * To handle next button from mobile sigin screen
+   * Creation Date : 10/02/2023
+   */
   const onNumberChange=(e)=> {
     const mobileNo = e.target.value;
     setphonenumber(e.target.value);
@@ -91,19 +91,28 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
       setActive(false);
     }
   }
-  const phoneno=(e)=> {
-
-  }
-
+ 
+ /**
+   * To handle Log in with Email ID modal
+   * Creation Date : 06/02/2023
+   */
   const emailHandler=(e)=> {
     setemail(true);
     setSocialLoginModal(false);
   }
+   /**
+   * To handle continue Link  Mobile no. with Email ID
+   * Creation Date : 10/02/2023
+   */
   const continueLinkEmail=()=> {
     setLinkPage(true);
     setemail(false);
     setIsLinkModal(false);
   }
+   /**
+   * Click to handle back event for sigin pages
+   * Creation Date : 09/02/2023
+   */
   const handleBackClick = () => {
     if (email) {
       setemail("")
@@ -118,33 +127,12 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
   return (
     <div>
       <div className={style.mainheader}>
-        {/* {
-          isMobileOnly ? 
-        <div className={style.header}>
-          <div onClick={handleBackClick}>
-          <Image
-              src={ArrowLeft}
-              alt="check_icon"
-              className={style.arrow}
-            />
-          </div>
-          {/* <div className={style.sign}>Sign in to watchs </div> */}
-          {/* {linkPage ? (
-            <>
-              <div className={style.sign}>Link  Mobile no. with Email ID</div>
-            </>
-          ) : (
-            <>
-              <div className={style.sign}>Sign in to watch </div>
-            </>
-          )}
-          <div className={style.skip}>Skip </div>
-        //</div> :  */} 
+        
         <div className={style.headerweb}>
         <div className={style.imgdiv} onClick={handleBackClick}>
         <Image
               src={ArrowLeft}
-              // alt="check_icon"
+              alt="check_icon"
               className={style.arrowLeft}
             />
           </div>
@@ -158,11 +146,9 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
             </>
           )}
         </div>
-       {/* } */}
         <div className={style.new}>
           {email ? (
             <div className={style.containeremail}>
-              {/* <div className={style.email}>Enter your Email ID</div> */}
               <input
                 className={style.email}
                 type="email"
@@ -186,7 +172,6 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
                   className={style.country}
                   onClick={onDropDown}
                 >
-                  {" "}
                   {code}
                 </select> 
                 <input
@@ -194,25 +179,12 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
                   max="10"
                   value={phonenumber}
                   onChange={onNumberChange}
-                  onkeypress={phoneno}
                   placeholder="Enter your phone number"
                 />
               </div>
             </>
           )}
-          {/* {error ? (
-            <div className={style.invaliderror}>Invalid Number</div>
-          ) : (
-            ""
-          )} */}
-          {/* {isMobileOnly ? (
-            <div className={style.refcode}>
-              Have a referral code ?{" "}
-              <span className={style.apply}> Click to apply</span>
-            </div>
-          ) : (
-            ""
-          )} */}
+         
           <div className={style.btndiv}>
             <button
               className={active ? style.active : style.nextbtn}
