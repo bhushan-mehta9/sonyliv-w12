@@ -331,7 +331,7 @@ const dictionary = props.dictionary;
               required
             />
             <label for="dateLabel" className={style.label}>
-              {dictionary.profile_setup_dob_placeholder}
+              {dictionary?.profile_setup_dob_placeholder? dictionary.profile_setup_dob_placeholder : ''}
             </label>
           </div>
           </div>
