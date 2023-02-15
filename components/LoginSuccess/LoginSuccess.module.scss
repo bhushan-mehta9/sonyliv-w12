@@ -8,7 +8,6 @@ $white:#fff;
   display: -webkit-flex;
   display: flex;
 }
-
 .SuccessLoginContainer {
   position: fixed;
   width: 100%;
@@ -48,7 +47,6 @@ $white:#fff;
     align-items: center;
     padding: 0px;
     margin-bottom: 20px;
-    
     .SuccessClick { 
         box-sizing: border-box;
         width: 104px;
@@ -114,20 +112,20 @@ $white:#fff;
             width: auto;
             height: auto;
             white-space: nowrap ;
-          font-style: normal;
-          font-weight: 700;
-          font-size: 10px;
-          line-height: 12px;
-          text-transform: uppercase;
-          text-align: center;
-          letter-spacing: 0.0125em;
-          color: #FFFFFF;
-          margin: 0px 0px 0px 5px;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 10px;
+            line-height: 12px;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 0.0125em;
+            color: #FFFFFF;
+            margin: 0px 0px 0px 5px;
         } 
       }.premium_icon_01{
         width: 12px;
-    height: auto;
-    white-space: nowrap;
+        height: auto;
+        white-space: nowrap;
      }
   }
   .sectionThree {
@@ -139,14 +137,12 @@ $white:#fff;
     gap: 4px;
     color: #F1F1F1;
     font-feature-settings: 'ss02' on, 'ss03' on;
-    
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
     text-align: center;
   }
- 
 }
 //for mobile screens
 @media screen and (max-width: 767px) {
@@ -171,7 +167,6 @@ $white:#fff;
           font-weight: 500;
           font-size: 14px;
           line-height: 16px;
-          
           text-align: center;
           color: #ffffff;
           display: -ms-flexbox;
@@ -186,7 +181,6 @@ $white:#fff;
         align-items: center;
         padding: 0px;
         margin-bottom: 22px;
-        
         .SuccessClick { 
             box-sizing: border-box;
             width: 65px;
@@ -197,7 +191,6 @@ $white:#fff;
           font-weight: 590;
           font-size: 16px;
           line-height: 24px;
-          
           text-align: center;
           color: #ffffff;
           display: flex;
@@ -233,7 +226,6 @@ $white:#fff;
             margin-bottom: 1px;
           }
       }
-      
       .sectionThree {
         display: flex;
         flex-direction: column;
@@ -242,14 +234,12 @@ $white:#fff;
         gap: 4px;
         color: #F1F1F1;
         font-feature-settings: 'ss02' on, 'ss03' on;
-        
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
         line-height: 16px;
         text-align: center;
       }
-      
       .button {
         border-radius: 8px;
         padding: 0px 0px 0px 5px;
@@ -260,31 +250,26 @@ $white:#fff;
         margin-right: auto;
         box-sizing: border-box;
         width: calc(100% - 32px);
-        // max-width: 530px;
-        // margin: 0px auto;
       }
       .buttonText {
         width: auto;
         height: auto;
         white-space: nowrap ;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 10px;
-      line-height: 12px;
-      text-transform: uppercase;
-      text-align: center;
-      letter-spacing: 0.0125em;
-      color: #FFFFFF;
-      margin: 0px 0px 0px 5px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 10px;
+        line-height: 12px;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 0.0125em;
+        color: #FFFFFF;
+        margin: 0px 0px 0px 5px;
       }.premium_icon_01{
         width: 12px;
         height: auto;
-        white-space: nowrap ;
-    
+        white-space: nowrap;
      }
   }
-
-
 }
 
 //for Ipad
@@ -309,7 +294,6 @@ $white:#fff;
           font-weight: 500;
           font-size: 24px;
           line-height: 40px;
-          
           text-align: center;
           color: #ffffff;
           display: -ms-flexbox;
@@ -327,7 +311,6 @@ $white:#fff;
         order: 0;
         flex-grow: 0;
         margin-bottom: 2px;
-        
         .SuccessClick { 
             box-sizing: border-box;
             width: 65px;
@@ -338,7 +321,6 @@ $white:#fff;
           font-weight: 400;
           font-size: 14px;
           line-height: 24px;
-          
           color: #ffffff;
         }
         .mobileNoText{
@@ -376,14 +358,12 @@ $white:#fff;
         gap: 4px;
         color: #F1F1F1;
         font-feature-settings: 'ss02' on, 'ss03' on;
-        
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
         line-height: 16px;
         text-align: center;
          margin-top: 20px;
-        
       }
       .button {
         border-radius: 8px;
@@ -395,22 +375,20 @@ $white:#fff;
         margin-right: auto;
         box-sizing: border-box;
         width: calc(100% - 32px);
-        // max-width: 530px;
-        // margin: 0px auto;
       }
       .buttonText {
         width: auto;
         height: auto;
         white-space: nowrap ;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 10px;
-      line-height: 12px;
-      text-transform: uppercase;
-      text-align: center;
-      letter-spacing: 0.0125em;
-      color: #FFFFFF;
-      margin: 0px 0px 0px 5px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 10px;
+        line-height: 12px;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 0.0125em;
+        color: #FFFFFF;
+        margin: 0px 0px 0px 5px;
       }.premium_icon_01{
         width: 12px;
         height: auto;
