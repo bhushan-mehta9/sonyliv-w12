@@ -1,7 +1,6 @@
 $white: #fff;
 
 .otpContainer {
-  padding-top: 20px;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -25,10 +24,6 @@ $white: #fff;
     .arrowLeftBlock {
       position: absolute;
       left: 3em;
-      top: 0;
-      display: inline-flex;
-      width: 24px;
-      height: 24px;
       cursor: pointer;
       .arrowLeft {
         width: 24px;
@@ -46,7 +41,7 @@ $white: #fff;
       display: flex;
       align-items: center;
       text-align: center;
-      margin-top: 40px;
+      margin-top: 80px;
     }
   }
   .sectionTwo {
@@ -225,32 +220,26 @@ $white: #fff;
 
 //for mobile screens
 @media screen and (max-width: 767px) {
-  .otpContainer {
-    padding-top: 20px;
-    .sectionOne {
-      margin-bottom: 40px;
-      .arrowLeftBlock {
-        position: absolute;
-        left: 1em;
-        top: -3px;
-        .arrowLeft {
-          width: 24px;
-          height: 24px;
-          padding: 5px;
-        }
-      }
-      .textOne {
-        font-size: 14px;
-        line-height: 16px;
-        margin-top: 0px;
+  .sectionOne {
+    margin-bottom: 40px !important;
+    .arrowLeftBlock {
+      position: absolute;
+      left: 2em !important;
+      .arrowLeft {
+        width: 24px;
+        height: 24px;
+        padding: 5px;
+        margin-top: 25px;
       }
     }
-    .displayFlex {
-      margin-bottom: 32px;
+    .textOne {
+      font-size: 14px !important;
+      line-height: 16px !important;
+      margin-top: 16px !important;
     }
-    .button {
-      width: calc(100% - 32px);
-    }
+  }
+  .displayFlex {
+    margin-bottom: 32px;
   }
   .otpNo {
     border: none;
@@ -261,7 +250,6 @@ $white: #fff;
       color: #fff;
       text-align: center;
       font-size: 18px;
-
       font-weight: 500;
       outline: none;
       border-bottom: 1px solid #fff !important;
@@ -280,18 +268,18 @@ $white: #fff;
         border-right: none !important;
       }
     }
-    .button {
-      margin-left: auto !important;
-      margin-right: auto !important;
-      box-sizing: border-box;
-      width: calc(100% - 32px) !important;
-    }
+  }
+  .button {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box;
+    width: calc(100% - 32px) !important;
   }
 }
 //for Ipad
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .sectionOne {
-    margin-bottom: 40px;
+    margin-bottom: 60px !important;
     .arrowLeftBlock {
       transform: translateY(-50%);
       top: 50%;
@@ -299,13 +287,13 @@ $white: #fff;
         width: 24px;
         height: 24px;
         padding: 5px;
-        margin-top: 25px;
+        margin-top: 64px;
       }
     }
     .textOne {
       font-size: 24px !important;
-      line-height: 40px;
-      margin-top: 0px !important;
+      line-height: 40px !important;
+      margin-top: 44px !important;
     }
   }
 
