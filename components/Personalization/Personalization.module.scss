@@ -58,7 +58,7 @@ $lighttGray: #f1f1f1;
         text-align: center;
         text-decoration-line: underline;
         cursor: pointer;
-        font-family: "SFProText-Regular";
+        font-family: "Roboto-regular";
       }
     }
   }
@@ -72,7 +72,7 @@ $lighttGray: #f1f1f1;
         font-weight: 700;
         font-size: 32px;
         line-height: 40px;
-        font-family: "SFProText-Regular";
+        font-family: "Roboto-regular";
         color: $white;
         margin-top: 0px;
         margin-bottom: 10px;
@@ -86,7 +86,7 @@ $lighttGray: #f1f1f1;
         font-weight: 400;
         font-size: 14px;
         line-height: 24px;
-        font-family: "SFProText-Regular";
+        font-family: "Roboto-regular";
         color: #a0a0aa;
 
         margin-left: 0px;
@@ -99,7 +99,7 @@ $lighttGray: #f1f1f1;
   .sectionThree {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 10%;
+    padding: 0px 17.5%;
     margin: 0px auto;
     width: auto;
     overflow-y: scroll;
@@ -124,7 +124,7 @@ $lighttGray: #f1f1f1;
         position: relative;
         border-radius: 50%;
         .avtaar_img {
-          width: calc(100vw * 0.13983) !important;
+          width: 10.9983vw !important;
         }
         .checkicon {
           display: none;
@@ -165,7 +165,7 @@ $lighttGray: #f1f1f1;
         align-content: center;
         flex-direction: column;
         flex-wrap: wrap;
-        font-family: "SFProText-Regular";
+        font-family: "Roboto-regular";
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -191,7 +191,7 @@ $lighttGray: #f1f1f1;
       border-radius: 8px;
       font-style: normal;
       font-weight: 700;
-      font-family: "SFProText-Regular";
+      font-family: "Roboto-regular";
       font-size: 16px;
       line-height: 24px;
       color: #636370;
@@ -218,7 +218,7 @@ $lighttGray: #f1f1f1;
       border-radius: 8px;
       font-style: normal;
       font-weight: 700;
-      font-family: "SFProText-Regular";
+      font-family: "Roboto-regular";
       font-size: 16px;
       line-height: 24px;
       color: #07070a;
@@ -324,6 +324,11 @@ $lighttGray: #f1f1f1;
       .row {
         margin-right: 29px;
         margin-bottom: 32px;
+        .img_block {
+          .avtaar_img {
+            width: 13.9983vw !important;
+          }
+        }
       }
     }
   }
@@ -340,7 +345,7 @@ $lighttGray: #f1f1f1;
       font-weight: 700;
       font-size: 14px;
       line-height: 16px;
-      font-family: "SFProText-Regular";
+      font-family: "Roboto-regular";
       color: $white;
       margin-top: 0px;
       margin-bottom: 0px;
@@ -388,7 +393,7 @@ $lighttGray: #f1f1f1;
           text-align: center;
           text-decoration-line: underline;
           cursor: pointer;
-          font-family: "SFProText-Regular";
+          font-family: "Roboto-regular";
         }
       }
     }
@@ -400,10 +405,10 @@ $lighttGray: #f1f1f1;
       padding: 0px 16px 0px 16px;
       margin: 0px auto;
       width: auto;
-      overflow-y: scroll;
+      overflow-y: overlay;
       .row {
-        margin-right: 5.42%;
-        margin-bottom: 5.42%;
+        margin-right: 5.303%;
+        margin-bottom: 5.303%;
         .img_block {
           .avtaar_img {
             width: 26.67vw !important;
@@ -415,7 +420,7 @@ $lighttGray: #f1f1f1;
           align-content: center;
           flex-direction: column;
           flex-wrap: wrap;
-          font-family: "SFProText-Regular";
+          font-family: "Roboto-regular";
           font-style: normal;
           font-weight: 510;
           font-size: 12px;
@@ -449,7 +454,7 @@ $lighttGray: #f1f1f1;
         border-radius: 8px;
         font-style: normal;
         font-weight: 700;
-        font-family: "SFProText-Regular";
+        font-family: "Roboto-regular";
         font-size: 16px;
         line-height: 16px;
         color: #636370;
@@ -480,7 +485,7 @@ $lighttGray: #f1f1f1;
         border-radius: 8px;
         font-style: normal;
         font-weight: 700;
-        font-family: "SFProText-Regular";
+        font-family: "Roboto-regular";
         font-size: 16px;
         line-height: 16px;
         color: #07070a;
@@ -519,7 +524,7 @@ $lighttGray: #f1f1f1;
           align-content: center;
           flex-direction: column;
           flex-wrap: wrap;
-          font-family: "SFProText-Regular";
+          font-family: "Roboto-regular";
           font-style: normal;
           font-weight: 510;
           font-size: 12px;
