@@ -5,6 +5,10 @@ const SelectCode=(props)=> {
     const {isOpen, handleModal,codehandler} = props;
     const [isChecked, setIsChecked] = useState(false);
 
+     /**
+   * Click to habdle country code selected for web
+   * Creation Date : 07/02/2023
+   */
     const handleCheckBox=(e)=> {
         codehandler(e);
         console.log("e.target.value", e.target.value);
@@ -19,7 +23,6 @@ const SelectCode=(props)=> {
     { name: "Italy", code: "+15" },
     { name: "Afganistan", code: "+21" },
     { name: "Albania", code: "+04" },
-    // { name: "Wakanda", code: "+0" },
   ];
   
 
@@ -52,7 +55,6 @@ const SelectCode=(props)=> {
                                     </label>
 
                                     <div className={style.customCheck}></div>
-                                    {/* {isChecked ? <img src={Radio} /> : <img src={Elipse} />} */}
                                 </div>
                                 </div>
                             ))}
