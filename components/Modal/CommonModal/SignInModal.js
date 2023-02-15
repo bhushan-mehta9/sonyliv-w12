@@ -6,13 +6,13 @@ import ProfileInfo from "@/components/ProfileInfo/ProfileInfo";
 import SignIn from "@/components/SignIn/SignIn";
 import ConfirmOtp from "@/components/ConfirmOtp/ConfirmOtp";
 import LoginSuccess from "@/components/LoginSuccess/LoginSuccess";
-import { isMobileOnly, isMobile, isTablet } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 import Personalization from "@/components/Personalization/Personalization";
 
 function Modal(props) {
   const [page, setPage] = useState("signin");
   const [successScreenShown, setsuccessScreenShown] = useState(
-    isMobileOnly ? false : true
+    isMobile ? false : true
   );
 
   /**
@@ -36,7 +36,7 @@ function Modal(props) {
    * Creation Date : 14/02/2023
    */
   const handlePageChangeForSucess = (value) => {
-    if (isMobileOnly) {
+    if (isMobile) {
       setsuccessScreenShown(true);
     }
     setPage(value);
@@ -76,7 +76,7 @@ function Modal(props) {
               />
             );
           case "profileinfo":
-            return isMobileOnly && !successScreenShown ? (
+            return isMobile && !successScreenShown ? (
               <>
                 <LoginSuccess
                   handlePageChangeForSucess={handlePageChangeForSucess}
