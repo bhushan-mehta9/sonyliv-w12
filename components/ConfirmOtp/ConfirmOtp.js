@@ -7,7 +7,7 @@ import ArrowLeft from "../../public/images/arrowLeft.svg";
 import { useState } from "react";
 import { useEffect, useRef } from "react";
 import ResendOtpPopup from "../Modal/ResendOtp/ResendOtpPopup";
-import { isMobile } from "react-device-detect";
+import { isMobileOnly } from "react-device-detect";
 
 const ConfirmOtp = ({ handleBack, handlePageChange }) => {
   const textInput = useRef(null);
@@ -50,7 +50,7 @@ const ConfirmOtp = ({ handleBack, handlePageChange }) => {
    * Creation Date : 10/02/2023
    */
   const handleNext = () => {
-    if (isMobile) {
+    if (isMobileOnly) {
       handlePageChange("profileinfo");
     } else {
       handlePageChange("loginsuccess");

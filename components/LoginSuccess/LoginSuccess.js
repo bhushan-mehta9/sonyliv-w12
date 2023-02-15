@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Shape from "@/public/loginsuccess/shape.png";
 import Tick_round from "@/public/loginsuccess/tick_round.png";
 import LoginSuccessModal from "./LoginSuccessModal";
-import { isMobile } from "react-device-detect";
+import { isMobile, isMobileOnly } from "react-device-detect";
 
 function LoginSuccess({ handlePageChangeForSucess }) {
   useEffect(() => {
@@ -21,7 +21,7 @@ function LoginSuccess({ handlePageChangeForSucess }) {
   const router = useRouter();
   return (
     <>
-      {!isMobile ? (
+      {!isMobileOnly  ? (
         <div className={styles.SuccessLoginContainer}>
           <div className={styles.sectionOne}>
             <div className={styles.textOne}></div>
