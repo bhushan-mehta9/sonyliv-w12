@@ -46,7 +46,7 @@ $black: #000;
     }
 
     .avtaarSlider_container {
-      max-width: 450px;
+      max-width: 490px;
       margin: 0 auto;
     }
     .image_block {
@@ -469,7 +469,7 @@ $black: #000;
   .registration_container{
     .avtaar_container {
       .avtaarSlider_container {
-        max-width: 430px;
+        max-width: 481px;
         margin: 0 auto;
       }
   }
@@ -561,8 +561,11 @@ $black: #000;
         line-height: 20px;
         margin-bottom: 16px;
       }
+      .image_block{
+        max-width: 76px;
+      }
       .avtaarSlider_container{
-        max-width: 412px;
+        max-width: 430px;
       }
     }
     .form_container {
@@ -582,6 +585,10 @@ $black: #000;
             &:nth-child(2){
                 padding-left: 0;
             }
+        }
+        .kidFlexBox{
+          justify-content: space-between;
+          margin-bottom: 20px;
         }
       }
     }
@@ -617,34 +624,19 @@ $black: #000;
             line-height: 24px;
             margin-bottom: 16px;
           }
+          .image_block{
+            max-width: 80px;
+          }
           .avtaarSlider_container{
-            max-width: 450px;
+            max-width: 455px;
           }
         }
+        .next_btn {
+          margin-top: 45px;
+        }
         }
 }
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  .registration_container {
-    .avtaar_container {
-        .title {
-          text-align: center;
-          max-width: 412px;
-          margin-left: auto;
-          margin-right: auto;
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 24px;
-          margin-bottom: 16px;
-        }
-        .avtaarSlider_container{
-          max-width: 412px;
-        }
-      }
-    .next_btn {
-      margin-top: 45px;
-    }
-  }
-}
+
 
 @media screen and (max-width: 767px) {
   .registration_container {
