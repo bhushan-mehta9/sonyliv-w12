@@ -4,7 +4,7 @@ const { default: ConfirmOtp } = require("@/components/ConfirmOtp/ConfirmOtp");
 
 function TestLight() {
     return <>
-        <SignIn />
+        <ConfirmOtp />
     </>
 }
 

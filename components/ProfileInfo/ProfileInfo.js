@@ -182,6 +182,13 @@ function ProfileInfo({dictionary, handleBack}) {
     speed: 500,
     responsive: [
       {
+        breakpoint: 2000,
+        settings: {
+          slidesToShow: 3.89,
+          slidesToScroll: 1,
+        },
+      },
+      {
         breakpoint: 1599,
         settings: {
           slidesToShow: 5,
@@ -191,21 +198,35 @@ function ProfileInfo({dictionary, handleBack}) {
       {
         breakpoint: 1598,
         settings: {
-          slidesToShow: 3.0,
+          slidesToShow: 3.9,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1199,
+        settings: {
+          slidesToShow: 3.89,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 3.87,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3.8,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 3.8,
           slidesToScroll: 1,
           // initialSlide: 2
         },
