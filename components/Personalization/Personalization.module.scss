@@ -16,6 +16,7 @@ $lighttGray: #f1f1f1;
     box-sizing: border-box;
   }
   .sectionOne {
+    display: block;
     position: relative;
     text-align: center;
     display: flex;
@@ -38,7 +39,9 @@ $lighttGray: #f1f1f1;
         padding: 5px;
       }
     }
-
+    .page_title_mweb{
+      display: none;
+    }
     .skipContainer {
       position: relative;
       text-align: center;
@@ -62,7 +65,6 @@ $lighttGray: #f1f1f1;
       }
     }
   }
-
   .sectionTwo {
     display: grid;
     .page_header {
@@ -86,9 +88,7 @@ $lighttGray: #f1f1f1;
         font-weight: 400;
         font-size: 14px;
         line-height: 24px;
-        
         color: #a0a0aa;
-
         margin-left: 0px;
         text-align: center;
         left: calc(50% - 567px / 2 - 0.5px);
@@ -114,7 +114,6 @@ $lighttGray: #f1f1f1;
       background-color: #636370;
       height: 70%;
     }
-
     .row {
       margin-right: 24px;
       padding: 0px 0px;
@@ -165,7 +164,6 @@ $lighttGray: #f1f1f1;
         align-content: center;
         flex-direction: column;
         flex-wrap: wrap;
-        
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -191,7 +189,6 @@ $lighttGray: #f1f1f1;
       border-radius: 8px;
       font-style: normal;
       font-weight: 700;
-      
       font-size: 16px;
       line-height: 24px;
       color: #636370;
@@ -218,7 +215,6 @@ $lighttGray: #f1f1f1;
       border-radius: 8px;
       font-style: normal;
       font-weight: 700;
-      
       font-size: 16px;
       line-height: 24px;
       color: #07070a;
@@ -227,14 +223,8 @@ $lighttGray: #f1f1f1;
       justify-content: center;
       cursor: pointer;
     }
-
-    /* identical to box height, or 150% */
-
     display: flex;
     align-items: center;
-
-    /* Neutrals/Neutral 4 */
-
     color: #636370;
   }
   .pagination {
@@ -268,12 +258,41 @@ $lighttGray: #f1f1f1;
   }
 }
 
-//for ipad and tablet screens
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+//for ipad and tablet screens portrait
+@media screen and (min-width: 768px) and (max-width: 1144px) {
   .personalizedContainer {
     padding-top: 50px;
     .sectionOne{
-      margin-bottom: -35px;
+      margin-bottom: 24px;
+        .page_title_mweb{
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 40px;
+            text-align: center;
+            color: #FFFFFF;  
+      }
+      .skipContainer {
+        position: relative;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+        margin-left: auto;
+        .skipstyle {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 19px;
+          color: #ffffff;
+          display: flex;
+          align-items: flex-end;
+          text-align: center;
+          text-decoration-line: underline;
+          cursor: pointer;
+        }
+      }
       .arrowLeftBlock{
         width: 32px;
         height: 32px;
@@ -284,6 +303,7 @@ $lighttGray: #f1f1f1;
       }
     }
     .sectionTwo{
+      display: none;
       .page_header{
         .page_title {
           text-align: center;
@@ -291,7 +311,6 @@ $lighttGray: #f1f1f1;
           font-weight: 500;
           font-size: 24px;
           line-height: 40px;
-          
           color: $white;
           margin-top: 0px;
           margin-bottom: 8px;
@@ -303,7 +322,6 @@ $lighttGray: #f1f1f1;
           }
         }
       }
-      
     }
     .sectionThree {
       display: flex;
@@ -324,9 +342,53 @@ $lighttGray: #f1f1f1;
     }
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+//ipads landsacpe
+@media screen and (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
   .personalizedContainer {
+    padding-top: 50px;
+    .sectionOne{
+      margin-bottom: 40px;
+      .page_title_mweb{
+        display: block;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 40px;
+        text-align: center;
+        color: #FFFFFF;
+      }
+      .skipContainer {
+        position: relative;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+        margin-left: auto;
+        .skipstyle {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 19px;
+          color: #ffffff;
+          display: flex;
+          align-items: flex-end;
+          text-align: center;
+          text-decoration-line: underline;
+          cursor: pointer;
+        }
+      }
+      .arrowLeftBlock{
+        width: 32px;
+        height: 32px;
+        .arrowLeft{
+            width: 32px;
+            height: 32px;
+        }
+      }
+    }
     .sectionTwo{
+      display: none;
       .page_header{
         .page_title {
           text-align: center;
@@ -334,25 +396,10 @@ $lighttGray: #f1f1f1;
           font-weight: 700;
           font-size: 24px;
           line-height: 40px;
-          
-          color: $white;
+          color: #FFFFFF;
           margin-top: 0px;
           margin-bottom: 8px;
         }
-        // .avtaar_container{
-        //   .title{
-        //     margin-top: 0;
-        //   margin-bottom: 32px;
-        //   font-style: normal;
-        //   font-weight: 400;
-        //   font-size: 10px;
-        //   line-height: 14px;
-          
-        //   color: #a0a0aa;
-        //   margin-left: 0px;
-        //   text-align: center;
-        //   }
-        // }
       }
       
     }
@@ -375,6 +422,7 @@ $lighttGray: #f1f1f1;
     }
   }
 }
+
 @media screen and (min-width: 768px) and (max-width: 992px) and (orientation: landscape){
   .personalizedContainer {
     .sectionThree {
@@ -382,11 +430,42 @@ $lighttGray: #f1f1f1;
     }
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
+
+@media screen and (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
   .personalizedContainer {
     padding-top: 50px;
     .sectionOne{
-      margin-bottom: -35px;
+      margin-bottom: 40px;
+        .page_title_mweb{
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 40px;
+            text-align: center;
+            color: #FFFFFF;
+            display: block;  
+      }
+      .skipContainer {
+        position: relative;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+        margin-left: auto;
+        .skipstyle {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 19px;
+          color: #ffffff;
+          display: flex;
+          align-items: flex-end;
+          text-align: center;
+          text-decoration-line: underline;
+          cursor: pointer;
+        }
+      }
       .arrowLeftBlock{
         width: 32px;
         height: 32px;
@@ -397,6 +476,7 @@ $lighttGray: #f1f1f1;
       }
     }
     .sectionTwo{
+      display: none;
       .page_header{
         .page_title {
           text-align: center;
@@ -404,7 +484,6 @@ $lighttGray: #f1f1f1;
           font-weight: 700;
           font-size: 24px;
           line-height: 40px;
-          
           color: $white;
           margin-top: 0px;
           margin-bottom: 8px;
@@ -416,7 +495,6 @@ $lighttGray: #f1f1f1;
           }
         }
       }
-      
     }
     .sectionThree {
       display: flex;
@@ -443,7 +521,20 @@ $lighttGray: #f1f1f1;
 //for mobile screens
 @media screen and (max-width: 767px) {
   .personalizedContainer {
+    .sectionOne{
+      margin-bottom: 24px;
+      .page_title_mweb{
+        display: block;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 16px;
+          text-align: center;
+          color: #FFFFFF;
+        }
+    }
     .sectionTwo{
+     display: none;
       .page_header{
         .page_title {
           text-align: center;
@@ -451,20 +542,18 @@ $lighttGray: #f1f1f1;
           font-weight: 500;
           font-size: 14px;
           line-height: 16px;
-          
           color: $white;
           margin-top: 0px;
           margin-bottom: 8px;
         }
         .avtaar_container{
           .title{
-            margin-top: 0;
+          margin-top: 0;
           margin-bottom: 32px;
           font-style: normal;
           font-weight: 400;
           font-size: 10px;
           line-height: 14px;
-          
           color: #a0a0aa;
           margin-left: 0px;
           text-align: center;
@@ -480,7 +569,6 @@ $lighttGray: #f1f1f1;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: -20px;
       padding: 0px 1em;
       .arrowLeftBlock {
         position: relative;
@@ -517,7 +605,6 @@ $lighttGray: #f1f1f1;
           text-align: center;
           text-decoration-line: underline;
           cursor: pointer;
-          
         }
       }
     }
@@ -525,7 +612,6 @@ $lighttGray: #f1f1f1;
     .sectionThree {
       display: flex;
       flex-wrap: wrap;
-      // padding: 0 25px;
       padding: 0px 16px 0px 16px;
       margin: 0px auto;
       width: auto;
@@ -544,7 +630,6 @@ $lighttGray: #f1f1f1;
           align-content: center;
           flex-direction: column;
           flex-wrap: wrap;
-          
           font-style: normal;
           font-weight: 510;
           font-size: 12px;
@@ -568,7 +653,6 @@ $lighttGray: #f1f1f1;
       max-width: 412px;
       margin: 0px auto;
       margin-top: auto;
-
       button {
         background-color: transparent;
         width: 100%;
@@ -578,7 +662,6 @@ $lighttGray: #f1f1f1;
         border-radius: 8px;
         font-style: normal;
         font-weight: 700;
-        
         font-size: 16px;
         line-height: 16px;
         color: #636370;
@@ -599,7 +682,6 @@ $lighttGray: #f1f1f1;
       max-width: 412px;
       margin: 0px auto;
       margin-top: auto;
-
       button {
         background-color: transparent;
         width: 100%;
@@ -609,7 +691,6 @@ $lighttGray: #f1f1f1;
         border-radius: 8px;
         font-style: normal;
         font-weight: 700;
-        
         font-size: 16px;
         line-height: 16px;
         color: #07070a;
@@ -618,20 +699,45 @@ $lighttGray: #f1f1f1;
         justify-content: center;
         cursor: pointer;
       }
-
-      /* identical to box height, or 150% */
       display: flex;
       align-items: center;
-
-      /* Neutrals/Neutral 4 */
       color: #636370;
     }
   }
 }
-
+@media screen and (max-width: 359px){
+  .personalizedContainer {
+    .sectionOne{
+      margin-bottom: 24px;
+      .page_title_mweb{
+        display: block;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 14px;
+          text-align: center;
+          color: #FFFFFF;
+        }
+    }
+  }
+}
 // for moboile landscape screens
 @media screen and (max-width: 767px) and (orientation: landscape) {
   .personalizedContainer {
+    .sectionOne{
+      margin-bottom: 24px;
+      .page_title_mweb{
+          font-style: normal;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 16px;
+          text-align: center;
+          color: #FFFFFF;
+        }
+    }
+    .sectionTwo{
+      display: none;
+    }
     .sectionThree {
       padding: 0 5%;
       overflow-y: visible;
@@ -649,7 +755,6 @@ $lighttGray: #f1f1f1;
           align-content: center;
           flex-direction: column;
           flex-wrap: wrap;
-          
           font-style: normal;
           font-weight: 510;
           font-size: 12px;

@@ -43,12 +43,14 @@ function LoginSuccessModal() {
               ></Image>
               <div className={style.buttonText}>subscription active</div>
             </div>
+          
           </div>
           <div className={style.sectionThree}>
             <div>
               <span>LIV Premium - valid till 2&nbsp;Sep,&nbsp;2022</span>
             </div>
           </div>
+         
         </div>
       </Modal>
     </>
