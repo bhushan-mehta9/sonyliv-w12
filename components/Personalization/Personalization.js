@@ -4,6 +4,7 @@ import { useState } from "react";
 import styles from "./Personalization.module.scss";
 import check from "@/public/images/Vector.png";
 import checkMweb from "@/public/images/Vector_mble.png";
+import checkIpad from "@/public/images/vector_ipad.png";
 import ArrowLeft from "@/public/images/arrow-left.svg";
 import pic1 from "@/public/personalization/image1.png";
 import pic2 from "@/public/personalization/image2.png";
@@ -18,7 +19,7 @@ import pic10 from "@/public/personalization/image10.png";
 import pic11 from "@/public/personalization/image11.png";
 import pic12 from "@/public/personalization/image12.png";
 import pic13 from "@/public/personalization/image5.png";
-import { isMobile } from "react-device-detect";
+import { isMobile,isMobileOnly, isTablet } from "react-device-detect";
 function Personalization({handleBack,closeSignIn}) {
   /**
    * Array Manipulation for image rendering
@@ -144,27 +145,22 @@ function Personalization({handleBack,closeSignIn}) {
               onClick={handleBackBtn}
             />
           </div>
-          {isMobile ? (
-            <span className={styles.page_title}>
+          <span className={styles.page_title_mweb}>
               What type of content are you interested in?
             </span>
-          ) : (
-            ""
-          )}
           <div className={styles.skipContainer}>
             <div className={styles.skipstyle}>Skip</div>
           </div>
         </div>
+        
         <div className={styles.sectionTwo}>
           <div className={styles.page_header}>
             <h1 className={styles.page_title}>
-              {isMobile ? "" : "What type of content are you interested in?"}
+               What type of content are you interested in?
             </h1>
             <div className={styles.avtaar_container} id="avtaar_container">
               <h3 className={styles.title}>
-                {isMobile
-                  ? ""
-                  : "Help us Personalize experience with suggestion,curated collection and more"}
+                 Help us Personalize experience with suggestion,curated collection and more
               </h3>
             </div>
           </div>
@@ -194,7 +190,7 @@ function Personalization({handleBack,closeSignIn}) {
                     />
                     <label for="myCheckbox1" className={styles.checkicon}>
                       <Image
-                        src={isMobile ? checkMweb : check}
+                        src={isMobileOnly ? checkMweb : isTablet ? checkIpad : check}
                         alt="check_icon"
                       />
                     </label>

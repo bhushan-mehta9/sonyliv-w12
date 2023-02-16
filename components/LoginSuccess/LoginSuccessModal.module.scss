@@ -10,7 +10,6 @@
         align-items: center;
         padding: 0px;
         margin-bottom: 12px;
-        font-family: "SFProText-Regular";
         .SuccessClick { 
             box-sizing: border-box;
             width: 65px;
@@ -23,7 +22,6 @@
             font-size: 16px;    
             font-feature-settings: 'ss02' on, 'ss03' on;
             line-height: 24px;
-            font-family: "SFProText-Regular";
             text-align: center;
             color: #ffffff;
             display: -ms-flexbox;
@@ -32,14 +30,12 @@
             text-align: center;
             margin-top: 30px;
         }
-        
         .mobileNoText{
             font-style: normal;
             font-weight: 590;
             font-size: 14px;    
             font-feature-settings: 'ss02' on, 'ss03' on;
             line-height: 20px;
-            font-family: "SFProText-Regular";
             text-align: center;
             color: #FFC328;
             display: -ms-flexbox;
@@ -79,7 +75,6 @@
                 width: auto;
                 height: auto;
                 white-space: nowrap ;
-                font-family: "SFProText-Bold";
                 font-style: normal;
                 font-weight: 700;
                 font-size: 10px;
@@ -94,6 +89,7 @@
             width: 10px;
         height: auto;
         white-space: nowrap;
+        margin: 0px 0px 3px 0px;
          }
       }
       .sectionThree {
@@ -104,7 +100,6 @@
         gap: 4px;
         color: #F1F1F1;
         font-feature-settings: 'ss02' on, 'ss03' on;
-        font-family: "SFProText-Regular";
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
@@ -112,60 +107,58 @@
         text-align: center;
       }
   }
-
   @media (min-width: 521px) and (max-width: 1024px) {
     .header_section {
+      margin :0px auto;
       .sectionTwo {
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
         padding: 0px;
-        margin-bottom: 12px;
-        font-family: "SFProText-Regular";
+        margin-bottom: 28px;
         .SuccessClick { 
             box-sizing: border-box;
-            width: 65px;
-            height: 65px;
-            margin-top: 25px;
+            width: 80px;
+            height: 80px;
+            margin-top: 0px;
           }
         .mobileNo {
             font-style: normal;
-            font-weight: 590;
-            font-size: 16px;    
+            font-weight: 510;
+            font-size: 24px;    
             font-feature-settings: 'ss02' on, 'ss03' on;
-            line-height: 24px;
-            font-family: "SFProText-Regular";
+            line-height: 32px;
+            white-space: nowrap ;
             text-align: center;
             color: #ffffff;
             display: -ms-flexbox;
             display: flex;
             align-items: center;
             text-align: center;
-            margin-top: 30px;
+            margin-top: 24px;
         }
-        
         .mobileNoText{
             font-style: normal;
             font-weight: 590;
-            font-size: 14px;    
+            font-size: 16px;    
             font-feature-settings: 'ss02' on, 'ss03' on;
-            line-height: 20px;
-            font-family: "SFProText-Regular";
+            line-height: 24px;
+            margin-top: 0;
             text-align: center;
             color: #FFC328;
             display: -ms-flexbox;
             display: flex;
             align-items: center;
             text-align: center;
-            margin-top: -14px;
-            margin-bottom: 20px;
+            white-space: nowrap ;
+            margin-bottom: 28px;
         }
         .displayFlex {
           display: flex;
           justify-content: center;
           align-items: center;
-          margin-bottom: 16px;
+          margin-bottom: 12px;
         }
         .LoggedMobile {
             display: flex;
@@ -191,21 +184,20 @@
                 width: auto;
                 height: auto;
                 white-space: nowrap ;
-              font-family: "SFProText-Bold";
-              font-style: normal;
-              font-weight: 700;
-              font-size: 10px;
-              line-height: 12px;
-              text-transform: uppercase;
-              text-align: center;
-              letter-spacing: 0.0125em;
-              color: #FFFFFF;
-              margin: 0px 0px 0px 5px;
+                font-style: normal;
+                font-weight: 590;
+                font-size: 12px;
+                line-height: 20px;
+                text-transform: uppercase;
+                text-align: center;
+                letter-spacing: 0.0125em;
+                color: #FFFFFF;
+                margin: 0px 0px 0px 5px;
             } 
           }.premium_icon_01{
             width: 10px;
-        height: auto;
-        white-space: nowrap;
+            height: auto;
+            white-space: nowrap;
          }
       }
       .sectionThree {
@@ -216,11 +208,10 @@
         gap: 4px;
         color: #F1F1F1;
         font-feature-settings: 'ss02' on, 'ss03' on;
-        font-family: "SFProText-Regular";
         font-style: normal;
         font-weight: 400;
-        font-size: 12px;
-        line-height: 16px;
+        font-size: 14px;
+        line-height: 20px;
         text-align: center;
       }
       .description {
@@ -228,7 +219,6 @@
       }
     }
   }
-  
   @media (min-width: 320px) and (max-width: 520px) {
     .header_section {
      margin-top: 10px;
@@ -240,7 +230,6 @@
         align-items: center;
         padding: 0px;
         margin-bottom: 12px;
-        font-family: "SFProText-Regular";
         .SuccessClick { 
             box-sizing: border-box;
             width: 65px;
@@ -253,7 +242,6 @@
             font-size: 16px;    
             font-feature-settings: 'ss02' on, 'ss03' on;
             line-height: 24px;
-            font-family: "SFProText-Regular";
             text-align: center;
             color: #ffffff;
             display: -ms-flexbox;
@@ -262,14 +250,12 @@
             text-align: center;
             margin-top: 20px;
         }
-        
         .mobileNoText{
             font-style: normal;
             font-weight: 590;
             font-size: 14px;    
             font-feature-settings: 'ss02' on, 'ss03' on;
             line-height: 20px;
-            font-family: "SFProText-Regular";
             text-align: center;
             color: #FFC328;
             display: -ms-flexbox;
@@ -309,7 +295,6 @@
                 width: auto;
                 height: auto;
                 white-space: nowrap ;
-                font-family: "SFProText-Bold";
                 font-style: normal;
                 font-weight: 700;
                 font-size: 10px;
@@ -334,13 +319,11 @@
         gap: 4px;
         color: #F1F1F1;
         font-feature-settings: 'ss02' on, 'ss03' on;
-        font-family: "SFProText-Regular";
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
         line-height: 16px;
         text-align: center;
       }
-     
     } 
   }

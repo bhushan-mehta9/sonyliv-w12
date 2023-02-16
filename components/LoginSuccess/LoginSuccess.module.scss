@@ -1,6 +1,5 @@
 
 $white:#fff;
-
 @mixin flexbox() {
   display: -webkit-box;
   display: -moz-box;
@@ -9,6 +8,7 @@ $white:#fff;
   display: flex;
 }
 .SuccessLoginContainer {
+  padding-bottom: 150px;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -94,7 +94,6 @@ $white:#fff;
         margin-bottom: 1px;
       }
       .button {
-       
         border-radius: 8px;
         padding: 8px;
         top: 369px;
@@ -126,10 +125,10 @@ $white:#fff;
         width: 12px;
         height: auto;
         white-space: nowrap;
+       margin: 0px 0px 3px 0px;
      }
   }
   .sectionThree {
-      
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -271,7 +270,6 @@ $white:#fff;
      }
   }
 }
-
 //for Ipad
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
   .SuccessLoginContainer {
@@ -392,10 +390,7 @@ $white:#fff;
       }.premium_icon_01{
         width: 12px;
         height: auto;
-        white-space: nowrap ;
-    
+        white-space: nowrap;
      }
   }
-
- 
 }
