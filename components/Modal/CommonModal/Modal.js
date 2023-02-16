@@ -13,11 +13,10 @@ const Modal = ({ isOpen, handleModal, children }) => {
   };
 
   /**
-   * Handle the Modal Click
+   * Handle the Modal Close on overlay click
    * Creation Date : 14/02/2023
    */
   const handleOverLayClick = (event) => {
-    console.log("event", event);
     if (event?.target?.classList[0]?.includes("myModal")) {
       handleModal();
     }

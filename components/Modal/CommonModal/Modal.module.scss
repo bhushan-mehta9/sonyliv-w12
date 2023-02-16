@@ -34,12 +34,13 @@
     height: 12px;
   }
 }
-@media (min-width: 521px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .myModal {
     background: rgba(7, 7, 10, 0.5);
     backdrop-filter: blur(8px);
   }
   .modal_content {
+    border-radius: 16px;
     max-width: 508px;
     width: 100%;
     position: fixed;
@@ -49,17 +50,44 @@
       top: 38px;
       right: 38px;
     }
-    // .header_section {
-    // }
+    
   }
 }
 
-@media screen and (max-width:991px) and (orientation:landscape) {
+// @media screen and (max-width:991px) and (orientation:landscape) {
+//   .myModal{
+//     position: fixed;
+//     z-index: 1;
+//     top: 0;
+//     left: 0;
+//     .modal_content{
+//       padding: 0px 16px 24px 16px;
+//       max-width: 445px;
+//       position: fixed;
+//       top: auto;
+//       bottom: 0;
+//       transform: translateX(-50%);
+//       left: 50%;
+//       border-radius: 16px 16px 0px 0px;
+//       .dash {
+//         width: 32px;
+//         height: 2px;
+//         background: #ffffff66;
+//         margin: 12px auto 34px auto;
+//         border-radius: 2px;
+//       }
+//     }
+//   }
+// }
+
+@media screen and (max-width: 767px) {
   .myModal{
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
+    background: rgba(7, 7, 10, 0.5);
+    backdrop-filter: blur(8px);
     .modal_content{
       padding: 0px 16px 24px 16px;
       max-width: 445px;
@@ -77,62 +105,5 @@
         border-radius: 2px;
       }
     }
-  }
-}
-
-@media (min-width:320px) and (max-width: 520px) {
-  .myModal {
-   background: rgba(7, 7, 10, 0.5);
-   backdrop-filter: blur(8px);
-   position: fixed;
-  }
-  .modal_content {
-    position: absolute;
-    bottom: 0;
-    max-width: unset;
-    height: auto;
-    width: 100%;
-    left: 0;
-    top: unset;
-    transform: none;
-    padding: 16px;
-    padding-top: 0px;
-    padding-bottom: 31px;
-    margin: 0 auto;
-    border-radius: 16px 16px 0px 0px;
-    .close {
-      right: 22px;
-    }
-    .dash {
-      width: 32px;
-      height: 2px;
-      background: #ffffff66;
-      margin: 12px auto 34px auto;
-      border-radius: 2px;
-    }
-    // .header_section {
-    //   .title {
-    //     font-size: 24px;
-    //     line-height: 32px;
-    //     font-weight: 700;
-    //     margin-bottom: 8px;
-    //   }
-    //   .description {
-    //     font-weight: 400;
-    //     font-size: 12px;
-    //     line-height: 16px;
-    //   }
-    // }
-    // .button_section {
-    //   .button {
-    //     button {
-    //       font-weight: 700;
-    //       font-size: 16px;
-    //       line-height: 24px;
-    //       margin-bottom: 12px;
-    //       height: 48px;
-    //     }
-    //   }
-    // }
   }
 }
