@@ -39,7 +39,7 @@ $lighttGray: #f1f1f1;
         padding: 5px;
       }
     }
-    .page_title_mweb{
+    .page_title_mweb {
       display: none;
     }
     .skipContainer {
@@ -61,7 +61,6 @@ $lighttGray: #f1f1f1;
         text-align: center;
         text-decoration-line: underline;
         cursor: pointer;
-        
       }
     }
   }
@@ -74,7 +73,7 @@ $lighttGray: #f1f1f1;
         font-weight: 700;
         font-size: 32px;
         line-height: 40px;
-        
+
         color: $white;
         margin-top: 0px;
         margin-bottom: 10px;
@@ -262,15 +261,15 @@ $lighttGray: #f1f1f1;
 @media screen and (min-width: 768px) and (max-width: 1144px) {
   .personalizedContainer {
     padding-top: 50px;
-    .sectionOne{
+    .sectionOne {
       margin-bottom: 24px;
-        .page_title_mweb{
-            font-style: normal;
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 40px;
-            text-align: center;
-            color: #FFFFFF;  
+      .page_title_mweb {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 40px;
+        text-align: center;
+        color: #ffffff;
       }
       .skipContainer {
         position: relative;
@@ -293,18 +292,18 @@ $lighttGray: #f1f1f1;
           cursor: pointer;
         }
       }
-      .arrowLeftBlock{
+      .arrowLeftBlock {
         width: 32px;
         height: 32px;
-        .arrowLeft{
+        .arrowLeft {
           width: 32px;
           height: 32px;
         }
       }
     }
-    .sectionTwo{
+    .sectionTwo {
       display: none;
-      .page_header{
+      .page_header {
         .page_title {
           text-align: center;
           font-style: normal;
@@ -315,10 +314,10 @@ $lighttGray: #f1f1f1;
           margin-top: 0px;
           margin-bottom: 8px;
         }
-        .avtaar_container{
-          .title{
+        .avtaar_container {
+          .title {
             margin-top: 0;
-          margin-bottom: 32px;
+            margin-bottom: 32px;
           }
         }
       }
@@ -346,16 +345,16 @@ $lighttGray: #f1f1f1;
 @media screen and (min-width: 768px) and (max-width: 1200px) and (orientation: landscape) {
   .personalizedContainer {
     padding-top: 50px;
-    .sectionOne{
+    .sectionOne {
       margin-bottom: 40px;
-      .page_title_mweb{
+      .page_title_mweb {
         display: block;
         font-style: normal;
         font-weight: 700;
         font-size: 24px;
         line-height: 40px;
         text-align: center;
-        color: #FFFFFF;
+        color: #ffffff;
       }
       .skipContainer {
         position: relative;
@@ -378,30 +377,29 @@ $lighttGray: #f1f1f1;
           cursor: pointer;
         }
       }
-      .arrowLeftBlock{
+      .arrowLeftBlock {
         width: 32px;
         height: 32px;
-        .arrowLeft{
-            width: 32px;
-            height: 32px;
+        .arrowLeft {
+          width: 32px;
+          height: 32px;
         }
       }
     }
-    .sectionTwo{
+    .sectionTwo {
       display: none;
-      .page_header{
+      .page_header {
         .page_title {
           text-align: center;
           font-style: normal;
           font-weight: 700;
           font-size: 24px;
           line-height: 40px;
-          color: #FFFFFF;
+          color: #ffffff;
           margin-top: 0px;
           margin-bottom: 8px;
         }
       }
-      
     }
     .sectionThree {
       display: flex;
@@ -423,7 +421,7 @@ $lighttGray: #f1f1f1;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 992px) and (orientation: landscape){
+@media screen and (min-width: 768px) and (max-width: 992px) and (orientation: landscape) {
   .personalizedContainer {
     .sectionThree {
       overflow-y: visible !important;
@@ -434,16 +432,16 @@ $lighttGray: #f1f1f1;
 @media screen and (min-width: 768px) and (max-width: 1200px) and (orientation: portrait) {
   .personalizedContainer {
     padding-top: 50px;
-    .sectionOne{
+    .sectionOne {
       margin-bottom: 40px;
-        .page_title_mweb{
-            font-style: normal;
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 40px;
-            text-align: center;
-            color: #FFFFFF;
-            display: block;  
+      .page_title_mweb {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 40px;
+        text-align: center;
+        color: #ffffff;
+        display: block;
       }
       .skipContainer {
         position: relative;
@@ -466,18 +464,18 @@ $lighttGray: #f1f1f1;
           cursor: pointer;
         }
       }
-      .arrowLeftBlock{
+      .arrowLeftBlock {
         width: 32px;
         height: 32px;
-        .arrowLeft{
+        .arrowLeft {
           width: 32px;
           height: 32px;
         }
       }
     }
-    .sectionTwo{
+    .sectionTwo {
       display: none;
-      .page_header{
+      .page_header {
         .page_title {
           text-align: center;
           font-style: normal;
@@ -488,10 +486,10 @@ $lighttGray: #f1f1f1;
           margin-top: 0px;
           margin-bottom: 8px;
         }
-        .avtaar_container{
-          .title{
+        .avtaar_container {
+          .title {
             margin-top: 0;
-          margin-bottom: 32px;
+            margin-bottom: 32px;
           }
         }
       }
@@ -521,21 +519,21 @@ $lighttGray: #f1f1f1;
 //for mobile screens
 @media screen and (max-width: 767px) {
   .personalizedContainer {
-    .sectionOne{
+    .sectionOne {
       margin-bottom: 24px;
-      .page_title_mweb{
+      .page_title_mweb {
         display: block;
-          font-style: normal;
-          font-weight: 700;
-          font-size: 14px;
-          line-height: 16px;
-          text-align: center;
-          color: #FFFFFF;
-        }
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+        color: #ffffff;
+      }
     }
-    .sectionTwo{
-     display: none;
-      .page_header{
+    .sectionTwo {
+      display: none;
+      .page_header {
         .page_title {
           text-align: center;
           font-style: normal;
@@ -546,23 +544,22 @@ $lighttGray: #f1f1f1;
           margin-top: 0px;
           margin-bottom: 8px;
         }
-        .avtaar_container{
-          .title{
-          margin-top: 0;
-          margin-bottom: 32px;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 10px;
-          line-height: 14px;
-          color: #a0a0aa;
-          margin-left: 0px;
-          text-align: center;
+        .avtaar_container {
+          .title {
+            margin-top: 0;
+            margin-bottom: 32px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 14px;
+            color: #a0a0aa;
+            margin-left: 0px;
+            text-align: center;
           }
         }
       }
-      
     }
-    
+
     .sectionOne {
       position: relative;
       text-align: center;
@@ -705,37 +702,37 @@ $lighttGray: #f1f1f1;
     }
   }
 }
-@media screen and (max-width: 359px){
+@media screen and (max-width: 359px) {
   .personalizedContainer {
-    .sectionOne{
+    .sectionOne {
       margin-bottom: 24px;
-      .page_title_mweb{
+      .page_title_mweb {
         display: block;
-          font-style: normal;
-          font-weight: 700;
-          font-size: 12px;
-          line-height: 14px;
-          text-align: center;
-          color: #FFFFFF;
-        }
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: center;
+        color: #ffffff;
+      }
     }
   }
 }
 // for moboile landscape screens
 @media screen and (max-width: 767px) and (orientation: landscape) {
   .personalizedContainer {
-    .sectionOne{
+    .sectionOne {
       margin-bottom: 24px;
-      .page_title_mweb{
-          font-style: normal;
-          font-weight: 700;
-          font-size: 14px;
-          line-height: 16px;
-          text-align: center;
-          color: #FFFFFF;
-        }
+      .page_title_mweb {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+        color: #ffffff;
+      }
     }
-    .sectionTwo{
+    .sectionTwo {
       display: none;
     }
     .sectionThree {
