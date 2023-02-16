@@ -54,22 +54,11 @@
     }
   }
   .headerweb {
-    // margin-top: 60px;
     display: flex;
-    // justify-content: space-between;
     padding-top: 20px;
-    padding-left: 53px;
+    padding-left: 48px;
     padding-right: 53px;
     .imgdiv {
-      // // //     position: absolute;
-      // //     left: 3em;
-      // //     top: 0;
-      //     display: -ms-inline-flexbox;
-      //     display: inline-flex;
-      width: 24px;
-      height: 24px;
-      // box-sizing: border-box;
-      cursor: pointer;
       .arrowLeft {
         width: 24px;
         height: 24px;
@@ -356,9 +345,6 @@
         line-height: 40px;
       }
       .imgdiv {
-        // width: 24px;
-        // height: 24px;
-        // padding: 5px;
         .arrowLeft {
           width: 24px;
           height: 24px;
@@ -375,7 +361,7 @@
     height: auto;
     min-height: 900px;
     .headerweb {
-      margin-top: 16px;
+      margin-top: 12px;
       display: flex;
       align-items: center;
       padding: 0px;
