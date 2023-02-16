@@ -4,8 +4,9 @@ import style from "./LinkYourMobilePopup.module.scss";
 
 /**
  * Component for Link mobile number popup
+ * Creation Date : 14/02/2023
  */
-const LinkYourMobilePopup=({ isOpen, handleModal, continueClick })=> {
+const LinkYourMobilePopup = ({ isOpen, handleModal, continueClick }) => {
   return (
     <Modal isOpen={isOpen} handleModal={handleModal}>
       <div className={style.header_section}>
@@ -25,6 +26,6 @@ const LinkYourMobilePopup=({ isOpen, handleModal, continueClick })=> {
       </div>
     </Modal>
   );
-}
+};
 
 export default LinkYourMobilePopup;

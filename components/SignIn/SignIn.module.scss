@@ -80,8 +80,7 @@
             }
         }
         .signweb{
-            text-align: center;
-            
+            text-align: center;  
             font-style: normal;
             font-weight: 700;
             line-height: 14px;
@@ -89,7 +88,7 @@
             color: white;
             font-size: 32px;
             line-height: 40px;
-            margin-top: 25px;
+            margin-top: 60px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -353,7 +352,8 @@
 @media (min-width:600px) and (max-width: 1024px) {
     .mainheader{
         .headerweb{
-            padding-top: 50px;
+            padding-top: 0px;
+            margin-top: 47px;
             align-items: center;
             .signweb{
                     margin-top: 0;
@@ -367,7 +367,7 @@
                 // height: 24px;
                 // padding: 5px;
                 .arrowLeft{
-                    width: 24px;
+                width: 24px;
                 height: 24px;
                 padding: 5px;   
                 }
@@ -383,10 +383,9 @@
         height: auto;
         min-height: 900px;
         .headerweb{
-            margin-top: 17px;
+            margin-top: 16px;
             display: flex;
             align-items: center;
-            // justify-content: space-between;
             padding: 0px;
             .imgdiv{
                 .arrowLeft{

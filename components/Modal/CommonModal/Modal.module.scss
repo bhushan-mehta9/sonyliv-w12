@@ -10,7 +10,6 @@
   top: 0;
   left: 0;
   background: rgba(7, 7, 10, 0.87);
-  //backdrop-filter:blur(2px)
 }
 .modal_content {
   margin-top: 10px;
@@ -49,6 +48,8 @@
     .close {
       top: 38px;
       right: 38px;
+      width: 16px;
+      height: 16px;
     }
     &.modal_content_loginSuccess{
       max-width: 480px;
@@ -62,31 +63,6 @@
   }
 }
 
-// @media screen and (max-width:991px) and (orientation:landscape) {
-//   .myModal{
-//     position: fixed;
-//     z-index: 1;
-//     top: 0;
-//     left: 0;
-//     .modal_content{
-//       padding: 0px 16px 24px 16px;
-//       max-width: 445px;
-//       position: fixed;
-//       top: auto;
-//       bottom: 0;
-//       transform: translateX(-50%);
-//       left: 50%;
-//       border-radius: 16px 16px 0px 0px;
-//       .dash {
-//         width: 32px;
-//         height: 2px;
-//         background: #ffffff66;
-//         margin: 12px auto 34px auto;
-//         border-radius: 2px;
-//       }
-//     }
-//   }
-// }
 
 @media screen and (max-width: 767px) {
   .myModal{

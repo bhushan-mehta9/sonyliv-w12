@@ -3,6 +3,11 @@ import style from "./Modal.module.scss";
 import close from "../../../public/images/closeModal.svg";
 import Image from "next/image";
 
+/***
+ * Component for common modal
+ * Creation Date : 14/02/2023
+ *
+ */
 const Modal = ({ isOpen, handleModal, children }) => {
   /**
    * Close the modal
