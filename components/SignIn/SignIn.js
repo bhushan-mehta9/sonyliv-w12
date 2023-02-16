@@ -16,8 +16,7 @@ import {
 } from "react-device-detect";
 import ExitPopup from "../Modal/ExitConfirmPopup/ExitPopup";
 
-
-const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
+const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
   const [isCountryModalOpen, setIsCountryModalOpen] = useState(false);
   const [isLinkModal, setIsLinkModal] = useState(false);
   const [socialLoginModal, setSocialLoginModal] = useState(false);
@@ -28,50 +27,49 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
   const [phonenumber, setphonenumber] = useState("");
   const [email, setemail] = useState("");
   const [error, seterror] = useState();
-  const [emailInput, setemailInput] = useState("")
-
+  const [emailInput, setemailInput] = useState("");
 
   /**
-   * open country code dropdown 
+   * open country code dropdown
    * Creation Date :10/02/23
    */
 
-  const onDropDown=()=> {
+  const onDropDown = () => {
     setIsCountryModalOpen(!isCountryModalOpen);
-  }
+  };
   /**
-   * close country code dropdown 
+   * close country code dropdown
    * Creation Date :10/02/23
    */
-  const handleCountryModal=()=> {
+  const handleCountryModal = () => {
     setIsCountryModalOpen(false);
-  }
+  };
   /**
-   * Open social Login popup 
+   * Open social Login popup
    * Creation Date :10/02/23
    */
-  const handleSocialModalClose=()=> {
+  const handleSocialModalClose = () => {
     setSocialLoginModal(false);
-  }
+  };
   /**
-   * Close social login popup 
+   * Close social login popup
    * Creation Date :10/02/23
    */
-  const handleSocialLoginModal=() =>{
+  const handleSocialLoginModal = () => {
     setSocialLoginModal(true);
-  }
+  };
   /**
    * Close Mobile number link popup
    * Creation Date :10/02/23
    */
-  const handleLinkModal=()=> {
+  const handleLinkModal = () => {
     setIsLinkModal(false);
-  }
+  };
   /**
    * Handle country code dropdown for web
    * Creation Date :10/02/23
    */
-  const handleClick=() =>{
+  const handleClick = () => {
     if (email) {
       setIsLinkModal(true);
     }
@@ -84,78 +82,78 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
       seterror(true);
       setActive(false);
     }
-  }
-  const codehandler=(e)=> {
+  };
+  const codehandler = (e) => {
     setcode(e.target.value);
-  }
-   /**
+  };
+  /**
    * To handle next button from mobile sigin screen
    * Creation Date : 10/02/2023
    */
-  const onNumberChange=(e)=> {
+  const onNumberChange = (e) => {
     const mobileNo = e.target.value;
-    if (isNaN(mobileNo) ) {
-     return ""      
-    }
-    else{
+    if (isNaN(mobileNo)) {
+      return "";
+    } else {
       setphonenumber(e.target.value);
-      if(mobileNo.length >= 10) {
+      if (mobileNo.length >= 10) {
         setActive(true);
       } else {
         setActive(false);
-      } 
+      }
     }
-  }
- 
- /**
+  };
+
+  /**
    * To handle Log in with Email ID modal
    * Creation Date : 06/02/2023
    */
-  const emailHandler=(e)=> {
+  const emailHandler = (e) => {
     setemail(true);
     setSocialLoginModal(false);
-  }
-  const emailChangehandler=(e)=> {
-    setemailInput(e.target.value)
-  }
-   /**
+  };
+  const emailChangehandler = (e) => {
+    setemailInput(e.target.value);
+  };
+  /**
    * To handle continue Link  Mobile no. with Email ID
    * Creation Date : 10/02/2023
    */
-  const continueLinkEmail=()=> {
+  const continueLinkEmail = () => {
     setLinkPage(true);
     setemail(false);
     setIsLinkModal(false);
-  }
-   /**
+  };
+  /**
    * Click to handle back event for sigin pages
    * Creation Date : 09/02/2023
    */
   const handleBackClick = () => {
     if (email) {
-      setemail("")
+      setemail("");
     } else if (linkPage) {
-      setLinkPage("")
+      setLinkPage("");
+    } else {
+      closeSignIn();
     }
-    else{
-      closeSignIn();    
-    }
-  }
+  };
 
   return (
     <div>
-      <div className={style.mainheader}>     
+      <div className={style.mainheader}>
         <div className={style.headerweb}>
-        <div className={style.imgdiv} onClick={handleBackClick}>
-        <Image
+          <div className={style.imgdiv} onClick={handleBackClick}>
+            <Image
               src={ArrowLeft}
               alt="check_icon"
               className={style.arrowLeft}
             />
           </div>
-            {linkPage ? (
+          {linkPage ? (
             <>
-              <div className={style.signweb}>Link  Mobile no. with Email ID</div>
+              <div className={style.signweb}>
+                Link  Mobile no. with Email ID
+              </div>
             </>
           ) : (
             <>
@@ -175,7 +173,9 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
                 autoComplete={false}
                 // placeholder="Enter your email address"
               />
-              <label className={style.labelemail} for="phone_number">Enter your email address</label>
+              <label className={style.labelemail} for="phone_number">
+                Enter your email address
+              </label>
               <div className={style.note}>
                 Note: OTP will be sent to your mobile number linked with this
                 email id
@@ -185,15 +185,17 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
             <>
               <div className={style.containerphone}>
                 <span className={style.defaultcode}>{code}</span>
-                <span
-                  className={style.country}
-                  onClick={onDropDown}
-                >
-                 <Image src={ArrowDown} width={10} height={5} alt="arrow_down"/>
-                </span> 
+                <span className={style.country} onClick={onDropDown}>
+                  <Image
+                    src={ArrowDown}
+                    width={10}
+                    height={5}
+                    alt="arrow_down"
+                  />
+                </span>
                 <input
                   className={style.number}
-                  type="text" 
+                  type="text"
                   max="10"
                   value={phonenumber}
                   onChange={onNumberChange}
@@ -201,11 +203,13 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
                   autoComplete={false}
                   id="phone_number"
                 />
-                <label className={style.labelphone} for="phone_number">Enter your phone number</label>
+                <label className={style.labelphone} for="phone_number">
+                  Enter your phone number
+                </label>
               </div>
             </>
           )}
-         
+
           <div className={style.btndiv}>
             <button
               className={active ? style.active : style.nextbtn}
@@ -268,6 +272,6 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
       /> */}
     </div>
   );
-}
+};
 
 export default SignIn;
