@@ -22,13 +22,13 @@ const Modal = ({ isOpen, handleModal, children }) => {
       handleModal();
     }
   };
-
+  console.log(children,"children details")
   return (
     <div
       className={isOpen ? style.myModal : style.hideModal}
       onClick={(e) => handleOverLayClick(e)}
     >
-      <div className={style.modal_content}>
+      <div className={children?.props?.className?.includes('LoginSuccessModal') ? `${style.modal_content_loginSuccess} ${style.modal_content}` : style.modal_content}>
         <div className={style.dash}></div>
         <Image
           src={close}

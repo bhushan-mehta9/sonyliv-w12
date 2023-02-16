@@ -49,6 +49,13 @@
       top: 38px;
       right: 38px;
     }
+    &.modal_content_loginSuccess{
+      max-width: 480px;
+      .close{
+        width: 16px;
+        height: 16px;
+      }
+    }
     // .header_section {
     // }
   }
