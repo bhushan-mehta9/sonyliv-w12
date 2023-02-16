@@ -2,6 +2,9 @@ import React from "react";
 import Modal from "../CommonModal/Modal";
 import style from "./LinkYourMobilePopup.module.scss";
 
+/**
+ * Component for Link mobile number popup
+ */
 const LinkYourMobilePopup=({ isOpen, handleModal, continueClick })=> {
   return (
     <Modal isOpen={isOpen} handleModal={handleModal}>

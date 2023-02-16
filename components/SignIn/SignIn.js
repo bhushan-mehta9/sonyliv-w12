@@ -14,10 +14,11 @@ import {
   isMobileOnly,
   isDesktop,
 } from "react-device-detect";
+import ExitPopup from "../Modal/ExitConfirmPopup/ExitPopup";
 
 
 const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCountryModalOpen, setIsCountryModalOpen] = useState(false);
   const [isLinkModal, setIsLinkModal] = useState(false);
   const [socialLoginModal, setSocialLoginModal] = useState(false);
   const [linkPage, setLinkPage] = useState(false);
@@ -27,42 +28,49 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
   const [phonenumber, setphonenumber] = useState("");
   const [email, setemail] = useState("");
   const [error, seterror] = useState();
-  const [width, setWidth] = useState("");
   const [emailInput, setemailInput] = useState("")
 
-  const router = useRouter();
 
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  });
-  const handleModals = (modal) => {
-    switch (modal) {
-      case "country":
-        return setIsModalOpen(!isModalOpen)
-      case "socialLogin":
-        return setSocialLoginModal(true)
-      case "linkMobil":
-        return setIsLinkModal(true)
-      default:
-        return null;
-    }
-  }
+  /**
+   * open country code dropdown 
+   * Creation Date :10/02/23
+   */
 
   const onDropDown=()=> {
-    setIsModalOpen(!isModalOpen);
+    setIsCountryModalOpen(!isCountryModalOpen);
   }
-  const  handleModal=()=> {
-    setIsModalOpen(false);
+  /**
+   * close country code dropdown 
+   * Creation Date :10/02/23
+   */
+  const handleCountryModal=()=> {
+    setIsCountryModalOpen(false);
   }
-  const handleModalClose=()=> {
+  /**
+   * Open social Login popup 
+   * Creation Date :10/02/23
+   */
+  const handleSocialModalClose=()=> {
     setSocialLoginModal(false);
   }
+  /**
+   * Close social login popup 
+   * Creation Date :10/02/23
+   */
   const handleSocialLoginModal=() =>{
     setSocialLoginModal(true);
   }
+  /**
+   * Close Mobile number link popup
+   * Creation Date :10/02/23
+   */
   const handleLinkModal=()=> {
     setIsLinkModal(false);
   }
+  /**
+   * Handle country code dropdown for web
+   * Creation Date :10/02/23
+   */
   const handleClick=() =>{
     if (email) {
       setIsLinkModal(true);
@@ -228,24 +236,24 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
           )}
         </div>
       </div>
-      {width < 768 ? (
+      {isMobile ? (
         <SelectCountry
-          isOpen={isModalOpen}
-          handleModal={handleModal}
+          isOpen={isCountryModalOpen}
+          handleModal={handleCountryModal}
           codehandler={codehandler}
           title="Select Country"
         />
       ) : (
         <SelectCountryCode
-          isOpen={isModalOpen}
-          handleModal={handleModal}
+          isOpen={isCountryModalOpen}
+          handleModal={handleCountryModal}
           codehandler={codehandler}
           title="Select Country"
         />
       )}
       <EmailAndSocialPopup
         isOpen={socialLoginModal}
-        handleModal={handleModalClose}
+        handleModal={handleSocialModalClose}
         emailHandler={emailHandler}
       />
       <LinkYourMobilePopup
@@ -253,9 +261,10 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
         handleModal={handleLinkModal}
         continueClick={continueLinkEmail}
       />
-      {/* <LinkYourMobilePopup
-        isOpen={socialLoginModal}
-        handleModal={handleModalClose}
+      {/* <ExitPopup
+         isOpen={isLinkModal}
+         handleModal={handleLinkModal}
+         continueClick={continueLinkEmail}
       /> */}
     </div>
   );

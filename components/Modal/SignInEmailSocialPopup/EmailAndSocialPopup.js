@@ -6,6 +6,9 @@ import Google from "../../../public/images/Google.png"
 import Facebook from "../../../public/images/Facebook.png";
 import Apple from "../../../public/images/Apple.png";
 
+/**
+ * Component for Social logins Popup
+ */
 const EmailAndSocialPopup=({ isOpen, handleModal, emailHandler })=>{
   return (
     <Modal isOpen={isOpen} handleModal={handleModal}>
@@ -24,7 +27,8 @@ const EmailAndSocialPopup=({ isOpen, handleModal, emailHandler })=>{
               src={Facebook}
               width={15.92}
               height={16}
-              className={style.image}
+            className={style.image}
+            alt="Facebook Icon"
             />
             <span>Continue with Facebook</span>
           </button>
@@ -35,7 +39,8 @@ const EmailAndSocialPopup=({ isOpen, handleModal, emailHandler })=>{
               src={Google}
               width={15.92}
               height={16}
-              className={style.image}
+            className={style.image}
+            alt="Google Icon"
             />
             <span>Continue with Google</span>
           </button>
