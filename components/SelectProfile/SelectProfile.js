@@ -12,6 +12,11 @@ function SelectProfile() {
   const handleProfile = (data) => {
     setAvtaar(data);
   };
+
+ /**
+   * for showing avtaar images
+   * Creation Date : 16/02/2023
+   */
   const mypicData = [
     {
       path: mypic,
