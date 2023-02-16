@@ -7,6 +7,7 @@ import Image from "next/image";
 import EmailAndSocialPopup from "../../components/Modal/SignInEmailSocialPopup/EmailAndSocialPopup";
 import LinkYourMobilePopup from "../../components/Modal/LinkYourMobile/LinkYourMobilePopup";
 import ArrowLeft from "../../public/images/arrowLeft.svg";
+import ArrowDown from "../../public/images/arrow_down_Vector.png";
 import {
   isMobile,
   isTablet,
@@ -27,6 +28,7 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
   const [email, setemail] = useState("");
   const [error, seterror] = useState();
   const [width, setWidth] = useState("");
+  const [emailInput, setemailInput] = useState("")
 
   const router = useRouter();
 
@@ -89,7 +91,8 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
       setActive(true);
     } else {
       setActive(false);
-    }
+    } 
+    
   }
  
  /**
@@ -99,6 +102,9 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
   const emailHandler=(e)=> {
     setemail(true);
     setSocialLoginModal(false);
+  }
+  const emailChangehandler=(e)=> {
+    setemailInput(e.target.value)
   }
    /**
    * To handle continue Link  Mobile no. with Email ID
@@ -126,8 +132,7 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
 
   return (
     <div>
-      <div className={style.mainheader}>
-        
+      <div className={style.mainheader}>     
         <div className={style.headerweb}>
         <div className={style.imgdiv} onClick={handleBackClick}>
         <Image
@@ -153,10 +158,12 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
                 className={style.email}
                 type="email"
                 name="email"
-                // value={email}
-                // onChange={emailChangehandler}
-                placeholder="Enter your email address"
+                value={emailInput}
+                onChange={emailChangehandler}
+                autoComplete={false}
+                // placeholder="Enter your email address"
               />
+              <label className={style.labelemail} for="phone_number">Enter your email address</label>
               <div className={style.note}>
                 Note: OTP will be sent to your mobile number linked with this
                 email id
@@ -166,21 +173,23 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
             <>
               <div className={style.containerphone}>
                 <span className={style.defaultcode}>{code}</span>
-                <select
-                  name="country"
-                  id="radio"
+                <span
                   className={style.country}
                   onClick={onDropDown}
                 >
-                  {code}
-                </select> 
+                 <Image src={ArrowDown} width={10} height={5} alt="arrow_down"/>
+                </span> 
                 <input
                   className={style.number}
+                  type="text" 
+                  onkeypress='return event.charCode >= 48 && event.charCode <= 57'
                   max="10"
                   value={phonenumber}
                   onChange={onNumberChange}
-                  placeholder="Enter your phone number"
+                  autoComplete={false}
+                  id="phone_number"
                 />
+                <label className={style.labelphone} for="phone_number">Enter your phone number</label>
               </div>
             </>
           )}
