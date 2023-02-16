@@ -4,14 +4,14 @@ import style from "./ExitPopup.module.scss";
 
 /**
  * Component for exit confirmation popup
+ * Creation Date : 14/02/2023
  */
-const ExitPopup=({ isOpen, handleModal })=> {
+const ExitPopup = ({ isOpen, handleModal }) => {
   return (
     <>
       <Modal isOpen={isOpen} handleModal={handleModal}>
         <div className={style.header_section}>
           <div className={style.title}>Are you sure you want to exit?</div>
-         
         </div>
         <div className={style.button_section}>
           <div className={style.button}>
@@ -24,6 +24,6 @@ const ExitPopup=({ isOpen, handleModal })=> {
       </Modal>
     </>
   );
-}
+};
 
 export default ExitPopup;
