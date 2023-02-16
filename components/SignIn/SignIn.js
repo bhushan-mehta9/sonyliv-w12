@@ -24,7 +24,7 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
   const [mobile, setmobile] = useState(false);
   const [active, setActive] = useState(false);
   const [code, setcode] = useState("+91");
-  const [phonenumber, setphonenumber] = useState();
+  const [phonenumber, setphonenumber] = useState("");
   const [email, setemail] = useState("");
   const [error, seterror] = useState();
   const [width, setWidth] = useState("");
@@ -86,13 +86,17 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
    */
   const onNumberChange=(e)=> {
     const mobileNo = e.target.value;
-    setphonenumber(e.target.value);
-    if(mobileNo.length >= 10) {
-      setActive(true);
-    } else {
-      setActive(false);
-    } 
-    
+    if (isNaN(mobileNo) ) {
+     return ""      
+    }
+    else{
+      setphonenumber(e.target.value);
+      if(mobileNo.length >= 10) {
+        setActive(true);
+      } else {
+        setActive(false);
+      } 
+    }
   }
  
  /**
@@ -182,10 +186,10 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
                 <input
                   className={style.number}
                   type="text" 
-                  onkeypress='return event.charCode >= 48 && event.charCode <= 57'
                   max="10"
                   value={phonenumber}
                   onChange={onNumberChange}
+                  // onKeyDown={onNumberChange}
                   autoComplete={false}
                   id="phone_number"
                 />
