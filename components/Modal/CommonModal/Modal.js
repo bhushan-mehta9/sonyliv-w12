@@ -26,7 +26,6 @@ const Modal = ({ isOpen, handleModal, children }) => {
       handleModal();
     }
   };
-  console.log(children,"children details")
   return (
     <div
       className={isOpen ? style.myModal : style.hideModal}

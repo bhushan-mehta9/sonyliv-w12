@@ -72,7 +72,6 @@ const ConfirmOtp = ({ handleBack, handlePageChange }) => {
       } else {
         const split = JSON.parse(otpLabel.split("otp")[1]);
         const splitNum = split + 1;
-        console.log("otp--", split, splitNum);
         setinputFocus(`otp${splitNum}`);
       }
     }

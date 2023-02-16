@@ -1,5 +1,5 @@
 import SignIn from "@/components/SignIn/SignIn";
-import ConfirmOtp from "@/components/ConfirmOtp/ConfirmOtp";
+// import ConfirmOtp from "@/components/ConfirmOtp/ConfirmOtp";
 import Head from "next/head";
 
 const { default: ConfirmOtp } = require("@/components/ConfirmOtp/ConfirmOtp");
@@ -17,7 +17,8 @@ function TestLight() {
           content=" Player page"
         />
       </Head>
-    <ConfirmOtp />
+      <SignIn />
+    {/* <ConfirmOtp /> */}
     </>
 }
 
