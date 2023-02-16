@@ -62,12 +62,15 @@
     }
   }
 }
-@media (min-width: 521px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .header_section {
-    max-width: 348px;
+    max-width: 349px;
     max-height: 112px;
     margin: 0px auto 24px auto;
-
+     .title{
+      max-width: 348px;
+      height: 80px;
+     }
     .description {
       max-width: 330px;
     }
@@ -79,16 +82,48 @@
   }
 }
 
-@media  screen and (max-width:991px) and (orientation:landscape) {
+// @media  screen and (max-width:991px) and (orientation:landscape) {
+//   .header_section{
+//     .title {
+//       letter-spacing: 1px;
+//       padding: 0 10px;
+//       padding-bottom: 0;
+//       font-size: 24px;
+//       line-height: 32px;
+//       font-weight: 700;
+//       margin-bottom: 8px;
+//     }
+//     .description {
+//       letter-spacing: 0.8px;
+//       max-width: 288px;
+//       max-height: 16px;
+//       font-weight: 400;
+//       font-size: 12px;
+//       line-height: 16px;
+//     }
+//   }
+//   .button_section {
+//     .button {
+//       font-weight: 700;
+//       font-size: 16px;
+//       line-height: 24px;
+//       margin-bottom: 12px;
+//       height: 48px !important;
+//     }
+//   }
+// }
+
+@media screen and (max-width: 767px) {
   .header_section{
     .title {
+      max-width: 288px;
       letter-spacing: 1px;
       padding: 0 10px;
       padding-bottom: 0;
       font-size: 24px;
       line-height: 32px;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin: 0 auto 8px auto;
     }
     .description {
       letter-spacing: 0.8px;
@@ -106,40 +141,6 @@
       line-height: 24px;
       margin-bottom: 12px;
       height: 48px !important;
-    }
-  }
-}
-
-@media (min-width: 320px) and (max-width: 520px) {
-  .header_section {
-    max-width: 288px;
-    height: 88px;
-    margin-top: 34px;
-    .title {
-      letter-spacing: 1px;
-      padding: 0 10px;
-      padding-bottom: 0;
-      font-size: 24px;
-      line-height: 32px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .description {
-      letter-spacing: 0.8px;
-      max-width: 288px;
-      max-height: 16px;
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 16px;
-    }
-  }
-  .button_section {
-    .button {
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 24px;
-      margin-bottom: 12px;
-      height: 48px;
     }
   }
 }

@@ -7,16 +7,18 @@ import Image from "next/image";
 import EmailAndSocialPopup from "../../components/Modal/SignInEmailSocialPopup/EmailAndSocialPopup";
 import LinkYourMobilePopup from "../../components/Modal/LinkYourMobile/LinkYourMobilePopup";
 import ArrowLeft from "../../public/images/arrowLeft.svg";
+import ArrowDown from "../../public/images/arrow_down_Vector.png";
 import {
   isMobile,
   isTablet,
   isMobileOnly,
   isDesktop,
 } from "react-device-detect";
+import ExitPopup from "../Modal/ExitConfirmPopup/ExitPopup";
 
 
 const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCountryModalOpen, setIsCountryModalOpen] = useState(false);
   const [isLinkModal, setIsLinkModal] = useState(false);
   const [socialLoginModal, setSocialLoginModal] = useState(false);
   const [linkPage, setLinkPage] = useState(false);
@@ -26,41 +28,49 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
   const [phonenumber, setphonenumber] = useState();
   const [email, setemail] = useState("");
   const [error, seterror] = useState();
-  const [width, setWidth] = useState("");
+  const [emailInput, setemailInput] = useState("")
 
-  const router = useRouter();
 
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  });
-  const handleModals = (modal) => {
-    switch (modal) {
-      case "country":
-        return setIsModalOpen(!isModalOpen)
-      case "socialLogin":
-        return setSocialLoginModal(true)
-      case "linkMobil":
-        return setIsLinkModal(true)
-      default:
-        return null;
-    }
-  }
+  /**
+   * open country code dropdown 
+   * Creation Date :10/02/23
+   */
 
   const onDropDown=()=> {
-    setIsModalOpen(!isModalOpen);
+    setIsCountryModalOpen(!isCountryModalOpen);
   }
-  const  handleModal=()=> {
-    setIsModalOpen(false);
+  /**
+   * close country code dropdown 
+   * Creation Date :10/02/23
+   */
+  const handleCountryModal=()=> {
+    setIsCountryModalOpen(false);
   }
-  const handleModalClose=()=> {
+  /**
+   * Open social Login popup 
+   * Creation Date :10/02/23
+   */
+  const handleSocialModalClose=()=> {
     setSocialLoginModal(false);
   }
+  /**
+   * Close social login popup 
+   * Creation Date :10/02/23
+   */
   const handleSocialLoginModal=() =>{
     setSocialLoginModal(true);
   }
+  /**
+   * Close Mobile number link popup
+   * Creation Date :10/02/23
+   */
   const handleLinkModal=()=> {
     setIsLinkModal(false);
   }
+  /**
+   * Handle country code dropdown for web
+   * Creation Date :10/02/23
+   */
   const handleClick=() =>{
     if (email) {
       setIsLinkModal(true);
@@ -89,7 +99,8 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
       setActive(true);
     } else {
       setActive(false);
-    }
+    } 
+    
   }
  
  /**
@@ -99,6 +110,9 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
   const emailHandler=(e)=> {
     setemail(true);
     setSocialLoginModal(false);
+  }
+  const emailChangehandler=(e)=> {
+    setemailInput(e.target.value)
   }
    /**
    * To handle continue Link  Mobile no. with Email ID
@@ -126,8 +140,7 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
 
   return (
     <div>
-      <div className={style.mainheader}>
-        
+      <div className={style.mainheader}>     
         <div className={style.headerweb}>
         <div className={style.imgdiv} onClick={handleBackClick}>
         <Image
@@ -153,10 +166,12 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
                 className={style.email}
                 type="email"
                 name="email"
-                // value={email}
-                // onChange={emailChangehandler}
-                placeholder="Enter your email address"
+                value={emailInput}
+                onChange={emailChangehandler}
+                autoComplete={false}
+                // placeholder="Enter your email address"
               />
+              <label className={style.labelemail} for="phone_number">Enter your email address</label>
               <div className={style.note}>
                 Note: OTP will be sent to your mobile number linked with this
                 email id
@@ -166,21 +181,23 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
             <>
               <div className={style.containerphone}>
                 <span className={style.defaultcode}>{code}</span>
-                <select
-                  name="country"
-                  id="radio"
+                <span
                   className={style.country}
                   onClick={onDropDown}
                 >
-                  {code}
-                </select> 
+                 <Image src={ArrowDown} width={10} height={5} alt="arrow_down"/>
+                </span> 
                 <input
                   className={style.number}
+                  type="text" 
+                  onkeypress='return event.charCode >= 48 && event.charCode <= 57'
                   max="10"
                   value={phonenumber}
                   onChange={onNumberChange}
-                  placeholder="Enter your phone number"
+                  autoComplete={false}
+                  id="phone_number"
                 />
+                <label className={style.labelphone} for="phone_number">Enter your phone number</label>
               </div>
             </>
           )}
@@ -215,24 +232,24 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
           )}
         </div>
       </div>
-      {width < 768 ? (
+      {isMobile ? (
         <SelectCountry
-          isOpen={isModalOpen}
-          handleModal={handleModal}
+          isOpen={isCountryModalOpen}
+          handleModal={handleCountryModal}
           codehandler={codehandler}
           title="Select Country"
         />
       ) : (
         <SelectCountryCode
-          isOpen={isModalOpen}
-          handleModal={handleModal}
+          isOpen={isCountryModalOpen}
+          handleModal={handleCountryModal}
           codehandler={codehandler}
           title="Select Country"
         />
       )}
       <EmailAndSocialPopup
         isOpen={socialLoginModal}
-        handleModal={handleModalClose}
+        handleModal={handleSocialModalClose}
         emailHandler={emailHandler}
       />
       <LinkYourMobilePopup
@@ -240,9 +257,10 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
         handleModal={handleLinkModal}
         continueClick={continueLinkEmail}
       />
-      {/* <LinkYourMobilePopup
-        isOpen={socialLoginModal}
-        handleModal={handleModalClose}
+      {/* <ExitPopup
+         isOpen={isLinkModal}
+         handleModal={handleLinkModal}
+         continueClick={continueLinkEmail}
       /> */}
     </div>
   );

@@ -4,7 +4,9 @@ import style from "./ResendOtpPopup.module.scss";
 import Apple from "../../../public/images/Apple.png";
 import Whatsapp from "../../../public/images/whatsapp.png";
 import Image from "next/image";
-
+/**
+ * Component for Resend otp popup
+ */
 const ResendOtpPopup=({ isOpen, handleModal })=> {
   return (
     <Modal isOpen={isOpen} handleModal={handleModal}>
@@ -30,6 +32,7 @@ const ResendOtpPopup=({ isOpen, handleModal })=> {
               width={15.92}
               height={16}
               className={style.image}
+              alt="Whatsapp Icon"
             />
             <span>Send via Whatsapp</span>
           </button>

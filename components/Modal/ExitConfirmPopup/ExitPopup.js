@@ -2,15 +2,16 @@ import React from "react";
 import Modal from "../CommonModal/Modal";
 import style from "./ExitPopup.module.scss";
 
+/**
+ * Component for exit confirmation popup
+ */
 const ExitPopup=({ isOpen, handleModal })=> {
   return (
     <>
       <Modal isOpen={isOpen} handleModal={handleModal}>
         <div className={style.header_section}>
           <div className={style.title}>Are you sure you want to exit?</div>
-          {/* <div className={style.description}>
-          How would you like to receive your one-time-password
-        </div> */}
+         
         </div>
         <div className={style.button_section}>
           <div className={style.button}>
