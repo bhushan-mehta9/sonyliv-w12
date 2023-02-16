@@ -25,6 +25,7 @@ $white: #fff;
       position: absolute;
       left: 3em;
       cursor: pointer;
+      top: 20px;
       .arrowLeft {
         width: 24px;
         height: 24px;
@@ -220,12 +221,12 @@ $white: #fff;
     margin-bottom: 40px !important;
     .arrowLeftBlock {
       position: absolute;
-      left: 2em !important;
+      left: 1em !important;
+      top: 12px !important;
       .arrowLeft {
         width: 24px;
         height: 24px;
         padding: 5px;
-        margin-top: 25px;
       }
     }
     .textOne {
@@ -276,13 +277,79 @@ $white: #fff;
   .sectionOne {
     margin-bottom: 60px !important;
     .arrowLeftBlock {
-      transform: translateY(-50%);
-      top: 50%;
+      position: absolute;
+      left: 3em !important;
+      cursor: pointer;
+      top: 3em !important;
       .arrowLeft {
         width: 24px;
         height: 24px;
         padding: 5px;
-        margin-top: 64px;
+      }
+    }
+    .textOne {
+      font-size: 24px !important;
+      line-height: 40px !important;
+      margin-top: 44px !important;
+    }
+  }
+
+  .displayFlex {
+    margin-bottom: 32px;
+  }
+  .otpNo {
+    border: none;
+    .otpNo1 {
+      width: 44px;
+      height: 56px;
+      color: #fff;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 500;
+      outline: none;
+      background: transparent !important;
+      border-bottom: 1px solid #fff !important;
+      border-left: none;
+      border-top: none;
+      border-right: none;
+      border-radius: 0px !important;
+      &.otpapplied {
+        border-bottom: 1px solid $white;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+      }
+      &:focus {
+        border-bottom: 1px solid #f5961e !important;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+      }
+    }
+    .button {
+      left: 5%;
+      right: 5%;
+      top: 369px;
+      background: #07070a;
+      border: 1px solid #636370;
+      max-width: 412px;
+    }
+  }
+}
+
+//for Ipad pro
+@media screen and (min-device-width: 768px) and (max-device-width: 1200px) and (orientation: landscape) {
+  .sectionOne {
+    margin-bottom: 60px !important;
+    .arrowLeftBlock {
+      position: absolute;
+      left: 3em !important;
+      cursor: pointer;
+      top: 3em !important;
+      .arrowLeft {
+        width: 24px;
+        height: 24px;
+        padding: 5px;
       }
     }
     .textOne {
