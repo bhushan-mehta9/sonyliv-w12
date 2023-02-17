@@ -204,7 +204,7 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
                   id="phone_number"
                 />
                 <label className={style.labelphone} for="phone_number">
-                  Enter your phone number
+                  Enter your mobile number
                 </label>
               </div>
             </>
@@ -240,6 +240,14 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
           )}
         </div>
       </div>
+      <div className={style.pagination}>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
       {isMobile && !isTablet ?  (
         <SelectCountry
           isOpen={isCountryModalOpen}
