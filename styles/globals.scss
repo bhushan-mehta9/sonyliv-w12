@@ -148,14 +148,14 @@ html body {
     .slick-list {
       padding-top: 10px !important;
       padding-bottom: 10px !important;
-      padding-left: 185px !important;
-      padding-right: 185px !important;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
       .slick-track {
         .slick-slide {
           text-align: center;
           &.slick-active {
             &.slick-center {
-              transform: scale(1.2);
+              transform: scale(1.16);
               #avtaar_img {
                 border: 2px solid #f5961e;
                 border-radius: 50%;
@@ -196,20 +196,6 @@ html body {
   }
 }
 
-@media screen and (min-width:1599px) {
-  #profileAvtaarCarousel {
-    .slick-slider {
-      .slick-list {
-        padding-top: 10px !important;
-        padding-bottom: 10px !important;
-        padding-left: 180px !important;
-        padding-right: 180px !important;
-       
-      }
-      
-    }
-  }
-}
 @media screen and (max-width: 992px) and (orientation: landscape) {
   #profileAvtaarCarousel {
     .slick-slider {
@@ -219,15 +205,9 @@ html body {
     }
   }
 }
-@media only screen and (min-device-width: 768px) and (max-device-width: 1200px) and (orientation: landscape){
+@media only screen and (min-device-width: 768px) and (max-device-width: 1200px) and (orientation: landscape) {
   #profileAvtaarCarousel {
     .slick-slider {
-      .slick-list {
-        padding-top: 10px !important;
-        padding-bottom: 10px !important;
-        padding-left: 172px !important;
-        padding-right: 172px !important;
-      }
       .slick-arrow {
         display: none !important;
       }
@@ -238,12 +218,6 @@ html body {
 @media only screen and (min-device-width: 768px) and (max-device-width: 1200px) and (orientation: portrait) {
   #profileAvtaarCarousel {
     .slick-slider {
-      .slick-list {
-        padding-top: 10px !important;
-        padding-bottom: 10px !important;
-        padding-left: 157px !important;
-        padding-right: 157px !important;
-      }
       .slick-arrow {
         display: none !important;
       }
@@ -254,6 +228,24 @@ html body {
 @media screen and (max-width: 767px) {
   #profileAvtaarCarousel {
     .slick-slider {
+      .slick-list {
+        padding-left: 150px !important;
+        padding-right: 150px !important;
+      }
+      .slick-arrow {
+        display: none !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 423px) {
+  #profileAvtaarCarousel {
+    .slick-slider {
+      .slick-list {
+        padding-left: 60px !important;
+        padding-right: 60px !important;
+      }
       .slick-arrow {
         display: none !important;
       }
