@@ -240,7 +240,7 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
           )}
         </div>
       </div>
-      {isMobile ? (
+      {isMobile && !isTablet ?  (
         <SelectCountry
           isOpen={isCountryModalOpen}
           handleModal={handleCountryModal}
