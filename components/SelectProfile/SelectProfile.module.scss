@@ -6,7 +6,7 @@ $white: #fff;
   left: 0;
   top: 0;
   min-height: auto;
-  overflow-y: hidden;
+  overflow-y: auto;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -25,23 +25,24 @@ $white: #fff;
   }
   .avatar_container {
     display: flex;
-    max-width: 630px;
-    margin: 0 auto;
+    padding: 0 9%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+   
 
     .image_block {
       padding: 0px;
       position: relative;
-      margin: 0 auto;
-      margin-right: 25px;
-      width: 200px;
-      height: 200px;
+      // margin-right: 32px;
      .avtaar_img{
-        width: 100%;
         height: auto;
+        width: 14.375vw;
+        
+        
      }
      .addBlock{
-        width: 100px;
-        height: 100px;
+      width: 14.375vw;
+      height: 14.375vw;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -49,14 +50,9 @@ $white: #fff;
         background: #242436;
         .plusIcon{
             width:30px !important;
-            height: 30px !important;
-      
-            
-            // padding: 34px;
-            
+            height: 30px !important;            
           }
-     }
-     
+     }  
       .checkicon {
         position: absolute;
         bottom: 6px;
@@ -65,7 +61,11 @@ $white: #fff;
         max-width: 24px;
         display: none;
         &.active {
+          background-color: #f5961e;
           display: block;
+          &::before {
+            left: 18px;
+          }
         }
       }
       .imageText {
@@ -90,9 +90,42 @@ $white: #fff;
     border: 1px solid #636370;
     border-radius: 8px;
     color: $white;
-    margin: auto;
+    margin-bottom: 64px;
     cursor: pointer;
     font-size: 16px;
     line-height: 24px;
+    margin: auto;
+    }
+}
+
+//for mobile screens
+@media screen and (max-width: 767px) {
+  .page_title{
+    margin-top: 24px !important;
+    font-size: 24px !important;
+    line-height: 30px !important;
+  }
+  .edit_Button{
+    margin-bottom: 32px !important;
+    width: 288px;
+    margin: auto;
+  }
+  .avtaar_img{
+    width: 35.375vw !important;
+  }
+  .image_block{
+    margin-right: 0px !important;
+    margin-bottom: 24px;
+  }
+  .addBlock{
+    width: 35.375vw !important;
+    height:35.375vw !important;
+  }
+}
+//for Ipad
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .page_title{
+    margin-top: 107px !important;
+    margin-bottom: 162px !important;
   }
 }

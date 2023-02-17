@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { useState } from "react";
 import styles from "./Personalization.module.scss";
 import check from "@/public/images/Vector.png";
 import checkMweb from "@/public/images/Vector_mble.png";
+import checkIpad from "@/public/images/vector_ipad.png";
 import ArrowLeft from "@/public/images/arrow-left.svg";
 import pic1 from "@/public/personalization/image1.png";
 import pic2 from "@/public/personalization/image2.png";
@@ -19,8 +19,8 @@ import pic10 from "@/public/personalization/image10.png";
 import pic11 from "@/public/personalization/image11.png";
 import pic12 from "@/public/personalization/image12.png";
 import pic13 from "@/public/personalization/image5.png";
-
-function Personalization({handleBack,closeSignIn}) {
+import { isMobile, isMobileOnly, isTablet } from "react-device-detect";
+function Personalization({ handleBack, closeSignIn }) {
   /**
    * Array Manipulation for image rendering
    * Creation Date : 14/02/2023
@@ -83,58 +83,68 @@ function Personalization({handleBack,closeSignIn}) {
       altData: "avtaar",
     },
   ];
-  const handleSubmit = ()=> {
+  /**
+   * Show the signin page to user
+   * Creation Date : 14/02/2023
+   */
+  const handleSubmit = () => {
     closeSignIn();
-  }
-
-  const [avtaar, setAvtaar] = useState();
-  const [Mobile, IsMobile] = useState();
-  const [formdata, setFormData] = useState({
+  };
+  const [personalisation, setPersonalisationData] = useState({
     PersonalizedData: [],
   });
-  useEffect(() => {
-    if (window.innerWidth <= 767) {
-      IsMobile(true);
-    }
-  }, []);
-  const handleProfile = (data) => {
-    setAvtaar(data);
-  };
-
+  /**
+   * Show the profile create page to user
+   * Creation Date : 14/02/2023
+   */
   const handleBackBtn = () => {
-    handleBack("profileinfo")
-  }
+    handleBack("profileinfo");
+  };
+  /**
+   * Handle Image check and uncheck event push
+   * Creation Date : 14/02/2023
+   */
   const handleClickChange = (data) => {
-    if (formdata.PersonalizedData.length > 0) {
-      const formdataNotExist = formdata.PersonalizedData.filter((item) => {
-        return item !== data;
-      });
-      const formdataExist = formdata.PersonalizedData.filter((item) => {
-        return item == data;
-      });
-      if (formdataNotExist.length > 0 && formdataExist.length > 0) {
-        setFormData((prevState) => ({
+    if (personalisation.PersonalizedData.length > 0) {
+      const personalisationdataNotExist =
+        personalisation.PersonalizedData.filter((item) => {
+          return item !== data;
+        });
+      const personalisationdataExist = personalisation.PersonalizedData.filter(
+        (item) => {
+          return item == data;
+        }
+      );
+      if (
+        personalisationdataNotExist.length > 0 &&
+        personalisationdataExist.length > 0
+      ) {
+        setPersonalisationData((prevState) => ({
           ...prevState,
-          PersonalizedData: [...formdataNotExist],
+          PersonalizedData: [...personalisationdataNotExist],
         }));
-      } else if (formdataNotExist.length > 0 && formdataExist.length == 0) {
-        setFormData((prevState) => ({
+      } else if (
+        personalisationdataNotExist.length > 0 &&
+        personalisationdataExist.length == 0
+      ) {
+        setPersonalisationData((prevState) => ({
           ...prevState,
-          PersonalizedData: [...formdataNotExist, data],
+          PersonalizedData: [...personalisationdataNotExist, data],
         }));
-      } else if (formdataNotExist.length == 0 && formdataExist.length > 0) {
-        setFormData((prevState) => ({
+      } else if (
+        personalisationdataNotExist.length == 0 &&
+        personalisationdataExist.length > 0
+      ) {
+        setPersonalisationData((prevState) => ({
           PersonalizedData: [],
         }));
       }
     } else {
-      setFormData(() => ({
+      setPersonalisationData(() => ({
         PersonalizedData: [data],
       }));
     }
   };
-  const router = useRouter();
-
   return (
     <>
       <div className={styles.personalizedContainer}>
@@ -147,27 +157,23 @@ function Personalization({handleBack,closeSignIn}) {
               onClick={handleBackBtn}
             />
           </div>
-          {Mobile ? (
-            <span className={styles.page_title}>
-              What are you interested in ?
-            </span>
-          ) : (
-            ""
-          )}
-          <div className={styles.sectionOne1}>
-            <div className={styles.arrowLeftBlock1}>Skip</div>
+          <span className={styles.page_title_mweb}>
+            What type of content are you interested in?
+          </span>
+          <div className={styles.skipContainer}>
+            <div className={styles.skipstyle}>Skip</div>
           </div>
         </div>
+
         <div className={styles.sectionTwo}>
           <div className={styles.page_header}>
             <h1 className={styles.page_title}>
-              {Mobile ? "" : "Personalize your experience"}
+              What type of content are you interested in?
             </h1>
             <div className={styles.avtaar_container} id="avtaar_container">
               <h3 className={styles.title}>
-                {Mobile
-                  ? ""
-                  : "Help us Personalize experience with suggestion,curated collection and more"}
+                Help us Personalize experience with suggestion,curated
+                collection and more
               </h3>
             </div>
           </div>
@@ -178,7 +184,8 @@ function Personalization({handleBack,closeSignIn}) {
               <div className={styles.row} key={index}>
                 <div
                   className={`${
-                    formdata.PersonalizedData.indexOf(item.altData) !== -1
+                    personalisation.PersonalizedData.indexOf(item.altData) !==
+                    -1
                       ? styles.active
                       : `${index}`
                   }`}
@@ -197,7 +204,13 @@ function Personalization({handleBack,closeSignIn}) {
                     />
                     <label for="myCheckbox1" className={styles.checkicon}>
                       <Image
-                        src={Mobile ? checkMweb : check}
+                        src={
+                          isMobileOnly
+                            ? checkMweb
+                            : isTablet
+                            ? checkIpad
+                            : check
+                        }
                         alt="check_icon"
                       />
                     </label>
@@ -208,17 +221,15 @@ function Personalization({handleBack,closeSignIn}) {
             );
           })}
         </div>
-
         <div
           className={
-            formdata.PersonalizedData.length > 0
+            personalisation.PersonalizedData.length > 0
               ? styles.enable_next_btn
               : styles.next_btn
           }
         >
           <button onClick={handleSubmit}> I'm done</button>
         </div>
-
         <div className={styles.pagination}>
           <ul>
             <li></li>
@@ -228,10 +239,7 @@ function Personalization({handleBack,closeSignIn}) {
           </ul>
         </div>
       </div>
-
-      {/* <ExitPopup /> */}
     </>
   );
 }
-
 export default Personalization;

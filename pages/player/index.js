@@ -4,16 +4,27 @@ import style from "./playerSignin.module.scss";
 import close from "../../public/images/close.png";
 import Image from "next/image";
 import { getCommonData } from "@/lib/app";
+import Head from "next/head";
 
 function Player(props) {
   const [showModal, setShowModal] = useState(false);
-  console.log(">>>>>> commonData", props)
   const handleSignInModal = (modalState) => {
     setShowModal(modalState);
   };
 
   return (
     <>
+      <Head>
+        <title>Player Page</title>
+        <meta charset="UTF-8" />
+        <meta name="keywords" content="titla, meta, nextjs" />
+        <meta name="author" content="Syamlal CM" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="description"
+          content=" Player page"
+        />
+      </Head>
       {showModal ? (
         ""
       ) : (
@@ -43,7 +54,14 @@ function Player(props) {
           </div>
         </div>
       )}
-      {showModal ? <SignInModal handleSignInModal={handleSignInModal} dictionary={props?.dictionary?.resultObj?.dictionary} /> : ""}
+      {showModal ? (
+        <SignInModal
+          handleSignInModal={handleSignInModal}
+          dictionary={props?.dictionary?.resultObj?.dictionary}
+        />
+      ) : (
+        ""
+      )}
     </>
   );
 }
@@ -51,19 +69,20 @@ function Player(props) {
 export default Player;
 
 /**
- * Function for Calling Server API call 
+ * Function for Calling Server API call
  * Creation Date : 13/02/2023
  */
 export async function getServerSideProps(context) {
   const { params, req, res } = context;
-  const {uld, dictionary, initialConfig, featureConfig} = await getCommonData();
-  
+  const { uld, dictionary, initialConfig, featureConfig } =
+    await getCommonData();
+
   return {
     props: {
-      uld : uld,
-      dictionary : dictionary,
-      initialConfig : initialConfig,
-      featureConfig : featureConfig
+      uld: uld,
+      dictionary: dictionary,
+      initialConfig: initialConfig,
+      featureConfig: featureConfig,
     },
   };
 }

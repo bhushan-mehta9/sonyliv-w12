@@ -3,7 +3,8 @@
 .isOpen{
         .modal {
             left: 50%;
-            top: 186px;
+            // top: 186px;
+            top: 220px;
             transform: translateX(-50%);
             z-index: 1; 
             position: absolute;
@@ -160,7 +161,7 @@
 
 .isOpen{
     .modal {
-       
+       top:140px;
       }
       .modalcontent {       
       }

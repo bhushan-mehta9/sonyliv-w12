@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./ConfirmOtp.module.scss";
 import Image from "next/image";
 import EditIcon from "../../public/images/editIcon.png";
-import { useRouter } from "next/router";
 import ArrowLeft from "../../public/images/arrowLeft.svg";
 import { useState } from "react";
 import { useEffect, useRef } from "react";
@@ -73,7 +72,6 @@ const ConfirmOtp = ({ handleBack, handlePageChange }) => {
       } else {
         const split = JSON.parse(otpLabel.split("otp")[1]);
         const splitNum = split + 1;
-        console.log("otp--", split, splitNum);
         setinputFocus(`otp${splitNum}`);
       }
     }
@@ -97,8 +95,6 @@ const ConfirmOtp = ({ handleBack, handlePageChange }) => {
 
   return (
     <>
-      <meta name="description" content="Confirm Otp Page"></meta>
-      <title>Confirm Otp Page</title>
       <div className={styles.otpContainer}>
         <div className={styles.sectionOne}>
           <div onClick={handleClick} className={styles.arrowLeftBlock}>
@@ -131,6 +127,7 @@ const ConfirmOtp = ({ handleBack, handlePageChange }) => {
               value={formData.otp1}
               onChange={handleOtp}
               ref={textInput}
+              autocomplete="off"
             />
             <input
               maxlength="1"
@@ -141,6 +138,7 @@ const ConfirmOtp = ({ handleBack, handlePageChange }) => {
               name="otp2"
               value={formData.otp2}
               onChange={handleOtp}
+              autocomplete="off"
               ref={inputFocus == "otp2" ? textInput : null}
             />
             <input
@@ -152,6 +150,7 @@ const ConfirmOtp = ({ handleBack, handlePageChange }) => {
               name="otp3"
               value={formData.otp3}
               onChange={handleOtp}
+              autocomplete="off"
               ref={inputFocus == "otp3" ? textInput : null}
             />
             <input
@@ -163,6 +162,7 @@ const ConfirmOtp = ({ handleBack, handlePageChange }) => {
               name="otp4"
               value={formData.otp4}
               onChange={handleOtp}
+              autocomplete="off"
               ref={inputFocus == "otp4" ? textInput : null}
             />
           </div>

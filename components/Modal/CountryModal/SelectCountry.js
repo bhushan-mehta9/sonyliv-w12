@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from "react";
 import style from "./SelectCountry.module.scss";
 
-const SelectCountry=({ isOpen, handleModal, codehandler })=> {
-  const [width, setWidth] = useState("");
+/**
+ * Component for selecting country code for mweb
+ * Creation Date : 14/02/2023
+ */
+const SelectCountry = ({ isOpen, handleModal, codehandler }) => {
   const [isChecked, setIsChecked] = useState(false);
 
-  const handleCheckBox=(e)=> {
+  /**
+   * Handler for slecting the country code
+   * Creation Date : 12/02/23
+   */
+  const handleCheckBox = (e) => {
     codehandler(e);
-    console.log("e.target.value", e.target.value);
     setIsChecked(!isChecked);
     handleModal();
-  }
+  };
 
   const arr = [
     { name: "India", code: "+91" },
@@ -23,13 +29,16 @@ const SelectCountry=({ isOpen, handleModal, codehandler })=> {
     { name: "Wakanda", code: "+0" },
   ];
 
-  const handleOverLayClick=(event)=> {
-    console.log("event", event);
+  /***
+   * Select Country Code Modal for Mweb
+   * Closing Modal on Overlay click
+   * Creation Date : 12/02/23
+   */
+  const handleOverLayClick = (event) => {
     if (event?.target?.classList[0]?.includes("myModal")) {
-      // setIsOpen(false);
       handleModal();
     }
-  }
+  };
 
   return (
     <div
@@ -67,6 +76,6 @@ const SelectCountry=({ isOpen, handleModal, codehandler })=> {
       </div>
     </div>
   );
-}
+};
 
 export default SelectCountry;
