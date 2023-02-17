@@ -239,7 +239,6 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
             </>
           )}
         </div>
-      </div>
       <div className={style.pagination}>
           <ul>
             <li></li>
@@ -248,6 +247,7 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
             <li></li>
           </ul>
         </div>
+      </div>
       {isMobile && !isTablet ?  (
         <SelectCountry
           isOpen={isCountryModalOpen}
