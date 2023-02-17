@@ -113,8 +113,17 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
     setSocialLoginModal(false);
   };
   const emailChangehandler = (e) => {
-    setemailInput(e.target.value);
-  };
+    const valueEmail = e.target.value
+    setemailInput(valueEmail);
+    const regexmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    console.log(regexmail.test(valueEmail),"mail")
+    if (regexmail.test(valueEmail) === true) {
+      setActive(!active);
+    }
+    else{
+      setActive(false);
+    }
+}
   /**
    * To handle continue Link  Mobile no. with Email ID
    * Creation Date : 10/02/2023
