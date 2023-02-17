@@ -8,7 +8,6 @@ import Head from "next/head";
 
 function Player(props) {
   const [showModal, setShowModal] = useState(false);
-  console.log(">>>>>> commonData", props);
   const handleSignInModal = (modalState) => {
     setShowModal(modalState);
   };

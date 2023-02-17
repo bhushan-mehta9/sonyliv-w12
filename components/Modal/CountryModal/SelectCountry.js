@@ -14,7 +14,6 @@ const SelectCountry = ({ isOpen, handleModal, codehandler }) => {
    */
   const handleCheckBox = (e) => {
     codehandler(e);
-    console.log("e.target.value", e.target.value);
     setIsChecked(!isChecked);
     handleModal();
   };

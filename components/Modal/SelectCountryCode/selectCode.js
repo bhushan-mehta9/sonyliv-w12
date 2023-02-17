@@ -11,7 +11,6 @@ const SelectCode = (props) => {
    */
   const handleCheckBox = (e) => {
     codehandler(e);
-    console.log("e.target.value", e.target.value);
     setIsChecked(!isChecked);
   };
   const arr = [
