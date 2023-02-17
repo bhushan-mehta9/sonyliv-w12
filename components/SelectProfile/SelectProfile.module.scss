@@ -37,8 +37,10 @@ $white: #fff;
      .avtaar_img{
         height: auto;
         width: 14.375vw;
-        
-        
+     }
+     .active .avtaar_img{
+      border: 2px solid #F5961E;
+    border-radius: 50%;
      }
      .addBlock{
       width: 14.375vw;
@@ -60,20 +62,23 @@ $white: #fff;
         width: 24px;
         max-width: 24px;
         display: none;
-        &.active {
-          background-color: #f5961e;
-          display: block;
-          &::before {
-            left: 18px;
-          }
+        
         }
-      }
+        .active .checkicon {
+          display: block;
+          right: 42px;
+    bottom: 33px;
+          }
+      
       .imageText {
         font-size: 16px;
         line-height: 16px;
         text-align: center;
         color: $white;
         margin-top: 5px;
+      }
+      .active .imageText{
+        color: #F5961E;
       }
     }
   }
@@ -120,6 +125,9 @@ $white: #fff;
   .addBlock{
     width: 35.375vw !important;
     height:35.375vw !important;
+  }
+  .imageText{
+    font-size: 14px !important;
   }
 }
 //for Ipad
