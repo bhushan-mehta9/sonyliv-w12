@@ -63,6 +63,7 @@ function SelectProfile() {
                     alt={item.altData}
                     className={styles.plusIcon}
                     id="avtaar_img"
+                    selected
                   />
                  
                     </div> : <>
