@@ -14,7 +14,7 @@ const SelectCode = (props) => {
     setIsChecked(!isChecked);
   };
   const arr = [
-    { name: "India", code: "+91" },
+    { name: "India", code: "+91", ...(!isChecked && { checked: true }) },
     { name: "United States", code: "+1" },
     { name: "Australia", code: "+33" },
     { name: "France", code: "+44" },
