@@ -72,17 +72,17 @@ export default Player;
  * Function for Calling Server API call
  * Creation Date : 13/02/2023
  */
-export async function getServerSideProps(context) {
-  const { params, req, res } = context;
-  const { uld, dictionary, initialConfig, featureConfig } =
-    await getCommonData();
+// export async function getServerSideProps(context) {
+//   const { params, req, res } = context;
+//   const { uld, dictionary, initialConfig, featureConfig } =
+//     await getCommonData();
 
-  return {
-    props: {
-      uld: uld,
-      dictionary: dictionary,
-      initialConfig: initialConfig,
-      featureConfig: featureConfig,
-    },
-  };
-}
+//   return {
+//     props: {
+//       uld: uld,
+//       dictionary: dictionary,
+//       initialConfig: initialConfig,
+//       featureConfig: featureConfig,
+//     },
+//   };
+// }

@@ -11,7 +11,7 @@ import Personalization from "@/components/Personalization/Personalization";
 import SelectProfile from "@/components/SelectProfile/SelectProfile";
 
 function Modal(props) {
-  const [page, setPage] = useState("selectprofile");
+  const [page, setPage] = useState("signin");
   const [successScreenShown, setsuccessScreenShown] = useState(
     isMobile ? false : true
   );
@@ -82,15 +82,28 @@ function Modal(props) {
                 <LoginSuccess
                   handlePageChangeForSucess={handlePageChangeForSucess}
                 />
-                <ProfileInfo dictionary={props.dictionary} handleBack={handleBack} />
+                <ProfileInfo
+                  dictionary={props.dictionary}
+                  handleBack={handleBack}
+                />
               </>
             ) : (
-              <ProfileInfo dictionary={props.dictionary} handleBack={handleBack} />
+              <ProfileInfo
+                dictionary={props.dictionary}
+                handleBack={handleBack}
+              />
             );
           case "personalization":
-            return <Personalization dictionary={props.dictionary} handleBack={handleBack} closeSignIn={closeSignIn} />
-            case "selectprofile":
-              return <SelectProfile/>
+            return (
+              <Personalization
+                dictionary={props.dictionary}
+                handleBack={handleBack}
+                closeSignIn={closeSignIn}
+              />
+            );
+          case "selectprofile":
+            return (<SelectProfile handlePageChange={handlePageChange} />
+            );
           default:
             return null;
         }

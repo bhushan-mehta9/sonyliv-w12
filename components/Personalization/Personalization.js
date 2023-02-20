@@ -228,7 +228,7 @@ function Personalization({ handleBack, closeSignIn }) {
               : styles.next_btn
           }
         >
-          <button onClick={handleSubmit}> I'm done</button>
+          <button onClick={handleSubmit}> I m done</button>
         </div>
         <div className={styles.pagination}>
           <ul>
