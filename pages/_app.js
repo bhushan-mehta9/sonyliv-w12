@@ -1,5 +1,6 @@
 import '@/styles/globals.scss';
 import { getConfigApiAfterLogin, generateToken } from "@/lib/app";
+import ErrorBoundary from '@/components/ErrorBoundary'
 
 export default function App({ Component, pageProps }) {
 
@@ -11,6 +12,8 @@ export default function App({ Component, pageProps }) {
     let commonData = getConfigApiAfterLogin();
     pageProps = {...pageProps, ...commonData};
   }
-
-  return <Component {...pageProps} />
+  
+  return <ErrorBoundary>
+    <Component {...pageProps} />
+  </ErrorBoundary>
 }

@@ -1,346 +1,332 @@
 .header_section {
-    color: white;
-    margin: 0px auto 32px auto;
-    width: 100%;
-    text-align: center;
-    .sectionTwo {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        padding: 0px;
-        margin-bottom: 12px;
-        font-family: "SFProText-Regular";
-        .SuccessClick { 
-            box-sizing: border-box;
-            width: 65px;
-            height: 65px;
-            margin-top: 25px;
-          }
-        .mobileNo {
-            font-style: normal;
-            font-weight: 590;
-            font-size: 16px;    
-            font-feature-settings: 'ss02' on, 'ss03' on;
-            line-height: 24px;
-            font-family: "SFProText-Regular";
-            text-align: center;
-            color: #ffffff;
-            display: -ms-flexbox;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            margin-top: 30px;
-        }
-        
-        .mobileNoText{
-            font-style: normal;
-            font-weight: 590;
-            font-size: 14px;    
-            font-feature-settings: 'ss02' on, 'ss03' on;
-            line-height: 20px;
-            font-family: "SFProText-Regular";
-            text-align: center;
-            color: #FFC328;
-            display: -ms-flexbox;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            margin-top: -14px;
-            margin-bottom: 20px;
-        }
-        .displayFlex {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-bottom: 16px;
-        }
-        .LoggedMobile {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: -3px;
-          }
-          .button {
-            border-radius: 8px;
-            padding: 8px;
-            top: 369px;
-            background: #141425;
-            border: 1px solid #636370;
-            box-sizing: border-box;
-            height: auto;
-            left: 607.3px;
-            top: 380px;
-            width: auto;
-            margin: 0px auto;
-            display: flex;
-            align-items: baseline;
-            .buttonText {
-                width: auto;
-                height: auto;
-                white-space: nowrap ;
-                font-family: "SFProText-Bold";
-                font-style: normal;
-                font-weight: 700;
-                font-size: 10px;
-                line-height: 12px;
-                text-transform: uppercase;
-                text-align: center;
-                letter-spacing: 0.0125em;
-                color: #FFFFFF;
-                margin: 0px 0px 0px 5px;
-            } 
-          }.premium_icon_01{
-            width: 10px;
+  color: white;
+  margin: 0px auto 32px auto;
+  width: 100%;
+  text-align: center;
+  .sectionTwo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    margin-bottom: 12px;
+    .SuccessClick {
+      box-sizing: border-box;
+      width: 65px;
+      height: 65px;
+      margin-top: 25px;
+    }
+    .mobileNo {
+      font-style: normal;
+      font-weight: 590;
+      font-size: 16px;
+      font-feature-settings: "ss02" on, "ss03" on;
+      line-height: 24px;
+      text-align: center;
+      color: #ffffff;
+      display: -ms-flexbox;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin-top: 30px;
+    }
+    .mobileNoText {
+      font-style: normal;
+      font-weight: 590;
+      font-size: 14px;
+      font-feature-settings: "ss02" on, "ss03" on;
+      line-height: 20px;
+      text-align: center;
+      color: #ffc328;
+      display: -ms-flexbox;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin-top: -14px;
+      margin-bottom: 20px;
+    }
+    .displayFlex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .LoggedMobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: -3px;
+    }
+    .button {
+      border-radius: 8px;
+      padding: 8px;
+      top: 369px;
+      background: #141425;
+      border: 1px solid #636370;
+      box-sizing: border-box;
+      height: auto;
+      left: 607.3px;
+      top: 380px;
+      width: auto;
+      margin: 0px auto;
+      display: flex;
+      align-items: baseline;
+      .buttonText {
+        width: auto;
         height: auto;
         white-space: nowrap;
-         }
-      }
-      .sectionThree {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0px;
-        gap: 4px;
-        color: #F1F1F1;
-        font-feature-settings: 'ss02' on, 'ss03' on;
-        font-family: "SFProText-Regular";
         font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 16px;
+        font-weight: 700;
+        font-size: 10px;
+        line-height: 12px;
+        text-transform: uppercase;
         text-align: center;
-      }
-  }
-
-  @media (min-width: 521px) and (max-width: 1024px) {
-    .header_section {
-      .sectionTwo {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        padding: 0px;
-        margin-bottom: 12px;
-        font-family: "SFProText-Regular";
-        .SuccessClick { 
-            box-sizing: border-box;
-            width: 65px;
-            height: 65px;
-            margin-top: 25px;
-          }
-        .mobileNo {
-            font-style: normal;
-            font-weight: 590;
-            font-size: 16px;    
-            font-feature-settings: 'ss02' on, 'ss03' on;
-            line-height: 24px;
-            font-family: "SFProText-Regular";
-            text-align: center;
-            color: #ffffff;
-            display: -ms-flexbox;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            margin-top: 30px;
-        }
-        
-        .mobileNoText{
-            font-style: normal;
-            font-weight: 590;
-            font-size: 14px;    
-            font-feature-settings: 'ss02' on, 'ss03' on;
-            line-height: 20px;
-            font-family: "SFProText-Regular";
-            text-align: center;
-            color: #FFC328;
-            display: -ms-flexbox;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            margin-top: -14px;
-            margin-bottom: 20px;
-        }
-        .displayFlex {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-bottom: 16px;
-        }
-        .LoggedMobile {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: -3px;
-          }
-          .button {
-            border-radius: 8px;
-            padding: 8px;
-            top: 369px;
-            background: #141425;
-            border: 1px solid #636370;
-            box-sizing: border-box;
-            height: auto;
-            left: 607.3px;
-            top: 380px;
-            width: auto;
-            margin: 0px auto;
-            display: flex;
-            align-items: baseline;
-            .buttonText {
-                width: auto;
-                height: auto;
-                white-space: nowrap ;
-              font-family: "SFProText-Bold";
-              font-style: normal;
-              font-weight: 700;
-              font-size: 10px;
-              line-height: 12px;
-              text-transform: uppercase;
-              text-align: center;
-              letter-spacing: 0.0125em;
-              color: #FFFFFF;
-              margin: 0px 0px 0px 5px;
-            } 
-          }.premium_icon_01{
-            width: 10px;
-        height: auto;
-        white-space: nowrap;
-         }
-      }
-      .sectionThree {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0px;
-        gap: 4px;
-        color: #F1F1F1;
-        font-feature-settings: 'ss02' on, 'ss03' on;
-        font-family: "SFProText-Regular";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 16px;
-        text-align: center;
-      }
-      .description {
-        max-width: 330px;
+        letter-spacing: 0.0125em;
+        color: #ffffff;
+        margin: 0px 0px 0px 5px;
       }
     }
+    .premium_icon_01 {
+      width: 10px;
+      height: auto;
+      white-space: nowrap;
+      margin: 0px 0px 3px 0px;
+    }
   }
-  
-  @media (min-width: 320px) and (max-width: 520px) {
-    .header_section {
-     margin-top: 10px;
-     border-radius: 16px 16px 0px 0px;
-      .sectionTwo {
+  .sectionThree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 4px;
+    color: #f1f1f1;
+    font-feature-settings: "ss02" on, "ss03" on;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+  }
+}
+@media (min-width: 521px) and (max-width: 1024px) {
+  .header_section {
+    margin: 0px auto;
+    .sectionTwo {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px;
+      margin-bottom: 28px;
+      .SuccessClick {
+        box-sizing: border-box;
+        width: 80px;
+        height: 80px;
+        margin-top: 0px;
+      }
+      .mobileNo {
+        font-style: normal;
+        font-weight: 510;
+        font-size: 24px;
+        font-feature-settings: "ss02" on, "ss03" on;
+        line-height: 32px;
+        white-space: nowrap;
+        text-align: center;
+        color: #ffffff;
+        display: -ms-flexbox;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-top: 24px;
+      }
+      .mobileNoText {
+        font-style: normal;
+        font-weight: 590;
+        font-size: 16px;
+        font-feature-settings: "ss02" on, "ss03" on;
+        line-height: 24px;
+        margin-top: 0;
+        text-align: center;
+        color: #ffc328;
+        display: -ms-flexbox;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        white-space: nowrap;
+        margin-bottom: 28px;
+      }
+      .displayFlex {
         display: flex;
         justify-content: center;
-        flex-direction: column;
         align-items: center;
-        padding: 0px;
         margin-bottom: 12px;
-        font-family: "SFProText-Regular";
-        .SuccessClick { 
-            box-sizing: border-box;
-            width: 65px;
-            height: 65px;
-            margin-top: 25px;
-          }
-        .mobileNo {
-            font-style: normal;
-            font-weight: 590;
-            font-size: 16px;    
-            font-feature-settings: 'ss02' on, 'ss03' on;
-            line-height: 24px;
-            font-family: "SFProText-Regular";
-            text-align: center;
-            color: #ffffff;
-            display: -ms-flexbox;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            margin-top: 20px;
-        }
-        
-        .mobileNoText{
-            font-style: normal;
-            font-weight: 590;
-            font-size: 14px;    
-            font-feature-settings: 'ss02' on, 'ss03' on;
-            line-height: 20px;
-            font-family: "SFProText-Regular";
-            text-align: center;
-            color: #FFC328;
-            display: -ms-flexbox;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            margin-top: -14px;
-            margin-bottom: 20px;
-        }
-        .displayFlex {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-bottom: 16px;
-        }
-        .LoggedMobile {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: -3px;
-          }
-          .button {
-            border-radius: 8px;
-            padding: 8px;
-            top: 369px;
-            background: #141425;
-            border: 1px solid #636370;
-            box-sizing: border-box;
-            height: auto;
-            left: 607.3px;
-            top: 380px;
-            width: auto;
-            margin: 0px auto;
-            display: flex;
-            align-items: baseline;
-            .buttonText {
-                width: auto;
-                height: auto;
-                white-space: nowrap ;
-                font-family: "SFProText-Bold";
-                font-style: normal;
-                font-weight: 700;
-                font-size: 10px;
-                line-height: 12px;
-                text-transform: uppercase;
-                text-align: center;
-                letter-spacing: 0.0125em;
-                color: #FFFFFF;
-                margin: 0px 0px 0px 5px;
-            } 
-          }.premium_icon_01{
-            width: 10px;
-            height: auto;
-            white-space: nowrap;
-         }
       }
-      .sectionThree {
+      .LoggedMobile {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        padding: 0px;
-        gap: 4px;
-        color: #F1F1F1;
-        font-feature-settings: 'ss02' on, 'ss03' on;
-        font-family: "SFProText-Regular";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 16px;
-        text-align: center;
+        margin-bottom: -3px;
       }
-     
-    } 
+      .button {
+        border-radius: 8px;
+        padding: 8px;
+        top: 369px;
+        background: #141425;
+        border: 1px solid #636370;
+        box-sizing: border-box;
+        height: auto;
+        left: 607.3px;
+        top: 380px;
+        width: auto;
+        margin: 0px auto;
+        display: flex;
+        align-items: baseline;
+        .buttonText {
+          width: auto;
+          height: auto;
+          white-space: nowrap;
+          font-style: normal;
+          font-weight: 590;
+          font-size: 12px;
+          line-height: 20px;
+          text-transform: uppercase;
+          text-align: center;
+          letter-spacing: 0.0125em;
+          color: #ffffff;
+          margin: 0px 0px 0px 5px;
+        }
+      }
+      .premium_icon_01 {
+        width: 10px;
+        height: auto;
+        white-space: nowrap;
+      }
+    }
+    .sectionThree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px;
+      gap: 4px;
+      color: #f1f1f1;
+      font-feature-settings: "ss02" on, "ss03" on;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+    }
+    .description {
+      max-width: 330px;
+    }
   }
+}
+@media (min-width: 320px) and (max-width: 520px) {
+  .header_section {
+    margin-top: 10px;
+    border-radius: 16px 16px 0px 0px;
+    .sectionTwo {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px;
+      margin-bottom: 12px;
+      .SuccessClick {
+        box-sizing: border-box;
+        width: 65px;
+        height: 65px;
+        margin-top: 25px;
+      }
+      .mobileNo {
+        font-style: normal;
+        font-weight: 590;
+        font-size: 16px;
+        font-feature-settings: "ss02" on, "ss03" on;
+        line-height: 24px;
+        text-align: center;
+        color: #ffffff;
+        display: -ms-flexbox;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .mobileNoText {
+        font-style: normal;
+        font-weight: 590;
+        font-size: 14px;
+        font-feature-settings: "ss02" on, "ss03" on;
+        line-height: 20px;
+        text-align: center;
+        color: #ffc328;
+        display: -ms-flexbox;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-top: -14px;
+        margin-bottom: 20px;
+      }
+      .displayFlex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+      .LoggedMobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: -3px;
+      }
+      .button {
+        border-radius: 8px;
+        padding: 8px;
+        top: 369px;
+        background: #141425;
+        border: 1px solid #636370;
+        box-sizing: border-box;
+        height: auto;
+        left: 607.3px;
+        top: 380px;
+        width: auto;
+        margin: 0px auto;
+        display: flex;
+        align-items: baseline;
+        .buttonText {
+          width: auto;
+          height: auto;
+          white-space: nowrap;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 10px;
+          line-height: 12px;
+          text-transform: uppercase;
+          text-align: center;
+          letter-spacing: 0.0125em;
+          color: #ffffff;
+          margin: 0px 0px 0px 5px;
+        }
+      }
+      .premium_icon_01 {
+        width: 10px;
+        height: auto;
+        white-space: nowrap;
+      }
+    }
+    .sectionThree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px;
+      gap: 4px;
+      color: #f1f1f1;
+      font-feature-settings: "ss02" on, "ss03" on;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+    }
+  }
+}

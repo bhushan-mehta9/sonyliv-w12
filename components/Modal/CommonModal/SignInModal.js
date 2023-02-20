@@ -8,6 +8,7 @@ import ConfirmOtp from "@/components/ConfirmOtp/ConfirmOtp";
 import LoginSuccess from "@/components/LoginSuccess/LoginSuccess";
 import { isMobile } from "react-device-detect";
 import Personalization from "@/components/Personalization/Personalization";
+import SelectProfile from "@/components/SelectProfile/SelectProfile";
 
 function Modal(props) {
   const [page, setPage] = useState("signin");
@@ -92,7 +93,16 @@ function Modal(props) {
               <ProfileInfo dictionary={props.dictionary} handleBack={handleBack} data={data}/>
             );
           case "personalization":
-            return <Personalization dictionary={props.dictionary} handleBack={handleBack} closeSignIn={closeSignIn} />
+            return (
+              <Personalization
+                dictionary={props.dictionary}
+                handleBack={handleBack}
+                closeSignIn={closeSignIn}
+              />
+            );
+          case "selectprofile":
+            return (<SelectProfile handlePageChange={handlePageChange} />
+            );
           default:
             return null;
         }

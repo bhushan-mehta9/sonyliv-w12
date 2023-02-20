@@ -2,15 +2,16 @@ import React from "react";
 import Modal from "../CommonModal/Modal";
 import style from "./ExitPopup.module.scss";
 
-const ExitPopup=({ isOpen, handleModal })=> {
+/**
+ * Component for exit confirmation popup
+ * Creation Date : 14/02/2023
+ */
+const ExitPopup = ({ isOpen, handleModal }) => {
   return (
     <>
       <Modal isOpen={isOpen} handleModal={handleModal}>
         <div className={style.header_section}>
           <div className={style.title}>Are you sure you want to exit?</div>
-          {/* <div className={style.description}>
-          How would you like to receive your one-time-password
-        </div> */}
         </div>
         <div className={style.button_section}>
           <div className={style.button}>
@@ -23,6 +24,6 @@ const ExitPopup=({ isOpen, handleModal })=> {
       </Modal>
     </>
   );
-}
+};
 
 export default ExitPopup;

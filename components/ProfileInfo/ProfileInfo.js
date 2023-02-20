@@ -16,10 +16,10 @@ import {
   isDesktop,
 } from "react-device-detect";
 import dynamic from "next/dynamic";
-
+import { useRef } from "react";
 import * as constants from "@/constants/constant";
 
-function ProfileInfo({dictionary, handleBack}) {
+function ProfileInfo({ dictionary, handleBack }) {
   const [exitModal, setExitModal] = useState(false);
   const [avtaar, setAvtaar] = useState();
   const [kiduser, setkiduser] = useState(true);
@@ -54,7 +54,6 @@ function ProfileInfo({dictionary, handleBack}) {
   const handleInput = (e) => {
     const fieldName = e.target.name;
     if (fieldName == "langData") {
-      
       if (formData.langData.length > 0) {
         const langDataOld = formData.langData.filter((item) => {
           return item !== e.target.value;
@@ -62,7 +61,7 @@ function ProfileInfo({dictionary, handleBack}) {
         const langDataExist = formData.langData.filter((item) => {
           return item == e.target.value;
         });
-       
+
         if (langDataOld.length > 0 && langDataExist.length > 0) {
           setFormData((prevState) => ({
             ...prevState,
@@ -90,18 +89,16 @@ function ProfileInfo({dictionary, handleBack}) {
           [fieldName]: [...prevState.langData, e.target.value],
         }));
       }
-    } 
-    else if (fieldName == "checkedKids") {
+    } else if (fieldName == "checkedKids") {
       const fieldValue = !JSON.parse(e.target.value);
 
       setFormData((prevState) => ({
         ...prevState,
         [fieldName]: fieldValue,
       }));
-    } 
-    else {
+    } else {
       let fieldValue = e.target.value;
-     
+
       setFormData((prevState) => ({
         ...prevState,
         [fieldName]: fieldValue,
@@ -110,7 +107,7 @@ function ProfileInfo({dictionary, handleBack}) {
   };
 
   const handleSubmit = () => {
-    handleBack("personalization")
+    handleBack("personalization");
   };
   const handleProfile = (data) => {
     setAvtaar(data);
@@ -178,82 +175,83 @@ function ProfileInfo({dictionary, handleBack}) {
     className: "center",
     centerMode: true,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 5,
     speed: 500,
     responsive: [
       {
         breakpoint: 2000,
         settings: {
-          slidesToShow: 3.89,
+          slidesToShow: 4.0,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 1599,
         settings: {
-          slidesToShow: 5,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1598,
-        settings: {
-          slidesToShow: 3.9,
+          slidesToShow: 4.0,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 1199,
         settings: {
-          slidesToShow: 3.89,
+          slidesToShow: 4,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3.87,
+          slidesToShow: 4,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 3.8,
+          slidesToShow: 4,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 767,
         settings: {
-          slidesToShow: 3.8,
+          slidesToShow: 3.79,
           slidesToScroll: 1,
           // initialSlide: 2
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 576,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 3.79,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 340,
+        breakpoint: 499,
         settings: {
-          slidesToShow: 2.299,
+          slidesToShow: 3.79,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 299,
+        breakpoint: 423,
         settings: {
-          slidesToShow: 2.4,
+          slidesToShow: 3.1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 359,
+        settings: {
+          slidesToShow: 2.47,
           slidesToScroll: 1,
         },
       },
     ],
   };
+
   return (
     <div
       className={`${style.registration_container} ${
@@ -265,10 +263,18 @@ function ProfileInfo({dictionary, handleBack}) {
       }`}
     >
       <div className={style.page_header} id="page_header">
-        <h1 className={style.page_title}>{dictionary?.profile_setup_title ? dictionary.profile_setup_title : constants.profile_setup_title}</h1>
+        <h1 className={style.page_title}>
+          {dictionary?.profile_setup_title
+            ? dictionary.profile_setup_title
+            : constants.profile_setup_title}
+        </h1>
       </div>
       <div className={style.avtaar_container} id="avtaar_container">
-        <h3 className={style.title}>{dictionary?.profile_setup_choose_avatar_title ? dictionary.profile_setup_choose_avatar_title : constants.profile_setup_choose_avatar_title}</h3>
+        <h3 className={style.title}>
+          {dictionary?.profile_setup_choose_avatar_title
+            ? dictionary.profile_setup_choose_avatar_title
+            : constants.profile_setup_choose_avatar_title}
+        </h3>
         <div
           className={style.avtaarSlider_container}
           id="profileAvtaarCarousel"
@@ -276,7 +282,7 @@ function ProfileInfo({dictionary, handleBack}) {
           <Slider {...settings}>
             {mypicData.map((item, index) => {
               return (
-                <div className={style.image_block} key={index}>
+                <div className={style.image_block} key={index} id="image_block">
                   <div
                     className={`${avtaar == index ? style.active : `${index}`}`}
                     onClick={(e) => {
@@ -308,117 +314,131 @@ function ProfileInfo({dictionary, handleBack}) {
       </div>
       <div className={style.form_container}>
         <form method="post" action="submit">
-        <div className={style.flex_cont}>
-          <div
-            className={`${style.nameFieldBox} ${
-              formData.nameField ? style.activeField : ""
-            }`}
-          >
-            <input
-              type="text"
-              className={style.nameField}
-              id="nameLabel"
-              name="nameField"
-              value={formData.nameField}
-              onChange={handleInput}
-              required
-            />
-            <label for="nameLabel" className={style.label}>
-              {dictionary?.profile_setup_name_placeholder? dictionary.profile_setup_name_placeholder : constants.profile_setup_name_placeholder}
-            </label>
-          </div>
-          <div className={style.kidFlexBox}>
-            <label className={style.label}>{dictionary?.profile_setup_kids_mode_title? dictionary.profile_setup_kids_mode_title : constants.profile_setup_kids_mode_title}</label>
+          <div className={style.flex_cont}>
             <div
-              className={`${style.switchBox} ${
-                formData.checkedKids ? style.active : ""
+              className={`${style.nameFieldBox} ${
+                formData.nameField ? style.activeField : ""
               }`}
             >
               <input
-                type="checkbox"
-                name="checkedKids"
-                value={formData.checkedKids}
+                type="text"
+                className={style.nameField}
+                id="nameLabel"
+                name="nameField"
+                value={formData.nameField}
                 onChange={handleInput}
+                required
               />
+              <label for="nameLabel" className={style.label}>
+                {dictionary?.profile_setup_name_placeholder
+                  ? dictionary.profile_setup_name_placeholder
+                  : constants.profile_setup_name_placeholder}
+              </label>
             </div>
-          </div>
-          <div
-            className={`${style.ageFieldBox}  ${
-              formData.ageField ? style.activeField : ""
-            }`}
-          >
-            <input
-              type="date"
-              className={style.ageField}
-              id="dateLabel"
-              name="ageField"
-              value={formData.ageField}
-              onChange={handleInput}
-              required
-            />
-            <label for="dateLabel" className={style.label}>
-              {dictionary?.profile_setup_dob_placeholder? dictionary.profile_setup_dob_placeholder : constants.profile_setup_dob_placeholder}
-            </label>
-          </div>
+            <div className={style.kidFlexBox}>
+              <label className={style.label}>
+                {dictionary?.profile_setup_kids_mode_title
+                  ? dictionary.profile_setup_kids_mode_title
+                  : constants.profile_setup_kids_mode_title}
+              </label>
+              <div
+                className={`${style.switchBox} ${
+                  formData.checkedKids ? style.active : ""
+                }`}
+              >
+                <input
+                  type="checkbox"
+                  name="checkedKids"
+                  value={formData.checkedKids}
+                  onChange={handleInput}
+                />
+              </div>
+            </div>
+            <div
+              className={`${style.ageFieldBox}  ${
+                formData.ageField ? style.activeField : ""
+              }`}
+            >
+              <input
+                type="date"
+                className={style.ageField}
+                id="dateLabel"
+                name="ageField"
+                value={formData.ageField}
+                onChange={handleInput}
+                required
+              />
+              <label for="dateLabel" className={style.label}>
+                {dictionary?.profile_setup_dob_placeholder
+                  ? dictionary.profile_setup_dob_placeholder
+                  : constants.profile_setup_dob_placeholder}
+              </label>
+            </div>
           </div>
           <div className={style.flex_cont}>
-          <div className={style.identityFieldBox}>
-            <h3 className={style.title}>{dictionary?.profile_setup_select_gender_title ? dictionary.profile_setup_select_gender_title : constants.profile_setup_select_gender_title}</h3>
-            <div className={style.genderBtn_Flexbox}>
-              {genderInfo &&
-                genderInfo.map((data, index) => {
-                  return (
-                    <button
-                      className={`${style.genderBtn} ${
-                        formData.genderData == data.item ? style.active : ""
-                      }`}
-                      key={index}
-                    >
-                      <input
-                        type="radio"
-                        value={data.item}
-                        name={data.name}
-                        onChange={handleInput}
-                      />
-                      <span>{data.item}</span>
-                    </button>
-                  );
-                })}
+            <div className={style.identityFieldBox}>
+              <h3 className={style.title}>
+                {dictionary?.profile_setup_select_gender_title
+                  ? dictionary.profile_setup_select_gender_title
+                  : constants.profile_setup_select_gender_title}
+              </h3>
+              <div className={style.genderBtn_Flexbox}>
+                {genderInfo &&
+                  genderInfo.map((data, index) => {
+                    return (
+                      <button
+                        className={`${style.genderBtn} ${
+                          formData.genderData == data.item ? style.active : ""
+                        }`}
+                        key={index}
+                      >
+                        <input
+                          type="radio"
+                          value={data.item}
+                          name={data.name}
+                          onChange={handleInput}
+                        />
+                        <span>{data.item}</span>
+                      </button>
+                    );
+                  })}
+              </div>
             </div>
-          </div>
-          <div className={style.contentLangFieldBox}>
-            <h3 className={style.title}>
-              {dictionary?.profile_setup_select_languages_title ? dictionary.profile_setup_select_languages_title : constants.profile_setup_select_languages_title}
-            </h3>
-            <div className={style.contentLangFlexbox}>
-              {langrInfo &&
-                langrInfo.map((data, index) => {
-                  return (
-                    <button
-                      className={`${style.langBtn} ${
-                        formData.langData.indexOf(data.item) !== -1
-                          ? style.active
-                          : ""
-                      }`}
-                      key={index}
-                    >
-                      <input
-                        type="checkbox"
-                        name={data.name}
-                        value={data.item}
-                        onChange={handleInput}
-                      />
-                      <Image
-                        src={checkNew}
-                        alt="check_icon"
-                        className={style.check_icon}
-                      />
-                      {data.item}
-                    </button>
-                  );
-                })}
+            <div className={style.contentLangFieldBox}>
+              <h3 className={style.title}>
+                {dictionary?.profile_setup_select_languages_title
+                  ? dictionary.profile_setup_select_languages_title
+                  : constants.profile_setup_select_languages_title}
+              </h3>
+              <div className={style.contentLangFlexbox}>
+                {langrInfo &&
+                  langrInfo.map((data, index) => {
+                    return (
+                      <button
+                        className={`${style.langBtn} ${
+                          formData.langData.indexOf(data.item) !== -1
+                            ? style.active
+                            : ""
+                        }`}
+                        key={index}
+                      >
+                        <input
+                          type="checkbox"
+                          name={data.name}
+                          value={data.item}
+                          onChange={handleInput}
+                        />
+                        <Image
+                          src={checkNew}
+                          alt="check_icon"
+                          className={style.check_icon}
+                        />
+                        {data.item}
+                      </button>
+                    );
+                  })}
+              </div>
             </div>
-          </div>
           </div>
         </form>
       </div>
@@ -445,7 +465,9 @@ function ProfileInfo({dictionary, handleBack}) {
               : true
           }
         >
-          {dictionary?.profile_setup_create_cta ? dictionary.profile_setup_create_cta : constants.profile_setup_create_cta}
+          {dictionary?.profile_setup_create_cta
+            ? dictionary.profile_setup_create_cta
+            : constants.profile_setup_create_cta}
         </button>
       </div>
       {/* <button

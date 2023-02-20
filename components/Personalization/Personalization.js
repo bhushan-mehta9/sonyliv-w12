@@ -4,6 +4,7 @@ import { useState } from "react";
 import styles from "./Personalization.module.scss";
 import check from "@/public/images/Vector.png";
 import checkMweb from "@/public/images/Vector_mble.png";
+import checkIpad from "@/public/images/vector_ipad.png";
 import ArrowLeft from "@/public/images/arrow-left.svg";
 import pic1 from "@/public/personalization/image1.png";
 import pic2 from "@/public/personalization/image2.png";
@@ -18,8 +19,8 @@ import pic10 from "@/public/personalization/image10.png";
 import pic11 from "@/public/personalization/image11.png";
 import pic12 from "@/public/personalization/image12.png";
 import pic13 from "@/public/personalization/image5.png";
-import { isMobile } from "react-device-detect";
-function Personalization({handleBack,closeSignIn}) {
+import { isMobile, isMobileOnly, isTablet } from "react-device-detect";
+function Personalization({ handleBack, closeSignIn }) {
   /**
    * Array Manipulation for image rendering
    * Creation Date : 14/02/2023
@@ -86,42 +87,54 @@ function Personalization({handleBack,closeSignIn}) {
    * Show the signin page to user
    * Creation Date : 14/02/2023
    */
-  const handleSubmit = ()=> {
+  const handleSubmit = () => {
     closeSignIn();
-  }
+  };
   const [personalisation, setPersonalisationData] = useState({
     PersonalizedData: [],
   });
-   /**
+  /**
    * Show the profile create page to user
    * Creation Date : 14/02/2023
    */
   const handleBackBtn = () => {
-    handleBack("profileinfo")
-  }
-   /**
+    handleBack("profileinfo");
+  };
+  /**
    * Handle Image check and uncheck event push
    * Creation Date : 14/02/2023
    */
   const handleClickChange = (data) => {
     if (personalisation.PersonalizedData.length > 0) {
-      const personalisationdataNotExist = personalisation.PersonalizedData.filter((item) => {
-        return item !== data;
-      });
-      const personalisationdataExist = personalisation.PersonalizedData.filter((item) => {
-        return item == data;
-      });
-      if (personalisationdataNotExist.length > 0 && personalisationdataExist.length > 0) {
+      const personalisationdataNotExist =
+        personalisation.PersonalizedData.filter((item) => {
+          return item !== data;
+        });
+      const personalisationdataExist = personalisation.PersonalizedData.filter(
+        (item) => {
+          return item == data;
+        }
+      );
+      if (
+        personalisationdataNotExist.length > 0 &&
+        personalisationdataExist.length > 0
+      ) {
         setPersonalisationData((prevState) => ({
           ...prevState,
           PersonalizedData: [...personalisationdataNotExist],
         }));
-      } else if (personalisationdataNotExist.length > 0 && personalisationdataExist.length == 0) {
+      } else if (
+        personalisationdataNotExist.length > 0 &&
+        personalisationdataExist.length == 0
+      ) {
         setPersonalisationData((prevState) => ({
           ...prevState,
           PersonalizedData: [...personalisationdataNotExist, data],
         }));
-      } else if (personalisationdataNotExist.length == 0 && personalisationdataExist.length > 0) {
+      } else if (
+        personalisationdataNotExist.length == 0 &&
+        personalisationdataExist.length > 0
+      ) {
         setPersonalisationData((prevState) => ({
           PersonalizedData: [],
         }));
@@ -144,27 +157,23 @@ function Personalization({handleBack,closeSignIn}) {
               onClick={handleBackBtn}
             />
           </div>
-          {isMobile ? (
-            <span className={styles.page_title}>
-              What type of content are you interested in?
-            </span>
-          ) : (
-            ""
-          )}
+          <span className={styles.page_title_mweb}>
+            What type of content are you interested in?
+          </span>
           <div className={styles.skipContainer}>
             <div className={styles.skipstyle}>Skip</div>
           </div>
         </div>
+
         <div className={styles.sectionTwo}>
           <div className={styles.page_header}>
             <h1 className={styles.page_title}>
-              {isMobile ? "" : "What type of content are you interested in?"}
+              What type of content are you interested in?
             </h1>
             <div className={styles.avtaar_container} id="avtaar_container">
               <h3 className={styles.title}>
-                {isMobile
-                  ? ""
-                  : "Help us Personalize experience with suggestion,curated collection and more"}
+                Help us Personalize experience with suggestion,curated
+                collection and more
               </h3>
             </div>
           </div>
@@ -175,7 +184,8 @@ function Personalization({handleBack,closeSignIn}) {
               <div className={styles.row} key={index}>
                 <div
                   className={`${
-                    personalisation.PersonalizedData.indexOf(item.altData) !== -1
+                    personalisation.PersonalizedData.indexOf(item.altData) !==
+                    -1
                       ? styles.active
                       : `${index}`
                   }`}
@@ -194,7 +204,13 @@ function Personalization({handleBack,closeSignIn}) {
                     />
                     <label for="myCheckbox1" className={styles.checkicon}>
                       <Image
-                        src={isMobile ? checkMweb : check}
+                        src={
+                          isMobileOnly
+                            ? checkMweb
+                            : isTablet
+                            ? checkIpad
+                            : check
+                        }
                         alt="check_icon"
                       />
                     </label>
@@ -212,7 +228,7 @@ function Personalization({handleBack,closeSignIn}) {
               : styles.next_btn
           }
         >
-        <button onClick={handleSubmit}> I'm done</button>
+          <button onClick={handleSubmit}> I m done</button>
         </div>
         <div className={styles.pagination}>
           <ul>

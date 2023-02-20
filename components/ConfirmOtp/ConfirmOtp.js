@@ -126,7 +126,6 @@ const ConfirmOtp = ({ handleBack, handlePageChange, data }) => {
       } else {
         const split = JSON.parse(otpLabel.split("otp")[1]);
         const splitNum = split + 1;
-        console.log("otp--", split, splitNum);
         setinputFocus(`otp${splitNum}`);
       }
     }
@@ -225,13 +224,12 @@ const ConfirmOtp = ({ handleBack, handlePageChange, data }) => {
         {resendOtpText ? (
           <div
             className={styles.sectionFour}
-            onClick={resendClick}
             style={{ cursor: "pointer" }}
           >
-            Didn’t receive the code? Try Again
+            <span className={styles.grayColor}>Didn’t receive the code? </span><span style={{ textDecoration: "underline" }} onClick={resendClick}>Try Again</span>
           </div>
         ) : (
-          <div className={styles.sectionFour}>
+          <div className={styles.sectionOtp}>
             You will be receiving an SMS shortly
             <div>
               Resend OTP in <span className={styles.blueColor}> 01:56</span>
