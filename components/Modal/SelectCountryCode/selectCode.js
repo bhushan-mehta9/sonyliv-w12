@@ -14,7 +14,7 @@ const SelectCode = (props) => {
     setIsChecked(!isChecked);
   };
   const arr = [
-    { name: "India", code: "+91" },
+    { name: "India", code: "+91", ...(!isChecked && { checked: true }) },
     { name: "United States", code: "+1" },
     { name: "Australia", code: "+33" },
     { name: "France", code: "+44" },
@@ -29,7 +29,7 @@ const SelectCode = (props) => {
         <div className={style.modalcontent}>
           <div className={style.selecttext}>Select Country</div>
           <div className={style.container}>
-            {arr.map(({ code, name, checked }) => (
+            {arr.map(({ code, name, checked, index}) => (
               <div className={style.wrapper} key={code}>
                 <div className={style.country_code_container}>
                   <span className={style.country_name}>{name + " "}</span>
@@ -44,6 +44,7 @@ const SelectCode = (props) => {
                       name="myGroup"
                       checked={checked}
                       onChange={(e) => handleCheckBox(e)}
+                      defaultChecked={code === 0}
                     />
                     <span className={style.circleshape}></span>
                   </label>

@@ -130,6 +130,20 @@ $white: #fff;
   }
   .sectionFour {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 4px;
+    color: #f1f1f1;
+    font-size: 12px;
+    line-height: 16px;
+    margin: auto;
+   .grayColor{
+    color:#acacac;
+   }
+  }
+  .sectionOtp {
+    display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0px;
@@ -137,7 +151,7 @@ $white: #fff;
     color: #f1f1f1;
     font-size: 12px;
     line-height: 16px;
-    margin-bottom: 32px;
+    margin: auto;
     .blueColor {
       color: #24bff3;
       margin-left: 3px;
@@ -150,6 +164,7 @@ $white: #fff;
     background: #07070a;
     border: 1px solid #636370;
     border-radius: 8px;
+    margin-top: 32px !important;
     margin-left: 16px;
     margin-right: 16px;
     max-width: 412px;

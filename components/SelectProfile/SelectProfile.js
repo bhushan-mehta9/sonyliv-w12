@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./SelectProfile.module.scss";
-import mypic from "../../public/images/Avatar.png";
-import mypic1 from "../../public/images/Avatar_1.png";
-import mypic2 from "../../public/images/Avatar_2.png";
+import mypic from "../../public/ProfileSelection/Avatar.svg";
+import mypic1 from "../../public/ProfileSelection/Avatar_1.svg";
+import mypic2 from "../../public/ProfileSelection/Avatar_2.svg";
 import Image from "next/image";
 import check from "../../public/images/check.png";
 import plusIcon from "../../public/images/plusIcon.svg";
@@ -63,6 +63,7 @@ function SelectProfile() {
                     alt={item.altData}
                     className={styles.plusIcon}
                     id="avtaar_img"
+                    selected
                   />
                  
                     </div> : <>
@@ -84,6 +85,7 @@ function SelectProfile() {
                     }
                   
                   <div className={styles.imageText}>Meera</div>
+                  <div className={styles.kidsUser}></div>
                 </div>
               </div>
             );

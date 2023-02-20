@@ -37,6 +37,16 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
   const onDropDown = () => {
     setIsCountryModalOpen(!isCountryModalOpen);
   };
+
+  /**
+   * Close country code dropdown
+   * Creation Date: 20/02/23
+   */
+  const closeDropdown = () => {
+    if (isCountryModalOpen) {
+      setIsCountryModalOpen(false);
+    }
+  };
   /**
    * close country code dropdown
    * Creation Date :10/02/23
@@ -56,6 +66,7 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
    * Creation Date :10/02/23
    */
   const handleSocialLoginModal = () => {
+    setActive(false);
     setSocialLoginModal(true);
   };
   /**
@@ -113,17 +124,15 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
     setSocialLoginModal(false);
   };
   const emailChangehandler = (e) => {
-    const valueEmail = e.target.value
+    const valueEmail = e.target.value;
     setemailInput(valueEmail);
     const regexmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    console.log(regexmail.test(valueEmail),"mail")
     if (regexmail.test(valueEmail) === true) {
       setActive(!active);
-    }
-    else{
+    } else {
       setActive(false);
     }
-}
+  };
   /**
    * To handle continue Link  Mobile no. with Email ID
    * Creation Date : 10/02/2023
@@ -149,7 +158,7 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
 
 
   return (
-    <div>
+    <div onClick={closeDropdown}>
       <div className={style.mainheader}>
         <div className={style.headerweb}>
           <div className={style.imgdiv} onClick={handleBackClick}>
@@ -180,8 +189,7 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
                 name="email"
                 value={emailInput}
                 onChange={emailChangehandler}
-                autoComplete={false}
-                // placeholder="Enter your email address"
+                autocomplete="off"
               />
               <label className={style.labelemail} for="phone_number">
                 Enter your email address
@@ -209,8 +217,7 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
                   max="10"
                   value={phonenumber}
                   onChange={onNumberChange}
-                  // onKeyDown={onNumberChange}
-                  autoComplete={false}
+                  autocomplete="off"
                   id="phone_number"
                 />
                 <label className={style.labelphone} for="phone_number">
@@ -249,7 +256,7 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
             </>
           )}
         </div>
-      <div className={style.pagination}>
+        <div className={style.pagination}>
           <ul>
             <li></li>
             <li></li>
@@ -258,7 +265,7 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
           </ul>
         </div>
       </div>
-      {isMobile && !isTablet ?  (
+      {isMobile && !isTablet ? (
         <SelectCountry
           isOpen={isCountryModalOpen}
           handleModal={handleCountryModal}
