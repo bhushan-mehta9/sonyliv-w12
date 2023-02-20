@@ -9,6 +9,8 @@ import ResendOtpPopup from "../Modal/ResendOtp/ResendOtpPopup";
 import { isMobile } from "react-device-detect";
 
 const ConfirmOtp = ({ handleBack, handlePageChange }) => {
+  const [otpArray, setOtpArray]=useState([])
+  const [prevOtp, setPrevOtp] = useState()
   const textInput = useRef(null);
   const [inputFocus, setinputFocus] = useState(false);
   const [resendOtpPopup, setResendOtpModal] = useState(false);
@@ -61,11 +63,14 @@ const ConfirmOtp = ({ handleBack, handlePageChange }) => {
    * Creation Date : 10/02/2023
    */
   const handleOtp = (event) => {
+    setPrevOtp(formData)
     const otpLabel = event.target.name;
     const otpValue = event.target.value;
-    if (!isNaN(otpValue)) {
+    if (!isNaN(otpValue) && otpValue==!undefined) {
       setFormData((prevState) => ({ ...prevState, [otpLabel]: otpValue }));
+      setOtpArray((prevState) => ([...prevState, otpValue ]));
     }
+  
     if (!isNaN(otpValue) && otpValue.length > 0) {
       if (otpLabel == "otp4") {
         setinputFocus(otpLabel);
@@ -90,8 +95,15 @@ const ConfirmOtp = ({ handleBack, handlePageChange }) => {
    * Creation Date : 10/02/2023
    */
   useEffect(() => {
-    textInput.current.focus();
-  }, [inputFocus]);
+
+    //   textInput.current.focus();
+    // }, [inputFocus]);
+  
+    // if(formData?.length < prevOtp?.length)
+    // textInput.current.focus(formData.length)
+    console.log("prevstate",prevOtp)
+    console.log("otparray",otpArray)
+  },[formData])
 
   return (
     <>
@@ -170,13 +182,12 @@ const ConfirmOtp = ({ handleBack, handlePageChange }) => {
         {resendOtpText ? (
           <div
             className={styles.sectionFour}
-            onClick={resendClick}
             style={{ cursor: "pointer" }}
           >
-            Didn’t receive the code? Try Again
+            <span className={styles.grayColor}>Didn’t receive the code? </span><span style={{ textDecoration: "underline" }} onClick={resendClick}>Try Again</span>
           </div>
         ) : (
-          <div className={styles.sectionFour}>
+          <div className={styles.sectionOtp}>
             You will be receiving an SMS shortly
             <div>
               Resend OTP in <span className={styles.blueColor}> 01:56</span>
