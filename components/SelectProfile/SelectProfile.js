@@ -27,12 +27,12 @@ function SelectProfile( {handlePageChange}) {
       altData: "avtaar1",
     },
     {
-      path: mypic2,
-      altData: "avtaar2",
-    },
-    {
       path: mypic,
       altData: "avtaar",
+    },
+    {
+      path: mypic1,
+      altData: "avtaar1",
     },
     {
       path: plusIcon,
