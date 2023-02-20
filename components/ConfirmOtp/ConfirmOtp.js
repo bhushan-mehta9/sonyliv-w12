@@ -7,8 +7,11 @@ import { useState } from "react";
 import { useEffect, useRef } from "react";
 import ResendOtpPopup from "../Modal/ResendOtp/ResendOtpPopup";
 import { isMobile } from "react-device-detect";
+import { confirmOtp } from "../../lib/signin";
+import * as constants from "@/constants/constant";
+import { invokeGetProfile } from "@/lib/profile";
 
-const ConfirmOtp = ({ handleBack, handlePageChange }) => {
+const ConfirmOtp = ({ handleBack, handlePageChange, data }) => {
   const textInput = useRef(null);
   const [inputFocus, setinputFocus] = useState(false);
   const [resendOtpPopup, setResendOtpModal] = useState(false);
@@ -45,15 +48,66 @@ const ConfirmOtp = ({ handleBack, handlePageChange }) => {
   };
 
   /**
+   * Call profile Api to get user subscription for success screen
+   * Creation Date : 16/02/2023
+   */
+  const callGetProfileApi = async (channelPartnerId, country_code) => {
+    await invokeGetProfile(channelPartnerId, country_code)
+    .then((res) => {
+      localStorage.setItem("CPID", res.userProfile.resultObj.cpCustomerID);
+      localStorage.setItem("Hashed_CPID", res.userProfile.resultObj.cpCustomerIDHash);
+
+      try {
+        /*********** next page navigation with profile response **********/
+        if (isMobile) {
+          handlePageChange("profileinfo", res);
+        } else {
+          handlePageChange("loginsuccess", res);
+        }
+      } catch (error) {
+        throw error;
+      }
+    })
+    .catch((error) => {
+      throw error;
+    });
+  }
+
+  /**
+   * Call ConfirmOtp Api
+   * Creation Date : 16/02/2023
+   */
+  const callConfirmOtpApi = (phonenumber, otp, country_code)=>{
+    confirmOtp(phonenumber, otp, country_code)
+    .then((result) => {
+      const { resultCode, resultObj } = result;
+      
+      if (resultCode === constants.SUCCESS_RESULT_CODE) {
+        if (typeof localStorage !== "undefined") {
+          localStorage.setItem("accessToken", resultObj.accessToken);
+          localStorage.setItem("loginType", "mobile");
+          localStorage.setItem("CPID", resultObj.cpCustomerID);
+        }
+
+        const channelPartnerId = localStorage.getItem('channelPartnerID')
+        callGetProfileApi(channelPartnerId, country_code)
+      }
+    })
+    .catch((error) => {
+      throw error;
+    });
+  }
+
+  /**
    * Click on next will show the profileinfo page to user
    * Creation Date : 10/02/2023
    */
   const handleNext = () => {
-    if (isMobile) {
-      handlePageChange("profileinfo");
-    } else {
-      handlePageChange("loginsuccess");
-    }
+    let country_code = localStorage.getItem('country_code');
+    let otp = `${formData.otp1}${formData.otp2}${formData.otp3}${formData.otp4}`;
+    
+    /*********** confirmOtp api call ***********/ 
+    callConfirmOtpApi(data.phonenumber, otp, country_code)
   };
 
   /**

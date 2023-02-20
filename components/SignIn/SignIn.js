@@ -14,6 +14,8 @@ import {
   isMobileOnly,
   isDesktop,
 } from "react-device-detect";
+import { createOtp } from "../../lib/signin";
+import * as constants from "@/constants/constant";
 
 
 const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
@@ -71,7 +73,20 @@ const SignIn=({handleBack,handlePageChange,closeSignIn}) =>{
     if (regex.test(phonenumber) === true) {
       seterror(false);
       setActive(true);
-      handlePageChange("confirmotp");
+
+      /*********** createOtp api call ***********/ 
+      let country_code = localStorage.getItem('country_code')
+      createOtp(phonenumber, country_code)
+      .then((result) => {
+        const { resultCode, resultObj } = result;
+        if (resultCode === constants.SUCCESS_RESULT_CODE) {
+          handlePageChange("confirmotp", {"phonenumber": phonenumber}); 
+        }
+      })
+      .catch((error) => {
+        throw error;
+      });
+
     } else {
       seterror(true);
       setActive(false);

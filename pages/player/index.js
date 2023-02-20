@@ -3,12 +3,31 @@ import React, { useState } from "react";
 import style from "./playerSignin.module.scss";
 import close from "../../public/images/close.png";
 import Image from "next/image";
-import { getCommonData } from "@/lib/app";
+import { getCommonData, generateToken } from "@/lib/app";
 import Head from "next/head";
 
 function Player(props) {
+  console.log(">>>>>>>>>serverside data", props)
   const [showModal, setShowModal] = useState(false);
-  console.log(">>>>>> commonData", props);
+
+  if(typeof window !== "undefined"){
+    if(!localStorage.getItem('security_token')){
+      localStorage.setItem('security_token', props.security_token)
+    }
+
+    if(!localStorage.getItem('state_code')){
+      localStorage.setItem('state_code', props.uld.resultObj.state_code)
+    }
+
+    if(!localStorage.getItem('country_code')){
+      localStorage.setItem('country_code', props.uld.resultObj.country_code)
+    }
+
+    if(!localStorage.getItem('channelPartnerID')){
+      localStorage.setItem('channelPartnerID', props.uld.resultObj.channelPartnerID)
+    }
+  }
+
   const handleSignInModal = (modalState) => {
     setShowModal(modalState);
   };
@@ -75,11 +94,11 @@ export default Player;
  */
 export async function getServerSideProps(context) {
   const { params, req, res } = context;
-  const { uld, dictionary, initialConfig, featureConfig } =
-    await getCommonData();
+  const {security_token, uld, dictionary, initialConfig, featureConfig} = await getCommonData();
 
   return {
     props: {
+      security_token : security_token,
       uld: uld,
       dictionary: dictionary,
       initialConfig: initialConfig,

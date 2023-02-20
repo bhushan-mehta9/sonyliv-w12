@@ -11,6 +11,7 @@ import Personalization from "@/components/Personalization/Personalization";
 
 function Modal(props) {
   const [page, setPage] = useState("signin");
+  const [data, setData] = useState({});
   const [successScreenShown, setsuccessScreenShown] = useState(
     isMobile ? false : true
   );
@@ -27,8 +28,9 @@ function Modal(props) {
    * Change page state to show proper page in signin full screen popup
    * Creation Date : 14/02/2023
    */
-  const handlePageChange = (value) => {
+  const handlePageChange = (value, data) => {
     setPage(value);
+    setData(data)
   };
 
   /**
@@ -67,12 +69,14 @@ function Modal(props) {
               <ConfirmOtp
                 handleBack={handleBack}
                 handlePageChange={handlePageChange}
+                data={data}
               />
             );
           case "loginsuccess":
             return (
               <LoginSuccess
                 handlePageChangeForSucess={handlePageChangeForSucess}
+                data={data}
               />
             );
           case "profileinfo":
@@ -80,11 +84,12 @@ function Modal(props) {
               <>
                 <LoginSuccess
                   handlePageChangeForSucess={handlePageChangeForSucess}
+                  data={data}
                 />
-                <ProfileInfo dictionary={props.dictionary} handleBack={handleBack} />
+                <ProfileInfo dictionary={props.dictionary} handleBack={handleBack} data={data} />
               </>
             ) : (
-              <ProfileInfo dictionary={props.dictionary} handleBack={handleBack} />
+              <ProfileInfo dictionary={props.dictionary} handleBack={handleBack} data={data}/>
             );
           case "personalization":
             return <Personalization dictionary={props.dictionary} handleBack={handleBack} closeSignIn={closeSignIn} />
