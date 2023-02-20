@@ -156,6 +156,7 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
     }
   };
 
+
   return (
     <div onClick={closeDropdown}>
       <div className={style.mainheader}>
