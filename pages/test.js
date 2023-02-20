@@ -1,3 +1,4 @@
+import React from "react";
 import SignIn from "@/components/SignIn/SignIn";
 // import ConfirmOtp from "@/components/ConfirmOtp/ConfirmOtp";
 import Head from "next/head";

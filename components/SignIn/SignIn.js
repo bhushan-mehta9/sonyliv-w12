@@ -66,6 +66,7 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
    * Creation Date :10/02/23
    */
   const handleSocialLoginModal = () => {
+    setActive(false);
     setSocialLoginModal(true);
   };
   /**
@@ -125,8 +126,7 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
   const emailChangehandler = (e) => {
     const valueEmail = e.target.value;
     setemailInput(valueEmail);
-    const regexmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    console.log(regexmail.test(valueEmail), "mail");
+    const regexmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     if (regexmail.test(valueEmail) === true) {
       setActive(!active);
     } else {
@@ -155,6 +155,7 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
       closeSignIn();
     }
   };
+
 
   return (
     <div onClick={closeDropdown}>
@@ -188,8 +189,7 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
                 name="email"
                 value={emailInput}
                 onChange={emailChangehandler}
-                autoComplete={false}
-                // placeholder="Enter your email address"
+                autocomplete="off"
               />
               <label className={style.labelemail} for="phone_number">
                 Enter your email address
@@ -217,8 +217,7 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
                   max="10"
                   value={phonenumber}
                   onChange={onNumberChange}
-                  // onKeyDown={onNumberChange}
-                  autoComplete={false}
+                  autocomplete="off"
                   id="phone_number"
                 />
                 <label className={style.labelphone} for="phone_number">
