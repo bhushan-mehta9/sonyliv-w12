@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import style from "./SelectCountry.module.scss";
+import close from "../../../public/images/close.png";
+import Image from "next/image";
 
 /**
  * Component for selecting country code for mweb
@@ -39,6 +41,9 @@ const SelectCountry = ({ isOpen, handleModal, codehandler }) => {
       handleModal();
     }
   };
+  const handleClose = () => {
+    handleModal();
+  };
 
   return (
     <div
@@ -47,6 +52,12 @@ const SelectCountry = ({ isOpen, handleModal, codehandler }) => {
     >
       <div className={style.modal_content}>
         <div className={style.dash}></div>
+        <Image
+          src={close}
+          className={style.close}
+          onClick={handleClose}
+          alt="close"
+        />
         <div className={style.title}>Select Country</div>
         <div className={style.containerr}>
           {arr.map(({ code, name, checked }) => (

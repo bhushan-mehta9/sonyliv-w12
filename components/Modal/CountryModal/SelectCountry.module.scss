@@ -29,6 +29,14 @@ $white:#fff;
       margin: 12px auto 34px auto;
       border-radius: 2px;
     }
+    .close {
+      cursor: pointer;
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 16px;
+      height: 16px;
+    }
     .title {
       font-style: normal;
       font-weight: 700;
