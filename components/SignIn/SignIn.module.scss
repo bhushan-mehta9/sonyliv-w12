@@ -102,7 +102,6 @@
         outline: none !important;
         position: relative;
         z-index: 1;
-        color: #ACACAC;
         &:focus + .labelemail {
           top: auto;
           bottom: 100%;
@@ -152,7 +151,6 @@
     .containerphone {
       display: flex;
       align-items: center;
-      // height: 40px;
       padding-bottom: 9px;
       border-bottom: 1px solid #636370;
       position: relative;
@@ -184,14 +182,14 @@
         height: 100%;
         font-size: 14px;
         letter-spacing: 1.3px;
-        color: #acacac;
         background: transparent;
         border: none;
         padding: 0 12px;
         width: 82%;
         outline: none;
         letter-spacing: 1px;
-        color: #ACACAC;
+        color: #FFFFFF;
+       
         &:focus + .labelphone {
           top: auto;
           bottom: 70%;
@@ -300,13 +298,14 @@
       color: #636370;
       margin: 16px 0 40px 0;
       letter-spacing: 0.5px;
-
       .tnc {
-        text-decoration: underline;
+        border-bottom: 1px solid;
+        font-weight: 600;
         cursor: pointer;
       }
       .pp {
-        text-decoration: underline;
+        border-bottom: 1px solid;
+        font-weight: 600;
         cursor: pointer;
       }
     }

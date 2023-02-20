@@ -44,7 +44,6 @@ const SelectCode = (props) => {
                       name="myGroup"
                       checked={checked}
                       onChange={(e) => handleCheckBox(e)}
-                      defaultChecked={code === 0}
                     />
                     <span className={style.circleshape}></span>
                   </label>
