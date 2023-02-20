@@ -29,7 +29,7 @@ const SelectCode = (props) => {
         <div className={style.modalcontent}>
           <div className={style.selecttext}>Select Country</div>
           <div className={style.container}>
-            {arr.map(({ code, name, checked }) => (
+            {arr.map(({ code, name, checked, index}) => (
               <div className={style.wrapper} key={code}>
                 <div className={style.country_code_container}>
                   <span className={style.country_name}>{name + " "}</span>
@@ -44,6 +44,7 @@ const SelectCode = (props) => {
                       name="myGroup"
                       checked={checked}
                       onChange={(e) => handleCheckBox(e)}
+                      defaultChecked={code === 0}
                     />
                     <span className={style.circleshape}></span>
                   </label>
