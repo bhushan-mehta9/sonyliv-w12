@@ -84,7 +84,7 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
    */
   const handleClick = () => {
     if (email) {
-      setIsLinkModal(true);
+      active ?  setIsLinkModal(true) : setIsLinkModal(false);
     }
     const regex = /^(\+\d{1,3}[- ]?)?\d{10}$/;
     if (regex.test(phonenumber) === true) {
@@ -143,7 +143,7 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
     setemailInput(valueEmail);
     const regexmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     if (regexmail.test(valueEmail) === true) {
-      setActive(!active);
+      setActive(true);
     } else {
       setActive(false);
     }
@@ -162,6 +162,9 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
    * Creation Date : 09/02/2023
    */
   const handleBackClick = () => {
+    setphonenumber("");
+    setemailInput("");
+    setActive(false);
     if (email) {
       setemail("");
     } else if (linkPage) {
