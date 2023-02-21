@@ -74,10 +74,11 @@ function Modal(props) {
               />
             );
           case "loginsuccess":
-            return (
+            return data && (
               <LoginSuccess
                 handlePageChangeForSucess={handlePageChangeForSucess}
                 data={data}
+                dictionary={props.dictionary}
               />
             );
           case "profileinfo":
@@ -86,6 +87,7 @@ function Modal(props) {
                 <LoginSuccess
                   handlePageChangeForSucess={handlePageChangeForSucess}
                   data={data}
+                  dictionary={props.dictionary}
                 />
                 <ProfileInfo dictionary={props.dictionary} handleBack={handleBack} data={data} />
               </>
