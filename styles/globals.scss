@@ -2,22 +2,64 @@
 @import "~slick-carousel/slick/slick-theme.css";
 
 @font-face {
-  font-family: "Roboto-regular";
-  src: url("../public/font/Roboto/Roboto-Regular.ttf");
+  font-family: "Roboto";
+  src: url("../public/font/Roboto/Roboto-Regular.woff2") format("woff2"),
+    url("../public/font/Roboto/Roboto-Regular.woff") format("woff"),
+    url("../public/font/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
   font-display: swap;
-  // src: url('../public/font/Roboto/Roboto-Bold.ttf');
-  // src: url('../public/font/Roboto/Roboto-Medium.ttf');
 }
 
-// @font-face {
-//   font-family: 'Roboto-bold';
-//   src: url('../public/font/Roboto/Roboto-Bold.ttf');
-// }
+@font-face {
+  font-family: "Roboto";
+  src: url("../public/font/Roboto/Roboto-Bold.woff2") format("woff2"),
+    url("../public/font/Roboto/Roboto-Bold.woff") format("woff"),
+    url("../public/font/Roboto/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
 
-// @font-face {
-//   font-family: 'Roboto-medium';
-//   src: url('../public/font/Roboto/Roboto-Medium.ttf');
-// }
+@font-face {
+  font-family: "Roboto";
+  src: url("../public/font/Roboto/Roboto-Black.woff2") format("woff2"),
+    url("../public/font/Roboto/Roboto-Black.woff") format("woff"),
+    url("../public/font/Roboto/Roboto-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../public/font/Roboto/Roboto-Light.woff2") format("woff2"),
+    url("../public/font/Roboto/Roboto-Light.woff") format("woff"),
+    url("../public/font/Roboto/Roboto-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../public/font/Roboto/Roboto-Medium.woff2") format("woff2"),
+    url("../public/font/Roboto/Roboto-Medium.woff") format("woff"),
+    url("../public/font/Roboto/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../public/font/Roboto/Roboto-Thin.woff2") format("woff2"),
+    url("../public/font/Roboto/Roboto-Thin.woff") format("woff"),
+    url("../public/font/Roboto/Roboto-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --max-width: 1100px;
@@ -98,7 +140,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Roboto-regular";
+  font-family: "Roboto";
 }
 
 html,
@@ -147,26 +189,65 @@ html body {
 #profileAvtaarCarousel {
   .slick-slider {
     .slick-list {
-      padding-top: 10px !important;
+      padding-top: 15px !important;
       padding-bottom: 10px !important;
       padding-left: 0px !important;
       padding-right: 0px !important;
+      margin: 0px -15px;
+      position: relative;
       .slick-track {
         .slick-slide {
           text-align: center;
+          transition: all 0.01s ease-in-out;
+
           &.slick-active {
             &.slick-center {
               transform: scale(1.16);
+              #image_block {
+                max-width: 100px;
+                margin-top: -5px;
+                opacity: 1;
+              }
               #avtaar_img {
-                border: 2px solid #f5961e;
-                border-radius: 50%;
+                // border: 2px solid #f5961e;
+                // border-radius: 50%;
               }
               #checkIcon {
-                display: inline-flex;
+                // display: inline-flex;
               }
             }
           }
+          #image_block {
+            position: relative;
+            opacity: 0.5;
+          }
         }
+      }
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: 51.2%;
+        top: 48%;
+        transform: translate(-50%, -50%);
+        width: 116px;
+        height: 116px;
+        border: 2px solid #f5961e;
+        border-radius: 50%;
+        z-index: 1;
+      }
+      &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: calc(50% + 35px);
+        bottom: 10px;
+        width: 23px;
+        height: 23px;
+        background-image: url("../public/images/check.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 1;
       }
     }
     .slick-arrow {
@@ -175,7 +256,7 @@ html body {
         background-size: cover;
         width: 30px;
         height: 30px;
-        right: -50px;
+        right: -55px;
         &::before {
           display: none;
         }
@@ -209,6 +290,9 @@ html body {
 @media only screen and (min-device-width: 768px) and (max-device-width: 1200px) and (orientation: landscape) {
   #profileAvtaarCarousel {
     .slick-slider {
+      .slick-list {
+        margin: 0px -14px;
+      }
       .slick-arrow {
         display: none !important;
       }
@@ -219,6 +303,28 @@ html body {
 @media only screen and (min-device-width: 768px) and (max-device-width: 1200px) and (orientation: portrait) {
   #profileAvtaarCarousel {
     .slick-slider {
+      .slick-list {
+        margin: 0px -10px;
+        .slick-track {
+          .slick-slide {
+            &.slick-active {
+              &.slick-center {
+                #image_block {
+                  max-width: 89.67px;
+                  margin-top: -5px;
+                }
+              }
+            }
+          }
+        }
+        &::before {
+          left: 50%;
+          top: 48%;
+          width: 104px;
+          height: 104px;
+        }
+      }
+
       .slick-arrow {
         display: none !important;
       }
@@ -230,11 +336,60 @@ html body {
   #profileAvtaarCarousel {
     .slick-slider {
       .slick-list {
-        padding-left: 150px !important;
+        padding-left: 160px !important;
         padding-right: 150px !important;
+        margin: 0px -10px;
+        .slick-track {
+          .slick-slide {
+            &.slick-active {
+              &.slick-center {
+                #image_block {
+                  max-width: 89.67px;
+                  margin-top: -5px;
+                }
+              }
+            }
+          }
+        }
+        &::before {
+          left: 49.5%;
+          top: 48%;
+          width: 100px;
+          height: 100px;
+        }
+        &::after {
+          left: calc(50% + 20px);
+        }
       }
       .slick-arrow {
         display: none !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 499px) {
+  #profileAvtaarCarousel {
+    .slick-slider {
+      .slick-list {
+        &::before {
+          left: 49.5%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 438px) {
+  #profileAvtaarCarousel {
+    .slick-slider {
+      .slick-list {
+        padding-left: 66px !important;
+        padding-right: 150px !important;
+        margin: 0px -10px;
+        &::before {
+          left: 50%;
+        }
       }
     }
   }
@@ -246,9 +401,75 @@ html body {
       .slick-list {
         padding-left: 60px !important;
         padding-right: 60px !important;
+        margin: 0px 0px;
+        .slick-track {
+          .slick-slide {
+            &.slick-active {
+              &.slick-center {
+                #image_block {
+                  max-width: 83px;
+                  margin-top: -5px;
+                }
+              }
+            }
+          }
+        }
+        &::before {
+          left: 48.9%;
+          top: 48%;
+          width: 92px;
+          height: 92px;
+        }
+        &::after {
+          left: calc(50% + 12px);
+        }
       }
-      .slick-arrow {
-        display: none !important;
+    }
+  }
+}
+
+@media screen and (max-width: 399px) {
+  #profileAvtaarCarousel {
+    .slick-slider {
+      .slick-list {
+        padding-left: 55px !important;
+        padding-right: 55px !important;
+        &::before {
+          left: 48%;
+          top: 48%;
+          width: 86px;
+          height: 86px;
+        }
+        &::after {
+          left: calc(50% + 11px);
+        }
+        .slick-track {
+          .slick-slide {
+            &.slick-active {
+              &.slick-center {
+                #image_block {
+                  max-width: 77.6px;
+                  margin-top: -5px;
+                }
+              }
+            }
+            #image_block {
+              max-width: 70px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 359px) {
+  #profileAvtaarCarousel {
+    .slick-slider {
+      .slick-list {
+        &::before {
+          left: 46%;
+        }
       }
     }
   }

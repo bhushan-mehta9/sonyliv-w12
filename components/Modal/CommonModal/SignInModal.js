@@ -11,7 +11,7 @@ import Personalization from "@/components/Personalization/Personalization";
 import SelectProfile from "@/components/SelectProfile/SelectProfile";
 
 function Modal(props) {
-  const [page, setPage] = useState("confirmotp");
+  const [page, setPage] = useState("signin");
   const [data, setData] = useState({});
   const [successScreenShown, setsuccessScreenShown] = useState(
     isMobile ? false : true

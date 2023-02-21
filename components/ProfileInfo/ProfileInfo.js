@@ -4,6 +4,7 @@ import mypic from "../../public/images/Avatar.png";
 import mypic1 from "../../public/images/Avatar_1.png";
 import mypic2 from "../../public/images/Avatar_2.png";
 import checkNew from "../../public/images/check_1.png";
+import Cross from "../../public/images/Cross.png";
 import Slider from "react-slick";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -27,6 +28,10 @@ function ProfileInfo({ dictionary, handleBack }) {
     mobileWidth: false,
     submitBtn: false,
     fieldDataArray: [],
+    typeDate: [],
+    typeMonth: [],
+    typeYear: [],
+    ageGroup: false,
   });
   // const [langData, setlangData] = useState([]);
   const [formData, setFormData] = useState({
@@ -91,11 +96,18 @@ function ProfileInfo({ dictionary, handleBack }) {
       }
     } else if (fieldName == "checkedKids") {
       const fieldValue = !JSON.parse(e.target.value);
-
-      setFormData((prevState) => ({
-        ...prevState,
-        [fieldName]: fieldValue,
-      }));
+      if (formData.ageField !== "") {
+        setFormData((prevState) => ({
+          ...prevState,
+          ageField: "",
+          [fieldName]: fieldValue,
+        }));
+      } else {
+        setFormData((prevState) => ({
+          ...prevState,
+          [fieldName]: fieldValue,
+        }));
+      }
     } else {
       let fieldValue = e.target.value;
 
@@ -113,6 +125,66 @@ function ProfileInfo({ dictionary, handleBack }) {
     setAvtaar(data);
   };
 
+  // const handleDate = (e) => {
+  //   console.log('eval', e.target.name, e.target.value, state.typeDate)
+  //   if(e.target.name == 'date'){
+  //     if( e.target.value > 31){
+  //       return null
+  //     }
+  //     else{
+  //       setState((prevState) => ({
+  //         ...prevState,
+  //         typeDate: e.target.value
+  //       }))
+  //     }
+
+  //   }
+  //   else if(e.target.name == 'month'){
+  //     if( e.target.value > 12){
+  //       return null
+  //     }
+  //     else{
+  //       setState((prevState) => ({
+  //         ...prevState,
+  //         typeMonth: e.target.value
+  //       }))
+  //     }
+  //   }
+  //   else if(e.target.name == 'year'){
+  //     if( e.target.value > 12){
+  //       return null
+  //     }
+  //     else{
+  //       setState((prevState) => ({
+  //         ...prevState,
+  //         typeYear: e.target.value
+  //       }))
+  //     }
+  //   }
+
+  // }
+
+  const handleageGroup = (e) => {
+    console.log("ageGroup", e.target.value);
+    setState({
+      ageGroup: e.target.value,
+    });
+  };
+
+  const handleCross = (e) => {
+    console.log("handlecross", e);
+    if (e == "nameField") {
+      setFormData((prevState) => ({
+        ...prevState,
+        nameField: "",
+      }));
+    } else if (e == "ageField") {
+      setFormData((prevState) => ({
+        ...prevState,
+        ageField: "",
+      }));
+    }
+  };
   const mypicData = [
     {
       path: mypic,
@@ -171,12 +243,37 @@ function ProfileInfo({ dictionary, handleBack }) {
     { item: "Kannada", name: "langData" },
   ];
 
+  const kids_age_group = [
+    {
+      key: "under7",
+      sub_type: "Under 7",
+      sub_type_long: "Under 7 years",
+    },
+    {
+      key: "under13",
+      sub_type: "Under 13",
+      sub_type_long: "Under 13 years",
+    },
+    {
+      key: "under16",
+      sub_type: "Under 16",
+      sub_type_long: "Under 16 years",
+    },
+    {
+      key: "under18",
+      sub_type: "Under 18",
+      sub_type_long: "Under 18 years",
+    },
+  ];
+
   const settings = {
     className: "center",
     centerMode: true,
     infinite: true,
     slidesToShow: 5,
-    speed: 500,
+    speed: 200,
+    accessibility: true,
+    easing: "linear",
     responsive: [
       {
         breakpoint: 2000,
@@ -188,7 +285,7 @@ function ProfileInfo({ dictionary, handleBack }) {
       {
         breakpoint: 1599,
         settings: {
-          slidesToShow: 4.0,
+          slidesToShow: 4,
           slidesToScroll: 1,
         },
       },
@@ -231,12 +328,26 @@ function ProfileInfo({ dictionary, handleBack }) {
       {
         breakpoint: 499,
         settings: {
-          slidesToShow: 3.79,
+          slidesToShow: 3.8,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 438,
+        settings: {
+          slidesToShow: 3.1,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 423,
+        settings: {
+          slidesToShow: 3.1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 399,
         settings: {
           slidesToShow: 3.1,
           slidesToScroll: 1,
@@ -251,7 +362,7 @@ function ProfileInfo({ dictionary, handleBack }) {
       },
     ],
   };
-
+  console.log("typeDate", state.typeDate);
   return (
     <div
       className={`${style.registration_container} ${
@@ -299,12 +410,12 @@ function ProfileInfo({ dictionary, handleBack }) {
                       className={style.avtaar_img}
                       id="avtaar_img"
                     />
-                    <Image
+                    {/* <Image
                       src={check}
                       alt="check_icon"
                       className={style.checkicon}
                       id="checkIcon"
-                    />
+                    /> */}
                   </div>
                 </div>
               );
@@ -334,6 +445,16 @@ function ProfileInfo({ dictionary, handleBack }) {
                   ? dictionary.profile_setup_name_placeholder
                   : constants.profile_setup_name_placeholder}
               </label>
+              {formData.nameField ? (
+                <span
+                  className={style.cross_icon}
+                  onClick={() => handleCross("nameField")}
+                >
+                  <Image src={Cross} width={16} height={16} alt="cross icon" />
+                </span>
+              ) : (
+                ""
+              )}
             </div>
             <div className={style.kidFlexBox}>
               <label className={style.label}>
@@ -354,26 +475,79 @@ function ProfileInfo({ dictionary, handleBack }) {
                 />
               </div>
             </div>
-            <div
-              className={`${style.ageFieldBox}  ${
-                formData.ageField ? style.activeField : ""
-              }`}
-            >
-              <input
-                type="date"
-                className={style.ageField}
-                id="dateLabel"
-                name="ageField"
-                value={formData.ageField}
-                onChange={handleInput}
-                required
-              />
-              <label for="dateLabel" className={style.label}>
-                {dictionary?.profile_setup_dob_placeholder
-                  ? dictionary.profile_setup_dob_placeholder
-                  : constants.profile_setup_dob_placeholder}
-              </label>
-            </div>
+            {formData.checkedKids ? (
+              <div className={style.kidsAgeGroup}>
+                <label className={style.label}>Age Group</label>
+                <div className={style.ageGroup}>
+                  {kids_age_group &&
+                    kids_age_group.map((item, index) => {
+                      return (
+                        <button
+                          key={index}
+                          className={
+                            item.key == state.ageGroup ? style.active : ""
+                          }
+                        >
+                          {item.key}
+                          <input
+                            type="radio"
+                            name="age"
+                            value={item.key}
+                            onChange={handleageGroup}
+                          />
+                        </button>
+                      );
+                    })}
+                </div>
+              </div>
+            ) : (
+              <div
+                className={`${style.ageFieldBox}  ${
+                  formData.ageField ? style.activeField : ""
+                }`}
+              >
+                <input
+                  type="date"
+                  className={style.ageField}
+                  id="dateLabel"
+                  name="ageField"
+                  placeholder="DD/MM/YYYY"
+                  data-date-format="DD/MM/YYYY"
+                  value={formData.ageField}
+                  onChange={handleInput}
+                  required
+                  // defaultValue="25/12/1994"
+                />
+                {/* <div className={style.fieldFlexBox}>
+              <input type="tel" placeholder="DD" maxLength={2} name='date' value={state.typeDate} onChange={handleDate}/>
+              <span className={style.seperator}>/</span>
+              <input type="tel" placeholder="MM" maxLength={2} name='month' value={state.typeMonth} onChange={handleDate}/>
+              <span className={style.seperator}>/</span>
+              <input type="tel" placeholder="YYYY" maxLength={4} name='year' value={state.typeYear} onChange={handleDate}/>
+              </div> */}
+
+                <label for="dateLabel" className={style.label}>
+                  {dictionary?.profile_setup_dob_placeholder
+                    ? dictionary.profile_setup_dob_placeholder
+                    : constants.profile_setup_dob_placeholder}
+                </label>
+                {formData.ageField ? (
+                  <span
+                    className={style.cross_icon}
+                    onClick={() => handleCross("ageField")}
+                  >
+                    <Image
+                      src={Cross}
+                      width={16}
+                      height={16}
+                      alt="cross icon"
+                    />
+                  </span>
+                ) : (
+                  ""
+                )}
+              </div>
+            )}
           </div>
           <div className={style.flex_cont}>
             <div className={style.identityFieldBox}>
@@ -416,6 +590,7 @@ function ProfileInfo({ dictionary, handleBack }) {
                     return (
                       <button
                         className={`${style.langBtn} ${
+                          formData.langData &&
                           formData.langData.indexOf(data.item) !== -1
                             ? style.active
                             : ""
@@ -450,6 +625,12 @@ function ProfileInfo({ dictionary, handleBack }) {
           formData.genderData &&
           formData.langData.length > 0
             ? style.activeBtn
+            : formData.nameField &&
+              formData.checkedKids &&
+              formData.genderData &&
+              state.ageGroup &&
+              formData.langData.length > 0
+            ? style.activeBtn
             : ""
         }`}
       >
@@ -461,6 +642,12 @@ function ProfileInfo({ dictionary, handleBack }) {
             formData.ageField &&
             formData.genderData &&
             formData.langData.length > 0
+              ? false
+              : formData.nameField &&
+                formData.checkedKids &&
+                formData.genderData &&
+                state.ageGroup &&
+                formData.langData.length
               ? false
               : true
           }
