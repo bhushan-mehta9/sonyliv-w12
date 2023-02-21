@@ -22,6 +22,7 @@ const ConfirmOtp = ({
   const [inputFocus, setinputFocus] = useState(false);
   const [resendOtpPopup, setResendOtpModal] = useState(false);
   const [resendOtpText, setResendOtpText] = useState(false);
+  const [email, setemail] = useState("");
   const [formData, setFormData] = useState({
     otp1: "",
     otp2: "",
@@ -118,7 +119,7 @@ const ConfirmOtp = ({
     /*********** confirmOtp api call ***********/
     callConfirmOtpApi(data.phonenumber, otp, country_code);
   };
-
+ 
   /**
    * set otp value ,number validation
    * Creation Date : 10/02/2023
@@ -167,12 +168,19 @@ const ConfirmOtp = ({
               className={styles.arrowLeft}
             />
           </div>
-          <div className={styles.textOne}> Please verify its you</div>
+          <div className={styles.textOne}> 
+          {dictionary.OTP_VERIFY_YOU}
+          </div>
         </div>
         <div className={styles.sectionTwo}>
-          <div className={styles.otpEmail}>Enter the OTP sent to:</div>
+        {email ? (
+          <div className={styles.otpEmail}>{dictionary.ENTER_OTP_EMAIL}</div>
+        ):
+        (
+          <div className={styles.otpEmail}>{dictionary.ENTER_OTP_MOBILE}</div>
+        )}
           <div className={styles.displayFlex}>
-            <span className={styles.mobileNo}> +91 252xxxx242</span>
+            {/* <span className={styles.mobileNo}> +91 252xxxx242</span> */}
             <span onClick={handleClick} className={styles.editIcon}>
               <Image src={EditIcon} alt="edit-icon"></Image>
             </span>
@@ -232,16 +240,16 @@ const ConfirmOtp = ({
         </div>
         {resendOtpText ? (
           <div className={styles.sectionFour} style={{ cursor: "pointer" }}>
-            <span className={styles.grayColor}>Didn’t receive the code? </span>
-            <span style={{ textDecoration: "underline" }} onClick={resendClick}>
+            <span className={styles.grayColor} onClick={resendClick}>{dictionary.DIDNT_RECIEVE_TEXT}</span>
+            {/* <span style={{ textDecoration: "underline" }} >
               Try Again
-            </span>
+            </span> */}
           </div>
         ) : (
           <div className={styles.sectionOtp}>
-            You will be receiving an SMS shortly
+            {dictionary.receive_sms_shortly}
             <div>
-              Resend OTP in <span className={styles.blueColor}> 01:56</span>
+             {dictionary.VALID_OTP_TEXT} <span className={styles.blueColor}> {dictionary.OTP_TIMER_VALUE}</span>
             </div>
           </div>
         )}
