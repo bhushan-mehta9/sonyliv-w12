@@ -125,7 +125,6 @@ function ProfileInfo({ dictionary, handleBack, config }) {
     setAvtaar(data);
   };
 
-
   const handleageGroup = (e) => {
     setState({
       ageGroup: e.target.value,
@@ -188,7 +187,6 @@ function ProfileInfo({ dictionary, handleBack, config }) {
     },
   ];
 
-
   const settings = {
     className: "center",
     centerMode: true,
@@ -238,7 +236,6 @@ function ProfileInfo({ dictionary, handleBack, config }) {
         settings: {
           slidesToShow: 3.79,
           slidesToScroll: 1,
-          
         },
       },
       {
@@ -286,22 +283,26 @@ function ProfileInfo({ dictionary, handleBack, config }) {
     ],
   };
 
-  const {profile_setup_feature} = config;
-  const langText = profile_setup_feature && 
-  profile_setup_feature.content_languages && 
-  profile_setup_feature.content_languages.display_text &&
-  profile_setup_feature.content_languages.display_text.split(',') ;
-  const langCode = profile_setup_feature && 
-  profile_setup_feature.content_languages && 
-  profile_setup_feature.content_languages.code.length > 0 && 
-  profile_setup_feature.content_languages.code;
+  const { profile_setup_feature } = config;
+  const langText =
+    profile_setup_feature &&
+    profile_setup_feature.content_languages &&
+    profile_setup_feature.content_languages.display_text &&
+    profile_setup_feature.content_languages.display_text.split(",");
+  const langCode =
+    profile_setup_feature &&
+    profile_setup_feature.content_languages &&
+    profile_setup_feature.content_languages.code.length > 0 &&
+    profile_setup_feature.content_languages.code;
   let contentLangData = [];
 
-  if(langText.length > 0 && langCode.length > 0){
+  if (langText.length > 0 && langCode.length > 0) {
     langCode.map((item, index) => {
-      contentLangData.push({ code :langCode[index],
-        displayText : langText[index]});
-    })
+      contentLangData.push({
+        code: langCode[index],
+        displayText: langText[index],
+      });
+    });
   }
 
   return (
@@ -420,9 +421,10 @@ function ProfileInfo({ dictionary, handleBack, config }) {
               <div className={style.kidsAgeGroup}>
                 <label className={style.label}>Age Group</label>
                 <div className={style.ageGroup}>
-                  {profile_setup_feature && profile_setup_feature.kids_age_group &&
-                  profile_setup_feature.kids_age_group.length > 0 && 
-                  profile_setup_feature.kids_age_group.map((item, index) => {
+                  {profile_setup_feature &&
+                    profile_setup_feature.kids_age_group &&
+                    profile_setup_feature.kids_age_group.length > 0 &&
+                    profile_setup_feature.kids_age_group.map((item, index) => {
                       return (
                         <button
                           key={index}
@@ -459,7 +461,6 @@ function ProfileInfo({ dictionary, handleBack, config }) {
                   onChange={handleInput}
                   required
                 />
-            
 
                 <label for="dateLabel" className={style.label}>
                   {dictionary?.profile_setup_dob_placeholder
@@ -492,8 +493,9 @@ function ProfileInfo({ dictionary, handleBack, config }) {
                   : constants.profile_setup_select_gender_title}
               </h3>
               <div className={style.genderBtn_Flexbox}>
-                {profile_setup_feature && profile_setup_feature.gender_options &&
-                profile_setup_feature.gender_options.length > 0 && 
+                {profile_setup_feature &&
+                  profile_setup_feature.gender_options &&
+                  profile_setup_feature.gender_options.length > 0 &&
                   profile_setup_feature.gender_options.map((data, index) => {
                     return (
                       <button
@@ -522,8 +524,8 @@ function ProfileInfo({ dictionary, handleBack, config }) {
               </h3>
               <div className={style.contentLangFlexbox}>
                 {contentLangData &&
-                contentLangData.length > 0 &&
-                contentLangData.map((data, index) => {
+                  contentLangData.length > 0 &&
+                  contentLangData.map((data, index) => {
                     return (
                       <button
                         className={`${style.langBtn} ${
