@@ -6,7 +6,18 @@ import style from "./LinkYourMobilePopup.module.scss";
  * Component for Link mobile number popup
  * Creation Date : 14/02/2023
  */
-const LinkYourMobilePopup = ({ isOpen, handleModal, continueClick,dictionary }) => {
+const LinkYourMobilePopup = ({
+  isOpen,
+  handleModal,
+  continueClick,
+  dictionary,
+  featureConfig,
+  cancelAccountSetup,
+}) => {
+  const cancelAccount = () => {
+    cancelAccountSetup();
+    handleModal();
+  };
   return (
     <Modal isOpen={isOpen} handleModal={handleModal}>
       <div className={style.header_section}>

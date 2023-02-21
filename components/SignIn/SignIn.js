@@ -18,7 +18,13 @@ import { createOtp } from "../../lib/signin";
 import * as constants from "@/constants/constant";
 import ExitPopup from "../Modal/ExitConfirmPopup/ExitPopup";
 
-const SignIn = ({ handleBack, handlePageChange, closeSignIn, dictionary }) => {
+const SignIn = ({
+  handleBack,
+  handlePageChange,
+  closeSignIn,
+  dictionary,
+  featureConfig,
+}) => {
   const [isCountryModalOpen, setIsCountryModalOpen] = useState(false);
   const [isLinkModal, setIsLinkModal] = useState(false);
   const [socialLoginModal, setSocialLoginModal] = useState(false);
@@ -84,26 +90,25 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn, dictionary }) => {
    */
   const handleClick = () => {
     if (email) {
-      active ?  setIsLinkModal(true) : setIsLinkModal(false);
+      active ? setIsLinkModal(true) : setIsLinkModal(false);
     }
     const regex = /^(\+\d{1,3}[- ]?)?\d{10}$/;
     if (regex.test(phonenumber) === true) {
       seterror(false);
       setActive(true);
 
-      /*********** createOtp api call ***********/ 
-      let country_code = localStorage.getItem('country_code')
+      /*********** createOtp api call ***********/
+      let country_code = localStorage.getItem("country_code");
       createOtp(phonenumber, country_code)
-      .then((result) => {
-        const { resultCode, resultObj } = result;
-        if (resultCode === constants.SUCCESS_RESULT_CODE) {
-          handlePageChange("confirmotp", {"phonenumber": phonenumber}); 
-        }
-      })
-      .catch((error) => {
-        throw error;
-      });
-
+        .then((result) => {
+          const { resultCode, resultObj } = result;
+          if (resultCode === constants.SUCCESS_RESULT_CODE) {
+            handlePageChange("confirmotp", { phonenumber: phonenumber });
+          }
+        })
+        .catch((error) => {
+          throw error;
+        });
     } else {
       seterror(true);
       setActive(false);
@@ -138,10 +143,14 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn, dictionary }) => {
     setemail(true);
     setSocialLoginModal(false);
   };
+  const handleCancelAccountSetup = () => {
+    setemail(false);
+    setSocialLoginModal(false);
+  };
   const emailChangehandler = (e) => {
     const valueEmail = e.target.value;
     setemailInput(valueEmail);
-    const regexmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    const regexmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (regexmail.test(valueEmail) === true) {
       setActive(true);
     } else {
@@ -173,9 +182,6 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn, dictionary }) => {
       closeSignIn();
     }
   };
-
-  console.log(dictionary,"diction");
-
 
   return (
     <div onClick={closeDropdown}>
@@ -307,18 +313,16 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn, dictionary }) => {
         isOpen={socialLoginModal}
         handleModal={handleSocialModalClose}
         emailHandler={emailHandler}
+        featureConfig={featureConfig}
       />
       <LinkYourMobilePopup
-      dictionary={dictionary}
-      isOpen={isLinkModal}
+        dictionary={dictionary}
+        featureConfig={featureConfig}
+        isOpen={isLinkModal}
         handleModal={handleLinkModal}
         continueClick={continueLinkEmail}
+        cancelAccountSetup={handleCancelAccountSetup}
       />
-      {/* <ExitPopup
-         isOpen={isLinkModal}
-         handleModal={handleLinkModal}
-         continueClick={continueLinkEmail}
-      /> */}
     </div>
   );
 };
