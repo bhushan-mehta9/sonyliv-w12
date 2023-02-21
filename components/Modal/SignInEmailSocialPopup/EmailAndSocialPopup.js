@@ -19,8 +19,11 @@ const EmailAndSocialPopup = ({
   return (
     <Modal isOpen={isOpen} handleModal={handleModal}>
       <div className={style.header_section}>
-        <div className={style.title}>Sign In via Email ID or Social Media </div>
-        <div className={style.description}>How would you like to Sign In?</div>
+        <div className={style.title}>{dictionary.email_social_login_options}
+           </div>
+        <div className={style.description}>
+          How would you like to Sign In?
+          </div>
       </div>
       <div className={style.button_section}>
         <button className={style.button} onClick={emailHandler}>

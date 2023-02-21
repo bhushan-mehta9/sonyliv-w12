@@ -197,12 +197,14 @@ const SignIn = ({
           {linkPage ? (
             <>
               <div className={style.signweb}>
-                Link  Mobile no. with Email ID
+                {dictionary.link_mobile_no}
               </div>
             </>
           ) : (
             <>
-              <div className={style.signweb}>Sign in to watch </div>
+              <div className={style.signweb}>
+                {dictionary.signin_title}
+                </div>
             </>
           )}
         </div>
@@ -221,8 +223,7 @@ const SignIn = ({
                 Enter your email address
               </label>
               <div className={style.note}>
-                Note: OTP will be sent to your mobile number linked with this
-                email id
+                {dictionary.otp_to_linked_mobileno}
               </div>
             </div>
           ) : (
@@ -247,7 +248,7 @@ const SignIn = ({
                   id="phone_number"
                 />
                 <label className={style.labelphone} for="phone_number">
-                  Enter your mobile number
+                  {dictionary.mobileno_input}
                 </label>
               </div>
             </>
@@ -258,26 +259,27 @@ const SignIn = ({
               className={active ? style.active : style.nextbtn}
               onClick={handleClick}
             >
-              Next
+              {dictionary.next_cta}
             </button>
           </div>
           <div className={style.proceed}>
-            By proceeding you confirm that you are of 18 years or above and
+            {dictionary.term_condition_disclaimer}
+            {/* By proceeding you confirm that you are of 18 years or above and
             accept the <span className={style.tnc}> Terms of Use</span> &{" "}
-            <span className={style.pp}>Privacy Policy</span>
+            <span className={style.pp}>Privacy Policy</span> */}
           </div>
           {email || linkPage ? (
             ""
           ) : (
             <>
               <div className={style.alreadyaccount}>
-                Already have an account?
+                {dictionary.email_social_login_title}
               </div>
               <div
                 className={style.viaemail}
                 onClick={() => handleSocialLoginModal()}
               >
-                Sign In via Email ID or Social Media
+                {dictionary.email_social_login_options}
               </div>
             </>
           )}
@@ -307,10 +309,10 @@ const SignIn = ({
         />
       )}
       <EmailAndSocialPopup
+       dictionary={dictionary}
         isOpen={socialLoginModal}
         handleModal={handleSocialModalClose}
         emailHandler={emailHandler}
-        dictionary={dictionary}
         featureConfig={featureConfig}
       />
       <LinkYourMobilePopup
