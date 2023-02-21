@@ -23,7 +23,6 @@ const ConfirmOtp = ({
   const [resendOtpPopup, setResendOtpModal] = useState(false);
   const [resendOtpText, setResendOtpText] = useState(false);
   const [email, setemail] = useState("");
-  const [active, setActive] = useState(false);
   const [formData, setFormData] = useState({
     otp1: "",
     otp2: "",
