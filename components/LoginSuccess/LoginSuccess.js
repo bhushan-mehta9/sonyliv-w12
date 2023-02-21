@@ -7,7 +7,7 @@ import Tick_round from "@/public/loginsuccess/tick_round.png";
 import LoginSuccessModal from "./LoginSuccessModal";
 import { isMobile, isTablet } from "react-device-detect";
 
-function LoginSuccess({ handlePageChangeForSucess }) {
+function LoginSuccess({ handlePageChangeForSucess, data, dictionary }) {
   useEffect(() => {
     /**
      * after 5 sec this component will hide automatically
@@ -18,6 +18,71 @@ function LoginSuccess({ handlePageChangeForSucess }) {
     }, 3000);
   }, []);
   const router = useRouter();
+  /**
+   * creating variables for getprofile check
+   * Creation Date : 21/02/2023
+   */
+  let MobileNumber =
+    data?.userProfile?.resultObj?.contactMessage[0]?.mobileNumber;
+  let isSubscriptionActive =
+    data?.userProfile?.resultObj?.contactMessage[0]?.subscription
+      ?.accountServiceMessage?.length > 0;
+  /**
+   * creating functions for subscribe and non subscribe check
+   * Creation Date : 21/02/2023
+   */
+  const renderSubscriptionActive = () => {
+    return (
+      <>
+        <Image
+          src={Shape}
+          className={styles.premium_icon_01}
+          alt="premium icon"
+        ></Image>
+        <div className={styles.buttonText}>
+          {dictionary?.subscription_active_cta}
+        </div>
+      </>
+    );
+  };
+  const renderSubscriptionNotActive = () => {
+    return (
+      <div className={styles.inactivebuttonText}>
+        {dictionary?.no_active_subscription_cta}
+      </div>
+    );
+  };
+  let accountSubscription =
+    data?.userProfile?.resultObj?.contactMessage[0]?.subscription
+      ?.accountServiceMessage;
+  let subscriptionPack = [];
+  accountSubscription &&
+    accountSubscription.map((accountServiceDetail) => {
+      let subscriptionValidity = accountServiceDetail.validityTill;
+      let date = new Date(subscriptionValidity);
+      var accountDetail = {
+        serviceName: accountServiceDetail.serviceName || "",
+        month: date.getMonth(),
+        day: date.getDate(),
+        year: date.getFullYear(),
+      };
+      subscriptionPack.push(accountDetail);
+    });
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "June",
+    "July",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
   return (
     <>
       {!isMobile ? (
@@ -34,29 +99,39 @@ function LoginSuccess({ handlePageChangeForSucess }) {
             <div className={styles.displayFlex}>
               <span className={styles.mobileNo}>
                 {" "}
-                You have successfully signed in with
+                {dictionary?.successfull_signin_message}
               </span>
             </div>
             <div className={styles.LoggedMobile}>
-              <span className={styles.mobileNoText}>+91 12318481913</span>
+              <span className={styles.mobileNoText}>{MobileNumber}</span>
             </div>
             <div className={styles.button}>
-              <Image
-                src={Shape}
-                className={styles.premium_icon_01}
-                alt="premium icon"
-              ></Image>
-              <div className={styles.buttonText}>subscription active</div>
+              {isSubscriptionActive
+                ? renderSubscriptionActive()
+                : renderSubscriptionNotActive()}
             </div>
           </div>
           <div className={styles.sectionThree}>
-            <div>
-              <span>LIV Premium - valid till 2&nbsp;Sep,&nbsp;2022</span>
-            </div>
+            {isSubscriptionActive
+              ? subscriptionPack &&
+                subscriptionPack.map((subItem) => (
+                  <div>
+                    <span>
+                      {subItem.serviceName} -
+                      {dictionary?.valid_till.replace(
+                        "$$",
+                        `${subItem?.day} ${months[subItem?.month]}, ${
+                          subItem?.year
+                        }`
+                      )}
+                    </span>
+                  </div>
+                ))
+              : ""}
           </div>
         </div>
       ) : (
-        <LoginSuccessModal />
+        <LoginSuccessModal data={data} dictionary={dictionary} />
       )}
     </>
   );
