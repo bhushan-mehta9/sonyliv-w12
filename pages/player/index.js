@@ -7,24 +7,27 @@ import { getCommonData, generateToken } from "@/lib/app";
 import Head from "next/head";
 
 function Player(props) {
-  console.log(">>>>>>>>>serverside data", props)
+  console.log(">>>>>>>>>serverside data", props);
   const [showModal, setShowModal] = useState(false);
 
-  if(typeof window !== "undefined"){
-    if(!localStorage.getItem('security_token')){
-      localStorage.setItem('security_token', props.security_token)
+  if (typeof window !== "undefined") {
+    if (!localStorage.getItem("security_token")) {
+      localStorage.setItem("security_token", props.security_token);
     }
 
-    if(!localStorage.getItem('state_code')){
-      localStorage.setItem('state_code', props.uld.resultObj.state_code)
+    if (!localStorage.getItem("state_code")) {
+      localStorage.setItem("state_code", props.uld.resultObj.state_code);
     }
 
-    if(!localStorage.getItem('country_code')){
-      localStorage.setItem('country_code', props.uld.resultObj.country_code)
+    if (!localStorage.getItem("country_code")) {
+      localStorage.setItem("country_code", props.uld.resultObj.country_code);
     }
 
-    if(!localStorage.getItem('channelPartnerID')){
-      localStorage.setItem('channelPartnerID', props.uld.resultObj.channelPartnerID)
+    if (!localStorage.getItem("channelPartnerID")) {
+      localStorage.setItem(
+        "channelPartnerID",
+        props.uld.resultObj.channelPartnerID
+      );
     }
   }
 
@@ -40,10 +43,7 @@ function Player(props) {
         <meta name="keywords" content="titla, meta, nextjs" />
         <meta name="author" content="Syamlal CM" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-          name="description"
-          content=" Player page"
-        />
+        <meta name="description" content=" Player page" />
       </Head>
       {showModal ? (
         ""
@@ -78,6 +78,7 @@ function Player(props) {
         <SignInModal
           handleSignInModal={handleSignInModal}
           dictionary={props?.dictionary?.resultObj?.dictionary}
+          featureConfig={props?.featureConfig?.resultObj?.config}
         />
       ) : (
         ""
@@ -94,11 +95,12 @@ export default Player;
  */
 export async function getServerSideProps(context) {
   const { params, req, res } = context;
-  const {security_token, uld, dictionary, initialConfig, featureConfig} = await getCommonData();
+  const { security_token, uld, dictionary, initialConfig, featureConfig } =
+    await getCommonData();
 
   return {
     props: {
-      security_token : security_token,
+      security_token: security_token,
       uld: uld,
       dictionary: dictionary,
       initialConfig: initialConfig,

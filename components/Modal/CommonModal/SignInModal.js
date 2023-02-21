@@ -31,7 +31,7 @@ function Modal(props) {
    */
   const handlePageChange = (value, data) => {
     setPage(value);
-    setData(data)
+    setData(data);
   };
 
   /**
@@ -63,6 +63,8 @@ function Modal(props) {
                 handleBack={handleBack}
                 handlePageChange={handlePageChange}
                 closeSignIn={closeSignIn}
+                dictionary={props.dictionary}
+                featureConfig={props.featureConfig}
               />
             );
           case "confirmotp":
@@ -71,6 +73,8 @@ function Modal(props) {
                 handleBack={handleBack}
                 handlePageChange={handlePageChange}
                 data={data}
+                dictionary={props.dictionary}
+                featureConfig={props.featureConfig}
               />
             );
           case "loginsuccess":
@@ -89,10 +93,19 @@ function Modal(props) {
                   data={data}
                   dictionary={props.dictionary}
                 />
-                <ProfileInfo dictionary={props.dictionary} handleBack={handleBack} data={data} />
+                <ProfileInfo
+                  dictionary={props.dictionary}
+                  handleBack={handleBack}
+                  data={data}
+                />
               </>
             ) : (
-              <ProfileInfo dictionary={props.dictionary} handleBack={handleBack} data={data}/>
+              <ProfileInfo
+                dictionary={props.dictionary}
+                config={props.featureConfig}
+                handleBack={handleBack}
+                data={data}
+              />
             );
           case "personalization":
             return (
@@ -103,8 +116,7 @@ function Modal(props) {
               />
             );
           case "selectprofile":
-            return (<SelectProfile handlePageChange={handlePageChange} />
-            );
+            return <SelectProfile handlePageChange={handlePageChange} />;
           default:
             return null;
         }
