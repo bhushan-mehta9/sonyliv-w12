@@ -100,6 +100,7 @@ function Modal(props) {
             ) : (
               <ProfileInfo
                 dictionary={props.dictionary}
+                config={props.featureConfig}
                 handleBack={handleBack}
                 data={data}
               />
