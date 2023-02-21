@@ -6,22 +6,23 @@ import style from "./LinkYourMobilePopup.module.scss";
  * Component for Link mobile number popup
  * Creation Date : 14/02/2023
  */
-const LinkYourMobilePopup = ({ isOpen, handleModal, continueClick }) => {
+const LinkYourMobilePopup = ({ isOpen, handleModal, continueClick,dictionary }) => {
   return (
     <Modal isOpen={isOpen} handleModal={handleModal}>
       <div className={style.header_section}>
         <div className={style.title}>
-          Link your mobile number to finish your account setup
+          {dictionary.link_mobile_number_title}
         </div>
       </div>
       <div className={style.button_section}>
         <div className={style.button}>
           <button className={style.button1} onClick={() => continueClick()}>
-            Continue
+            {dictionary.continue_cta}
           </button>
         </div>
         <div className={style.button}>
-          <button>Cancel account setup</button>
+          <button>{dictionary.cancel_account_setup_cta}
+            </button>
         </div>
       </div>
     </Modal>

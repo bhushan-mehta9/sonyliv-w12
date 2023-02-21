@@ -18,7 +18,7 @@ import { createOtp } from "../../lib/signin";
 import * as constants from "@/constants/constant";
 import ExitPopup from "../Modal/ExitConfirmPopup/ExitPopup";
 
-const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
+const SignIn = ({ handleBack, handlePageChange, closeSignIn, dictionary }) => {
   const [isCountryModalOpen, setIsCountryModalOpen] = useState(false);
   const [isLinkModal, setIsLinkModal] = useState(false);
   const [socialLoginModal, setSocialLoginModal] = useState(false);
@@ -174,6 +174,8 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
     }
   };
 
+  console.log(dictionary,"diction");
+
 
   return (
     <div onClick={closeDropdown}>
@@ -189,12 +191,14 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
           {linkPage ? (
             <>
               <div className={style.signweb}>
-                Link  Mobile no. with Email ID
+                {dictionary.link_mobile_no}
               </div>
             </>
           ) : (
             <>
-              <div className={style.signweb}>Sign in to watch </div>
+              <div className={style.signweb}>
+                {dictionary.signin_title}
+                </div>
             </>
           )}
         </div>
@@ -213,8 +217,7 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
                 Enter your email address
               </label>
               <div className={style.note}>
-                Note: OTP will be sent to your mobile number linked with this
-                email id
+                {dictionary.otp_to_linked_mobileno}
               </div>
             </div>
           ) : (
@@ -239,7 +242,7 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
                   id="phone_number"
                 />
                 <label className={style.labelphone} for="phone_number">
-                  Enter your mobile number
+                  {dictionary.mobileno_input}
                 </label>
               </div>
             </>
@@ -250,26 +253,27 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
               className={active ? style.active : style.nextbtn}
               onClick={handleClick}
             >
-              Next
+              {dictionary.next_cta}
             </button>
           </div>
           <div className={style.proceed}>
-            By proceeding you confirm that you are of 18 years or above and
+            {dictionary.term_condition_disclaimer}
+            {/* By proceeding you confirm that you are of 18 years or above and
             accept the <span className={style.tnc}> Terms of Use</span> &{" "}
-            <span className={style.pp}>Privacy Policy</span>
+            <span className={style.pp}>Privacy Policy</span> */}
           </div>
           {email || linkPage ? (
             ""
           ) : (
             <>
               <div className={style.alreadyaccount}>
-                Already have an account?
+                {dictionary.email_social_login_title}
               </div>
               <div
                 className={style.viaemail}
                 onClick={() => handleSocialLoginModal()}
               >
-                Sign In via Email ID or Social Media
+                {dictionary.email_social_login_options}
               </div>
             </>
           )}
@@ -299,12 +303,14 @@ const SignIn = ({ handleBack, handlePageChange, closeSignIn }) => {
         />
       )}
       <EmailAndSocialPopup
+       dictionary={dictionary}
         isOpen={socialLoginModal}
         handleModal={handleSocialModalClose}
         emailHandler={emailHandler}
       />
       <LinkYourMobilePopup
-        isOpen={isLinkModal}
+      dictionary={dictionary}
+      isOpen={isLinkModal}
         handleModal={handleLinkModal}
         continueClick={continueLinkEmail}
       />

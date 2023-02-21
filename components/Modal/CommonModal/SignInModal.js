@@ -63,6 +63,7 @@ function Modal(props) {
                 handleBack={handleBack}
                 handlePageChange={handlePageChange}
                 closeSignIn={closeSignIn}
+                dictionary={props.dictionary}
               />
             );
           case "confirmotp":
