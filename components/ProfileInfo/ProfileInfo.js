@@ -283,7 +283,7 @@ function ProfileInfo({ dictionary, handleBack, config }) {
     ],
   };
 
-  const { profile_setup_feature } = config;
+  const  profile_setup_feature  = config && config.profile_setup_feature;
   const langText =
     profile_setup_feature &&
     profile_setup_feature.content_languages &&
@@ -296,7 +296,7 @@ function ProfileInfo({ dictionary, handleBack, config }) {
     profile_setup_feature.content_languages.code;
   let contentLangData = [];
 
-  if (langText.length > 0 && langCode.length > 0) {
+  if (langText && langCode ) {
     langCode.map((item, index) => {
       contentLangData.push({
         code: langCode[index],
