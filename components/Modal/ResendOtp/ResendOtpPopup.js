@@ -19,9 +19,9 @@ const ResendOtpPopup = ({ isOpen, handleModal, dictionary, featureConfig }) => {
       </div>
       <div className={style.button_section}>
         {featureConfig?.confirm_otp?.resend_otp_options?.map(
-          (item) =>
+          (item , index) =>
             item.isEnable && (
-              <div className={style.button}>
+              <div className={style.button} key={index}>
                 <button className={style.button}>
                   <Image
                     src={Whatsapp}

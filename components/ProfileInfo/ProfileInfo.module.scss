@@ -47,7 +47,8 @@ $black: #000;
     }
 
     .avtaarSlider_container {
-      max-width: 508px;
+      // max-width: 508px;
+      max-width: 514px;
       margin: 0 auto;
     }
     .image_block {
@@ -107,7 +108,8 @@ $black: #000;
       width: calc(100% - 0px);
       margin-right: auto;
       position: relative;
-      padding-top: 20px;
+      padding-top: 18px;
+      border-bottom: 1px solid #636370;
       .label {
         font-style: normal;
         font-weight: 400;
@@ -124,7 +126,7 @@ $black: #000;
         width: 100%;
         height: 38px;
         background-color: transparent !important;
-        border-bottom: 1px solid #636370;
+        border: none;
         outline: none;
         border-top: none;
         border-left: none;
@@ -134,7 +136,7 @@ $black: #000;
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
-
+        padding-right: 20px;
         &:-webkit-autofill {
           -webkit-background-clip: text;
           -webkit-text-fill-color: $white !important;
@@ -143,7 +145,7 @@ $black: #000;
           }
         }
         &:focus + .label {
-          top: 0;
+          top: 3px;
           font-style: normal;
           font-weight: 400;
           font-size: 12px;
@@ -158,42 +160,52 @@ $black: #000;
           font-size: 12px;
           line-height: 16px;
           color: $lighttGray;
-          top: 0;
+          top: 3px;
           left: 0;
         }
+        .cross_icon{
+          display: inline-flex;
+        }
+      }
+      .cross_icon{
+        position: absolute;
+        right: 2px;
+        width: 16px;
+        height: 16px;
+        display: none;
+        top:29px;
+        cursor: pointer;
       }
     }
     .ageFieldBox {
       margin-bottom: 32px;
       width: calc(100% - 0px);
       margin-right: auto;
-      padding-top: 20px;
+      padding-top: 18px;
       position: relative;
-
+      border-bottom: 1px solid #636370;
       .ageField {
         width: 100%;
         height: 38px;
         background-color: transparent !important;
-        border-bottom: 1px solid #636370;
-        outline: none;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        color: $white;
+        // border-bottom: 1px solid #636370;
+        color: #a0a0aa;
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
-
-        background-color: red;
+        border: none;
+        outline: none;
+        padding-right: 20px;
         &:focus + .label {
-          top: 0;
+          top: 3px;
           font-style: normal;
           font-weight: 400;
           font-size: 12px;
           line-height: 16px;
           color: $lighttGray;
         }
+
         &[value=""]::-webkit-datetime-edit {
           color: transparent;
         }
@@ -201,7 +213,9 @@ $black: #000;
           color: $white;
         }
       }
-
+      input[type="date"]:not([value="DD-MM-YYYY"]) {
+        color: $white !important;
+      }
       .label {
         font-style: normal;
         font-weight: 400;
@@ -221,8 +235,69 @@ $black: #000;
           font-size: 12px;
           line-height: 16px;
           color: $lighttGray;
-          top: 0;
+          top: 3px;
           left: 0;
+        }
+        .cross_icon{
+          display: inline-flex;
+        }
+      }
+      .cross_icon{
+        position: absolute;
+        right: 2px;
+        width: 16px;
+        height: 16px;
+        display: none;
+        top:29px;
+        cursor: pointer;
+      }
+    }
+    .kidsAgeGroup {
+      .label {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 16px;
+        display: inline-flex;
+        color: $lighttGray;
+      }
+      .ageGroup {
+        display: flex;
+        flex-wrap: wrap;
+        > button {
+          background-color: $lightViolet;
+          border-radius: 22px;
+          min-width: 79px;
+          min-height: 32px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          cursor: pointer;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 16px;
+          color: $lighttGray;
+          letter-spacing: 0.7px;
+          border: none;
+          outline: none;
+          margin-right: 8px;
+          margin-bottom: 16px;
+          input[type="radio"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            z-index: 1;
+            opacity: 0;
+          }
+          &.active {
+            background: #636370;
+          }
         }
       }
     }
@@ -402,7 +477,7 @@ $black: #000;
     padding-top: 0px;
     max-width: 412px;
     margin: 0px auto;
-    margin-top: 50px;
+    margin-top: auto;
     width: 100%;
     button {
       background-color: transparent;
@@ -432,7 +507,7 @@ $black: #000;
   }
   .pagination {
     padding: 0px 16px 32px 16px;
-    margin-top: auto;
+    margin-top: 0;
     ul {
       margin: 0;
       padding: 0;
@@ -471,15 +546,6 @@ $black: #000;
       .page_title {
         margin-bottom: 40px;
       }
-    }
-    .avtaar_container {
-      .avtaarSlider_container {
-        // max-width: 481px;
-        margin: 0 auto;
-      }
-    }
-    .next_btn {
-      margin-top: 90px;
     }
   }
 }
@@ -645,7 +711,7 @@ $black: #000;
         margin-bottom: 16px;
       }
       .image_block {
-        max-width: 80px;
+        // max-width: 80px;
       }
       .avtaarSlider_container {
         max-width: 508px;
@@ -691,12 +757,11 @@ $black: #000;
     .avtaar_container {
       .title {
         margin-top: 0;
-        margin-bottom: 22px;
+        margin-bottom: 11px;
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
         line-height: 16px;
-
         color: $lighttGray;
         margin-left: auto;
         margin-right: auto;
@@ -705,7 +770,7 @@ $black: #000;
         text-align: left;
       }
       .avtaarSlider_container {
-        max-width: 424px;
+        max-width: 440px;
       }
       .image_block {
         max-width: 76px;
@@ -780,6 +845,7 @@ $black: #000;
                 opacity: 0;
                 // color: #fff;
               }
+
               input[type="date"]:required:invalid::-webkit-datetime-edit {
                 color: transparent;
               }
@@ -1036,7 +1102,7 @@ $black: #000;
 @media screen and (max-width: 576px) {
   .registration_container {
     .form_container {
-      max-height: calc(100vh - 390px);
+      max-height: calc(100vh - 350px);
       overflow-y: auto;
       &::-webkit-scrollbar {
         border-radius: 90px;
@@ -1054,6 +1120,15 @@ $black: #000;
   }
 }
 
+@media screen and (max-width: 399px) {
+  .registration_container {
+    .avtaar_container {
+      .image_block {
+        max-width: 70px;
+      }
+    }
+  }
+}
 @media screen and (max-width: 299px) {
   .registration_container {
     .avtaar_container {
