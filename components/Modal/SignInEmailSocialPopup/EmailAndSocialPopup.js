@@ -9,7 +9,13 @@ import Facebook from "../../../public/images/Facebook.png";
  * Component for Social logins Popup
  * Creation Date : 14/02/2023
  */
-const EmailAndSocialPopup = ({ isOpen, handleModal, emailHandler }) => {
+const EmailAndSocialPopup = ({
+  isOpen,
+  handleModal,
+  emailHandler,
+  dictionary,
+  featureConfig,
+}) => {
   return (
     <Modal isOpen={isOpen} handleModal={handleModal}>
       <div className={style.header_section}>

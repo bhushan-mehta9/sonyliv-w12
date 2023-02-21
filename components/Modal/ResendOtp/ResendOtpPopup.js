@@ -7,7 +7,8 @@ import Image from "next/image";
  * Component for Resend otp popup
  * Creation Date : 14/02/2023
  */
-const ResendOtpPopup = ({ isOpen, handleModal }) => {
+const ResendOtpPopup = ({ isOpen, handleModal, dictionary, featureConfig }) => {
+  console.log("featureConfig", featureConfig);
   return (
     <Modal isOpen={isOpen} handleModal={handleModal}>
       <div className={style.header_section}>
@@ -17,10 +18,25 @@ const ResendOtpPopup = ({ isOpen, handleModal }) => {
         </div>
       </div>
       <div className={style.button_section}>
-        <div className={style.button}>
-          <button className={style.button1}>Send Sms</button>
-        </div>
-        <div className={style.button}>
+        {featureConfig?.confirm_otp?.resend_otp_options?.map(
+          (item) =>
+            item.isEnable && (
+              <div className={style.button}>
+                <button className={style.button}>
+                  <Image
+                    src={Whatsapp}
+                    width={15.92}
+                    height={16}
+                    className={style.image}
+                    alt="Whatsapp Icon"
+                  />
+                  <span>{item.title}</span>
+                </button>
+              </div>
+            )
+        )}
+
+        {/* <div className={style.button}>
           <button>
             <span>Call me</span>
           </button>
@@ -36,7 +52,7 @@ const ResendOtpPopup = ({ isOpen, handleModal }) => {
             />
             <span>Send via Whatsapp</span>
           </button>
-        </div>
+        </div> */}
       </div>
     </Modal>
   );

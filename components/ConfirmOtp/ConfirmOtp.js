@@ -11,7 +11,13 @@ import { confirmOtp } from "../../lib/signin";
 import * as constants from "@/constants/constant";
 import { invokeGetProfile } from "@/lib/profile";
 
-const ConfirmOtp = ({ handleBack, handlePageChange, data }) => {
+const ConfirmOtp = ({
+  handleBack,
+  handlePageChange,
+  data,
+  dictionary,
+  featureConfig,
+}) => {
   const textInput = useRef(null);
   const [inputFocus, setinputFocus] = useState(false);
   const [resendOtpPopup, setResendOtpModal] = useState(false);
@@ -22,7 +28,7 @@ const ConfirmOtp = ({ handleBack, handlePageChange, data }) => {
     otp3: "",
     otp4: "",
   });
-
+  console.log("featureConfig", featureConfig);
   /**
    * Show the signin page to user
    * Creation Date : 10/02/2023
@@ -53,61 +59,64 @@ const ConfirmOtp = ({ handleBack, handlePageChange, data }) => {
    */
   const callGetProfileApi = async (channelPartnerId, country_code) => {
     await invokeGetProfile(channelPartnerId, country_code)
-    .then((res) => {
-      localStorage.setItem("CPID", res.userProfile.resultObj.cpCustomerID);
-      localStorage.setItem("Hashed_CPID", res.userProfile.resultObj.cpCustomerIDHash);
+      .then((res) => {
+        localStorage.setItem("CPID", res.userProfile.resultObj.cpCustomerID);
+        localStorage.setItem(
+          "Hashed_CPID",
+          res.userProfile.resultObj.cpCustomerIDHash
+        );
 
-      try {
-        /*********** next page navigation with profile response **********/
-        if (isMobile) {
-          handlePageChange("profileinfo", res);
-        } else {
-          handlePageChange("loginsuccess", res);
+        try {
+          /*********** next page navigation with profile response **********/
+          if (isMobile) {
+            handlePageChange("profileinfo", res);
+          } else {
+            handlePageChange("loginsuccess", res);
+          }
+        } catch (error) {
+          throw error;
         }
-      } catch (error) {
+      })
+      .catch((error) => {
         throw error;
-      }
-    })
-    .catch((error) => {
-      throw error;
-    });
-  }
+      });
+  };
 
   /**
    * Call ConfirmOtp Api
    * Creation Date : 16/02/2023
    */
-  const callConfirmOtpApi = (phonenumber, otp, country_code)=>{
+  const callConfirmOtpApi = (phonenumber, otp, country_code) => {
     confirmOtp(phonenumber, otp, country_code)
-    .then((result) => {
-      const { resultCode, resultObj } = result;
-      
-      if (resultCode === constants.SUCCESS_RESULT_CODE) {
-        if (typeof localStorage !== "undefined") {
-          localStorage.setItem("accessToken", resultObj.accessToken);
-          localStorage.setItem("loginType", "mobile");
-          localStorage.setItem("CPID", resultObj.cpCustomerID);
-        }
+      .then((result) => {
+        const { resultCode, resultObj } = result;
 
-        const channelPartnerId = localStorage.getItem('channelPartnerID')
-        callGetProfileApi(channelPartnerId, country_code)
-      }
-    })
-    .catch((error) => {
-      throw error;
-    });
-  }
+        if (resultCode === constants.SUCCESS_RESULT_CODE) {
+          if (typeof localStorage !== "undefined") {
+            localStorage.setItem("accessToken", resultObj.accessToken);
+            localStorage.setItem("loginType", "mobile");
+            localStorage.setItem("CPID", resultObj.cpCustomerID);
+          }
+
+          const channelPartnerId = localStorage.getItem("channelPartnerID");
+          callGetProfileApi(channelPartnerId, country_code);
+        }
+      })
+      .catch((error) => {
+        throw error;
+      });
+  };
 
   /**
    * Click on next will show the profileinfo page to user
    * Creation Date : 10/02/2023
    */
   const handleNext = () => {
-    let country_code = localStorage.getItem('country_code');
+    let country_code = localStorage.getItem("country_code");
     let otp = `${formData.otp1}${formData.otp2}${formData.otp3}${formData.otp4}`;
-    
-    /*********** confirmOtp api call ***********/ 
-    callConfirmOtpApi(data.phonenumber, otp, country_code)
+
+    /*********** confirmOtp api call ***********/
+    callConfirmOtpApi(data.phonenumber, otp, country_code);
   };
 
   /**
@@ -222,11 +231,11 @@ const ConfirmOtp = ({ handleBack, handlePageChange, data }) => {
           </div>
         </div>
         {resendOtpText ? (
-          <div
-            className={styles.sectionFour}
-            style={{ cursor: "pointer" }}
-          >
-            <span className={styles.grayColor}>Didn’t receive the code? </span><span style={{ textDecoration: "underline" }} onClick={resendClick}>Try Again</span>
+          <div className={styles.sectionFour} style={{ cursor: "pointer" }}>
+            <span className={styles.grayColor}>Didn’t receive the code? </span>
+            <span style={{ textDecoration: "underline" }} onClick={resendClick}>
+              Try Again
+            </span>
           </div>
         ) : (
           <div className={styles.sectionOtp}>
@@ -259,7 +268,12 @@ const ConfirmOtp = ({ handleBack, handlePageChange, data }) => {
             <li></li>
           </ul>
         </div>
-        <ResendOtpPopup isOpen={resendOtpPopup} handleModal={handleResendOtp} />
+        <ResendOtpPopup
+          isOpen={resendOtpPopup}
+          handleModal={handleResendOtp}
+          dictionary={dictionary}
+          featureConfig={featureConfig}
+        />
       </div>
     </>
   );

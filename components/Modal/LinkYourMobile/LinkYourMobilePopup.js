@@ -6,7 +6,18 @@ import style from "./LinkYourMobilePopup.module.scss";
  * Component for Link mobile number popup
  * Creation Date : 14/02/2023
  */
-const LinkYourMobilePopup = ({ isOpen, handleModal, continueClick }) => {
+const LinkYourMobilePopup = ({
+  isOpen,
+  handleModal,
+  continueClick,
+  dictionary,
+  featureConfig,
+  cancelAccountSetup,
+}) => {
+  const cancelAccount = () => {
+    cancelAccountSetup();
+    handleModal();
+  };
   return (
     <Modal isOpen={isOpen} handleModal={handleModal}>
       <div className={style.header_section}>
@@ -21,7 +32,7 @@ const LinkYourMobilePopup = ({ isOpen, handleModal, continueClick }) => {
           </button>
         </div>
         <div className={style.button}>
-          <button>Cancel account setup</button>
+          <button onClick={cancelAccount}>Cancel account setup</button>
         </div>
       </div>
     </Modal>
